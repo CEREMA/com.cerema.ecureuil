@@ -16,6 +16,13 @@ App.view.define('VMain', {
 			xtype: "Menu",
 			itemId: "MenuPanel",
 			menu: [
+			{
+				text: "Mobilité",
+				menu: [{
+					text: "Ajouter un périphérique",
+					itemId: "MobileADD"
+				}]
+			}
 				/*{
 					text: "Saisie modification",
 					menu: [
