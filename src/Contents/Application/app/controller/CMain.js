@@ -362,7 +362,7 @@ App.controller.define('CMain', {
         };
     },
     annulerMobile: function(p, record) {
-        App.get('MobileADD').close();
+        //App.get('MobileADD').close();
     },
 /*****************************************************************************************************************************************************************/
     //remet les saisies à vide
