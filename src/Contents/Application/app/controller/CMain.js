@@ -350,7 +350,7 @@ App.controller.define('CMain', {
         if (p.itemId) {
             if (p.itemId=="mobileADD") {
                 /**********************************************************************************************/
-                console.log(p.itemId);
+                //console.log(p.itemId);
             }
         };
     },
