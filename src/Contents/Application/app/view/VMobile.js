@@ -12,6 +12,10 @@ App.view.define('VMobile', {
                 border: false,
                 width: "100%",
                 items: [
+                    {
+                        html: 'Ecureuil Mobile',
+                        flex: 6
+                    },
             		{
                         xtype: "textfield",
                         itemId: "Peripherique",
