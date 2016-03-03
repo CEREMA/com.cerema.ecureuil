@@ -23,6 +23,9 @@ App.controller.define('CMain', {
             "button#CancelMobile": {
                 click: "CancelMobile"
             },
+            "button#synchroniser_code": {
+                click: "CancelMobile"
+            },
             "TForm1 grid#AO": {
                 itemclick: "AO_onclick",
                 itemdblclick: "grid_dblclick",
@@ -355,7 +358,6 @@ App.controller.define('CMain', {
             if (p.itemId == "MobileADD") {
                 console.log(p.itemId);
                 App.view.create('VMobile').show().center();
-
             }
         };
     },

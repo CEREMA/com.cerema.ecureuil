@@ -39,7 +39,7 @@ App.view.define('VMobile', {
             }, 
             {
                 xtype: "button",
-                itemId: "synchroniser_code",
+                itemId: "SynchroniserMobile",
                 text: "Synchroniser",
                 margin: {
                     top: 10,
