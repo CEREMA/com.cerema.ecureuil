@@ -23,20 +23,6 @@ App.view.define('VMobile', {
                         labelWidth: 200,
                     }
 				]
-            }, {
-                layout: "hbox",
-                width: 400,
-                height: 4,
-                margin: {
-                    top: 0,
-                    bottom: 0,
-                    left: 0,
-                    right: 0
-                },
-                border: false,
-                items: [
-
-                ]
             }
         ];
         this.bbar = [{
