@@ -23,7 +23,8 @@ App.view.define('VMobile', {
                         labelWidth: 200,
                     }
 				]
-            }, {
+            }, 
+            {
                 layout: "hbox",
                 width: 400,
                 height: 4,
@@ -34,12 +35,11 @@ App.view.define('VMobile', {
                     right: 0
                 },
                 border: false,
-                items: [
-
-                ]
+                items: []
             }
         ];
-        this.bbar = [{
+        this.bbar = [
+        	{
                 xtype: "button",
                 itemId: 'CancelMobile',
                 text: "Annuler",
@@ -62,6 +62,7 @@ App.view.define('VMobile', {
                 }
             }
         ];
+        
         this.callParent(arguments);
     }
 
