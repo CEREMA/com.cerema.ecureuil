@@ -42,7 +42,7 @@ App.view.define('VMobile', {
         this.bbar = [{
                 xtype: "button",
                 itemId: 'CancelMobile',
-                text: "Annuler"
+                text: "Annuler",
                 margin: {
                     top: 0,
                     bottom: 0,
