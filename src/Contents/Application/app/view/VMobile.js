@@ -40,7 +40,8 @@ App.view.define('VMobile', {
             }
         ];
         this.bbar = [{
-                xtype: "buttonMobile",
+                xtype: "button",
+                itemId: 'annulerMobile',
                 text: "Annuler",
                 itemId: "CANCEL_lien"
             }, 
