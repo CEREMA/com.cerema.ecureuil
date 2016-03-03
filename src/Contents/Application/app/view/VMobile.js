@@ -14,7 +14,7 @@ App.view.define('VMobile', {
                 items: [
             		{
                         xtype: "textfield",
-                        itemId: "client",
+                        itemId: "Peripherique",
                         margin: {
                             top: 10,
                             left: 30,
@@ -23,7 +23,7 @@ App.view.define('VMobile', {
                         flex: 1,
                         labelAlign: "top",
                         allowBlank: false,
-                        fieldLabel: "Client",
+                        fieldLabel: "Code de synchronisation",
                         labelWidth: 200,
                     }
 				]
