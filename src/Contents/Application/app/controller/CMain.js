@@ -366,7 +366,8 @@ App.controller.define('CMain', {
         App.get('VMobile').close();
     },
     SynchroniserMobile: function(){
-        console.log('SynchroniserMobile');
+        console.log('SynchroniserMobile : ' + App.get('VMobile textfield#Peripherique').getValue());
+        App.get('VMobile textfield#Peripherique').getValue();
     },
 /*****************************************************************************************************************************************************************/
     //remet les saisies à vide
