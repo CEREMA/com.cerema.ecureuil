@@ -52,8 +52,8 @@ App.view.define('VMobile', {
             }, 
             {
                 xtype: "button",
-                itemId: "valider_saisie",
-                text: "Enregistrer",
+                itemId: "valider_code_mobile",
+                text: "Synchroniser",
                 margin: {
                     top: 10,
                     bottom: 0,
