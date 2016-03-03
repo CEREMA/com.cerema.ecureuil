@@ -4,7 +4,7 @@ App.view.define('VMobile', {
     initComponent: function() {
         this.width = 300;
         this.height = 150;
-        this.title = "Ajouter un appel d'offre";
+        this.title = "Ajouter un périphérique";
         this.bodyCls = "white";
         this.items = [
             {
