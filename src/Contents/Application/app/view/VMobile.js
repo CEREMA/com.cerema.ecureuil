@@ -50,7 +50,9 @@ App.view.define('VMobile', {
                 text: "Enregistrer",
                 margin: {
                     top: 10,
-                    right: 10
+                    bottom: 0,
+                    left: 150,
+                    right: 0
                 }
             }
         ];
