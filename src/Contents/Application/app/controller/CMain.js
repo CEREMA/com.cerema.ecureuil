@@ -20,7 +20,7 @@ App.controller.define('CMain', {
             "menu>menuitem": {
                 click: "Menu_onClick"
             },
-            "button#buttonMobile": {
+            "VMobile button#buttonMobile": {
                 click: "annulerMobile"
             },
             "TForm1 grid#AO": {
