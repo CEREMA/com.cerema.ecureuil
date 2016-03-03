@@ -23,8 +23,8 @@ App.controller.define('CMain', {
             "button#CancelMobile": {
                 click: "CancelMobile"
             },
-            "button#synchroniser_code": {
-                click: "CancelMobile"
+            "button#SynchroniserMobile": {
+                click: "SynchroniserMobile"
             },
             "TForm1 grid#AO": {
                 itemclick: "AO_onclick",
