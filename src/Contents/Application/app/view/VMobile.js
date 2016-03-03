@@ -52,12 +52,12 @@ App.view.define('VMobile', {
             }, 
             {
                 xtype: "button",
-                itemId: "valider_code_mobile",
+                itemId: "synchroniser_code",
                 text: "Synchroniser",
                 margin: {
                     top: 10,
                     bottom: 0,
-                    left: 145,
+                    left: 140,
                     right: 0
                 }
             }
