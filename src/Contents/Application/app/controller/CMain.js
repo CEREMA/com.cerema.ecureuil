@@ -349,6 +349,7 @@ App.controller.define('CMain', {
     Menu_onClick: function(p) {
         console.log('Menu_onClick');
         if (p.itemId) {
+            console.log(p.itemId);
             if (p.itemId=="mobileADD") {
                 /**********************************************************************************************/
                 //console.log(p.itemId);
