@@ -351,7 +351,6 @@ App.controller.define('CMain', {
         if (p.itemId) {
             if (p.itemId == "MobileADD") {
                 console.log(p.itemId);
-
                 App.view.create('VMobile', {
                     
                 }).show().center();

@@ -1,6 +1,6 @@
-App.view.define('VForm2', {
+App.view.define('VMobile', {
     extend: "Ext.window.Window",
-    alias: "widget.TForm2",
+    alias: "widget.TMobile",
     initComponent: function() {
         this.width = 800;
         this.height = 750;
