@@ -2,8 +2,8 @@ App.view.define('VMobile', {
     extend: "Ext.window.Window",
     alias: "widget.TMobile",
     initComponent: function() {
-        this.width = 800;
-        this.height = 750;
+        this.width = 150;
+        this.height = 50;
         this.title = "Ajouter un appel d'offre";
         this.bodyCls = "white";
         this.items = [
