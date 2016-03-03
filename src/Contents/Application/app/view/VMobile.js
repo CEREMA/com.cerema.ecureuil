@@ -11,6 +11,7 @@ App.view.define('VMobile', {
                 layout: "vbox",
                 border: false,
                 width: "100%",
+                height: '100%',
                 items: [
                     {
                         html: '<div>Ecureuil Mobile</div>',
