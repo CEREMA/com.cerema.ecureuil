@@ -57,7 +57,7 @@ App.view.define('VMobile', {
                 margin: {
                     top: 10,
                     bottom: 0,
-                    left: 140,
+                    left: 137,
                     right: 0
                 }
             }
