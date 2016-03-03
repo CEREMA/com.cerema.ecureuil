@@ -8,7 +8,7 @@ App.view.define('VMobile', {
         this.bodyCls = "white";
         this.items = [
             {
-                layout: "hbox",
+                layout: "vbox",
                 border: false,
                 width: "100%",
                 items: [
