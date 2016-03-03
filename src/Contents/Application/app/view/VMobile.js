@@ -35,7 +35,9 @@ App.view.define('VMobile', {
                     right: 0
                 },
                 border: false,
-                items: []
+                items: [
+
+                ]
             }
         ];
         this.bbar = [
