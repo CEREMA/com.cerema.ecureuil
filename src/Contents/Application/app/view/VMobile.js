@@ -43,6 +43,12 @@ App.view.define('VMobile', {
                 xtype: "button",
                 itemId: 'CancelMobile',
                 text: "Annuler"
+                margin: {
+                    top: 0,
+                    bottom: 0,
+                    left: 10,
+                    right: 0
+                }
             }, 
             {
                 xtype: "button",
