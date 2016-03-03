@@ -50,69 +50,6 @@ App.view.define('VMobile', {
 
                 ]
             },
-			{
-				layout: "hbox",
-				width: "100%",
-				border: false,
-				items: [
-				{
-					layout:"vbox",
-					width: 400,
-					border: false,
-					items: [
-            {
-                xtype: "textarea",
-                itemId: "objet",
-				flex: 1,
-                padding: 10,
-				width: "95%",
-                height: 50,
-                labelAlign: "top",
-                allowBlank: false,
-                fieldLabel: "Objet"
-
-            },
-
-            {
-                xtype: "textarea",
-                itemId: "observations",
-				flex: 1,
-                padding: 10,
-                width: "95%",
-                height: 50,
-                labelAlign: "top",
-                fieldLabel: "Observations"
-            }					
-					]
-				},             {
-
-                layout: "vbox",
-                border: false,
-                width: "100%",
-				padding: 10,
-                items: [{
-                        xtype: "boxselect",
-                        itemId: "cboDepartement",
-                        fieldLabel: "Département",
-                        allowBlank: false,
-                        editable: false,
-                        labelAlign: "top",
-                        labelWidth: 200,
-                        width: 310,
-                        displayField: "departement",
-                        valueField: "IdDepartement",
-
-                        store: App.store.create('App.AO.getAll4', // Creation du store
-                            {
-                                autoLoad: true
-                            })
-
-                    }
-                ]
-            }
-				]
-			},
-
             {
                 layout: "hbox",
                 itemId: "regroupement_hboxUpload",
