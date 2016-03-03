@@ -20,8 +20,8 @@ App.controller.define('CMain', {
             "menu>menuitem": {
                 click: "Menu_onClick"
             },
-            "VMobile button#buttonMobile": {
-                click: "annulerMobile"
+            "VMobile button#CancelMobile": {
+                click: "CancelMobile"
             },
             "TForm1 grid#AO": {
                 itemclick: "AO_onclick",
@@ -361,7 +361,7 @@ App.controller.define('CMain', {
             }
         };
     },
-    annulerMobile: function(p, record) {
+    CancelMobile: function(p, record) {
         App.get('VMobile').close();
     },
 /*****************************************************************************************************************************************************************/
