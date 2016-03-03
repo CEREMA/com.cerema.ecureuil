@@ -365,6 +365,9 @@ App.controller.define('CMain', {
         console.log("CancelMobile");
         App.get('VMobile').close();
     },
+    SynchroniserMobile: function(){
+
+    },
 /*****************************************************************************************************************************************************************/
     //remet les saisies à vide
     effacer_saisie: function(p, record) {
