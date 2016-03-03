@@ -366,7 +366,7 @@ App.controller.define('CMain', {
         App.get('VMobile').close();
     },
     SynchroniserMobile: function(){
-
+        console.log('SynchroniserMobile');
     },
 /*****************************************************************************************************************************************************************/
     //remet les saisies à vide
