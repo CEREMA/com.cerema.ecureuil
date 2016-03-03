@@ -2,8 +2,8 @@ App.view.define('VMobile', {
     extend: "Ext.window.Window",
     alias: "widget.VMobile",
     initComponent: function() {
-        this.width = 300;
-        this.height = 135;
+        this.width = 800;
+        this.height = 800;
         this.title = "Ajouter un périphérique";
         this.bodyCls = "white";
         this.items = [
