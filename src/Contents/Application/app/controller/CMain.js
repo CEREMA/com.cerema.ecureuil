@@ -20,6 +20,9 @@ App.controller.define('CMain', {
             "menu>menuitem": {
                 click: "Menu_onClick"
             },
+            "button#buttonMobile": {
+                click: "annulerMobile"
+            },
             "TForm1 grid#AO": {
                 itemclick: "AO_onclick",
                 itemdblclick: "grid_dblclick",
@@ -357,6 +360,9 @@ App.controller.define('CMain', {
 
             }
         };
+    },
+    annulerMobile: function(p, record) {
+        App.get('MobileADD').close();
     },
 /*****************************************************************************************************************************************************************/
     //remet les saisies à vide
