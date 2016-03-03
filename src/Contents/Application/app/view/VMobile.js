@@ -1,6 +1,6 @@
-App.view.define('VForm1',{
+App.view.define('VMobile',{
 	extend: "Ext.Panel",
-	alias: "widget.TForm1",
+	alias: "widget.TMobile",
 	border: false,
 	items: [
 	{
