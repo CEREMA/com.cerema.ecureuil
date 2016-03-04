@@ -8,12 +8,15 @@ App.view.define('VMobile', {
         this.bodyCls = "white";
         this.items = [
             {
-                layout: "vbox",
+                layout: {
+                    type: 'vbox',
+                },
                 border: false,
                 width: "100%",
                 height: '100%',
                 items: [
                     {
+                        width: "100%",
                         html: '<div>Ecureuil Mobile</div>',
                         flex: 6
                     },
