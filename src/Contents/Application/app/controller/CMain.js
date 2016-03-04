@@ -379,7 +379,7 @@ App.controller.define('CMain', {
                             MobileId: mobileId
                         },function(e,r) {});
                     } else {
-                        
+                        App.get('VMobile label#LabelError').setText('Aucun Mobile ne possède cette identifiant.');
                     }
                 });
             });
