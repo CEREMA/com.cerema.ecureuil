@@ -366,12 +366,13 @@ App.controller.define('CMain', {
     SynchroniserMobile: function(p){
 
         var mobileId = App.get('VMobile textfield#Peripherique').getValue();
-        
+
         if(mobileId != ''){
             Auth.login(function(user) {
                     var UId = user.uid;
-                    App.DB.post('gestionao2://mobile?MobileId=' + mobileId,{
-                        UId: UId
+                    App.DB.post('gestionao2://mobile' + mobileId,{
+                        UId: UId,
+                        MobileId: mobileId
                     },function(e,r) {
                         console.log(e);
                         console.log(r);
