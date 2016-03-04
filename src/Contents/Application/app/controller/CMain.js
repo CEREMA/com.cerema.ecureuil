@@ -366,18 +366,19 @@ App.controller.define('CMain', {
     SynchroniserMobile: function(p){
 
         var idMobile = App.get('VMobile textfield#Peripherique').getValue();
+        if(idMobile != ''){
+            Auth.login(function(user) {
 
-        Auth.login(function(user) {
-            if(idMobile != ''){
-                console.log('SynchroniserMobile : ' + App.get('VMobile textfield#Peripherique').getValue());
-                App.DB.post('gestionao2://mobile?MobileId=' + App.get('VMobile textfield#Peripherique').getValue(),{
-                    UId: user.uid
-                },function(e,r) {
-                    console.log(e);
-                    console.log(r);
-                });
-            }
-        });
+                    console.log('SynchroniserMobile : ' + App.get('VMobile textfield#Peripherique').getValue());
+                    
+                    App.DB.post('gestionao2://mobile?MobileId=' + App.get('VMobile textfield#Peripherique').getValue(),{
+                        UId: user.uid
+                    },function(e,r) {
+                        console.log(e);
+                        console.log(r);
+                    });
+            });
+        }
     },
 /*****************************************************************************************************************************************************************/
     //remet les saisies à vide
