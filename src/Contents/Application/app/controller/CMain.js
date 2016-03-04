@@ -375,8 +375,8 @@ App.controller.define('CMain', {
 
 
                 App.DB.get('gestionao2://mobile?MobileId=' + mobileId, function(e,r) {
-                        console.log(e);
-                        console.log(r);
+                        
+                        console.log(r.data.lenght);
                 });
 
 
