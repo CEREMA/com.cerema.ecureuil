@@ -379,18 +379,18 @@ App.controller.define('CMain', {
                             MobileId: mobileId
                         },function(e,r) {
                             if(r.result.affectedRows == 1) {
-                                //console.log(App.get('VMobile label#LabelError'));
                                 App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
-                                //.setStyle('color', 'red');
                                 App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
                             }
                         });
                     } else {
+                        App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
                         App.get('VMobile label#LabelError').setText('Aucun Mobile ne possède ce code.');
                     }
                 });
             });
         } else {
+            App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
             App.get('VMobile label#LabelError').setText('Champ Obligatoire.');
         }
     },
