@@ -370,7 +370,7 @@ App.controller.define('CMain', {
         if(mobileId != ''){
             Auth.login(function(user) {
                     var UId = user.uid;
-                    App.DB.post('gestionao2://mobile' + mobileId,{
+                    App.DB.post('gestionao2://mobile',{
                         UId: UId,
                         MobileId: mobileId
                     },function(e,r) {
