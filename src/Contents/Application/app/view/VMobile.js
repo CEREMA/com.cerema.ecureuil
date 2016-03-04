@@ -7,31 +7,25 @@ App.view.define('VMobile', {
         this.title = "Ajouter un périphérique";
         this.bodyCls = "white";
         this.items = [
-            {   
-                layout: "fit",
+            {
+                layout: "vbox",
+                border: false,
+                width: "100%",
+                height: '100%',
                 items: [
                     {
-                        layout: "vbox",
-                        border: false,
-                        width: "100%",
-                        height: '100%',
-                        items: [
-                            {
-                                width: "100%",
-                                html: '<div>Ecureuil Mobile</div>',
-                                flex: 6
-                            },
-                    		{
-                                xtype: "textfield",
-                                itemId: "Peripherique",
-                                margin: 10,
-                                flex: 1,
-                                labelAlign: "top",
-                                allowBlank: false,
-                                fieldLabel: "Code de synchronisation",
-                                labelWidth: 100,
-                            }
-                        ]
+                        html: '<div>Ecureuil Mobile</div>',
+                        flex: 6
+                    },
+            		{
+                        xtype: "textfield",
+                        itemId: "Peripherique",
+                        margin: 10,
+                        flex: 1,
+                        labelAlign: "top",
+                        allowBlank: false,
+                        fieldLabel: "Code de synchronisation",
+                        labelWidth: 100,
                     }
 				]
             }
