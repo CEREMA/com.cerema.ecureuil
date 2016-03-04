@@ -14,7 +14,8 @@ App.view.define('VMobile', {
                 items: [
                     {
                         width: "100%",
-                        html: '<div class="title-mobile">Ecureuil Mobile</div><div class="description-mobile">Image</div><div></div>',
+                        html:   '<div class="title-mobile">Ecureuil Mobile</div><hr/>'+
+                                '<div class="description-mobile">Dès aujourd\'hui, Accedez à votre espace Ecureuil sur votre mobile.</div>',
                         flex: 11
                     },
             		{
