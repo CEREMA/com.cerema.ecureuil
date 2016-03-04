@@ -380,7 +380,7 @@ App.controller.define('CMain', {
                         },function(e,r) {
                             if(r.result.affectedRows == 1) {
                                 console.log(App.get('VMobile label#LabelError'));
-                                App.get('VMobile label#LabelError').labelEl.setStyle({"color":"red"});
+                                App.get('VMobile label#LabelError').labelEl.setStyle({"color":"green"});
                                 //.setStyle('color', 'red');
                                 App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
                             }
