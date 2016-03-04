@@ -61,3 +61,10 @@
 .title-step{
 	margin: 15px;
 }
+
+.googleplay {
+	height: 20px;
+    display: none;
+    background: url(mobi/googleplay.jpg) no-repeat center center;
+    background-size: contain;
+}
