@@ -53,12 +53,12 @@
 
 .title-mobile{
 	color: #F07D00;
-	font-size: 1.2em;
+	font-size: 1.4em;
 	margin: 15px;
 }
 
 .description-mobile {
-	font-size: 1.0em;
+	font-size: 1.2em;
 	color: #157efb;
 }
 
@@ -88,5 +88,5 @@
 .text-mobile {
 	margin: 15px;
 	font-weight: 500;
-	font-size: 0.8em;
+	font-size: 1.0em;
 }
