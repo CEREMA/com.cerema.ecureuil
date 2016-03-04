@@ -366,7 +366,7 @@ App.controller.define('CMain', {
     SynchroniserMobile: function(p){
 
         var idMobile = App.get('VMobile textfield#Peripherique').getValue();
-        
+
         Auth.login(function(user) {
 
             console.log('SynchroniserMobile');
@@ -376,7 +376,8 @@ App.controller.define('CMain', {
                 App.DB.post('gestionao2://mobile?MobileId=' + App.get('VMobile textfield#Peripherique').getValue(),{
                     UId: user.uid
                 },function(e,r) {
-                    
+                    console.log(e);
+                    console.log(r);
                 });
             }
         });
