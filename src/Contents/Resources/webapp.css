@@ -67,6 +67,7 @@
 }
 
 .googleplay {
+	vertical-align: top;
 	display: inline-block;
 	height: 50px;
 	width: 150px;
@@ -75,6 +76,7 @@
 }
 
 .appstore {
+	vertical-align: top;
 	display: inline-block;
 	height: 45px;
 	width: 150px;
