@@ -69,13 +69,15 @@
 .googleplay {
 	display: inline-block;
 	height: 50px;
+	width: 150px;
     background: url(webapp/googleplay.jpg) no-repeat center center;
     background-size: contain;
 }
 
 .appstore {
 	display: inline-block;
-	height: 40px;
+	height: 45px;
+	width: 150px;
     background: url(webapp/appstore.jpg) no-repeat center center;
     background-size: contain;
 }
