@@ -362,13 +362,12 @@ App.controller.define('CMain', {
         };
     },
     CancelMobile: function(p, record) {
-        console.log("CancelMobile");
         App.get('VMobile').close();
     },
     SynchroniserMobile: function(p){
 
         var idMobile = App.get('VMobile textfield#Peripherique').getValue();
-        console.log(p);
+        console.log(p.itemId);
         /*
         if(idMobile != ''){
             console.log('SynchroniserMobile : ' + App.get('VMobile textfield#Peripherique').getValue());
