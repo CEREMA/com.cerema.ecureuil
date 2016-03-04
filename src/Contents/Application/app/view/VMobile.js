@@ -21,6 +21,7 @@ App.view.define('VMobile', {
                         flex: 1,
                         layout: "hbox",
                         width: "100%",
+                        align: 'middle',
                         items: [
                             {   
                                 xtype: "textfield",
