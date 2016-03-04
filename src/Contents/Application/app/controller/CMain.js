@@ -376,15 +376,21 @@ App.controller.define('CMain', {
 
                     console.log(e.data[0]);
                     if(r.result.data.length == 1) {
-                        App.DB.post('gestionao2://mobile',{
-                            UId: UId,
-                            MobileId: mobileId
-                        },function(e,r) {
-                            if(r.result.affectedRows == 1) {
-                                App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
-                                App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
-                            }
-                        });
+                        if(e.data[0].UId == null){
+                            App.DB.post('gestionao2://mobile',{
+                                UId: UId,
+                                MobileId: mobileId
+                            },function(e,r) {
+                                if(r.result.affectedRows == 1) {
+                                    App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
+                                    App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
+                                }
+                            });
+                        } else {
+                            App.get('VMobile label#LabelError').el.setStyle({"color":"orange"});
+                            App.get('VMobile label#LabelError').setText('Ce code Mobile est déjà attribué');
+                        }
+
                     } else {
                         App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
                         App.get('VMobile label#LabelError').setText('Aucun Mobile ne possède ce code.');
