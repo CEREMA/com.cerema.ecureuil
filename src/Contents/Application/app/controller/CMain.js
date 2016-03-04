@@ -378,7 +378,9 @@ App.controller.define('CMain', {
                             UId: UId,
                             MobileId: mobileId
                         },function(e,r) {
-                            console.log(r.result.affectedRows);
+                            if(r.result.affectedRows == 1) {
+                                App.get('VMobile label#LabelError').setText('Synchronisation Ok.');
+                            }
                         });
                     } else {
                         App.get('VMobile label#LabelError').setText('Aucun Mobile ne possède ce code.');
@@ -386,7 +388,7 @@ App.controller.define('CMain', {
                 });
             });
         } else {
-            App.get('VMobile label#LabelError').setText('Obligatoire.');
+            App.get('VMobile label#LabelError').setText('Champ Obligatoire.');
         }
     },
 /*****************************************************************************************************************************************************************/
