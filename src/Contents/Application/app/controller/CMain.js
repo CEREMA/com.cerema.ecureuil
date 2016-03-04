@@ -377,7 +377,10 @@ App.controller.define('CMain', {
                         App.DB.post('gestionao2://mobile',{
                             UId: UId,
                             MobileId: mobileId
-                        },function(e,r) {});
+                        },function(e,r) {
+                            console.log(e);
+                            console.log(r);
+                        });
                     } else {
                         App.get('VMobile label#LabelError').setText('Aucun Mobile ne possède cette identifiant.');
                     }
