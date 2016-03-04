@@ -19,6 +19,7 @@ App.view.define('VMobile', {
                                     '<div class="description-mobile">Dès aujourd\'hui, Accedez à votre espace Ecureuil sur votre mobile.<br/>En seulement 3 étapes !</div>'+
                                     '<div class="title-step">Etape 1 : Télécharger l\'application "Ecureuil Mobile"</div>'+
                                     '<div class="googleplay"></div><div class="appstore"></div>'+
+                                    '<div class="title-step">Etape 2 : Suivre les instructions sur votre mobile</div>'+
                                 '</div>',
                         flex: 11
                     },
