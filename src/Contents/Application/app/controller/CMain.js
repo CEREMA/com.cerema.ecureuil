@@ -378,10 +378,7 @@ App.controller.define('CMain', {
                         App.DB.post('gestionao2://mobile',{
                             UId: UId,
                             MobileId: mobileId
-                        },function(e,r) {
-                            console.log(e);
-                            console.log(r);
-                        });
+                        },function(e,r) {});
                     }
                 });
             });
