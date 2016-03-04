@@ -20,7 +20,7 @@ App.view.define('VMobile', {
                                     '<div class="title-step">Etape 1 : Télécharger l\'application "Ecureuil Mobile"</div>'+
                                     '<div class="googleplay"></div><div class="appstore"></div>'+
                                     '<div class="title-step">Etape 2 : Suivre les instructions sur votre mobile</div>'+
-                                    '<div class="title-step">Après l\'installation de l\'application.<br/> Vous vous laissez guider par les étape de synchronisation</div>'+
+                                    '<div class="title-step">Après l\'installation de l\'application,<br/> Suivez les instruction de synchronisation.<br/> Cela permettra D\'associer votre compte Ecureuil avec votre mobile.</div>'+
                                 '</div>',
                         flex: 11
                     },
