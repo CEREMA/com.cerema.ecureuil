@@ -374,6 +374,7 @@ App.controller.define('CMain', {
 
                 App.DB.get('gestionao2://mobile?MobileId=' + mobileId, function(e,r) {
                     if(r.result.data.length == 1)
+                    {
                         App.DB.post('gestionao2://mobile',{
                             UId: UId,
                             MobileId: mobileId
