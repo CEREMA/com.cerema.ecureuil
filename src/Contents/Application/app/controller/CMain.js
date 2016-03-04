@@ -356,7 +356,7 @@ App.controller.define('CMain', {
     Menu_onClick: function(p) {
         if (p.itemId) {
             if (p.itemId == "MobileADD") {
-                App.view.create('VMobile').show().center();
+                App.view.create('VMobile',{modal: true}).show().center();
             }
         };
     },
