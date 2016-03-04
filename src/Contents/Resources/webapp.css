@@ -84,3 +84,9 @@
     background: url(webapp/appstore.jpg) no-repeat center center;
     background-size: contain;
 }
+
+.text-mobile {
+	margin: 15px;
+	font-weight: 500;
+	font-size: 0.8em;
+}
