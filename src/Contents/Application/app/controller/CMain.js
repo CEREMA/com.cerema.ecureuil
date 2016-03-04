@@ -369,31 +369,20 @@ App.controller.define('CMain', {
 
         if(mobileId != ''){
             Auth.login(function(user) {
+
                 var UId = user.uid;
 
-
-
-
                 App.DB.get('gestionao2://mobile?MobileId=' + mobileId, function(e,r) {
-                        
-                        console.log(r.result.data.length);
+                    if(r.result.data.length == 1)
+                        App.DB.post('gestionao2://mobile',{
+                            UId: UId,
+                            MobileId: mobileId
+                        },function(e,r) {
+                            console.log(e);
+                            console.log(r);
+                        });
+                    }
                 });
-
-
-
-
-
-
-
-/*
-
-                    App.DB.post('gestionao2://mobile',{
-                        UId: UId,
-                        MobileId: mobileId
-                    },function(e,r) {
-                        console.log(e);
-                        console.log(r);
-                    });*/
             });
         }
     },
