@@ -6,6 +6,7 @@ App.view.define('VMobile', {
         this.height = 600;
         this.title = "Ajouter un périphérique";
         this.bodyCls = "white";
+        this.layout="fit";
         this.items = [
             {
                 layout: "vbox",
