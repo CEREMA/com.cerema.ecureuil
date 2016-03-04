@@ -356,7 +356,6 @@ App.controller.define('CMain', {
     Menu_onClick: function(p) {
         if (p.itemId) {
             if (p.itemId == "MobileADD") {
-                console.log(p.itemId);
                 App.view.create('VMobile').show().center();
             }
         };
@@ -367,7 +366,6 @@ App.controller.define('CMain', {
     SynchroniserMobile: function(p){
 
         var idMobile = App.get('VMobile textfield#Peripherique').getValue();
-        console.log(p.itemId);
         /*
         if(idMobile != ''){
             console.log('SynchroniserMobile : ' + App.get('VMobile textfield#Peripherique').getValue());
@@ -377,6 +375,10 @@ App.controller.define('CMain', {
             
             });
         }*/
+
+        Auth.login(function(user) {
+                console.log(user);
+        });
     },
 /*****************************************************************************************************************************************************************/
     //remet les saisies à vide
