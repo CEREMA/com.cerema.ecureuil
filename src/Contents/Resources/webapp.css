@@ -42,17 +42,23 @@
 											VMobile
 \********************************************************************************************/
 
-.title-mobile{
+.screen-mobile {
 	text-align: center;
 	color: #F07D00;
 	font-weight: 600;
+}
+
+.title-mobile{
+	color: #F07D00;
 	font-size: 1.2em;
 	margin: 15px;
 }
 
 .description-mobile {
-	text-align: center;
-	font-weight: 600;
 	font-size: 1.0em;
 	color: #157efb;
+}
+
+.title-step{
+	
 }
