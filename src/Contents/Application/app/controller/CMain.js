@@ -366,18 +366,19 @@ App.controller.define('CMain', {
     SynchroniserMobile: function(p){
 
         var idMobile = App.get('VMobile textfield#Peripherique').getValue();
-        /*
-        if(idMobile != ''){
-            console.log('SynchroniserMobile : ' + App.get('VMobile textfield#Peripherique').getValue());
-            App.DB.post('gestionao2://mobile?MobileId=' + App.get('VMobile textfield#Peripherique').getValue(),{
-                UId: id_appelOffre
-            },function(e,r) {
-            
-            });
-        }*/
-
+        
         Auth.login(function(user) {
-                console.log(user);
+
+            console.log('SynchroniserMobile');
+
+            if(idMobile != ''){
+                console.log('SynchroniserMobile : ' + App.get('VMobile textfield#Peripherique').getValue());
+                App.DB.post('gestionao2://mobile?MobileId=' + App.get('VMobile textfield#Peripherique').getValue(),{
+                    UId: user.uid
+                },function(e,r) {
+                    
+                });
+            }
         });
     },
 /*****************************************************************************************************************************************************************/
