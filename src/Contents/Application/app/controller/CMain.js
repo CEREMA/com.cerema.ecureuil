@@ -379,6 +379,7 @@ App.controller.define('CMain', {
                             MobileId: mobileId
                         },function(e,r) {
                             if(r.result.affectedRows == 1) {
+                                console.log(App.get('VMobile label#LabelError'));
                                 App.get('VMobile label#LabelError').setStyle('color', 'red');
                                 App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
                             }
