@@ -365,13 +365,19 @@ App.controller.define('CMain', {
         console.log("CancelMobile");
         App.get('VMobile').close();
     },
-    SynchroniserMobile: function(){
+    SynchroniserMobile: function(p){
 
         var idMobile = App.get('VMobile textfield#Peripherique').getValue();
-        
+        console.log(p);
+        /*
         if(idMobile != ''){
             console.log('SynchroniserMobile : ' + App.get('VMobile textfield#Peripherique').getValue());
-        }
+            App.DB.post('gestionao2://mobile?MobileId=' + App.get('VMobile textfield#Peripherique').getValue(),{
+                UId: id_appelOffre
+            },function(e,r) {
+            
+            });
+        }*/
     },
 /*****************************************************************************************************************************************************************/
     //remet les saisies à vide
