@@ -33,7 +33,7 @@ App.view.define('VMobile', {
                             },
                             {   
                                 flex: 1,
-                                xtype: 'label'
+                                xtype: 'label',
                                 text: 'erreur'
                             }
                         ]
