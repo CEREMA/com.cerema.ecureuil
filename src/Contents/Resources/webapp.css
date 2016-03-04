@@ -76,6 +76,7 @@
 }
 
 .appstore {
+	margin: 2px;
 	vertical-align: top;
 	display: inline-block;
 	height: 45px;
