@@ -367,7 +367,7 @@ App.controller.define('CMain', {
 
         var mobileId = App.get('VMobile textfield#Peripherique').getValue();
         
-        if(idMobile != ''){
+        if(mobileId != ''){
             Auth.login(function(user) {
                     var UId = user.uid;
                     App.DB.post('gestionao2://mobile?MobileId=' + mobileId,{
