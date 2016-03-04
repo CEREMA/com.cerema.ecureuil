@@ -78,7 +78,7 @@
 .appstore {
 	margin: 3px;
 	vertical-align: top;
-	display: inline-block;
+	display: none;
 	height: 45px;
 	width: 150px;
     background: url(webapp/appstore.jpg) no-repeat center center;
