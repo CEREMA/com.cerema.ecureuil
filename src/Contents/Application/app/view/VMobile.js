@@ -36,10 +36,7 @@ App.view.define('VMobile', {
                                 xtype: 'label',
                                 itemId: 'LabelError',
                                 text: '',
-                                margin: 10,
-                                style: {
-                                  color: 'red'
-                                }
+                                margin: 10
                             }
                         ]
                         
