@@ -15,13 +15,13 @@ App.view.define('VMobile', {
                     {
                         width: "100%",
                         html: '<div>Ecureuil Mobile</div>',
-                        flex: 6
+                        flex: 7
                     },
             		{
                         xtype: "textfield",
                         itemId: "Peripherique",
                         flex: 1,
-                        labelAlign: "top",
+                        labelAlign: "center",
                         allowBlank: false,
                         fieldLabel: "Code de synchronisation",
                     }
