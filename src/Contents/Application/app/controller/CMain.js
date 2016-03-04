@@ -393,7 +393,7 @@ App.controller.define('CMain', {
 
                     } else {
                         App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
-                        App.get('VMobile label#LabelError').setText('Aucun Mobile ne possède ce code.');
+                        App.get('VMobile label#LabelError').setText('Code incorrect.');
                     }
                 });
             });
