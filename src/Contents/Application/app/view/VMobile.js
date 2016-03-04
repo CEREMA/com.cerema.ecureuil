@@ -15,7 +15,7 @@ App.view.define('VMobile', {
                     {
                         width: "100%",
                         html: '<div>Ecureuil Mobile</div>',
-                        flex: 1
+                        flex: 6
                     },
             		{
                         xtype: "textfield",
