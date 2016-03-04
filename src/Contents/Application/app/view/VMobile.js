@@ -24,7 +24,7 @@ App.view.define('VMobile', {
                                     'Suivez les instruction de synchronisation.<br/>'+
                                     'Cela permettra d\'associer votre compte Ecureuil avec votre application mobile.</div>'+
                                 '</div>',
-                        flex: 9
+                        flex: 7
                     },
             		{
                         flex: 1,
