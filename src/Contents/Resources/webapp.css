@@ -67,8 +67,13 @@
 }
 
 .googleplay {
-	height: 50px;
-	width: 50px;
+	height: 150px;
     background: url(webapp/googleplay.jpg) no-repeat center center;
+    background-size: contain;
+}
+
+.appstore {
+	height: 150px;
+    background: url(webapp/appstore.jpg) no-repeat center center;
     background-size: contain;
 }
