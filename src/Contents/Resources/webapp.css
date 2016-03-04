@@ -46,11 +46,13 @@
 	text-align: center;
 	color: #F07D00;
 	font-weight: 600;
+	font-size: 1.2em;
 	margin: 15px;
 }
 
 .description-mobile {
 	text-align: center;
-	font-weight: 400;
+	font-weight: 600;
+	font-size: 1.0em;
 	color: #157efb;
 }
