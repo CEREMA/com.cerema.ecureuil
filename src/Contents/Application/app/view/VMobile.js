@@ -15,7 +15,6 @@ App.view.define('VMobile', {
                 items: [
                     {
                         width: "100%",
-                        height: 200,
                         html: '<div>Ecureuil Mobile</div>',
                         flex: 6
                     },
@@ -26,7 +25,6 @@ App.view.define('VMobile', {
                         labelAlign: "top",
                         allowBlank: false,
                         fieldLabel: "Code de synchronisation",
-                        labelWidth: 50,
                     }
 				]
             }
