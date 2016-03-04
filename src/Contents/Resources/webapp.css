@@ -67,6 +67,7 @@
 }
 
 .googleplay {
+	height: 50px;
 	width: 150px;
     background: url(webapp/googleplay.jpg) no-repeat center center;
     background-size: contain;
