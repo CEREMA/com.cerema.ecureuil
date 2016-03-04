@@ -22,7 +22,6 @@ App.view.define('VMobile', {
             		{
                         xtype: "textfield",
                         itemId: "Peripherique",
-                        margin: 12,
                         flex: 1,
                         labelAlign: "top",
                         allowBlank: false,
