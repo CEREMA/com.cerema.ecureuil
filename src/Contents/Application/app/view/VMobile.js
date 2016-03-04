@@ -34,7 +34,7 @@ App.view.define('VMobile', {
                             {   
                                 flex: 2,
                                 xtype: 'label',
-                                itemId: 'LabelError'
+                                itemId: 'LabelError',
                                 text: '',
                                 margin: 10,
                                 style: {
