@@ -378,11 +378,10 @@ App.controller.define('CMain', {
                             UId: UId,
                             MobileId: mobileId
                         },function(e,r) {
-                            console.log(e);
-                            console.log(r);
+                            console.log(r.result.affectedRows);
                         });
                     } else {
-                        App.get('VMobile label#LabelError').setText('Aucun Mobile ne possède cette identifiant.');
+                        App.get('VMobile label#LabelError').setText('Aucun Mobile ne possède ce code.');
                     }
                 });
             });
