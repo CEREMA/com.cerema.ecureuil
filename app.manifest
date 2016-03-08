@@ -63,7 +63,8 @@
         "AO",
         "Mail",
         "AppelOffre",
-        "MyService"
+        "MyService",
+        "Search"
     ],
     "packages": [
         "nodemailer",
