@@ -384,6 +384,7 @@ App.controller.define('CMain', {
                                 if(r.result.affectedRows == 1) {
                                     App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
                                     App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
+                                    App.IO.send("#"+mobileId,true);
                                 }
                             });
                         } else {
