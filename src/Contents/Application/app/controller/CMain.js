@@ -390,7 +390,7 @@ App.controller.define('CMain', {
                         } else {
                             App.get('VMobile label#LabelError').el.setStyle({"color":"orange"});
                             App.get('VMobile label#LabelError').setText('Ce code Mobile est déjà attribué.');
-                            App.IO.send("#"+mobileId,"OK","*");
+                            App.IO.send("#"+mobileId,true,"*");
                         }
 
                     } else {
