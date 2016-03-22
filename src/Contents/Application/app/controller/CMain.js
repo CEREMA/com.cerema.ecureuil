@@ -27,11 +27,6 @@ App.controller.define('CMain', {
             "button#SynchroniserMobile": {
                 click: "SynchroniserMobile"
             },
-            "TForm1 grid#AO": {
-                itemclick: "AO_onclick",
-                itemdblclick: "grid_dblclick",
-				beforeitemcontextmenu: "grid_oncontextmenu"
-            },
             "uploadpanel#up": {
                 itemuploadsuccess: "item_upload"
             },
