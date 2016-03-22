@@ -382,7 +382,8 @@ App.controller.define('CMain', {
                         }
 
                         for (a in data){
-                            console.log(data[a]);
+                            console.log(data[a].DateLimite);
+                            console.log(data[a].DateParution);
                         }
 
                         console.log(tabMeta);
