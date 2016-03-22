@@ -726,6 +726,7 @@ App.controller.define('CMain', {
             o._BLOB = App.get('uploadfilemanager#up').getFiles();
 
             App.AO.update(o, function(error, result) {
+                console.log('y');
                 App.get("grid#AO").getStore().load();
                 UPLOADZ = [];
 				var id_appelOffre=AO_ID;
