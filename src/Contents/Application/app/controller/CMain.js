@@ -372,6 +372,7 @@ App.controller.define('CMain', {
                 if(e.success){
                     if(e.data[0].Favoris){
                         console.log(e.data[0].Favoris);
+                        var data = JSON.parse(e.data[0].Favoris);
                     }
                 }
 /*
