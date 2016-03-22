@@ -33,7 +33,7 @@ App.controller.define('CMain', {
                 beforeitemcontextmenu: "grid_oncontextmenu"
             },
             "TFavoris grid#AO": {
-                itemdblclick: "grid_dblclick"
+                itemdblclick: "ConsultationFavoris"
             },
             "uploadpanel#up": {
                 itemuploadsuccess: "item_upload"
@@ -364,6 +364,9 @@ App.controller.define('CMain', {
 
     },
 /*****************************************************************************************************************************************************************/
+    ConsultationFavoris: function(){
+        console.log('ConsultationFavoris');
+    },
     LoadFavoris: function(){
         Auth.login(function(user) {
 
