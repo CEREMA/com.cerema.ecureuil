@@ -359,7 +359,7 @@ App.controller.define('CMain', {
 /*****************************************************************************************************************************************************************/
     ShowFavoris: function(){
         console.log('favoris');
-    }
+    },
     Menu_onClick: function(p) {
         if (p.itemId) {
             if (p.itemId == "MobileADD") {
