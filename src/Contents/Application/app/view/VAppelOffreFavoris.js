@@ -419,18 +419,8 @@ App.view.define('VAppelOffreFavoris', {
             },
             '->', {
                 xtype: "button",
-                itemId: "effacer_saisie",
-                text: "Effacer",
-                margin: {
-                    top: 10,
-                    bottom: 0,
-                    left: 196,
-                    right: 0
-                }
-            }, {
-                xtype: "button",
-                itemId: "valider_saisie",
-                text: "Enregistrer",
+                itemId: "supprimer_favoris",
+                text: "Supprimer des favoris",
                 margin: {
                     top: 10,
                     left: 10
