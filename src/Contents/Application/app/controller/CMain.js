@@ -8,7 +8,8 @@ App.controller.define('CMain', {
         "VForm4",
         "VShowDoc",
         "VMobile",
-        "VFavoris"
+        "VFavoris",
+        "VAppelOffreFavoris"
     ],
 
     models: [
