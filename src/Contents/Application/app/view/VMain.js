@@ -54,6 +54,12 @@ App.view.define('VMain', {
 			region: "center",
 			split:true,
 			layout: 'fit',			
+			xtype: "TForm1"
+		},
+		{
+			region: "center",
+			split:true,
+			layout: 'fit',			
 			xtype: "TFavoris",
 			hidden: true
 		}
