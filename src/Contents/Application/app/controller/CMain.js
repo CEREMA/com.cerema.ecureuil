@@ -878,7 +878,8 @@ App.controller.define('CMain', {
                 console.log(user);
                 App.AO.getProfil(user.mail, function(err, r) {
                     console.log('t');
-                    App.get('grid#AO').getStore().load();
+                    App.get('TFavoris grid#AO').getStore().load();
+                    App.get('TForm1 grid#AO').getStore().load();
                     if (r.result.length > 0) App.get('button#ajouter_modification').show();
                     else App.get('button#ajouter_modification').hide();
                 });
