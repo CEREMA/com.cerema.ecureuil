@@ -67,10 +67,10 @@ App.view.define('VForm1',{
 					return '<div style="color:red">'+value.toString('dd/MM/yyyy')+'</div>'
 				}
 			}
-		],
+		]/*,
 		store: App.store.create('App.AO.getAll',{
 			groupField: 'nom_thematique'
-		})
+		})*/
 	}	
 	]
 });
