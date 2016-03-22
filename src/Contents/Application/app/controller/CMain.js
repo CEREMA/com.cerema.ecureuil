@@ -369,11 +369,11 @@ App.controller.define('CMain', {
         Auth.login(function(user) {
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
-                console.log(e);
-                //if(){
-                    console.log(e.data[0].Favoris);
-                //}
-
+                if(e.success){
+                    if(e.data[0].Favoris){
+                        console.log(e.data[0].Favoris);
+                    }
+                }
 /*
                 var store = App.store.create({
                     fields : r.result.metaData.fields,
