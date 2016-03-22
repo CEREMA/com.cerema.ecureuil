@@ -62,6 +62,60 @@ App.view.define('VAppelOffreFavoris', {
                         fieldLabel: 'Date limite',
                         allowBlank: false,
                     }]
+                }, 
+                {
+                    layout: "hbox",
+                    itemId: "regroupement_hboxGrid1",
+                    border: false,
+                    flex: 1,
+                    items: [{
+                        xtype: "grid",
+                        itemId: "grid1",
+                        flex: 1,
+                        padding: 10,
+
+                        tbar: [{
+                                xtype: "button",
+                                text: "Ajouter groupe(s)",
+                                itemId: "ajouter_groupe"
+                            },
+
+                            {
+                                xtype: "button",
+                                text: "Ajouter agent(s)",
+                                itemId: "ajouter_agent"
+                            },
+                        ],
+
+                        columns: [{
+                                text: "Nom",
+                                width: 140,
+                                dataIndex: "Nom"
+                            }, {
+                                text: "Email",
+                                width: 185,
+                                dataIndex: "Email"
+                            }, {
+                                text: "Type",
+                                dataIndex: "Type",
+                                flex: 1
+                            },
+
+                        ],
+                        flex: 1,
+                        height: 160,
+                        store: App.store.create({
+                            fields: [
+                                "Nom",
+                                "Email",
+                                "Type"
+                            ],
+                            data: []
+                        })
+
+
+                    }]
+
                 }]
             },
 
