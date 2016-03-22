@@ -365,7 +365,7 @@ App.controller.define('CMain', {
 
     },
 /*****************************************************************************************************************************************************************/
-    ShowFavoris: function(){
+    LoadFavoris: function(){
         App.AO.getFavoris(null,function(e, r){
             console.log(e);
             console.log(r);
@@ -376,14 +376,15 @@ App.controller.define('CMain', {
                 groupField: 'nom_thematique'
             });
 
-
-            
             App.get('TFavoris grid#AO').bindStore(store);
             App.get('TFavoris grid#AO').getStore().load();
 
-            App.get('TForm1').hide();
-            App.get('TFavoris').show();
         });
+    },
+    ShowFavoris: function(){
+        this.LoadFavoris();
+        App.get('TForm1').hide();
+        App.get('TFavoris').show();
     },
     ShowAccueil: function(){
         App.get('TForm1').show();
