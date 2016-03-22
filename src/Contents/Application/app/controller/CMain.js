@@ -367,22 +367,27 @@ App.controller.define('CMain', {
 /*****************************************************************************************************************************************************************/
     LoadFavoris: function(){
         Auth.login(function(user) {
-        console.log(user);
-        });
-       /* App.DB.get('gestionao2://favoris?MobileId=' + mobileId,function(e, r){
-            console.log(e);
-            console.log(r);
 
-            var store = App.store.create({
-                fields : r.result.metaData.fields,
-                data : r.result.data,
-                groupField: 'nom_thematique'
+        App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
+                console.log(e);
+                console.log(r);
+
+
+/*
+                var store = App.store.create({
+                    fields : r.result.metaData.fields,
+                    data : r.result.data,
+                    groupField: 'nom_thematique'
+                });
+
+                App.get('TFavoris grid#AO').bindStore(store);
+                App.get('TFavoris grid#AO').getStore().load();
+*/
             });
 
-            App.get('TFavoris grid#AO').bindStore(store);
-            App.get('TFavoris grid#AO').getStore().load();
 
-        });*/
+        });
+      
     },
     ShowFavoris: function(){
         this.LoadFavoris();
