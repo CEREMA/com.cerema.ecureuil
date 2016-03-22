@@ -373,8 +373,6 @@ App.controller.define('CMain', {
                 if(e.success){
                     if(e.data[0].Favoris){
                         var data = JSON.parse(e.data[0].Favoris);
-                        console.log(data);
-
                         var tabMeta = [];
 
                         // Création des meta type.
@@ -389,8 +387,6 @@ App.controller.define('CMain', {
                             console.log(data[a].DateParution);
                         }
 
-                        console.log(tabMeta);
-
                         var store = App.store.create({
                             fields : tabMeta,
                             data : data,
@@ -402,8 +398,6 @@ App.controller.define('CMain', {
                     }
                 }
             });
-
-
         });
       
     },
