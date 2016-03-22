@@ -9,12 +9,11 @@ App.view.define('VFavoris',{
 		tbar: [
 			{
 				xtype:"button",
-				itemId: "ajouter_modification",
-				text: "Ajouter",
+				itemId: "retour_accueil",
+				text: "Accueil",
 				scale: "large",
 				iconAlign: "top",
-				iconCls: "add",
-				hidden: true
+				iconCls: "add"
 			}
 		],
 		features: [
