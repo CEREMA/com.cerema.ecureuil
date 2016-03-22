@@ -373,11 +373,11 @@ App.controller.define('CMain', {
             var store = App.store.create({
                 fields : r.result.metaData.fields,
                 data : r.result.data
-            });
+            },{groupField: 'nom_thematique'});
 
 
             
-            App.get('TFavoris grid#AO').bindStore(store,{groupField: 'nom_thematique'});
+            App.get('TFavoris grid#AO').bindStore(store);
             App.get('TFavoris grid#AO').getStore().load();
 
             App.get('TForm1').hide();
