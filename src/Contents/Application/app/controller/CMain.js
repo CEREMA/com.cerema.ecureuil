@@ -366,7 +366,9 @@ App.controller.define('CMain', {
     },
 /*****************************************************************************************************************************************************************/
     LoadFavoris: function(){
-        console.log(Setting);
+        Auth.login(function(user) {
+        console.log(user);
+        });
        /* App.DB.get('gestionao2://favoris?MobileId=' + mobileId,function(e, r){
             console.log(e);
             console.log(r);
