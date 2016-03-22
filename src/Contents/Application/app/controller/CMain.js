@@ -362,6 +362,10 @@ App.controller.define('CMain', {
         App.get('TForm1').hide();
         App.get('TFavoris').show();
     },
+    retour_accueil: function(){
+        App.get('TForm1').show();
+        App.get('TFavoris').hide();
+    },
     Menu_onClick: function(p) {
         if (p.itemId) {
             if (p.itemId == "MobileADD") {
