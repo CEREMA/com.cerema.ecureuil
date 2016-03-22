@@ -412,12 +412,8 @@ App.view.define('VAppelOffreFavoris', {
                 ]
             }
         ];
-        this.bbar = [{
-                xtype: "button",
-                text: "Annuler",
-                itemId: "CANCEL_lien"
-            },
-            '->', {
+        this.bbar = [ 
+            {
                 xtype: "button",
                 itemId: "supprimer_favoris",
                 text: "Supprimer des favoris",
