@@ -58,10 +58,7 @@ App.view.define('VFavoris',{
 					return '<div style="color:red">'+value.toString('dd/MM/yyyy')+'</div>'
 				}
 			}
-		],
-		store: App.store.create('App.AO.getFavoris',{
-			groupField: 'nom_thematique'
-		})
+		]
 	}	
 	]
 });
