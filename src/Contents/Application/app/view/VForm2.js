@@ -4,7 +4,7 @@ App.view.define('VForm2', {
     initComponent: function() {
         this.width = 800;
         this.height = 750;
-        this.title = "Ajouter un appel d'offre";
+        this.title = "Consultation Appel d'offre";
         this.bodyCls = "white";
         this.items = [{
                 layout: "hbox",
