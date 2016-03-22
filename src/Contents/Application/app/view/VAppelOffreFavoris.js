@@ -10,31 +10,7 @@ App.view.define('VAppelOffreFavoris', {
                 layout: "hbox",
                 border: false,
                 width: "100%",
-                items: [{
-                    layout: "vbox",
-					border: false,
-                    items: [{
-                        xtype: "combo",
-                        itemId: "cboNom",
-                        margin: {
-                            top: 10,
-                            left: 10
-                        },
-                        fieldLabel: "Source",
-                        allowBlank: false,
-                        editable: false,
-                        labelAlign: "top",
-                        labelWidth: 200,
-                        width: 200,
-                        displayField: "NomSource",
-                        valueField: "IdSource",
-
-                        store: App.store.create('App.AO.getAll2', // Creation du store
-                            {
-                                autoLoad: true
-                            })
-
-                    }, 
+                items: [ 
                     {
                         xtype: "datefield",
                         renderer: Ext.util.Format.dateRenderer('d/m/Y'),
