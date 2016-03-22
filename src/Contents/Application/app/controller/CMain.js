@@ -673,7 +673,7 @@ App.controller.define('CMain', {
 						}
 					});
 				});
-				
+				console.log('x');
                 App.get("TForm1 grid#AO").getStore().load();
                 App.get("TFavoris grid#AO").getStore().load();
                 if (EMAIL.length > 0) {
