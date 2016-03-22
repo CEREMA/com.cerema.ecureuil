@@ -674,8 +674,8 @@ App.controller.define('CMain', {
 					});
 				});
 				console.log('x');
-                App.get("TForm1 grid#AO").getStore().load();
-                App.get("TFavoris grid#AO").getStore().load();
+                App.get('TFavoris grid#AO').getStore().load();
+                App.get('TForm1 grid#AO').getStore().load();
                 if (EMAIL.length > 0) {
 					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('textfield#objet').getValue();
                     var o = {
@@ -726,8 +726,8 @@ App.controller.define('CMain', {
             o._BLOB = App.get('uploadfilemanager#up').getFiles();
 
             App.AO.update(o, function(error, result) {
-                console.log('y');
-                App.get("grid#AO").getStore().load();
+                App.get('TFavoris grid#AO').getStore().load();
+                App.get('TForm1 grid#AO').getStore().load();
                 UPLOADZ = [];
 				var id_appelOffre=AO_ID;
 
@@ -877,7 +877,6 @@ App.controller.define('CMain', {
             Auth.login(function(user) {
                 console.log(user);
                 App.AO.getProfil(user.mail, function(err, r) {
-                    console.log('t');
                     App.get('TFavoris grid#AO').getStore().load();
                     App.get('TForm1 grid#AO').getStore().load();
                     if (r.result.length > 0) App.get('button#ajouter_modification').show();
