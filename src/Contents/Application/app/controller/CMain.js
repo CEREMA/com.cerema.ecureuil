@@ -369,9 +369,10 @@ App.controller.define('CMain', {
         Auth.login(function(user) {
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
-                console.log(e.data[0]);
-                console.log(r);
-
+                console.log(e);
+                if(){
+                    console.log(e.data[0].Favoris);
+                }
 
 /*
                 var store = App.store.create({
