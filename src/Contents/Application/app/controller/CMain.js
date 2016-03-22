@@ -377,7 +377,7 @@ App.controller.define('CMain', {
                         App.AO.getProfil(user.mail, function(err, r) {
                             
                             if (r.result.length > 0) {
-                                
+
                                 App.get('combo#cboNom').setValue(record.data.IdSource);
                                 
                                 App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
@@ -482,7 +482,6 @@ App.controller.define('CMain', {
                 }
             }
         }).show().center();
-
     },
     LoadFavoris: function(){
         Auth.login(function(user) {
