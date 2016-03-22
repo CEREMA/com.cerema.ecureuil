@@ -359,6 +359,8 @@ App.controller.define('CMain', {
 /*****************************************************************************************************************************************************************/
     ShowFavoris: function(){
         console.log('favoris');
+        App.get('TForm1').hide();
+        App.get('TFavoris').show();
     },
     Menu_onClick: function(p) {
         if (p.itemId) {
