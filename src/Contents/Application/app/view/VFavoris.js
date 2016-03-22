@@ -1,6 +1,6 @@
 App.view.define('VFavoris',{
 	extend: "Ext.Panel",
-	alias: "widget.VFavoris",
+	alias: "widget.TFavoris",
 	border: false,
 	items: [
 	{
