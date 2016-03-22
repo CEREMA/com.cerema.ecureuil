@@ -38,6 +38,9 @@ App.controller.define('CMain', {
             "button#ajouter_modification": {
                 click: "ajouter_modification"
             },
+            "button#b_favoris": {
+                click: "ShowFavoris"
+            },
 			"datefield#date": {
 				change: "date_change_week"
 			},
@@ -354,6 +357,9 @@ App.controller.define('CMain', {
 
     },
 /*****************************************************************************************************************************************************************/
+    ShowFavoris: function(){
+        console.log('favoris');
+    }
     Menu_onClick: function(p) {
         if (p.itemId) {
             if (p.itemId == "MobileADD") {
