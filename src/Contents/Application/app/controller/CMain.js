@@ -372,8 +372,9 @@ App.controller.define('CMain', {
 
             var store = App.store.create({
                 fields : r.result.metaData.fields,
-                data : r.result.data
-            },{groupField: 'nom_thematique'});
+                data : r.result.data,
+                groupField: 'nom_thematique'
+            });
 
 
             
