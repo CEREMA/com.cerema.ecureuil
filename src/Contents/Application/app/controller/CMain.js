@@ -44,11 +44,6 @@ App.controller.define('CMain', {
             "button#retour_accueil": {
                 click: "ShowAccueil"
             },
-            "TFavoris grid#AO": {
-                itemclick: "AO_onclick",
-                itemdblclick: "grid_dblclick",
-                beforeitemcontextmenu: "grid_oncontextmenu"
-            },
 			"datefield#date": {
 				change: "date_change_week"
 			},
