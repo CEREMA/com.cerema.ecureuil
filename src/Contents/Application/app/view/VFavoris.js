@@ -27,7 +27,8 @@ App.view.define('VFavoris',{
 				text: "Id",
 				dataIndex: "IdAppelOffre",
 				width: 50
-			},			{
+			},			
+			{
 				text: "Objet",
 				dataIndex: "Objet",
 				flex: 1
