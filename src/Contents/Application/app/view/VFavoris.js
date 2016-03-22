@@ -10,7 +10,7 @@ App.view.define('VFavoris',{
 			{
 				xtype:"button",
 				itemId: "retour_accueil",
-				text: "Accueil",
+				text: "Retour",
 				scale: "large",
 				iconAlign: "top",
 				iconCls: "add"
