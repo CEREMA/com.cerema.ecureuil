@@ -7,7 +7,8 @@ App.controller.define('CMain', {
         "VForm3",
         "VForm4",
         "VShowDoc",
-        "VMobile"
+        "VMobile",
+        "VFavoris"
     ],
 
     models: [
