@@ -380,12 +380,7 @@ App.controller.define('CMain', {
                         for (a in data){
                             tabMeta.push(a);
                         }
-
-                        // Preparation de la tab.
-                        var tab = {
-                            fields: tabMeta,
-                            data: []
-                        };
+                        console.log(tabMeta);
                         
                         var store = App.store.create({
                             fields : tabMeta,
@@ -397,8 +392,6 @@ App.controller.define('CMain', {
                         App.get('TFavoris grid#AO').getStore().load();
                     }
                 }
-
-
             });
 
 
