@@ -674,7 +674,8 @@ App.controller.define('CMain', {
 					});
 				});
 				
-                App.get("grid#AO").getStore().load();
+                App.get("TForm1 grid#AO").getStore().load();
+                App.get("TFavoris grid#AO").getStore().load();
                 if (EMAIL.length > 0) {
 					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('textfield#objet').getValue();
                     var o = {
