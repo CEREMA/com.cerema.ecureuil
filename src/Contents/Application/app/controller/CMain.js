@@ -374,8 +374,7 @@ App.controller.define('CMain', {
                     if(e.data[0].Favoris){
                         var data = JSON.parse(e.data[0].Favoris);
                         var tabMeta = [];
-
-                        // Création des meta type.
+                        
                         for (a in data[0]){
                             tabMeta.push(a);
                         }
