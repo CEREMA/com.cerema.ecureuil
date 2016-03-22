@@ -374,7 +374,7 @@ App.controller.define('CMain', {
                     if(e.data[0].Favoris){
                         var data = JSON.parse(e.data[0].Favoris);
                         var tabMeta = [];
-                        
+
                         for (a in data[0]){
                             tabMeta.push(a);
                         }
@@ -382,8 +382,6 @@ App.controller.define('CMain', {
                         for (a in data){
                             data[a].DateLimite = new Date(data[a].DateLimite);
                             data[a].DateParution = new Date(data[a].DateParution);
-                            console.log(data[a].DateLimite);
-                            console.log(data[a].DateParution);
                         }
 
                         var store = App.store.create({
