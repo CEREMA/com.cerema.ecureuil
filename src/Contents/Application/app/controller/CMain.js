@@ -366,17 +366,16 @@ App.controller.define('CMain', {
     },
 /*****************************************************************************************************************************************************************/
     ShowFavoris: function(){
-        
-
-            App.get('TFavoris grid#AO').bindStore(App.store.create(App.AO.getFavoris(null,function(e, r){
-                console.log(e);
-                console.log(r);
-            }),{groupField: 'nom_thematique'}));
-
+        App.AO.getFavoris(null,function(e, r){
+            console.log(e);
+            console.log(r);
+            
+            App.get('TFavoris grid#AO').bindStore(App.store.create('App.AO.getFavoris',{groupField: 'nom_thematique'}));
             App.get('TFavoris grid#AO').getStore().load();
 
             App.get('TForm1').hide();
             App.get('TFavoris').show();
+        });
     },
     ShowAccueil: function(){
         App.get('TForm1').show();
