@@ -36,6 +36,9 @@ App.controller.define('CMain', {
             "TFavoris grid#AO": {
                 itemdblclick: "ConsultationFavoris"
             },
+            "VAppelOffreFavoris button#supprimer_favoris": {
+                click: "SuppressionFavori"
+            },
             "uploadpanel#up": {
                 itemuploadsuccess: "item_upload"
             },
@@ -364,6 +367,9 @@ App.controller.define('CMain', {
 
     },
 /*****************************************************************************************************************************************************************/
+    SuppressionFavori: function(){
+        console.log('SuppressionFavori');
+    },
     ConsultationFavoris: function(p, record){
         console.log('ConsultationFavoris');
 
