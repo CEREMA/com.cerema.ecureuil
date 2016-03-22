@@ -371,8 +371,8 @@ App.controller.define('CMain', {
             console.log(r);
 
             var store = App.store.create({
-                fields : r.metaData.fields,
-                data : r.data
+                fields : r.result.metaData.fields,
+                data : r.result.data
             });
             
             App.get('TFavoris grid#AO').bindStore(App.store.create(store,{groupField: 'nom_thematique'}));
