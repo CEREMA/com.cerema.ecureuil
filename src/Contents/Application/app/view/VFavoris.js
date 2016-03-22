@@ -36,7 +36,7 @@ App.view.define('VFavoris',{
 				text: "Thématique",
 				dataIndex: "nom_thematique",
 				width: 300,
-				hidden: true				
+				hidden: false				
 			},
 			{
 				text: "Client",
