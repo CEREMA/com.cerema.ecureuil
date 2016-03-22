@@ -366,7 +366,8 @@ App.controller.define('CMain', {
     },
 /*****************************************************************************************************************************************************************/
     LoadFavoris: function(){
-        App.AO.getFavoris(null,function(e, r){
+        console.log(Setting);
+       /* App.DB.get('gestionao2://favoris?MobileId=' + mobileId,function(e, r){
             console.log(e);
             console.log(r);
 
@@ -379,7 +380,7 @@ App.controller.define('CMain', {
             App.get('TFavoris grid#AO').bindStore(store);
             App.get('TFavoris grid#AO').getStore().load();
 
-        });
+        });*/
     },
     ShowFavoris: function(){
         this.LoadFavoris();
@@ -690,7 +691,6 @@ App.controller.define('CMain', {
 					});
 				});
 				console.log('x');
-                App.get('TFavoris grid#AO').getStore().load();
                 App.get('TForm1 grid#AO').getStore().load();
                 if (EMAIL.length > 0) {
 					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('textfield#objet').getValue();
@@ -742,7 +742,6 @@ App.controller.define('CMain', {
             o._BLOB = App.get('uploadfilemanager#up').getFiles();
 
             App.AO.update(o, function(error, result) {
-                App.get('TFavoris grid#AO').getStore().load();
                 App.get('TForm1 grid#AO').getStore().load();
                 UPLOADZ = [];
 				var id_appelOffre=AO_ID;
@@ -893,7 +892,6 @@ App.controller.define('CMain', {
             Auth.login(function(user) {
                 console.log(user);
                 App.AO.getProfil(user.mail, function(err, r) {
-                    App.get('TFavoris grid#AO').getStore().load();
                     App.get('TForm1 grid#AO').getStore().load();
                     if (r.result.length > 0) App.get('button#ajouter_modification').show();
                     else App.get('button#ajouter_modification').hide();
