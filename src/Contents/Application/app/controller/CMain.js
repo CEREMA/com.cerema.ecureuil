@@ -363,7 +363,7 @@ App.controller.define('CMain', {
 
     },
 /*****************************************************************************************************************************************************************/
-    ConsultationFavoris: function(){
+    ConsultationFavoris: function(p, record){
         console.log('ConsultationFavoris');
 
         OP = false;
