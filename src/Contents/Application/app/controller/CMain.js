@@ -366,11 +366,10 @@ App.controller.define('CMain', {
     },
 /*****************************************************************************************************************************************************************/
     ShowFavoris: function(){
-        console.log('favoris');
-        console.log(App.store.create('App.AO.getFavoris',{groupField: 'nom_thematique'}));
-
+        console.log(App.AO.getFavoris);
         App.get('TFavoris grid#AO').bindStore(App.store.create('App.AO.getFavoris',{groupField: 'nom_thematique'}));
-         App.get('TFavoris grid#AO').getStore().load();
+        App.get('TFavoris grid#AO').getStore().load();
+
         App.get('TForm1').hide();
         App.get('TFavoris').show();
     },
