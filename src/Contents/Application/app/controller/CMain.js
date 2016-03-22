@@ -33,9 +33,7 @@ App.controller.define('CMain', {
                 beforeitemcontextmenu: "grid_oncontextmenu"
             },
             "TFavoris grid#AO": {
-                itemclick: "AO_onclick",
-                itemdblclick: "grid_dblclick",
-                beforeitemcontextmenu: "grid_oncontextmenu"
+                itemdblclick: "grid_dblclick"
             },
             "uploadpanel#up": {
                 itemuploadsuccess: "item_upload"
