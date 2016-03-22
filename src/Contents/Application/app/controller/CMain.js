@@ -368,7 +368,7 @@ App.controller.define('CMain', {
 
         OP = false;
 
-        App.view.create('VForm2', {
+        App.view.create('VAppelOffreFavoris', {
             modal: true,
             listeners: {
                 show: function() {
