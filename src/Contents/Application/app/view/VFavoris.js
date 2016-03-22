@@ -59,7 +59,7 @@ App.view.define('VFavoris',{
 				}
 			}
 		],
-		store: App.store.create('App.AO.getAll',{
+		store: App.store.create('App.AO.getFavoris',{
 			groupField: 'nom_thematique'
 		})
 	}	
