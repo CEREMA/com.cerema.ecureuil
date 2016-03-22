@@ -377,8 +377,7 @@ App.controller.define('CMain', {
                         App.AO.getProfil(user.mail, function(err, r) {
                             
                             if (r.result.length > 0) {
-
-                                App.get('TAppelOffreFavoris').setTitle('Modifier un enregistrement');
+                                
                                 App.get('combo#cboNom').setValue(record.data.IdSource);
                                 
                                 App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
