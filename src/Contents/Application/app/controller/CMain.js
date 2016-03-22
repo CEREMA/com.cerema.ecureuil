@@ -41,6 +41,9 @@ App.controller.define('CMain', {
             "button#b_favoris": {
                 click: "ShowFavoris"
             },
+            "button#retour_accueil": {
+                click: "ShowAccueil"
+            },
 			"datefield#date": {
 				change: "date_change_week"
 			},
@@ -362,7 +365,7 @@ App.controller.define('CMain', {
         App.get('TForm1').hide();
         App.get('TFavoris').show();
     },
-    retour_accueil: function(){
+    ShowAccueil: function(){
         App.get('TForm1').show();
         App.get('TFavoris').hide();
     },
