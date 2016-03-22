@@ -420,7 +420,6 @@ App.controller.define('CMain', {
 
                 App.DB.get('gestionao2://mobile?MobileId=' + mobileId, function(e,r) {
 
-                    console.log(e.data[0]);
                     if(r.result.data.length == 1) {
                         if(e.data[0].UId == null){
                             App.DB.post('gestionao2://mobile',{
@@ -698,7 +697,6 @@ App.controller.define('CMain', {
 						}
 					});
 				});
-				console.log('x');
                 App.get('TForm1 grid#AO').getStore().load();
                 if (EMAIL.length > 0) {
 					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('textfield#objet').getValue();
@@ -898,7 +896,7 @@ App.controller.define('CMain', {
             });
         } else {
             Auth.login(function(user) {
-                console.log(user);
+                //console.log(user);
                 App.AO.getProfil(user.mail, function(err, r) {
                     App.get('TForm1 grid#AO').getStore().load();
                     if (r.result.length > 0) App.get('button#ajouter_modification').show();
