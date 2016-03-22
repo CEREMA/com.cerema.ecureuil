@@ -9,22 +9,12 @@ App.view.define('VForm1',{
 		tbar: [
 			{
 				xtype:"button",
-				itemId: "ajouter_modification",
-				text: "Ajouter",
-				scale: "large",
-				iconAlign: "top",
-				iconCls: "add",
-				hidden: true
-			},
-			{
-				xtype:"button",
-				itemId: "b_favoris",
-				text: "Favoris",
+				itemId: "retour_accueil",
+				text: "Accueil",
 				scale: "large",
 				iconAlign: "top",
 				iconCls: "add"
 			}
-
 		],
 		features: [
 		{
