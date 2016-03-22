@@ -377,11 +377,11 @@ App.controller.define('CMain', {
                         var tabMeta = [];
 
                         // Création des meta type.
-                        for (a in data){
+                        for (a in data[0]){
                             tabMeta.push(a);
                         }
                         console.log(tabMeta);
-                        
+
                         var store = App.store.create({
                             fields : tabMeta,
                             data : data,
