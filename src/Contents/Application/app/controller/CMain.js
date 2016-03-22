@@ -369,7 +369,7 @@ App.controller.define('CMain', {
         Auth.login(function(user) {
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
-                console.log(e.data[0].favoris);
+                console.log(e.data[0]);
                 console.log(r);
 
 
