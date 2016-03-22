@@ -369,10 +369,9 @@ App.controller.define('CMain', {
         App.AO.getFavoris(null,function(e, r){
             console.log(e);
             console.log(r);
-            console.log(App.AO.getFavoris);
 
             var store = App.store.create(e);
-            App.get('TFavoris grid#AO').bindStore(store);
+            //App.get('TFavoris grid#AO').bindStore(store);
             //App.get('TFavoris grid#AO').setGroupField({groupField: 'nom_thematique'});
             //App.get('TFavoris grid#AO').getStore().load();
 
