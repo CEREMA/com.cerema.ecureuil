@@ -61,6 +61,9 @@ App.view.define('VForm1',{
 		],
 		store: App.store.create('App.AO.getAll',{
 			groupField: 'nom_thematique'
+		}),
+		store: App.store.create('App.AO.getAll',{
+			groupField: 'nom_thematique'
 		})
 	}	
 	]
