@@ -191,10 +191,11 @@ App.controller.define('CMain', {
     item_upload: function(response) {
         UPLOADZ.push(response.message);
     },
+
     //Permet le double click sur un appelOffre et recupere les données 
     grid_dblclick: function(p, record) {
 
-
+        console.log(record);
         OP = false;
 
         App.view.create('VForm2', {
