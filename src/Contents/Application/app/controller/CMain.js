@@ -378,7 +378,7 @@ App.controller.define('CMain', {
                             
                             if (r.result.length > 0) {
 
-                                App.get('TForm2').setTitle('Modifier un enregistrement');
+                                App.get('VAppelOffreFavoris').setTitle('Modifier un enregistrement');
                                 App.get('combo#cboNom').setValue(record.data.IdSource);
                                 
                                 App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
