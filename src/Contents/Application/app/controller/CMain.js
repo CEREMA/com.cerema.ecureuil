@@ -380,6 +380,11 @@ App.controller.define('CMain', {
                         for (a in data[0]){
                             tabMeta.push(a);
                         }
+
+                        for (a in data){
+                            console.log(data[a]);
+                        }
+
                         console.log(tabMeta);
 
                         var store = App.store.create({
