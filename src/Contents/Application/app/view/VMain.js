@@ -61,7 +61,7 @@ App.view.define('VMain', {
 			split:true,
 			layout: 'fit',			
 			xtype: "TFavoris",
-			hidden: true
+			hidden: false
 		}
 	]
 	
