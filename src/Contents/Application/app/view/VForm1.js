@@ -15,7 +15,16 @@ App.view.define('VForm1',{
 				iconAlign: "top",
 				iconCls: "add",
 				hidden: true
+			},
+			{
+				xtype:"button",
+				itemId: "b_favoris",
+				text: "Favoris",
+				scale: "large",
+				iconAlign: "top",
+				iconCls: "add"
 			}
+
 		],
 		features: [
 		{
