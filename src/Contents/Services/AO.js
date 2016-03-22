@@ -8,9 +8,6 @@ AO = {
 	getAll: function(o,cb) {
 		AO.using('db').model('gestionao2','SELECT * FROM (appelsoffres LEFT JOIN thematiques ON (thematiques.id_thematique = appelsoffres.IdThematique)) where YEAR(DateParution)>=2014 order by DateParution desc',cb);		
 	},
-	getFavoris: function(o,cb){
-		AO.using('db').model('gestionao2','SELECT * FROM (appelsoffres LEFT JOIN thematiques ON (thematiques.id_thematique = appelsoffres.IdThematique)) where YEAR(DateParution)>=2014 order by DateParution desc',cb);	
-	},
 	getProfil: function(o,cb) {
 		AO.using('db').query('gestionao2','select * from profils where PassportUID="'+o+'"',cb);
 	},
