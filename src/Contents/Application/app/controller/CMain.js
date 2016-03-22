@@ -367,6 +367,7 @@ App.controller.define('CMain', {
 /*****************************************************************************************************************************************************************/
     ShowFavoris: function(){
         console.log('favoris');
+        console.log(App.store.create('App.AO.getFavoris',{groupField: 'nom_thematique'}));
         App.get('TForm1').hide();
         App.get('TFavoris').show();
     },
