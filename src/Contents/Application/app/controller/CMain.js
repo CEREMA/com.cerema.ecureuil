@@ -370,7 +370,7 @@ App.controller.define('CMain', {
             console.log(e);
             console.log(r);
 
-            var store = App.store.create(e);
+            var store = App.store.create('App.AO.getAll');
             App.get('TFavoris grid#AO').bindStore(store);
             //App.get('TFavoris grid#AO').bindStore(store);
             //App.get('TFavoris grid#AO').setGroupField({groupField: 'nom_thematique'});
