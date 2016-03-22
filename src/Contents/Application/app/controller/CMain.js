@@ -373,8 +373,8 @@ App.controller.define('CMain', {
 
             var store = App.store.create(e);
             App.get('TFavoris grid#AO').bindStore(store);
-            App.get('TFavoris grid#AO').setGroupField({groupField: 'nom_thematique'});
-            App.get('TFavoris grid#AO').getStore().load();
+            //App.get('TFavoris grid#AO').setGroupField({groupField: 'nom_thematique'});
+            //App.get('TFavoris grid#AO').getStore().load();
 
             App.get('TForm1').hide();
             App.get('TFavoris').show();
