@@ -6,49 +6,7 @@ App.view.define('VAppelOffreFavoris', {
         this.height = 750;
         this.title = "Ajouter un appel d'offre";
         this.bodyCls = "white";
-        this.items = [{
-                layout: "hbox",
-                border: false,
-                width: "100%",
-                items: [{
-                    layout: "vbox",
-					border: false,
-                    items: [{
-                        xtype: "combo",
-                        itemId: "cboNom",
-                        margin: {
-                            top: 10,
-                            left: 10
-                        },
-                        fieldLabel: "Source",
-                        allowBlank: false,
-                        editable: false,
-                        labelAlign: "top",
-                        labelWidth: 200,
-                        width: 200,
-                        displayField: "NomSource",
-                        valueField: "IdSource",
-
-                        store: App.store.create('App.AO.getAll2', // Creation du store
-                            {
-                                autoLoad: true
-                            })
-
-                    }, 
-                    {
-                        xtype: "datefield",
-                        itemId: "date_limite",
-                        labelAlign: "top",
-						editable: false,
-                        margin: {
-                            top: 10,
-                            left: 10
-                        },
-                        width: 200,
-                        fieldLabel: 'Date limite',
-                        allowBlank: false,
-                    }]
-                }, 
+        this.items = [ 
                 {
                     layout: "hbox",
                     itemId: "regroupement_hboxGrid1",
