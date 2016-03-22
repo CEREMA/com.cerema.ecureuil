@@ -383,6 +383,8 @@ App.controller.define('CMain', {
                         }
 
                         for (a in data){
+                            data[a].DateLimite = data[a].DateLimite.toDate();
+                            data[a].DateParution = data[a].DateParution.toDate();
                             console.log(data[a].DateLimite);
                             console.log(data[a].DateParution);
                         }
