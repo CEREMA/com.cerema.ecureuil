@@ -371,20 +371,34 @@ App.controller.define('CMain', {
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     if(e.data[0].Favoris){
-                        console.log(e.data[0].Favoris);
                         var data = JSON.parse(e.data[0].Favoris);
+                        console.log(data);
+
+                        var tabMeta = [];
+
+                        // Création des meta type.
+                        for (a in data){
+                            tabMeta.push(a);
+                        }
+
+                        // Preparation de la tab.
+                        var tab = {
+                            fields: tabMeta,
+                            data: []
+                        };
+                        
+                        var store = App.store.create({
+                            fields : tabMeta,
+                            data : data,
+                            groupField: 'nom_thematique'
+                        });
+
+                        App.get('TFavoris grid#AO').bindStore(store);
+                        App.get('TFavoris grid#AO').getStore().load();
                     }
                 }
-/*
-                var store = App.store.create({
-                    fields : r.result.metaData.fields,
-                    data : r.result.data,
-                    groupField: 'nom_thematique'
-                });
 
-                App.get('TFavoris grid#AO').bindStore(store);
-                App.get('TFavoris grid#AO').getStore().load();
-*/
+
             });
 
 
