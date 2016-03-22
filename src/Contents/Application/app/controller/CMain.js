@@ -370,8 +370,12 @@ App.controller.define('CMain', {
             console.log(e);
             console.log(r);
 
-            var store = App.store.create('App.AO.getFavoris',{groupField: 'nom_thematique'});
-            App.get('TFavoris grid#AO').bindStore(store);
+            var store = App.store.create({
+                fields : r.metaData.fields,
+                data : r.data
+            });
+            
+            App.get('TFavoris grid#AO').bindStore(App.store.create(store,{groupField: 'nom_thematique'}));
             App.get('TFavoris grid#AO').getStore().load();
 
             App.get('TForm1').hide();
