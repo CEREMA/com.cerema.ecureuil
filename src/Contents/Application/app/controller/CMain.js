@@ -208,7 +208,7 @@ App.controller.define('CMain', {
                     var favoris = null;
                     var check;
 
-                    console.log(e);
+                    console.log(e.data[0]);
                     if(e.data[0].favoris != '' && e.data[0].favoris != null){
                         favoris = JSON.parse(e.data[0].Favoris);
                     }
