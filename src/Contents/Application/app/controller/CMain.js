@@ -534,27 +534,28 @@ App.controller.define('CMain', {
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
+                    if(e.data[0].Favoris){
+                        var data = JSON.parse(e.data[0].Favoris);
+                        var tabMeta = [];
 
-                    var data = JSON.parse(e.data[0].Favoris);
-                    var tabMeta = [];
+                        for (a in data[0]){
+                            tabMeta.push(a);
+                        }
 
-                    for (a in data[0]){
-                        tabMeta.push(a);
-                    }
+                        for (a in data){
+                            data[a].DateLimite = new Date(data[a].DateLimite);
+                            data[a].DateParution = new Date(data[a].DateParution);
+                        }
 
-                    for (a in data){
-                        data[a].DateLimite = new Date(data[a].DateLimite);
-                        data[a].DateParution = new Date(data[a].DateParution);
-                    }
+                        var store = App.store.create({
+                            fields : tabMeta,
+                            data : data,
+                            groupField: 'nom_thematique'
+                        });
 
-                    var store = App.store.create({
-                        fields : tabMeta,
-                        data : data,
-                        groupField: 'nom_thematique'
-                    });
-
-                    App.get('TFavoris grid#AO').bindStore(store);
-                    App.get('TFavoris grid#AO').getStore().load();
+                        App.get('TFavoris grid#AO').bindStore(store);
+                        App.get('TFavoris grid#AO').getStore().load();
+                    } 
                 }
             });
         });
