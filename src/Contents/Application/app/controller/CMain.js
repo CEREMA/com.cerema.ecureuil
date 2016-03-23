@@ -401,8 +401,16 @@ App.controller.define('CMain', {
                     var favoris = JSON.parse(e.data[0].Favoris);
                     App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
                         if(e.success){
-                            console.log(e.data[0]);
-
+                            favoris.push(e.data[0]);
+                            App.DB.post('gestionao2://favoris',{
+                                UId: user.uid,
+                                Favoris: newAppelOffre,
+                                LastUpdate: new Date()
+                            },function(e,r) {
+                                if(e.affectedRows == 1){
+                                    App.get('button#ajouter_favoris').hide();
+                                }
+                            });
                         }
                     });
                 }
