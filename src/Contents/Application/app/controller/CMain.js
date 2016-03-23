@@ -369,6 +369,10 @@ App.controller.define('CMain', {
 /*****************************************************************************************************************************************************************/
     SuppressionFavori: function(){
         console.log('SuppressionFavori');
+        var result = confirm("Êtes-vous sûr de vouloir supprimer cet appel d'offre de vos favoris ?");
+        if (result) {
+            //Logic to delete the item
+        }
     },
     ConsultationFavoris: function(p, record){
         console.log('ConsultationFavoris');
