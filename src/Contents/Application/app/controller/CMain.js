@@ -206,23 +206,23 @@ App.controller.define('CMain', {
                 if(e.success){
 
                     var favoris = null;
-                    var check;
+                    var check = true;
+                    var idAppelOffre = record.data.IdAppelOffre;
 
-                    console.log(e.data[0]);
                     if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
                         favoris = JSON.parse(e.data[0].Favoris);
-                    }
-                    
-                    var idAppelOffre = record.data.IdAppelOffre;
-                    check = true;
 
-                    if(favoris != null){
                         for(var i = 0 ; i < favoris.length && check ; i++){
                             if(favoris[i].IdAppelOffre == idAppelOffre){
                                 check = false;
                             }
                         }
+                    } else {
+                        check = false;
                     }
+                    
+                    
+
                     
                     if(check){
                         App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
