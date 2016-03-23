@@ -367,9 +367,8 @@ App.controller.define('CMain', {
 
     },
 /*****************************************************************************************************************************************************************/
-    SuppressionFavori: function(e,r){
-        console.log(e);
-        console.log(r);
+    SuppressionFavori: function(obj){
+        console.log(obj);
         
         Ext.Msg.show({
             title:'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
@@ -392,7 +391,6 @@ App.controller.define('CMain', {
         });
     },
     ConsultationFavoris: function(p, record){
-        console.log('ConsultationFavoris');
 
         OP = false;
 
