@@ -452,6 +452,14 @@ App.controller.define('CMain', {
     SuppressionFavori: function(obj){
         console.log(obj);
         var me = this;
+        var idAppelOffre;
+
+        if(typeof obj === 'number'){
+            idAppelOffre = obj;
+        } else {
+            idAppelOffre = obj.idAppelOffre;
+        }
+
         Ext.Msg.show({
             title:'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
             message: 'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
@@ -464,7 +472,7 @@ App.controller.define('CMain', {
                                 var appelOffre = JSON.parse(e.data[0].Favoris);
                                 var newAppelOffre = [];
                                 for(var i = 0 ; i < appelOffre.length ; i++){
-                                    if(appelOffre[i].IdAppelOffre != obj.idAppelOffre){
+                                    if(appelOffre[i].IdAppelOffre != idAppelOffre){
                                         newAppelOffre.push(appelOffre[i]);
                                     }
                                 }
