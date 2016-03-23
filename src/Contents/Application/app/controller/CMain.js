@@ -204,12 +204,17 @@ App.controller.define('CMain', {
         Auth.login(function(user) {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
+
+                    var favoris = null;
+
+                    if(e.data[0]){
+                        favoris = JSON.parse(e.data[0].Favoris);
+                    }
                     
-                    var favoris = JSON.parse(e.data[0].Favoris);
                     var idAppelOffre = record.data.IdAppelOffre;
                     var check = true;
 
-                    if(favoris){
+                    if(favoris != null){
                         for(var i = 0 ; i < favoris.length && check ; i++){
                             if(favoris[i].IdAppelOffre == idAppelOffre){
                                 check = false;
