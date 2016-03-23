@@ -476,7 +476,7 @@ App.controller.define('CMain', {
                                 },function(e,r) {
                                     console.log(e);
                                     if(e.affectedRows == 1){
-                                        if(App.get('VAppelOffreFavoris').close()){
+                                        if(App.get('VAppelOffreFavoris')){
                                             App.get('VAppelOffreFavoris').close();
                                         }
                                         me.LoadFavoris();
