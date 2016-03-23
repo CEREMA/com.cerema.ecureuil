@@ -408,8 +408,6 @@ App.controller.define('CMain', {
             items: [{
                 text: 'Supprimer des favoris',
                 handler: function() {
-                    console.log('supprimer');
-                    console.log(record);
                     me.SuppressionFavori(record.data.IdAppelOffre);
                 }
 
@@ -450,7 +448,6 @@ App.controller.define('CMain', {
         });
     },
     SuppressionFavori: function(obj){
-        console.log(obj);
         var me = this;
         var idAppelOffre;
 
