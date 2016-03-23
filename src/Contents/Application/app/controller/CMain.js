@@ -556,7 +556,7 @@ App.controller.define('CMain', {
 
                         App.get('TFavoris grid#AO').bindStore(store);
                     } else {
-                        App.get('TFavoris grid#AO').removeAll();
+                        App.get('TFavoris grid#AO').bindStore.removeAll();
                     }
 
                     App.get('TFavoris grid#AO').getStore().load();
