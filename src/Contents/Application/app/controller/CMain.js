@@ -435,7 +435,9 @@ App.controller.define('CMain', {
                     }
 
                     favoris.push(e.data[0]);
-                    
+
+                    console.log(favoris);
+
                     App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
                         if(e.success){
                             App.DB.post('gestionao2://favoris',{
