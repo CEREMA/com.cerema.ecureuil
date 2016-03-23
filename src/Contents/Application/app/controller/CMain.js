@@ -382,6 +382,9 @@ App.controller.define('CMain', {
                                 var appelOffre = JSON.parse(e.data[0].Favoris);
                                 var newAppelOffre = [];
                                 console.log(appelOffre);
+                                for(var i in appelOffre){
+                                    console.log(i);
+                                }
 
                             }
                         });
