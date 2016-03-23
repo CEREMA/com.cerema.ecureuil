@@ -316,7 +316,8 @@ App.controller.define('CMain', {
 				}
 			}
         }).show().center();
-        
+
+        App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
     },
     //Si l'url contient ?appelOffre= cela modifie la fenêtre initial et affiche les données de l'appelOffre correspondante
     TForm2_onshow: function(p) {
@@ -472,7 +473,7 @@ App.controller.define('CMain', {
 
                             } else {
                                 AO_ID = record.data.IdAppelOffre;
-                                App.get('TForm2').setTitle('Appel d\'offre');
+                                App.get('VAppelOffreFavoris').setTitle('Appel d\'offre');
                                 App.get('panel#regroupement_hboxGrid1').hide();
                                 App.get('uploadfilemanager#up').setReadOnly(true);
                                 App.get('combo#cboNom').setReadOnly(true);
@@ -488,8 +489,8 @@ App.controller.define('CMain', {
                                 App.get('combo#cboDomaine').setReadOnly(true);
                                 App.get('combo#cboThematique').setReadOnly(true);
                                 App.get('combo#cboCode').setReadOnly(true);
-                                App.get('TForm2 boxselect#Keywords').setReadOnly(true);
-                                App.get('TForm2 button#add_keyword').hide();
+                                App.get('VAppelOffreFavoris boxselect#Keywords').setReadOnly(true);
+                                App.get('VAppelOffreFavoris button#add_keyword').hide();
                                 App.get('combo#cboNom').setValue(record.data.IdSource);
                                 App.get('combo#cboType').setValue(record.data.IdConsultation);
                                 App.get('textfield#objet').setValue(record.data.Objet);
