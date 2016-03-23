@@ -331,7 +331,7 @@ App.controller.define('CMain', {
                         }
                     }
                     if(check){
-                        App.get('button#ajouter_favoris').aoAjout = record.data;
+                        App.get('button#ajouter_favoris').aoAjout = record.data.IdAppelOffre;
                     } else {
                         App.get('button#ajouter_favoris').hide();
                     }
@@ -394,27 +394,19 @@ App.controller.define('CMain', {
     AjoutFavori: function(obj){
 
         console.log(obj);
-        /*
+        
         Auth.login(function(user) {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     var favoris = JSON.parse(e.data[0].Favoris);
-                    App.DB.get('gestionao2://appelsoffres?IdAppelOffre=' + obj.idAppelOffre,function(e, r){
+                    App.AppelOffre.FetchForHome(newAppelsOffresSeen,limit,function(e, record){
                         if(e.success){
-                            
-                            console.log(e);
-                            
-
-
-
-
-                           
+                                console.log(e);
                         }
                     });
                 }
             });
         });
-    */
     },
     SuppressionFavori: function(obj){
         var me = this;
