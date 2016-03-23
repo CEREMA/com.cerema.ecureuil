@@ -215,13 +215,14 @@ App.controller.define('CMain', {
                     }
                     if(check){
                         App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
+                        App.get('button#ajouter_favoris').show();
                     } else {
                         App.get('button#ajouter_favoris').hide();
                     }
                 }
             });
         });
-        
+
         OP = false;
 
         App.view.create('VForm2', {
