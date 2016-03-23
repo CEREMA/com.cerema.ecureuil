@@ -387,7 +387,7 @@ App.controller.define('CMain', {
                                     }
                                 }
                                 console.log(newAppelOffre);
-                                if(newAppelOffre.length > 1){
+                                if(newAppelOffre.length > 0){
                                     newAppelOffre = JSON.stringify(newAppelOffre);
                                 } else {
                                     newAppelOffre = null;
@@ -398,7 +398,7 @@ App.controller.define('CMain', {
                                     LastUpdate: new Date()
                                 },function(e,r) {
                                     if(e.success){
-                                        
+
                                     }
                                 });
                             }
