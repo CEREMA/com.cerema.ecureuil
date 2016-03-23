@@ -331,7 +331,6 @@ App.controller.define('CMain', {
                         }
                     }
                     if(check){
-                        console.log(record.data);
                         App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
                     } else {
                         App.get('button#ajouter_favoris').hide();
@@ -402,7 +401,8 @@ App.controller.define('CMain', {
                     var favoris = JSON.parse(e.data[0].Favoris);
                     App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
                         if(e.success){
-                                console.log(e);
+                            console.log(e.data[0]);
+
                         }
                     });
                 }
