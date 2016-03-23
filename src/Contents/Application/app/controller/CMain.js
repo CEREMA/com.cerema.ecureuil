@@ -554,11 +554,11 @@ App.controller.define('CMain', {
                         });
 
                         App.get('TFavoris grid#AO').bindStore(store);
-                        App.get('TFavoris grid#AO').getStore().load();
                     } else {
                         App.get('TFavoris grid#AO').removeAll();
-                        App.get('TFavoris grid#AO').getStore().load();
                     }
+
+                    App.get('TFavoris grid#AO').getStore().load();
                 }
             });
         });
