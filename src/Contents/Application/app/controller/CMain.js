@@ -538,7 +538,7 @@ App.controller.define('CMain', {
         App.get('button#supprimer_favoris').idAppelOffre = record.data.IdAppelOffre;
     },
     LoadFavoris: function(){
-        console.log('LoadFavoris');
+
         Auth.login(function(user) {
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
@@ -580,6 +580,7 @@ App.controller.define('CMain', {
         App.get('TFavoris').show();
     },
     ShowAccueil: function(){
+        console.log('ShowAccueil');
         App.get('TForm1').show();
         App.get('TFavoris').hide();
     },
