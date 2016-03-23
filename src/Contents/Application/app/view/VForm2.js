@@ -422,6 +422,7 @@ App.view.define('VForm2', {
                 margin: {
                     top: 10,
                     left: 250
+                }
             },
             {
                 xtype: "button",
@@ -433,7 +434,8 @@ App.view.define('VForm2', {
                     left: 196,
                     right: 0
                 }
-            }, {
+            }, 
+            {
                 xtype: "button",
                 itemId: "valider_saisie",
                 text: "Enregistrer",
