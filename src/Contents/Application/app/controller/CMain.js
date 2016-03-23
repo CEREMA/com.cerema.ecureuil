@@ -321,10 +321,21 @@ App.controller.define('CMain', {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     
-                    console.log(JSON.parse(e.data[0].Favoris));
-                    App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
+                    var favoris = JSON.parse(e.data[0].Favoris);
+                    var idAppelOffre = record.data.IdAppelOffre;
+                    var check = true;
+
+                    for(var i = 0 ; i < favoris.length && check ; i++){
+                        if(favoris[i].IdAppelOffre == idAppelOffre){
+                            check = false;
+                        }
+                    }
+                    if(check){
+                        App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
+                    } else {
+                        App.get('button#ajouter_favoris').hide();
+                    }
                 }
-                
             });
         });
     },
