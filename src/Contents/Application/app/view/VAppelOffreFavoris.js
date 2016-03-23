@@ -1,6 +1,6 @@
 App.view.define('VAppelOffreFavoris', {
     extend: "Ext.window.Window",
-    alias: "widget.TAppelOffreFavoris",
+    alias: "widget.VAppelOffreFavoris",
     initComponent: function() {
         this.width = 800;
         this.height = 750;
