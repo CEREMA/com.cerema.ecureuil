@@ -4,7 +4,7 @@ App.view.define('VAppelOffreFavoris', {
     initComponent: function() {
         this.width = 800;
         this.height = 750;
-        this.title = "Ajouter un appel d'offre";
+        this.title = "Consultation de l'appel d'offre";
         this.bodyCls = "white";
         this.items = [{
                 layout: "hbox",
