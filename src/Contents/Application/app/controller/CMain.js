@@ -528,6 +528,7 @@ App.controller.define('CMain', {
         App.get('button#supprimer_favoris').idAppelOffre = record.data.IdAppelOffre;
     },
     LoadFavoris: function(){
+        console.log('LoadFavoris');
         Auth.login(function(user) {
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
