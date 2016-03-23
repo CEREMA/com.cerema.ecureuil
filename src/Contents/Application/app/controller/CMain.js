@@ -406,7 +406,8 @@ App.controller.define('CMain', {
                 text: 'Supprimer des favoris',
                 handler: function() {
                     console.log('supprimer');
-                    me.SuppressionFavori();
+                    console.log(record);
+                    //me.SuppressionFavori();
                 }
 
             }]
