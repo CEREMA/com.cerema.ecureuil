@@ -414,7 +414,16 @@ App.view.define('VForm2', {
                 text: "Annuler",
                 itemId: "CANCEL_lien"
             },
-            '->', {
+            '->', 
+            {
+                xtype: "button",
+                itemId: "ajouter_favoris",
+                text: "Ajouter aux favoris",
+                margin: {
+                    top: 10,
+                    left: 250
+            },
+            {
                 xtype: "button",
                 itemId: "effacer_saisie",
                 text: "Effacer",
@@ -432,16 +441,6 @@ App.view.define('VForm2', {
                     top: 10,
                     left: 10
 
-                }
-            }
-            , 
-            {
-                xtype: "button",
-                itemId: "ajouter_favoris",
-                text: "Ajouter aux favoris",
-                margin: {
-                    top: 10,
-                    left: 250
                 }
             }
         ];
