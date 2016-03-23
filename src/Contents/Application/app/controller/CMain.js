@@ -321,7 +321,7 @@ App.controller.define('CMain', {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     
-                    console.log(e.data[0].Favoris);
+                    console.log(JSON.parse(e.data[0].Favoris));
                     App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
                 }
                 
