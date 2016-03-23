@@ -534,6 +534,9 @@ App.controller.define('CMain', {
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
+                    
+                    var store = null;
+
                     if(e.data[0].Favoris){
                         var data = JSON.parse(e.data[0].Favoris);
                         var tabMeta = [];
@@ -547,15 +550,15 @@ App.controller.define('CMain', {
                             data[a].DateParution = new Date(data[a].DateParution);
                         }
 
-                        var store = App.store.create({
+                        store = App.store.create({
                             fields : tabMeta,
                             data : data,
                             groupField: 'nom_thematique'
                         });
+                    } 
 
-                        App.get('TFavoris grid#AO').bindStore(store);
-                        App.get('TFavoris grid#AO').getStore().load();
-                    }
+                    App.get('TFavoris grid#AO').bindStore(store);
+                    App.get('TFavoris grid#AO').getStore().load();
                 }
             });
         });
