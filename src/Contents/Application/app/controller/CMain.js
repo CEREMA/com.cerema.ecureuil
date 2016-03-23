@@ -399,7 +399,7 @@ App.controller.define('CMain', {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     var favoris = JSON.parse(e.data[0].Favoris);
-                    App.AppelOffre.FetchForHome(obj.idAppelOffre,function(e, record){
+                    App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
                         if(e.success){
                                 console.log(e);
                         }
