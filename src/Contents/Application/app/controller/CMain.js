@@ -383,7 +383,7 @@ App.controller.define('CMain', {
                                 var newAppelOffre = [];
                                 console.log(appelOffre);
                                 for(var i in appelOffre){
-                                    console.log(i);
+                                    console.log(appelOffre[i]);
                                 }
 
                             }
