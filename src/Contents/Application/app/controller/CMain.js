@@ -508,8 +508,7 @@ App.controller.define('CMain', {
             }
         }).show().center();
 
-        console.log(record.data.IdAppelOffre);
-        console.log(App.get('button#supprimer_favoris').idAppelOffre);
+        App.get('button#supprimer_favoris').idAppelOffre = record.data.IdAppelOffre;
     },
     LoadFavoris: function(){
         Auth.login(function(user) {
