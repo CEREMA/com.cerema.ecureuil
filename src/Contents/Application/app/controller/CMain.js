@@ -381,11 +381,19 @@ App.controller.define('CMain', {
                             if(e.success){
                                 var appelOffre = JSON.parse(e.data[0].Favoris);
                                 var newAppelOffre = [];
-                                console.log(appelOffre);
                                 for(var i in appelOffre){
-                                    console.log(appelOffre[i]);
+                                    if(appelOffre[i].IdAppelOffre != obj.idAppelOffre){
+                                        newAppelOffre.push(appelOffre[i]);
+                                    }
                                 }
+                                newAppelOffre = JSON.stringify(newAppelOffre);
+                                App.DB.post('gestionao2://favoris',{
+                                    UId: user.uid,
+                                    Favoris: newAppelOffre,
+                                    LastUpdate: new Date()
+                                },function(e,r) {
 
+                                });
                             }
                         });
                     });
