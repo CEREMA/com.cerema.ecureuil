@@ -419,7 +419,6 @@ App.controller.define('CMain', {
 
     },
     AjoutFavori: function(obj){
-        console.log(obj);
         Auth.login(function(user) {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
@@ -451,6 +450,7 @@ App.controller.define('CMain', {
         });
     },
     SuppressionFavori: function(obj){
+        console.log(obj);
         var me = this;
         Ext.Msg.show({
             title:'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
