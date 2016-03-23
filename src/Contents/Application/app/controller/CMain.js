@@ -376,7 +376,10 @@ App.controller.define('CMain', {
                 if (btn === 'yes') {
                     Auth.login(function(user) {
                         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
-                            console.log(e);
+                            if(e.success){
+                                var appelOffre = JSON.parse(e.data[0].Favoris);
+                                console.log(appelOffre);
+                            }
                         });
                     });
                 }
