@@ -387,13 +387,19 @@ App.controller.define('CMain', {
                                     }
                                 }
                                 console.log(newAppelOffre);
-                                newAppelOffre = JSON.stringify(newAppelOffre);
+                                if(newAppelOffre.length > 1){
+                                    newAppelOffre = JSON.stringify(newAppelOffre);
+                                } else {
+                                    newAppelOffre = null;
+                                }
                                 App.DB.post('gestionao2://favoris',{
                                     UId: user.uid,
                                     Favoris: newAppelOffre,
                                     LastUpdate: new Date()
                                 },function(e,r) {
-
+                                    if(e.success){
+                                        
+                                    }
                                 });
                             }
                         });
