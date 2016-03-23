@@ -370,9 +370,8 @@ App.controller.define('CMain', {
     SuppressionFavori: function(){
         Ext.Msg.show({
             title:'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
-            message: 'You are closing a tab that has unsaved changes. Would you like to save your changes?',
+            message: 'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
             buttons: Ext.Msg.YESNOCANCEL,
-            icon: Ext.Msg.QUESTION,
             fn: function(btn) {
                 if (btn === 'yes') {
                     console.log('Yes pressed');
