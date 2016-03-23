@@ -421,7 +421,7 @@ App.view.define('VForm2', {
                 text: "Ajouter aux favoris",
                 margin: {
                     top: 10,
-                    left: 250
+                    left: 10
                 }
             },
             {
