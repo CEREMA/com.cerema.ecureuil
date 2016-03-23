@@ -393,7 +393,7 @@ App.controller.define('CMain', {
 /*****************************************************************************************************************************************************************/
     AjoutFavori: function(obj){
 
-        console.log(obj.idAppelOffre);
+        console.log(obj);
         console.log(window);
         Auth.login(function(user) {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
