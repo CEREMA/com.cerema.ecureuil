@@ -207,13 +207,15 @@ App.controller.define('CMain', {
                     var favoris = JSON.parse(e.data[0].Favoris);
                     var idAppelOffre = record.data.IdAppelOffre;
                     var check = true;
-
-                    for(var i = 0 ; i < favoris.length && check ; i++){
-                        if(favoris[i].IdAppelOffre == idAppelOffre){
-                            check = false;
+                    
+                    if(favoris){
+                        for(var i = 0 ; i < favoris.length && check ; i++){
+                            if(favoris[i].IdAppelOffre == idAppelOffre){
+                                check = false;
+                            }
                         }
                     }
-                    console.log(check);
+                    
                     if(check){
                         App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
                         App.get('button#ajouter_favoris').show();
