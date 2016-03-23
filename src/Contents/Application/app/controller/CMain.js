@@ -397,7 +397,7 @@ App.controller.define('CMain', {
                                     LastUpdate: new Date()
                                 },function(e,r) {
                                     console.log(e);
-                                    if(e.success){
+                                    if(e.affectedRows == 1){
                                         me.LoadFavoris();
                                     }
                                 });
