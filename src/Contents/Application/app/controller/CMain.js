@@ -207,7 +207,7 @@ App.controller.define('CMain', {
                     var favoris = JSON.parse(e.data[0].Favoris);
                     var idAppelOffre = record.data.IdAppelOffre;
                     var check = true;
-                    
+
                     if(favoris){
                         for(var i = 0 ; i < favoris.length && check ; i++){
                             if(favoris[i].IdAppelOffre == idAppelOffre){
@@ -403,6 +403,9 @@ App.controller.define('CMain', {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     var favoris = JSON.parse(e.data[0].Favoris);
+                    if(favoris){
+                        favoris = [];
+                    }
                     App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
                         if(e.success){
                             favoris.push(e.data[0]);
