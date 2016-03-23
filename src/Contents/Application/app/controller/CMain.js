@@ -399,12 +399,14 @@ App.controller.define('CMain', {
     //Permet de supprimer une ligne avec le clic droit supprimer
     gridFavoris_oncontextmenu: function(view, record, item, index, e) {
         Remove_Id = record.data.Id;
+        me =this;
         e.stopEvent();
         var gridMenu = Ext.create('Ext.menu.Menu', {
             items: [{
                 text: 'Supprimer des favoris',
                 handler: function() {
-                    console.log('supprimer')
+                    console.log('supprimer');
+                    me.SuppressionFavori();
                 }
 
             }]
