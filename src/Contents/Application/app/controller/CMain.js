@@ -206,13 +206,14 @@ App.controller.define('CMain', {
                 if(e.success){
 
                     var favoris = null;
-
+                    var check ;
+                    console.log(e.data[0].favoris);
                     if(e.data[0].favoris != '' && e.data[0].favoris != null){
                         favoris = JSON.parse(e.data[0].Favoris);
                     }
                     
                     var idAppelOffre = record.data.IdAppelOffre;
-                    var check = true;
+                    check = true;
 
                     if(favoris != null){
                         for(var i = 0 ; i < favoris.length && check ; i++){
