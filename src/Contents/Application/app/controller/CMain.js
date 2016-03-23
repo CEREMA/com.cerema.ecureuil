@@ -404,7 +404,7 @@ App.controller.define('CMain', {
                             favoris.push(e.data[0]);
                             App.DB.post('gestionao2://favoris',{
                                 UId: user.uid,
-                                Favoris: newAppelOffre,
+                                Favoris: favoris,
                                 LastUpdate: new Date()
                             },function(e,r) {
                                 if(e.affectedRows == 1){
