@@ -381,7 +381,7 @@ App.controller.define('CMain', {
                             if(e.success){
                                 var appelOffre = JSON.parse(e.data[0].Favoris);
                                 var newAppelOffre = [];
-                                for(var i in appelOffre){
+                                for(var i = 0 , i < appelOffre.length ; i++){
                                     if(appelOffre[i].IdAppelOffre != obj.idAppelOffre){
                                         newAppelOffre.push(appelOffre[i]);
                                     }
