@@ -468,7 +468,6 @@ App.controller.define('CMain', {
                                         newAppelOffre.push(appelOffre[i]);
                                     }
                                 }
-                                console.log(newAppelOffre);
                                 if(newAppelOffre.length > 0){
                                     newAppelOffre = JSON.stringify(newAppelOffre);
                                 } else {
@@ -479,7 +478,6 @@ App.controller.define('CMain', {
                                     Favoris: newAppelOffre,
                                     LastUpdate: new Date()
                                 },function(e,r) {
-                                    console.log(e);
                                     if(e.affectedRows == 1){
                                         if(App.get('VAppelOffreFavoris')){
                                             App.get('VAppelOffreFavoris').close();
