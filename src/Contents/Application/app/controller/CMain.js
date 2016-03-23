@@ -218,9 +218,6 @@ App.controller.define('CMain', {
                                 check = false;
                             }
                         }
-
-                    } else {
-                        check = false;
                     }
                     
                     if(check){
