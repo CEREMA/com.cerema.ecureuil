@@ -36,7 +36,7 @@ App.controller.define('CMain', {
             "TFavoris grid#AO": {
                 itemdblclick: "ConsultationFavoris"
             },
-            "TAppelOffreFavoris button#supprimer_favoris": {
+            "VAppelOffreFavoris button#supprimer_favoris": {
                 click: "SuppressionFavori"
             },
             "uploadpanel#up": {
