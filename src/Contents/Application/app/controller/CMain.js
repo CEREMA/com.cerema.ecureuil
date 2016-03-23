@@ -534,17 +534,17 @@ App.controller.define('CMain', {
                 }
             }
         }).show().center();
-    
+    console.log('test1');
         Auth.login(function(user) {
-
+console.log('test2');
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     
 
                     console.log(e.data[0].Favoris);
-                   App.get('button#supprimer_favoris').idAppelOffre = record.data.IdAppelOffre;
+                    App.get('button#supprimer_favoris').idAppelOffre = record.data.IdAppelOffre;
                 }
-                console.log('test');
+                
             });
         });
 
