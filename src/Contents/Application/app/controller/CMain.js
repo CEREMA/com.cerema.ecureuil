@@ -367,7 +367,10 @@ App.controller.define('CMain', {
 
     },
 /*****************************************************************************************************************************************************************/
-    SuppressionFavori: function(){
+    SuppressionFavori: function(e,r){
+        console.log(e);
+        console.log(r);
+        
         Ext.Msg.show({
             title:'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
             message: 'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
@@ -378,7 +381,9 @@ App.controller.define('CMain', {
                         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                             if(e.success){
                                 var appelOffre = JSON.parse(e.data[0].Favoris);
+                                var newAppelOffre = [];
                                 console.log(appelOffre);
+
                             }
                         });
                     });
