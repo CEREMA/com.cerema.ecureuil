@@ -427,14 +427,13 @@ App.controller.define('CMain', {
                 if(e.success){
 
                     var favoris = null;
-
+                    console.log(e.data[0].favoris);
                     if(e.data[0].favoris != '' && e.data[0].favoris != null){
                         favoris = JSON.parse(e.data[0].Favoris);
                     } else {
                         favoris = [];
                     }
-
-                    favoris.push(e.data[0]);
+                    //favoris.push(e.data[0]);
 
                     console.log(favoris);
 
