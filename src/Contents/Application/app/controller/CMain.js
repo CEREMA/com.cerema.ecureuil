@@ -403,6 +403,7 @@ App.controller.define('CMain', {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     var favoris = JSON.parse(e.data[0].Favoris);
+                    console.log(favoris);
                     if(favoris){
                         favoris = [];
                     }
