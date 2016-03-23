@@ -426,8 +426,12 @@ App.controller.define('CMain', {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
 
+                    console.log(obj);
+
                     var favoris = null;
+
                     console.log(e.data[0].favoris);
+                    
                     if(e.data[0].favoris != '' && e.data[0].favoris != null){
                         favoris = JSON.parse(e.data[0].Favoris);
                     } else {
