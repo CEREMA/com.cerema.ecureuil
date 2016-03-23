@@ -419,7 +419,7 @@ App.controller.define('CMain', {
 
     },
     AjoutFavori: function(obj){
-        
+        console.log(obj);
         Auth.login(function(user) {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
