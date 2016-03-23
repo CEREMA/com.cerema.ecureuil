@@ -434,6 +434,16 @@ App.view.define('VForm2', {
 
                 }
             }
+            , 
+            {
+                xtype: "button",
+                itemId: "ajouter_favoris",
+                text: "Ajouter aux favoris",
+                margin: {
+                    top: 10,
+                    left: 250
+                }
+            }
         ];
         this.callParent(arguments);
     }
