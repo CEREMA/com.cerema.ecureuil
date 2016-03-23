@@ -39,6 +39,9 @@ App.controller.define('CMain', {
             "VAppelOffreFavoris button#supprimer_favoris": {
                 click: "SuppressionFavori"
             },
+            "button#ajouter_favoris": {
+                click: "AjoutFavori"
+            },
             "uploadpanel#up": {
                 itemuploadsuccess: "item_upload"
             },
@@ -367,6 +370,9 @@ App.controller.define('CMain', {
 
     },
 /*****************************************************************************************************************************************************************/
+    AjoutFavori: function(obj){
+        console.log(obj);
+    },
     SuppressionFavori: function(obj){
         var me = this;
         Ext.Msg.show({

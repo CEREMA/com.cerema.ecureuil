@@ -431,7 +431,7 @@ App.view.define('VForm2', {
                 margin: {
                     top: 10,
                     bottom: 0,
-                    left: 0,
+                    left: 10,
                     right: 0
                 }
             }, 
