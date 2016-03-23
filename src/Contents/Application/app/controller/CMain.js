@@ -374,12 +374,12 @@ App.controller.define('CMain', {
             buttons: Ext.Msg.YESNOCANCEL,
             fn: function(btn) {
                 if (btn === 'yes') {
-                    console.log('Yes pressed');
-                } else if (btn === 'no') {
-                    console.log('No pressed');
-                } else {
-                    console.log('Cancel pressed');
-                } 
+                    Auth.login(function(user) {
+                        App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
+                            console.log(e);
+                        });
+                    });
+                }
             }
         });
     },
