@@ -386,6 +386,7 @@ App.controller.define('CMain', {
                                         newAppelOffre.push(appelOffre[i]);
                                     }
                                 }
+                                console.log(newAppelOffre);
                                 newAppelOffre = JSON.stringify(newAppelOffre);
                                 App.DB.post('gestionao2://favoris',{
                                     UId: user.uid,
