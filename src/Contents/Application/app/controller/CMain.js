@@ -34,7 +34,8 @@ App.controller.define('CMain', {
                 beforeitemcontextmenu: "grid_oncontextmenu"
             },
             "TFavoris grid#AO": {
-                itemdblclick: "ConsultationFavoris"
+                itemdblclick: "ConsultationFavoris",
+                beforeitemcontextmenu: "gridFavoris_oncontextmenu"
             },
             "VAppelOffreFavoris button#supprimer_favoris": {
                 click: "SuppressionFavori"
@@ -396,7 +397,7 @@ App.controller.define('CMain', {
     },
 /*****************************************************************************************************************************************************************/
     //Permet de supprimer une ligne avec le clic droit supprimer
-    grid1_oncontextmenu: function(view, record, item, index, e) {
+    gridFavoris_oncontextmenu: function(view, record, item, index, e) {
         Remove_Id = record.data.Id;
         e.stopEvent();
         var gridMenu = Ext.create('Ext.menu.Menu', {
