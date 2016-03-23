@@ -580,7 +580,6 @@ App.controller.define('CMain', {
         App.get('TFavoris').show();
     },
     ShowAccueil: function(){
-        console.log('ShowAccueil');
         App.get('TForm1').show();
         App.get('TFavoris').hide();
     },
