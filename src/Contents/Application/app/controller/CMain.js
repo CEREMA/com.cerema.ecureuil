@@ -431,18 +431,18 @@ App.controller.define('CMain', {
                     var favoris = null;
 
                     console.log(e.data[0].favoris);
-                    
+
                     if(e.data[0].favoris != '' && e.data[0].favoris != null){
                         favoris = JSON.parse(e.data[0].Favoris);
                     } else {
                         favoris = [];
                     }
-                    //favoris.push(e.data[0]);
 
                     console.log(favoris);
 
                     App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
                         if(e.success){
+                            favoris.push(e.data[0]);
                             App.DB.post('gestionao2://favoris',{
                                 UId: user.uid,
                                 Favoris: favoris,
