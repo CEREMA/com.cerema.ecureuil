@@ -22,7 +22,7 @@ App.view.define('VForm1',{
 				text: "Favoris",
 				scale: "large",
 				iconAlign: "top",
-				iconCls: "favori"
+				iconCls: "add"
 			}
 
 		],
