@@ -393,7 +393,7 @@ App.controller.define('CMain', {
     ConsultationFavoris: function(p, record){
         console.log(record.data.IdAppelOffre);
         OP = false;
-
+        console.log(App.get('button#supprimer_favoris'));
         App.view.create('VAppelOffreFavoris', {
             modal: true,
             listeners: {
