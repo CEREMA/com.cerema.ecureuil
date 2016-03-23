@@ -544,6 +544,7 @@ App.controller.define('CMain', {
                     console.log(e.data[0].Favoris);
                    App.get('button#supprimer_favoris').idAppelOffre = record.data.IdAppelOffre;
                 }
+                console.log('test');
             });
         });
 
