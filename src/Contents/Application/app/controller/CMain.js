@@ -368,8 +368,7 @@ App.controller.define('CMain', {
     },
 /*****************************************************************************************************************************************************************/
     SuppressionFavori: function(obj){
-        console.log(obj);
-        
+        var me = this;
         Ext.Msg.show({
             title:'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
             message: 'Êtes-vous sûr de vouloir supprimer cet appel d\'offre de vos favoris ?',
@@ -398,7 +397,7 @@ App.controller.define('CMain', {
                                     LastUpdate: new Date()
                                 },function(e,r) {
                                     if(e.success){
-
+                                        me.LoadFavoris();
                                     }
                                 });
                             }
