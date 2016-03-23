@@ -206,8 +206,8 @@ App.controller.define('CMain', {
                 if(e.success){
 
                     var favoris = null;
-                    
-                    if(e.data[0].favoris){
+
+                    if(e.data[0].favoris != '' && e.data[0].favoris != null){
                         favoris = JSON.parse(e.data[0].Favoris);
                     }
                     
@@ -425,11 +425,15 @@ App.controller.define('CMain', {
         Auth.login(function(user) {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
-                    var favoris = JSON.parse(e.data[0].Favoris);
-                    console.log(favoris);
-                    if(favoris == null || favoris == ''){
+
+                    var favoris = null;
+
+                    if(e.data[0].favoris != '' && e.data[0].favoris != null){
+                        favoris = JSON.parse(e.data[0].Favoris);
+                    } else {
                         favoris = [];
                     }
+
                     App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
                         if(e.success){
                             favoris.push(e.data[0]);
