@@ -210,6 +210,7 @@ App.controller.define('CMain', {
                     var idAppelOffre = record.data.IdAppelOffre;
 
                     if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
+
                         favoris = JSON.parse(e.data[0].Favoris);
 
                         for(var i = 0 ; i < favoris.length && check ; i++){
@@ -217,12 +218,10 @@ App.controller.define('CMain', {
                                 check = false;
                             }
                         }
+
                     } else {
                         check = false;
                     }
-                    
-                    
-
                     
                     if(check){
                         App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
@@ -428,19 +427,13 @@ App.controller.define('CMain', {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
 
-                    console.log(obj);
-
                     var favoris = null;
 
-                    console.log(e.data[0].favoris);
-
-                    if(e.data[0].favoris != '' && e.data[0].favoris != null){
+                    if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
                         favoris = JSON.parse(e.data[0].Favoris);
                     } else {
                         favoris = [];
                     }
-
-                    console.log(favoris);
 
                     App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
                         if(e.success){
