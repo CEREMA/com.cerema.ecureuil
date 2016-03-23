@@ -373,7 +373,7 @@ App.controller.define('CMain', {
 /*****************************************************************************************************************************************************************/
     AjoutFavori: function(obj){
         console.log(obj.idAppelOffre);
-        console.log(Setting);
+        console.log(window);
     },
     SuppressionFavori: function(obj){
         var me = this;
