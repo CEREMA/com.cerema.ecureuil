@@ -417,7 +417,7 @@ App.view.define('VAppelOffreFavoris', {
                 xtype: "button",
                 itemId: "supprimer_favoris",
                 text: "Supprimer des favoris",
-                idAppelOffre: null,
+                idAppelOffre: 'lol',
                 margin: {
                     top: 10,
                     left: 10
