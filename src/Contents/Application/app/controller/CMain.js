@@ -200,6 +200,28 @@ App.controller.define('CMain', {
     //Permet le double click sur un appelOffre et recupere les données 
     grid_dblclick: function(p, record) {
 
+        Auth.login(function(user) {
+            App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
+                if(e.success){
+                    
+                    var favoris = JSON.parse(e.data[0].Favoris);
+                    var idAppelOffre = record.data.IdAppelOffre;
+                    var check = true;
+
+                    for(var i = 0 ; i < favoris.length && check ; i++){
+                        if(favoris[i].IdAppelOffre == idAppelOffre){
+                            check = false;
+                        }
+                    }
+                    if(check){
+                        App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
+                    } else {
+                        App.get('button#ajouter_favoris').hide();
+                    }
+                }
+            });
+        });
+        
         OP = false;
 
         App.view.create('VForm2', {
@@ -316,28 +338,6 @@ App.controller.define('CMain', {
 				}
 			}
         }).show().center();
-
-        Auth.login(function(user) {
-            App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
-                if(e.success){
-                    
-                    var favoris = JSON.parse(e.data[0].Favoris);
-                    var idAppelOffre = record.data.IdAppelOffre;
-                    var check = true;
-
-                    for(var i = 0 ; i < favoris.length && check ; i++){
-                        if(favoris[i].IdAppelOffre == idAppelOffre){
-                            check = false;
-                        }
-                    }
-                    if(check){
-                        App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
-                    } else {
-                        App.get('button#ajouter_favoris').hide();
-                    }
-                }
-            });
-        });
     },
     //Si l'url contient ?appelOffre= cela modifie la fenêtre initial et affiche les données de l'appelOffre correspondante
     TForm2_onshow: function(p) {
