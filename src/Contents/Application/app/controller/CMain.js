@@ -331,7 +331,7 @@ App.controller.define('CMain', {
                         }
                     }
                     if(check){
-                        App.get('button#ajouter_favoris').aoAjout = record;
+                        App.get('button#ajouter_favoris').aoAjout = record.data;
                     } else {
                         App.get('button#ajouter_favoris').hide();
                     }
