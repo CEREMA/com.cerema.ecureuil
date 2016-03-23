@@ -391,7 +391,7 @@ App.controller.define('CMain', {
         });
     },
     ConsultationFavoris: function(p, record){
-
+        console.log(record);
         OP = false;
 
         App.view.create('VAppelOffreFavoris', {
