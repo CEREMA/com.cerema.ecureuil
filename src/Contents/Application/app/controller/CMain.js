@@ -331,7 +331,7 @@ App.controller.define('CMain', {
                         }
                     }
                     if(check){
-                        App.get('button#ajouter_favoris').aoAjout = record.data.IdAppelOffre;
+                        App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
                     } else {
                         App.get('button#ajouter_favoris').hide();
                     }
@@ -399,7 +399,7 @@ App.controller.define('CMain', {
             App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
                     var favoris = JSON.parse(e.data[0].Favoris);
-                    App.AppelOffre.FetchForHome(newAppelsOffresSeen,limit,function(e, record){
+                    App.AppelOffre.FetchForHome(obj.idAppelOffre,function(e, record){
                         if(e.success){
                                 console.log(e);
                         }
