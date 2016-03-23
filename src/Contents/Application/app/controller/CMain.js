@@ -509,7 +509,7 @@ App.controller.define('CMain', {
         }).show().center();
 
         console.log(record.data.IdAppelOffre);
-        console.log(App.get('button#supprimer_favoris'));
+        console.log(App.get('button#supprimer_favoris').idAppelOffre);
     },
     LoadFavoris: function(){
         Auth.login(function(user) {
