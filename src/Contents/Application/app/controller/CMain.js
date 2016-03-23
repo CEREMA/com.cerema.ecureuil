@@ -317,7 +317,16 @@ App.controller.define('CMain', {
 			}
         }).show().center();
 
-        App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
+        Auth.login(function(user) {
+            App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
+                if(e.success){
+                    
+                    console.log(e.data[0].Favoris);
+                    App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
+                }
+                
+            });
+        });
     },
     //Si l'url contient ?appelOffre= cela modifie la fenêtre initial et affiche les données de l'appelOffre correspondante
     TForm2_onshow: function(p) {
