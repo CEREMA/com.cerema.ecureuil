@@ -396,6 +396,7 @@ App.controller.define('CMain', {
                                     Favoris: newAppelOffre,
                                     LastUpdate: new Date()
                                 },function(e,r) {
+                                    console.log(e);
                                     if(e.success){
                                         me.LoadFavoris();
                                     }
