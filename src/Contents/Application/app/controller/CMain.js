@@ -407,7 +407,7 @@ App.controller.define('CMain', {
                 handler: function() {
                     console.log('supprimer');
                     console.log(record);
-                    //me.SuppressionFavori();
+                    me.SuppressionFavori(record.data.IdAppelOffre);
                 }
 
             }]
