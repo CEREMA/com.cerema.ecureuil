@@ -213,6 +213,7 @@ App.controller.define('CMain', {
                             check = false;
                         }
                     }
+                    console.log(check);
                     if(check){
                         App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
                         App.get('button#ajouter_favoris').show();
