@@ -398,6 +398,7 @@ App.controller.define('CMain', {
                                 },function(e,r) {
                                     console.log(e);
                                     if(e.affectedRows == 1){
+                                        App.get('VAppelOffreFavoris').close();
                                         me.LoadFavoris();
                                     }
                                 });
