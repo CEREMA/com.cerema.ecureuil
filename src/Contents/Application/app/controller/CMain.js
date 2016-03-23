@@ -404,7 +404,7 @@ App.controller.define('CMain', {
                 if(e.success){
                     var favoris = JSON.parse(e.data[0].Favoris);
                     console.log(favoris);
-                    if(favoris){
+                    if(favoris == null || favoris == ''){
                         favoris = [];
                     }
                     App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
