@@ -23,6 +23,14 @@ App.view.define('VFavoris',{
 				scale: "large",
 				iconAlign: "top",
 				iconCls: "add"
+			},
+			{
+				xtype:"button",
+				itemId: "b_favoris",
+				text: "Favoris",
+				scale: "large",
+				iconAlign: "top",
+				iconCls: "add"
 			}
 		],
 		features: [
