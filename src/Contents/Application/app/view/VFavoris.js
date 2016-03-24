@@ -30,7 +30,7 @@ App.view.define('VFavoris',{
 				text: "Favoris",
 				scale: "large",
 				iconAlign: "top",
-				iconCls: "add"
+				iconCls: "favori"
 			}
 		],
 		features: [
