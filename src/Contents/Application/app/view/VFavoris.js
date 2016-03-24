@@ -22,7 +22,7 @@ App.view.define('VFavoris',{
 				text: "Appel d'offre",
 				scale: "large",
 				iconAlign: "top",
-				iconCls: "add"
+				iconCls: "appel-offre"
 			},
 			{
 				xtype:"button",
