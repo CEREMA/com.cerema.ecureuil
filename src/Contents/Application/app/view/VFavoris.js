@@ -7,10 +7,19 @@ App.view.define('VFavoris',{
 		xtype: "grid",
 		itemId: "AO",
 		tbar: [
+			,
 			{
 				xtype:"button",
-				itemId: "retour_accueil",
-				text: "Retour",
+				itemId: "b_favoris",
+				text: "Favoris",
+				scale: "large",
+				iconAlign: "top",
+				iconCls: "add"
+			},
+			{
+				xtype:"button",
+				itemId: "b_appeloffre",
+				text: "Appel d'offre",
 				scale: "large",
 				iconAlign: "top",
 				iconCls: "add"

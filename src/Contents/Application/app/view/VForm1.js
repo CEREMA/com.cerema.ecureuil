@@ -23,6 +23,14 @@ App.view.define('VForm1',{
 				scale: "large",
 				iconAlign: "top",
 				iconCls: "add"
+			},
+			{
+				xtype:"button",
+				itemId: "b_appeloffre",
+				text: "Appel d'offre",
+				scale: "large",
+				iconAlign: "top",
+				iconCls: "add"
 			}
 
 		],
