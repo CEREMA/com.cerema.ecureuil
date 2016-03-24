@@ -562,7 +562,7 @@ App.controller.define('CMain', {
                                 App.get('boxselect#cboDepartement').setReadOnly(true);
                                 App.get('datefield#date').setReadOnly(true);
                                 App.get('datefield#date_limite').setReadOnly(true);
-                                App.get('button#effacer_saisie').hide();
+                                //App.get('button#effacer_saisie').hide();
                                 App.get('button#valider_saisie').hide();
                                 App.get('textfield#client').setReadOnly(true);
                                 App.get('textarea#objet').setReadOnly(true);
