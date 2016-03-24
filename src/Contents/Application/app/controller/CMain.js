@@ -691,13 +691,23 @@ App.controller.define('CMain', {
                                 if(r.result.affectedRows == 1) {
                                     App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
                                     App.get('VMobile label#LabelError').setText('Synchronisation...');
+
                                     App.IO.send("#"+mobileId,true,"*");
+                                    App.IO.subscribe('#' + localStorage.getItem('MobileId') + 'OK');
+                                    App.IO.on('#'+localStorage.getItem('MobileId'),function() {
+                                        App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
+                                    });
                                 }
                             });
                         } else if(!e.data[0].Synchro) {
                             App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
                             App.get('VMobile label#LabelError').setText('Synchronisation...');
+
                             App.IO.send("#"+mobileId,true,"*");
+                            App.IO.subscribe('#' + localStorage.getItem('MobileId') + 'OK');
+                            App.IO.on('#'+localStorage.getItem('MobileId'),function() {
+                                App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
+                            });
                         } else {
                             App.get('VMobile label#LabelError').el.setStyle({"color":"orange"});
                             App.get('VMobile label#LabelError').setText('Ce code Mobile est déjà attribué.');
