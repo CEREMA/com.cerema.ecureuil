@@ -692,7 +692,7 @@ App.controller.define('CMain', {
                                     App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
                                     App.get('VMobile label#LabelError').setText('Synchronisation...');
 
-                                    App.IO.send("#"+mobileId,true,"*");
+                                    App.IO.send('#'+mobileId,true,"*");
                                     App.IO.subscribe('#' + localStorage.getItem('MobileId') + 'OK');
                                     App.IO.on('#'+localStorage.getItem('MobileId'),function() {
                                         App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
@@ -703,7 +703,7 @@ App.controller.define('CMain', {
                             App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
                             App.get('VMobile label#LabelError').setText('Synchronisation...');
 
-                            App.IO.send("#"+mobileId,true,"*");
+                            App.IO.send('#'+mobileId,true,"*");
                             App.IO.subscribe('#' + localStorage.getItem('MobileId') + 'OK');
                             App.IO.on('#'+localStorage.getItem('MobileId'),function() {
                                 App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
