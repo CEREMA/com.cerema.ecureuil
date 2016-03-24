@@ -18,16 +18,16 @@ App.view.define('VForm1',{
 			},
 			{
 				xtype:"button",
-				itemId: "b_favoris",
-				text: "Favoris",
+				itemId: "b_appeloffre",
+				text: "Appel d'offre",
 				scale: "large",
 				iconAlign: "top",
 				iconCls: "add"
 			},
 			{
 				xtype:"button",
-				itemId: "b_appeloffre",
-				text: "Appel d'offre",
+				itemId: "b_favoris",
+				text: "Favoris",
 				scale: "large",
 				iconAlign: "top",
 				iconCls: "add"
