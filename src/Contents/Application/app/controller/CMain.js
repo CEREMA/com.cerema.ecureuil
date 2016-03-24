@@ -37,6 +37,9 @@ App.controller.define('CMain', {
                 itemdblclick: "ConsultationFavoris",
                 beforeitemcontextmenu: "gridFavoris_oncontextmenu"
             },
+            "button#b_appeloffre": {
+                click: "ShowAccueil"
+            },
             "VAppelOffreFavoris button#supprimer_favoris": {
                 click: "SuppressionFavori"
             },
@@ -51,9 +54,6 @@ App.controller.define('CMain', {
             },
             "button#b_favoris": {
                 click: "ShowFavoris"
-            },
-            "button#retour_accueil": {
-                click: "ShowAccueil"
             },
 			"datefield#date": {
 				change: "date_change_week"
