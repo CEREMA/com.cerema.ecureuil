@@ -690,7 +690,7 @@ App.controller.define('CMain', {
                             },function(e,r) {
                                 if(r.result.affectedRows == 1) {
                                     App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
-                                    App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
+                                    App.get('VMobile label#LabelError').setText('Synchronisation...');
                                     App.IO.send("#"+mobileId,true,"*");
                                 }
                             });
