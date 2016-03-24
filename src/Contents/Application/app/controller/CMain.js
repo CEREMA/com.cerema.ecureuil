@@ -694,12 +694,14 @@ App.controller.define('CMain', {
                                     App.IO.send("#"+mobileId,true,"*");
                                 }
                             });
+                        } else if(e.data[0].Synchro == 0) {
+                            App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
+                            App.get('VMobile label#LabelError').setText('Synchronisation...');
+                            App.IO.send("#"+mobileId,true,"*");
                         } else {
                             App.get('VMobile label#LabelError').el.setStyle({"color":"orange"});
                             App.get('VMobile label#LabelError').setText('Ce code Mobile est déjà attribué.');
-                            App.IO.send("#"+mobileId,true,"*");
                         }
-
                     } else {
                         App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
                         App.get('VMobile label#LabelError').setText('Code incorrect.');
