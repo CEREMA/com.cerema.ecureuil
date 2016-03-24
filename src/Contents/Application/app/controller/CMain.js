@@ -694,7 +694,7 @@ App.controller.define('CMain', {
                                     App.IO.send("#"+mobileId,true,"*");
                                 }
                             });
-                        } else if(e.data[0].Synchro == 0) {
+                        } else if(e.data[0].Synchro) {
                             App.get('VMobile label#LabelError').el.setStyle({"color":"green"});
                             App.get('VMobile label#LabelError').setText('Synchronisation...');
                             App.IO.send("#"+mobileId,true,"*");
