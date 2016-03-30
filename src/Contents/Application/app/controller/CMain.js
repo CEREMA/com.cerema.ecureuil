@@ -713,15 +713,15 @@ App.controller.define('CMain', {
                             App.get('VMobile label#LabelError').setText('Ce code Mobile est déjà attribué.');
                         }
                     } else {
-                        /*App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
-                        App.get('VMobile label#LabelError').setText('Code incorrect.');*/
-                        App.get('VMobile').close();
+                        App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
+                        App.get('VMobile label#LabelError').setText('Code incorrect.');
                     }
                 });
             });
         } else {
-            App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
-            App.get('VMobile label#LabelError').setText('Champ Obligatoire.');
+            /*App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
+            App.get('VMobile label#LabelError').setText('Champ Obligatoire.');*/
+            App.get('VMobile').close();
         }
     },
 /*****************************************************************************************************************************************************************/
