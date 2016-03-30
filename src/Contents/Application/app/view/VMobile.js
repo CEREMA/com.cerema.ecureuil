@@ -33,6 +33,7 @@ App.view.define('VMobile', {
                         margin: {
                             top:10
                         },
+                        border: false,
                         items: [
                             {   
                                 xtype: "textfield",
