@@ -34,7 +34,7 @@ App.view.define('VMobile', {
                             {   
                                 xtype: "textfield",
                                 itemId: "Peripherique",
-                                flex: 1,
+                                flex: 3,
                                 margin: 10,
                                 allowBlank: false,
                                 fieldLabel: "Code de synchronisation",
@@ -42,7 +42,7 @@ App.view.define('VMobile', {
                                 labelStyle: 'font-size: 1.2em;'
                             },
                             {   
-                                flex: 1,
+                                flex: 2,
                                 xtype: 'label',
                                 itemId: 'LabelError',
                                 text: '',
