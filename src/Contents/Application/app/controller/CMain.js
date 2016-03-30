@@ -706,8 +706,8 @@ App.controller.define('CMain', {
                             App.IO.send('#'+mobileId,true,"*");
                             App.IO.subscribe('#' + mobileId + 'OK');
                             App.IO.on('#' + mobileId + 'OK',function() {
-                                App.notify('Synchronisation mobile Réussite.')
                                 App.get('VMobile').close();
+                                App.notify('Synchronisation mobile terminée.');
                             });
                         } else {
                             App.get('VMobile label#LabelError').el.setStyle({"color":"orange"});
