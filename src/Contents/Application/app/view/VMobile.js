@@ -36,7 +36,6 @@ App.view.define('VMobile', {
                                 itemId: "Peripherique",
                                 flex: 3,
                                 margin: 10,
-                                allowBlank: false,
                                 fieldLabel: "Code de synchronisation",
                                 labelWidth: 175,
                                 height: 40,
