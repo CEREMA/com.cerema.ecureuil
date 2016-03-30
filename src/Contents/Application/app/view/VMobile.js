@@ -30,6 +30,7 @@ App.view.define('VMobile', {
                         flex: 1,
                         layout: "hbox",
                         width: 600,
+                        height: 50,
                         items: [
                             {   
                                 xtype: "textfield",
@@ -41,7 +42,6 @@ App.view.define('VMobile', {
                                 labelWidth: 175,
                                 labelStyle: 'font-size: 1.2em;',
                                 fieldStyle: {
-                                    'height': '30px',
                                     'padding': '10px;',
                                     'fontSize' : '30px'
                                 }
