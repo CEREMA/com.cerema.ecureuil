@@ -61,10 +61,7 @@
     ],
     "api": [
         "AO",
-        "Mail",
-        "AppelOffre",
-        "MyService",
-        "Search"
+        "Mail"
     ],
     "packages": [
         "nodemailer",
