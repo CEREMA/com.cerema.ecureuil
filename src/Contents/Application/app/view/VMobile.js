@@ -30,6 +30,9 @@ App.view.define('VMobile', {
                         flex: 2,
                         layout: "hbox",
                         width: 600,
+                        margin: {
+                            top:10
+                        },
                         items: [
                             {   
                                 xtype: "textfield",
