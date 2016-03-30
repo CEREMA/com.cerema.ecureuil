@@ -3,7 +3,7 @@ App.view.define('VMobile', {
     alias: "widget.VMobile",
     initComponent: function() {
         this.width = 600;
-        this.height = 500;
+        this.height = 450;
         this.title = "Ajouter un périphérique";
         this.bodyCls = "white";
         this.layout="fit";
@@ -39,7 +39,7 @@ App.view.define('VMobile', {
                                 fieldLabel: "Code de synchronisation",
                                 labelWidth: 175,
                                 height: 40,
-                                labelStyle: 'font-size: 1.2em; margin-top: 15px;',
+                                labelStyle: 'font-size: 1.2em; margin-top: 13px;',
                                 fieldStyle: {
                                     'padding': '10px;',
                                     'fontSize' : '30px'
