@@ -693,8 +693,8 @@ App.controller.define('CMain', {
                                     App.get('VMobile label#LabelError').setText('Synchronisation...');
 
                                     App.IO.send('#'+mobileId,true,"*");
-                                    App.IO.subscribe('#' + localStorage.getItem('MobileId') + 'OK');
-                                    App.IO.on('#'+localStorage.getItem('MobileId'),function() {
+                                    App.IO.subscribe('#' + mobileId + 'OK');
+                                    App.IO.on('#'+ mobileId + 'OK',function() {
                                         App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
                                     });
                                 }
@@ -704,8 +704,8 @@ App.controller.define('CMain', {
                             App.get('VMobile label#LabelError').setText('Synchronisation...');
 
                             App.IO.send('#'+mobileId,true,"*");
-                            App.IO.subscribe('#' + localStorage.getItem('MobileId') + 'OK');
-                            App.IO.on('#'+localStorage.getItem('MobileId'),function() {
+                            App.IO.subscribe('#' + mobileId + 'OK');
+                            App.IO.on('#' + mobileId + 'OK',function() {
                                 App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
                             });
                         } else {
