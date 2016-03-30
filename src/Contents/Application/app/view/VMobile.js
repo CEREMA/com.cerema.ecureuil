@@ -39,8 +39,7 @@ App.view.define('VMobile', {
                                 allowBlank: false,
                                 fieldLabel: "Code de synchronisation",
                                 labelWidth: 175,
-                                labelStyle: 'font-size: 1.2em;',
-                                style: 'font-size: 1.2em;'
+                                labelStyle: 'font-size: 1.2em;'
                             },
                             {   
                                 flex: 2,
