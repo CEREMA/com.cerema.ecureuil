@@ -721,7 +721,7 @@ App.controller.define('CMain', {
         } else {
             /*App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
             App.get('VMobile label#LabelError').setText('Champ Obligatoire.');*/
-            App.notify('Synchronisation Terminée.')
+            App.notify('Synchronisation mobile Réussite')
             App.get('VMobile').close();
         }
     },
