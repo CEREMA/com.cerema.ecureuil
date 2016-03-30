@@ -706,7 +706,8 @@ App.controller.define('CMain', {
                             App.IO.send('#'+mobileId,true,"*");
                             App.IO.subscribe('#' + mobileId + 'OK');
                             App.IO.on('#' + mobileId + 'OK',function() {
-                                App.get('VMobile label#LabelError').setText('Synchronisation Terminée.');
+                                App.notify('Synchronisation mobile Réussite.')
+                                App.get('VMobile').close();
                             });
                         } else {
                             App.get('VMobile label#LabelError').el.setStyle({"color":"orange"});
@@ -719,10 +720,8 @@ App.controller.define('CMain', {
                 });
             });
         } else {
-            /*App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
-            App.get('VMobile label#LabelError').setText('Champ Obligatoire.');*/
-            App.notify('Synchronisation mobile Réussite')
-            App.get('VMobile').close();
+            App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
+            App.get('VMobile label#LabelError').setText('Champ Obligatoire.');
         }
     },
 /*****************************************************************************************************************************************************************/
