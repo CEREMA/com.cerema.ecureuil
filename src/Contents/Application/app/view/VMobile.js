@@ -41,7 +41,7 @@ App.view.define('VMobile', {
                                 labelWidth: 175,
                                 height: 40,
                                 labelStyle: {
-                                    'font-size': '1.2em'
+                                    'font-size': '30px'
                                 },
                                 fieldStyle: {
                                     'fontSize' : '30px'
