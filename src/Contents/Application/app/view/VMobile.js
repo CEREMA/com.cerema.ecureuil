@@ -40,7 +40,7 @@ App.view.define('VMobile', {
                                 fieldLabel: "Code de synchronisation",
                                 labelWidth: 175,
                                 height: 40,
-                                labelStyle: 'font-size: 1.2em; margin-top: 5px;',
+                                labelStyle: 'font-size: 1.2em; margin-top: 15px;',
                                 fieldStyle: {
                                     'padding': '10px;',
                                     'fontSize' : '30px'
