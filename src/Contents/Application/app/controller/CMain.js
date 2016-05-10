@@ -679,7 +679,8 @@ App.controller.define('CMain', {
         var mobileId = App.get('VMobile textfield#Peripherique').getValue();
 
         if(mobileId != ''){
-            Auth.login(function(user) {
+            		var user=Auth.User;
+
 
                 var UId = user.uid;
 
@@ -721,7 +722,7 @@ App.controller.define('CMain', {
                         App.get('VMobile label#LabelError').setText('Code incorrect.');
                     }
                 });
-            });
+
         } else {
             App.get('VMobile label#LabelError').el.setStyle({"color":"red"});
             App.get('VMobile label#LabelError').setText('Champ Obligatoire.');
