@@ -31,8 +31,15 @@ App.view.define('VForm1',{
 				scale: "large",
 				iconAlign: "top",
 				iconCls: "favori"
+			},
+			{
+				xtype:"button",
+				itemId: "b_excel",
+				text: "Exporter",
+				scale: "large",
+				iconAlign: "top",
+				iconCls: "xls"
 			}
-
 		],
 		features: [
 		{
