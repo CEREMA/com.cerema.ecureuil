@@ -65,7 +65,8 @@
     ],
     "packages": [
         "nodemailer",
-        "nodemailer-smtp-transport"
+        "nodemailer-smtp-transport",
+        "xlsx"
     ],
     "icon": {
         "background": "#FFFFFF",
