@@ -160,35 +160,37 @@ App.controller.define('CMain', {
     },
 	grid_oncontextmenu: function(view, record, item, index, e) {
         e.stopEvent();
-		Auth.login(function(user) {
-			App.AO.getProfil(user.mail, function(err, r) {
-				if (r.result.length<=0) return;
-				var gridMenu = Ext.create('Ext.menu.Menu', {
-					items: [{
-						text: 'Supprimer',
-						handler: function() {
-							Ext.MessageBox.show({
-							   title:"Supprimer l'appel d'offre",
-							   msg: "Vous êtes sur le point de supprimer cet appel d'offre. Voulez vous continuer ?",
-							   buttons: Ext.MessageBox.YESNOCANCEL,
-							   fn: function(btn) {
-									if (btn=="yes") {
-										App.AO.del(record.data.IdAppelOffre,function(err,r){
-											view.getStore().load();
-											App.notify("L'appel d'offre a été supprimé");
-										});									
-									}
-							   },
-							   animateTarget: 'mb4',
-							   icon: Ext.MessageBox.QUESTION
-							});
-						}
+		
+		var user=Auth.User;
 
-					}]
-				});
-				gridMenu.showAt(e.getXY());				
+		App.AO.getProfil(user.mail, function(err, r) {
+			if (r.result.length<=0) return;
+			var gridMenu = Ext.create('Ext.menu.Menu', {
+				items: [{
+					text: 'Supprimer',
+					handler: function() {
+						Ext.MessageBox.show({
+						   title:"Supprimer l'appel d'offre",
+						   msg: "Vous êtes sur le point de supprimer cet appel d'offre. Voulez vous continuer ?",
+						   buttons: Ext.MessageBox.YESNOCANCEL,
+						   fn: function(btn) {
+								if (btn=="yes") {
+									App.AO.del(record.data.IdAppelOffre,function(err,r){
+										view.getStore().load();
+										App.notify("L'appel d'offre a été supprimé");
+									});									
+								}
+						   },
+						   animateTarget: 'mb4',
+						   icon: Ext.MessageBox.QUESTION
+						});
+					}
+
+				}]
 			});
+			gridMenu.showAt(e.getXY());				
 		});
+
 		
     },
     button_exit_onclick: function() {
@@ -201,34 +203,35 @@ App.controller.define('CMain', {
     //Permet le double click sur un appelOffre et recupere les données 
     grid_dblclick: function(p, record) {
 
-        Auth.login(function(user) {
-            App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
-                if(e.success){
+        var user=Auth.User;
 
-                    var favoris = null;
-                    var check = true;
-                    var idAppelOffre = record.data.IdAppelOffre;
+		App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
+			if(e.success){
 
-                    if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
+				var favoris = null;
+				var check = true;
+				var idAppelOffre = record.data.IdAppelOffre;
 
-                        favoris = JSON.parse(e.data[0].Favoris);
+				if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
 
-                        for(var i = 0 ; i < favoris.length && check ; i++){
-                            if(favoris[i].IdAppelOffre == idAppelOffre){
-                                check = false;
-                            }
-                        }
-                    }
-                    
-                    if(check){
-                        App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
-                        App.get('button#ajouter_favoris').show();
-                    } else {
-                        App.get('button#ajouter_favoris').hide();
-                    }
-                }
-            });
-        });
+					favoris = JSON.parse(e.data[0].Favoris);
+
+					for(var i = 0 ; i < favoris.length && check ; i++){
+						if(favoris[i].IdAppelOffre == idAppelOffre){
+							check = false;
+						}
+					}
+				}
+
+				if(check){
+					App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
+					App.get('button#ajouter_favoris').show();
+				} else {
+					App.get('button#ajouter_favoris').hide();
+				}
+			}
+		});
+
 
         OP = false;
 
@@ -236,113 +239,115 @@ App.controller.define('CMain', {
             modal: true,
 			listeners: {
 				show: function() {
-					Auth.login(function(user) {
-						App.AO.getProfil(user.mail, function(err, r) {
-							
-							if (r.result.length > 0) {
+					
+					var user=Auth.User;
 
-								App.get('TForm2').setTitle('Modifier un enregistrement');
-								App.get('combo#cboNom').setValue(record.data.IdSource);
-								
-								App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
-									try {
-										var t=JSON.parse(r.result.data[0].value);
-										App.get('grid#grid1').getStore().loadRawData(t);
-									}catch(e) {}
-								});
-								
-								App.get('combo#cboType').setValue(record.data.IdConsultation);
-								App.get('textfield#objet').setValue(record.data.Objet);
-								App.get('textfield#client').setValue(record.data.Client);
-								App.get('textfield#observations').setValue(record.data.Observation);
-								App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
-								if (record.data.Keywords) App.get('boxselect#Keywords').setValue(JSON.parse(record.data.Keywords));
-								
+					App.AO.getProfil(user.mail, function(err, r) {
+
+						if (r.result.length > 0) {
+
+							App.get('TForm2').setTitle('Modifier un enregistrement');
+							App.get('combo#cboNom').setValue(record.data.IdSource);
+
+							App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
 								try {
-									var tab = record.data.IdDepartement.split(',');
-								} catch (e) {
-									var tab = [];
-									tab.push(record.data.IdDepartement);
-								};
-								var tabx = [];
-								for (var i = 0; i < tab.length; i++) {
-									tabx.push(parseInt(tab[i]));
-								};
-								
-								App.get('boxselect#cboDepartement').setValue(tabx);
-								App.get('datefield#date').setValue(record.data.DateParution);
-								App.get('datefield#date_limite').setValue(record.data.DateLimite);
-								App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
-								App.get('textfield#numero_semaine').setValue(record.data.Semaine);
-								App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-								App.get('combo#cboThematique').setValue(record.data.IdThematique);
-								if (App.get('combo#cboDomaine').getValue() == 0) {
-									App.get('combo#cboDomaine').setValue('');
-								};
-								App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-								App.get('combo#cboThematique').getStore().load();
+									var t=JSON.parse(r.result.data[0].value);
+									App.get('grid#grid1').getStore().loadRawData(t);
+								}catch(e) {}
+							});
 
-								AO_ID = record.data.IdAppelOffre;
+							App.get('combo#cboType').setValue(record.data.IdConsultation);
+							App.get('textfield#objet').setValue(record.data.Objet);
+							App.get('textfield#client').setValue(record.data.Client);
+							App.get('textfield#observations').setValue(record.data.Observation);
+							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+							if (record.data.Keywords) App.get('boxselect#Keywords').setValue(JSON.parse(record.data.Keywords));
 
-							} else {
-								AO_ID = record.data.IdAppelOffre;
-								App.get('TForm2').setTitle('Appel d\'offre');
-								App.get('panel#regroupement_hboxGrid1').hide();
-								App.get('uploadfilemanager#up').setReadOnly(true);
-								App.get('combo#cboNom').setReadOnly(true);
-								App.get('combo#cboType').setReadOnly(true);
-								App.get('boxselect#cboDepartement').setReadOnly(true);
-								App.get('datefield#date').setReadOnly(true);
-								App.get('datefield#date_limite').setReadOnly(true);
-								App.get('button#effacer_saisie').hide();
-								App.get('button#valider_saisie').hide();
-								App.get('textfield#client').setReadOnly(true);
-								App.get('textarea#objet').setReadOnly(true);
-								App.get('textarea#observations').setReadOnly(true);
-								App.get('combo#cboDomaine').setReadOnly(true);
-								App.get('combo#cboThematique').setReadOnly(true);
-								App.get('combo#cboCode').setReadOnly(true);
-								App.get('TForm2 boxselect#Keywords').setReadOnly(true);
-								App.get('TForm2 button#add_keyword').hide();
-								App.get('combo#cboNom').setValue(record.data.IdSource);
-								App.get('combo#cboType').setValue(record.data.IdConsultation);
-								App.get('textfield#objet').setValue(record.data.Objet);
-								App.get('textfield#client').setValue(record.data.Client);
-								App.get('textfield#observations').setValue(record.data.Observation);
+							try {
+								var tab = record.data.IdDepartement.split(',');
+							} catch (e) {
+								var tab = [];
+								tab.push(record.data.IdDepartement);
+							};
+							var tabx = [];
+							for (var i = 0; i < tab.length; i++) {
+								tabx.push(parseInt(tab[i]));
+							};
 
-								App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+							App.get('boxselect#cboDepartement').setValue(tabx);
+							App.get('datefield#date').setValue(record.data.DateParution);
+							App.get('datefield#date_limite').setValue(record.data.DateLimite);
+							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
+							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
+							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
+							App.get('combo#cboThematique').setValue(record.data.IdThematique);
+							if (App.get('combo#cboDomaine').getValue() == 0) {
+								App.get('combo#cboDomaine').setValue('');
+							};
+							App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+							App.get('combo#cboThematique').getStore().load();
 
-								try {
-									var tab = record.data.IdDepartement.split(',');
-								} catch (e) {
-									var tab = [];
-									tab.push(record.data.IdDepartement);
-								};
-								var tabx = [];
-								for (var i = 0; i < tab.length; i++) {
-									tabx.push(parseInt(tab[i]));
-								};
-								App.get('boxselect#cboDepartement').setValue(tabx);
-								App.get('boxselect#cboDepartement').getStore().on('load', function() {
-									
-								});
-								App.get('datefield#date').setValue(record.data.DateParution);
-								App.get('datefield#date_limite').setValue(record.data.DateLimite);
+							AO_ID = record.data.IdAppelOffre;
 
-								App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
-								App.get('textfield#numero_semaine').setValue(record.data.Semaine);
-								App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-								App.get('combo#cboThematique').setValue(record.data.IdThematique);
-								if (App.get('combo#cboDomaine').getValue() == 0) {
-									App.get('combo#cboDomaine').setValue('');
-								}
-								App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-								App.get('combo#cboThematique').getStore().load();
+						} else {
+							AO_ID = record.data.IdAppelOffre;
+							App.get('TForm2').setTitle('Appel d\'offre');
+							App.get('panel#regroupement_hboxGrid1').hide();
+							App.get('uploadfilemanager#up').setReadOnly(true);
+							App.get('combo#cboNom').setReadOnly(true);
+							App.get('combo#cboType').setReadOnly(true);
+							App.get('boxselect#cboDepartement').setReadOnly(true);
+							App.get('datefield#date').setReadOnly(true);
+							App.get('datefield#date_limite').setReadOnly(true);
+							App.get('button#effacer_saisie').hide();
+							App.get('button#valider_saisie').hide();
+							App.get('textfield#client').setReadOnly(true);
+							App.get('textarea#objet').setReadOnly(true);
+							App.get('textarea#observations').setReadOnly(true);
+							App.get('combo#cboDomaine').setReadOnly(true);
+							App.get('combo#cboThematique').setReadOnly(true);
+							App.get('combo#cboCode').setReadOnly(true);
+							App.get('TForm2 boxselect#Keywords').setReadOnly(true);
+							App.get('TForm2 button#add_keyword').hide();
+							App.get('combo#cboNom').setValue(record.data.IdSource);
+							App.get('combo#cboType').setValue(record.data.IdConsultation);
+							App.get('textfield#objet').setValue(record.data.Objet);
+							App.get('textfield#client').setValue(record.data.Client);
+							App.get('textfield#observations').setValue(record.data.Observation);
 
+							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+
+							try {
+								var tab = record.data.IdDepartement.split(',');
+							} catch (e) {
+								var tab = [];
+								tab.push(record.data.IdDepartement);
+							};
+							var tabx = [];
+							for (var i = 0; i < tab.length; i++) {
+								tabx.push(parseInt(tab[i]));
+							};
+							App.get('boxselect#cboDepartement').setValue(tabx);
+							App.get('boxselect#cboDepartement').getStore().on('load', function() {
+
+							});
+							App.get('datefield#date').setValue(record.data.DateParution);
+							App.get('datefield#date_limite').setValue(record.data.DateLimite);
+
+							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
+							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
+							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
+							App.get('combo#cboThematique').setValue(record.data.IdThematique);
+							if (App.get('combo#cboDomaine').getValue() == 0) {
+								App.get('combo#cboDomaine').setValue('');
 							}
-						});
+							App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+							App.get('combo#cboThematique').getStore().load();
+
+						}
 					});
-				
+
+
 				}
 			}
         }).show().center();
@@ -417,35 +422,35 @@ App.controller.define('CMain', {
 
     },
     AjoutFavori: function(obj){
-        Auth.login(function(user) {
-            App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
-                if(e.success){
+		var user=Auth.User;
 
-                    var favoris = null;
+		App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
+			if(e.success){
 
-                    if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
-                        favoris = JSON.parse(e.data[0].Favoris);
-                    } else {
-                        favoris = [];
-                    }
+				var favoris = null;
 
-                    App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
-                        if(e.success){
-                            favoris.push(e.data[0]);
-                            App.DB.post('gestionao2://favoris',{
-                                UId: user.uid,
-                                Favoris: favoris,
-                                LastUpdate: new Date()
-                            },function(e,r) {
-                                if(e.affectedRows == 1){
-                                    App.get('button#ajouter_favoris').hide();
-                                }
-                            });
-                        }
-                    });
-                }
-            });
-        });
+				if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
+					favoris = JSON.parse(e.data[0].Favoris);
+				} else {
+					favoris = [];
+				}
+
+				App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
+					if(e.success){
+						favoris.push(e.data[0]);
+						App.DB.post('gestionao2://favoris',{
+							UId: user.uid,
+							Favoris: favoris,
+							LastUpdate: new Date()
+						},function(e,r) {
+							if(e.affectedRows == 1){
+								App.get('button#ajouter_favoris').hide();
+							}
+						});
+					}
+				});
+			}
+		});
     },
     SuppressionFavori: function(obj){
         var me = this;
@@ -463,36 +468,35 @@ App.controller.define('CMain', {
             buttons: Ext.Msg.YESNOCANCEL,
             fn: function(btn) {
                 if (btn === 'yes') {
-                    Auth.login(function(user) {
-                        App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
-                            if(e.success){
-                                var appelOffre = JSON.parse(e.data[0].Favoris);
-                                var newAppelOffre = [];
-                                for(var i = 0 ; i < appelOffre.length ; i++){
-                                    if(appelOffre[i].IdAppelOffre != idAppelOffre){
-                                        newAppelOffre.push(appelOffre[i]);
-                                    }
-                                }
-                                if(newAppelOffre.length > 0){
-                                    newAppelOffre = JSON.stringify(newAppelOffre);
-                                } else {
-                                    newAppelOffre = null;
-                                }
-                                App.DB.post('gestionao2://favoris',{
-                                    UId: user.uid,
-                                    Favoris: newAppelOffre,
-                                    LastUpdate: new Date()
-                                },function(e,r) {
-                                    if(e.affectedRows == 1){
-                                        if(App.get('VAppelOffreFavoris')){
-                                            App.get('VAppelOffreFavoris').close();
-                                        }
-                                        me.LoadFavoris();
-                                    }
-                                });
-                            }
-                        });
-                    });
+					var user=Auth.User;
+					App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
+						if(e.success){
+							var appelOffre = JSON.parse(e.data[0].Favoris);
+							var newAppelOffre = [];
+							for(var i = 0 ; i < appelOffre.length ; i++){
+								if(appelOffre[i].IdAppelOffre != idAppelOffre){
+									newAppelOffre.push(appelOffre[i]);
+								}
+							}
+							if(newAppelOffre.length > 0){
+								newAppelOffre = JSON.stringify(newAppelOffre);
+							} else {
+								newAppelOffre = null;
+							}
+							App.DB.post('gestionao2://favoris',{
+								UId: user.uid,
+								Favoris: newAppelOffre,
+								LastUpdate: new Date()
+							},function(e,r) {
+								if(e.affectedRows == 1){
+									if(App.get('VAppelOffreFavoris')){
+										App.get('VAppelOffreFavoris').close();
+									}
+									me.LoadFavoris();
+								}
+							});
+						}
+					});
                 }
             }
         });
@@ -505,110 +509,108 @@ App.controller.define('CMain', {
             modal: true,
             listeners: {
                 show: function() {
-                    Auth.login(function(user) {
-                        App.AO.getProfil(user.mail, function(err, r) {
-                            
-                            if (r.result.length > 0) {
+					var user=Auth.User;	
+					App.AO.getProfil(user.mail, function(err, r) {
 
-                                App.get('combo#cboNom').setValue(record.data.IdSource);
-                                
-                                App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
-                                    try {
-                                        var t=JSON.parse(r.result.data[0].value);
-                                        App.get('grid#grid1').getStore().loadRawData(t);
-                                    }catch(e) {}
-                                });
-                                
-                                App.get('combo#cboType').setValue(record.data.IdConsultation);
-                                App.get('textfield#objet').setValue(record.data.Objet);
-                                App.get('textfield#client').setValue(record.data.Client);
-                                App.get('textfield#observations').setValue(record.data.Observation);
-                                App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
-                                if (record.data.Keywords) App.get('boxselect#Keywords').setValue(JSON.parse(record.data.Keywords));
-                                
-                                try {
-                                    var tab = record.data.IdDepartement.split(',');
-                                } catch (e) {
-                                    var tab = [];
-                                    tab.push(record.data.IdDepartement);
-                                };
-                                var tabx = [];
-                                for (var i = 0; i < tab.length; i++) {
-                                    tabx.push(parseInt(tab[i]));
-                                };
-                                
-                                App.get('boxselect#cboDepartement').setValue(tabx);
-                                App.get('datefield#date').setValue(record.data.DateParution);
-                                App.get('datefield#date_limite').setValue(record.data.DateLimite);
-                                App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
-                                App.get('textfield#numero_semaine').setValue(record.data.Semaine);
-                                App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-                                App.get('combo#cboThematique').setValue(record.data.IdThematique);
-                                if (App.get('combo#cboDomaine').getValue() == 0) {
-                                    App.get('combo#cboDomaine').setValue('');
-                                };
-                                App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-                                App.get('combo#cboThematique').getStore().load();
+						if (r.result.length > 0) {
 
-                                AO_ID = record.data.IdAppelOffre;
+							App.get('combo#cboNom').setValue(record.data.IdSource);
 
-                            } else {
-                                AO_ID = record.data.IdAppelOffre;
-                                App.get('VAppelOffreFavoris').setTitle('Appel d\'offre');
-                                App.get('panel#regroupement_hboxGrid1').hide();
-                                App.get('uploadfilemanager#up').setReadOnly(true);
-                                App.get('combo#cboNom').setReadOnly(true);
-                                App.get('combo#cboType').setReadOnly(true);
-                                App.get('boxselect#cboDepartement').setReadOnly(true);
-                                App.get('datefield#date').setReadOnly(true);
-                                App.get('datefield#date_limite').setReadOnly(true);
-                                App.get('textfield#client').setReadOnly(true);
-                                App.get('textarea#objet').setReadOnly(true);
-                                App.get('textarea#observations').setReadOnly(true);
-                                App.get('combo#cboDomaine').setReadOnly(true);
-                                App.get('combo#cboThematique').setReadOnly(true);
-                                App.get('combo#cboCode').setReadOnly(true);
-                                App.get('VAppelOffreFavoris boxselect#Keywords').setReadOnly(true);
-                                App.get('VAppelOffreFavoris button#add_keyword').hide();
-                                App.get('combo#cboNom').setValue(record.data.IdSource);
-                                App.get('combo#cboType').setValue(record.data.IdConsultation);
-                                App.get('textfield#objet').setValue(record.data.Objet);
-                                App.get('textfield#client').setValue(record.data.Client);
-                                App.get('textfield#observations').setValue(record.data.Observation);
+							App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
+								try {
+									var t=JSON.parse(r.result.data[0].value);
+									App.get('grid#grid1').getStore().loadRawData(t);
+								}catch(e) {}
+							});
 
-                                App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+							App.get('combo#cboType').setValue(record.data.IdConsultation);
+							App.get('textfield#objet').setValue(record.data.Objet);
+							App.get('textfield#client').setValue(record.data.Client);
+							App.get('textfield#observations').setValue(record.data.Observation);
+							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+							if (record.data.Keywords) App.get('boxselect#Keywords').setValue(JSON.parse(record.data.Keywords));
 
-                                try {
-                                    var tab = record.data.IdDepartement.split(',');
-                                } catch (e) {
-                                    var tab = [];
-                                    tab.push(record.data.IdDepartement);
-                                };
-                                var tabx = [];
-                                for (var i = 0; i < tab.length; i++) {
-                                    tabx.push(parseInt(tab[i]));
-                                };
-                                App.get('boxselect#cboDepartement').setValue(tabx);
-                                App.get('boxselect#cboDepartement').getStore().on('load', function() {
-                                    
-                                });
-                                App.get('datefield#date').setValue(record.data.DateParution);
-                                App.get('datefield#date_limite').setValue(record.data.DateLimite);
+							try {
+								var tab = record.data.IdDepartement.split(',');
+							} catch (e) {
+								var tab = [];
+								tab.push(record.data.IdDepartement);
+							};
+							var tabx = [];
+							for (var i = 0; i < tab.length; i++) {
+								tabx.push(parseInt(tab[i]));
+							};
 
-                                App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
-                                App.get('textfield#numero_semaine').setValue(record.data.Semaine);
-                                App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-                                App.get('combo#cboThematique').setValue(record.data.IdThematique);
-                                if (App.get('combo#cboDomaine').getValue() == 0) {
-                                    App.get('combo#cboDomaine').setValue('');
-                                }
-                                App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-                                App.get('combo#cboThematique').getStore().load();
+							App.get('boxselect#cboDepartement').setValue(tabx);
+							App.get('datefield#date').setValue(record.data.DateParution);
+							App.get('datefield#date_limite').setValue(record.data.DateLimite);
+							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
+							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
+							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
+							App.get('combo#cboThematique').setValue(record.data.IdThematique);
+							if (App.get('combo#cboDomaine').getValue() == 0) {
+								App.get('combo#cboDomaine').setValue('');
+							};
+							App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+							App.get('combo#cboThematique').getStore().load();
 
-                            }
-                        });
-                    });
-                
+							AO_ID = record.data.IdAppelOffre;
+
+						} else {
+							AO_ID = record.data.IdAppelOffre;
+							App.get('VAppelOffreFavoris').setTitle('Appel d\'offre');
+							App.get('panel#regroupement_hboxGrid1').hide();
+							App.get('uploadfilemanager#up').setReadOnly(true);
+							App.get('combo#cboNom').setReadOnly(true);
+							App.get('combo#cboType').setReadOnly(true);
+							App.get('boxselect#cboDepartement').setReadOnly(true);
+							App.get('datefield#date').setReadOnly(true);
+							App.get('datefield#date_limite').setReadOnly(true);
+							App.get('textfield#client').setReadOnly(true);
+							App.get('textarea#objet').setReadOnly(true);
+							App.get('textarea#observations').setReadOnly(true);
+							App.get('combo#cboDomaine').setReadOnly(true);
+							App.get('combo#cboThematique').setReadOnly(true);
+							App.get('combo#cboCode').setReadOnly(true);
+							App.get('VAppelOffreFavoris boxselect#Keywords').setReadOnly(true);
+							App.get('VAppelOffreFavoris button#add_keyword').hide();
+							App.get('combo#cboNom').setValue(record.data.IdSource);
+							App.get('combo#cboType').setValue(record.data.IdConsultation);
+							App.get('textfield#objet').setValue(record.data.Objet);
+							App.get('textfield#client').setValue(record.data.Client);
+							App.get('textfield#observations').setValue(record.data.Observation);
+
+							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+
+							try {
+								var tab = record.data.IdDepartement.split(',');
+							} catch (e) {
+								var tab = [];
+								tab.push(record.data.IdDepartement);
+							};
+							var tabx = [];
+							for (var i = 0; i < tab.length; i++) {
+								tabx.push(parseInt(tab[i]));
+							};
+							App.get('boxselect#cboDepartement').setValue(tabx);
+							App.get('boxselect#cboDepartement').getStore().on('load', function() {
+
+							});
+							App.get('datefield#date').setValue(record.data.DateParution);
+							App.get('datefield#date_limite').setValue(record.data.DateLimite);
+
+							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
+							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
+							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
+							App.get('combo#cboThematique').setValue(record.data.IdThematique);
+							if (App.get('combo#cboDomaine').getValue() == 0) {
+								App.get('combo#cboDomaine').setValue('');
+							}
+							App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+							App.get('combo#cboThematique').getStore().load();
+
+						}
+					});
                 }
             }
         }).show().center();
@@ -617,7 +619,8 @@ App.controller.define('CMain', {
     },
     LoadFavoris: function(){
 
-        Auth.login(function(user) {
+        		var user=Auth.User;
+
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
                 if(e.success){
@@ -649,7 +652,7 @@ App.controller.define('CMain', {
                     App.get('TFavoris grid#AO').getStore().load();
                 }
             });
-        });
+
       
     },
     ShowFavoris: function(){
