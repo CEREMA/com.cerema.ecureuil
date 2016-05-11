@@ -27,7 +27,7 @@ App.view.define('VCommunes', {
 			title: 'Main Content',
 			collapsible: false,
 			region:'center',
-			html: '<div style="background-color:red" width="350px" height="350px" id="TMapPanel">xxxx</div>',
+			html: '<div style="background-color:red" width="100%" height="100%" id="TMapPanel">xxxx</div>',
 			margins: '5 0 0 0'
 		}        
 		];
