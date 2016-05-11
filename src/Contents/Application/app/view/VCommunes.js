@@ -28,7 +28,8 @@ App.view.define('VCommunes', {
 			collapsible: false,
 			region:'center',
 			html: '<div style="background-color:red" width="100%" height="100%" id="TMapPanel">xxxx</div>',
-			margins: '5 0 0 0'
+			margins: '5 0 0 0',
+			height: "100%"
 		}        
 		];
         this.bbar = [ 
