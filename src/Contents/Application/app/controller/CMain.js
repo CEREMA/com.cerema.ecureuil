@@ -1198,7 +1198,8 @@ App.controller.define('CMain', {
             });
         } else {
             Auth.login(function(user) {
-                //console.log(user);
+                console.log(user);
+				console.log(Auth.User);
                 App.AO.getProfil(user.mail, function(err, r) {
                     App.get('TForm1 grid#AO').getStore().load();
                     if (r.result.length > 0) App.get('button#ajouter_modification').show();
