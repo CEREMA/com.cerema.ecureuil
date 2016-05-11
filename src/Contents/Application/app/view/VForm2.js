@@ -345,7 +345,38 @@ App.view.define('VForm2', {
                         autoLoad: true
                     })
 
-                }]
+                },
+				{
+					layout:"hbox",
+					width: "100%",
+					items: [
+						{
+							xtype: "combo",
+							itemId: "cboCommunes",
+							margin: {
+								left: 30
+							},
+							fieldLabel: "Communes",
+							allowBlank: false,
+							editable: false,
+							labelAlign: "top",
+							labelWidth: 200,
+							width: 200,
+							displayField: "nom_thematique",
+							valueField: "id_thematique",
+							store: App.store.create('App.AO.getCommunes', {
+								autoLoad: false
+							})
+                		},
+						{
+							xtype: "button",
+							text: "Ajouter",
+							handler: function() {
+								App.view.create('VCommunes',{modal: true}).show();
+							}
+						}
+					]
+				}]
             },
 
 
