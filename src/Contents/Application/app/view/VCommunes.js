@@ -22,6 +22,7 @@ App.view.define('VCommunes', {
 			width: 175,
 			minSize: 100,
 			maxSize: 250,
+			height: 350,
 			html: '<div width="100%" height="100%" id="TMapPanel"></div>'
 		},{
 			title: 'Main Content',
