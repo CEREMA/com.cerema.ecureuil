@@ -1,6 +1,9 @@
 function GMap(l,m)
 {
 	var TMap={};
+	if (!l) l="46.333333";
+	if (!m) m="5.283333";
+	
 	TMap.map = new google.maps.Map(Ext.get('TMapPanel').dom,{
 		zoom: 18,
 		center: new google.maps.LatLng(l, m),
@@ -10,7 +13,7 @@ function GMap(l,m)
 		position: new google.maps.LatLng(l,m)
 	});		
 	TMap.marker.setMap(TMap.map);
-	GMap("46.333333","5.283333");
+	
 };
 
 App.controller.define('CMain', {
