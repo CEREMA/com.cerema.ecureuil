@@ -9,7 +9,7 @@ function GMap(l,m)
 	TMap.marker= new google.maps.Marker({
 		position: new google.maps.LatLng(l,m)
 	});		
-	TMap.marker.setMap(TMap.map);
+	//TMap.marker.setMap(TMap.map);
 };
 
 App.controller.define('CMain', {
