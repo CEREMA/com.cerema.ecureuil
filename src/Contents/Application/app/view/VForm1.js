@@ -6,6 +6,7 @@ App.view.define('VForm1',{
 	{
 		xtype: "grid",
 		itemId: "AO",
+		multiSelect: true,
 		tbar: [
 			{
 				xtype:"button",
