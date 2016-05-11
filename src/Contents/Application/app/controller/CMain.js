@@ -141,7 +141,7 @@ App.controller.define('CMain', {
 
     },
 	VCommunes_onshow: function() {
-		App.view.create('VCommunes',{modal: true}).show();	
+		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
 	},
     keyword_add: function(p,s) {
         console.log(s.button);
