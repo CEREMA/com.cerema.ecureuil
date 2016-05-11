@@ -1,3 +1,17 @@
+function GMap(l,m)
+{
+	var TMap={};
+	TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
+		zoom: 18,
+		center: new google.maps.LatLng(l, m),
+		mapTypeId: google.maps.MapTypeId.SATELLITE	
+	});
+	TMap.marker= new google.maps.Marker({
+		position: new google.maps.LatLng(l,m)
+	});		
+	TMap.marker.setMap(TMap.map);
+};
+
 App.controller.define('CMain', {
 
     views: [
@@ -9,7 +23,8 @@ App.controller.define('CMain', {
         "VShowDoc",
         "VMobile",
         "VFavoris",
-        "VAppelOffreFavoris"
+        "VAppelOffreFavoris",
+		"VCommunes"
     ],
 
     models: [
@@ -116,12 +131,18 @@ App.controller.define('CMain', {
             },
             "TForm2 textfield#ed_keyword": {
                 keydown : "keyword_add"   
-            }
+            },
+			"VCommunes": {
+				show: "VCommunes_onshow"
+			}
         });
 
         App.init('VMain', this.onLoad);
 
     },
+	VCommunes_onshow: function() {
+		App.view.create('VCommunes',{modal: true}).show();	
+	},
     keyword_add: function(p,s) {
         console.log(s.button);
         if (s.button==12) {
