@@ -6,15 +6,9 @@ App.view.define('VCommunes', {
         this.height = 868;
         this.title = "Consultation de l'appel d'offre";
         this.bodyCls = "white";
-		this.layout="border";
+		this.layout="fit";
         this.items = [
 		{
-			region: 'south',
-			height: 50,
-			minSize: 50,
-			maxSize: 50,
-			cmargins: '5 0 0 0'
-		},{
 			title: 'Main Content',
 			collapsible: false,
 			region:'center',
