@@ -32,7 +32,7 @@ App.view.define('VCommunes', {
 { 
       xtype: 'component', 
       // some long html to demonstrate scrolling
-      html: '<div style="background-color:red" width="100%" height="100%" id="TMapPanel">&nbsp;</div>'
+      html: '<div style="background-color:red" width="100%" height="600px" id="TMapPanel">&nbsp;</div>'
     }			]
 		}        
 		];
