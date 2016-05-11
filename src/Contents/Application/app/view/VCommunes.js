@@ -9,9 +9,6 @@ App.view.define('VCommunes', {
 		this.layout="fit";
         this.items = [
 		{
-			title: 'Main Content',
-			collapsible: false,
-			region:'center',
 			layout: "fit",
 			items: [
 { 
