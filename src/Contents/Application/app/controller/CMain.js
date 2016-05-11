@@ -10,6 +10,7 @@ function GMap(l,m)
 		position: new google.maps.LatLng(l,m)
 	});		
 	TMap.marker.setMap(TMap.map);
+	GMap("46.333333","5.283333");
 };
 
 App.controller.define('CMain', {
