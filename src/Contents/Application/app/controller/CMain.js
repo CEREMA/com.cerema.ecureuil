@@ -142,7 +142,7 @@ App.controller.define('CMain', {
 
     },
 	VCommunes_onshow: function() {
-		App.loadAPI("https://maps.googleapis.com/maps/api/js?sensor=false&callback=GMap");
+		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
 	},
     keyword_add: function(p,s) {
         console.log(s.button);
