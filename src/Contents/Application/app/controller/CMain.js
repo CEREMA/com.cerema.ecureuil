@@ -1,15 +1,15 @@
 function GMap(l,m)
 {
-	/*var TMap={};
-	TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
+	var TMap={};
+	TMap.map = new google.maps.Map(Ext.get('#TMapPanel').dom,{
 		zoom: 18,
 		center: new google.maps.LatLng(l, m),
 		mapTypeId: google.maps.MapTypeId.SATELLITE	
 	});
 	TMap.marker= new google.maps.Marker({
 		position: new google.maps.LatLng(l,m)
-	});*/		
-	//TMap.marker.setMap(TMap.map);
+	});		
+	TMap.marker.setMap(TMap.map);
 };
 
 App.controller.define('CMain', {
