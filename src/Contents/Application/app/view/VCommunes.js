@@ -15,15 +15,6 @@ App.view.define('VCommunes', {
 			maxSize: 50,
 			cmargins: '5 0 0 0'
 		},{
-			title: 'Navigation',
-			region:'east',
-			margins: '5 0 0 0',
-			cmargins: '5 5 0 0',
-			width: 175,
-			minSize: 100,
-			maxSize: 250,
-			height: 350
-		},{
 			title: 'Main Content',
 			collapsible: false,
 			region:'center',
