@@ -1,7 +1,7 @@
 function GMap(l,m)
 {
 	var TMap={};
-	TMap.map = new google.maps.Map(Ext.get('#TMapPanel').dom,{
+	TMap.map = new google.maps.Map(Ext.get('TMapPanel').dom,{
 		zoom: 18,
 		center: new google.maps.LatLng(l, m),
 		mapTypeId: google.maps.MapTypeId.SATELLITE	
