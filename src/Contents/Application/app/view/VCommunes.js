@@ -27,9 +27,13 @@ App.view.define('VCommunes', {
 			title: 'Main Content',
 			collapsible: false,
 			region:'center',
-			html: '<div style="background-color:red" width="100%" height="100%" id="TMapPanel">xxxx</div>',
-			height: "100%",
-			width: "100%"
+			layout: "fit",
+			items: [
+{ 
+      xtype: 'component', 
+      // some long html to demonstrate scrolling
+      html: '<div style="background-color:red" width="100%" height="100%" id="TMapPanel">&nbsp;</div>'
+    }			]
 		}        
 		];
         this.bbar = [ 
