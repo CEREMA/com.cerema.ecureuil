@@ -1133,8 +1133,6 @@ App.controller.define('CMain', {
         var loc = document.location.href.split('?appelOffre=');
         lien = document.location.href.split('?')[0];
 		
-		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
-		
         if (loc.length > 1) {
             profil = parseInt(document.location.href.split('?appelOffre=')[1].trim());
             App.AO.get(profil, function(response) {
