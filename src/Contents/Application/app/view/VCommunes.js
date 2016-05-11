@@ -4,7 +4,7 @@ App.view.define('VCommunes', {
     initComponent: function() {
         this.width = 800;
         this.height = 650;
-        this.title = "Consultation de l'appel d'offre";
+        this.title = "Communes";
         this.bodyCls = "white";
 		this.layout="border";
         this.items = [
@@ -17,8 +17,6 @@ App.view.define('VCommunes', {
 		},{
 			title: 'Communes',
 			region:'east',
-			margins: '5 0 0 0',
-			cmargins: '5 5 0 0',
 			width: 175,
 			minSize: 100,
 			maxSize: 250,
