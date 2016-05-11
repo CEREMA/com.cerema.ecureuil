@@ -21,13 +21,13 @@ App.view.define('VCommunes', {
 			cmargins: '5 5 0 0',
 			width: 175,
 			minSize: 100,
-			maxSize: 250
+			maxSize: 250,
+			html: '<div width="100%" height="100%" id="TMapPanel"></div>'
 		},{
 			title: 'Main Content',
 			collapsible: false,
 			region:'center',
-			margins: '5 0 0 0',
-			html: '<div width="100%" height="100%" id="TMapPanel"></div>'
+			margins: '5 0 0 0'
 		}        
 		];
         this.bbar = [ 
