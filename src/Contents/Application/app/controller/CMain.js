@@ -183,8 +183,9 @@ App.controller.define('CMain', {
         e.stopEvent();
 		
 		var user=Auth.User;
-
+		alert(user.mail);
 		App.AO.getProfil(user.mail, function(err, r) {
+			console.log(r);
 			if (r.result.length<=0) return;
 			var gridMenu = Ext.create('Ext.menu.Menu', {
 				items: [{
@@ -1198,8 +1199,6 @@ App.controller.define('CMain', {
             });
         } else {
             Auth.login(function(user) {
-                console.log(user);
-				console.log(Auth.User);
                 App.AO.getProfil(user.mail, function(err, r) {
                     App.get('TForm1 grid#AO').getStore().load();
                     if (r.result.length > 0) App.get('button#ajouter_modification').show();
