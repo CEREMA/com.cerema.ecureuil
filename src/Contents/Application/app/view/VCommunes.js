@@ -11,7 +11,7 @@ App.view.define('VCommunes', {
 		
 
 	{ 
-      html: '<div style="background-color:red" width="100%" height="600px" id="TMapPanel">&nbsp;</div>'
+    	id:"TMapPanel"
     }			
 		        
 		];
