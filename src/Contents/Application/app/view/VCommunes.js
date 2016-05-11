@@ -20,7 +20,7 @@ App.view.define('VCommunes', {
 			margins: '5 0 0 0',
 			cmargins: '5 5 0 0',
 			width: 175,
-			html: '<div width="350px" height="350px" id="TMapPanel"></div>',
+			html: '<div style="background-color:red" width="350px" height="350px" id="TMapPanel"></div>',
 			minSize: 100,
 			maxSize: 250,
 			height: 350
