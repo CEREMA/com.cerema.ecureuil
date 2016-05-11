@@ -20,10 +20,10 @@ App.view.define('VCommunes', {
 			margins: '5 0 0 0',
 			cmargins: '5 5 0 0',
 			width: 175,
+			html: '<div width="100%" height="100%" id="TMapPanel"></div>',
 			minSize: 100,
 			maxSize: 250,
-			height: 350,
-			html: '<div width="100%" height="100%" id="TMapPanel"></div>'
+			height: 350
 		},{
 			title: 'Main Content',
 			collapsible: false,
