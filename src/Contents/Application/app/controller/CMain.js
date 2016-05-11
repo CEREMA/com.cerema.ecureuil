@@ -1,6 +1,7 @@
 function GMap(l,m)
 {
 	var TMap={};
+	alert(document.getElementById('TMapPanel'));
 	TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
 		zoom: 18,
 		center: new google.maps.LatLng(l, m),
