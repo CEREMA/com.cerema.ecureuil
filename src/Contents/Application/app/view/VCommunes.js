@@ -26,7 +26,8 @@ App.view.define('VCommunes', {
 			title: 'Main Content',
 			collapsible: false,
 			region:'center',
-			margins: '5 0 0 0'
+			margins: '5 0 0 0',
+			html: '<div width="100%" height="100%" id="TMapPanel"></div>'
 		}        
 		];
         this.bbar = [ 
