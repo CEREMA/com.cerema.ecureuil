@@ -150,7 +150,7 @@ App.controller.define('CMain', {
                     var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
                     if (s) s=s[0].data;
                     App.get(p.up('window'),'grid#gridcom').getStore().add();
-                    var data=[];
+                    var data=App.get(p.up('window'),'grid#gridcom').getStore().getRange();
                     data.push({
                         id: s.id,
                         commune: s.nom_commune 
