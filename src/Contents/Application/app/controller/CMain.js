@@ -138,7 +138,13 @@ App.controller.define('CMain', {
             },
 			"VCommunes": {
 				show: "VCommunes_onshow"
-			}
+			},
+            "VCommunes ux-searchbox": {
+                keyup: function(me) {
+                    var search=me.getValue();
+                    alert(search);
+                }
+            }
         });
 
         App.init('VMain', this.onLoad);
