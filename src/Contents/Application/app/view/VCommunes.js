@@ -29,7 +29,7 @@ App.view.define('VCommunes', {
                 id: "TGridPanel",
                 xtype: "grid",
                 columns: [],
-                store: App.store.create({fields:[],data:[]})
+                store: App.store.create({fields:[],data:[]}),
                 height: 200
             },
             {
