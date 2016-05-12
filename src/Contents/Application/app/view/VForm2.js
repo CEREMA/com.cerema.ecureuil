@@ -9,51 +9,68 @@ App.view.define('VForm2', {
         this.layout = "border";
         this.items = [
             {
+                region:
+            }
+            {
                 region: "south",
                 width: 300,
                 layout: "fit",
                 border: false,
                 items: [
                 {
-                    xtype: "grid",
-                    itemId: "grid1",
-                    tbar: [{
-                            xtype: "button",
-                            text: "Ajouter groupe(s)",
-                            itemId: "ajouter_groupe"
-                        },
-                        {
-                            xtype: "button",
-                            text: "Ajouter agent(s)",
-                            itemId: "ajouter_agent"
-                        },
-                    ],
-                    columns: [{
-                            text: "Nom",
-                            width: 140,
-                            dataIndex: "Nom"
-                        }, {
-                            text: "Email",
-                            width: 185,
-                            dataIndex: "Email"
-                        }, {
-                            text: "Type",
-                            dataIndex: "Type",
-                            flex: 1
-                        },
-                    ],
-                    flex: 1,
-                    height: 160,
-                    store: App.store.create({
-                        fields: [
-                            "Nom",
-                            "Email",
-                            "Type"
+                    layout: "hbox",
+                    width: "100%",
+                    items: [
+                    {
+                        xtype: "grid",
+                        itemId: "grid1",
+                        flex: 1,
+                        tbar: [{
+                                xtype: "button",
+                                text: "Ajouter groupe(s)",
+                                itemId: "ajouter_groupe"
+                            },
+                            {
+                                xtype: "button",
+                                text: "Ajouter agent(s)",
+                                itemId: "ajouter_agent"
+                            },
                         ],
-                        data: []
-                    })
-                }                    
-                ]
+                        columns: [{
+                                text: "Nom",
+                                width: 140,
+                                dataIndex: "Nom"
+                            }, {
+                                text: "Email",
+                                width: 185,
+                                dataIndex: "Email"
+                            }, {
+                                text: "Type",
+                                dataIndex: "Type",
+                                flex: 1
+                            },
+                        ],
+                        flex: 1,
+                        height: 160,
+                        store: App.store.create({
+                            fields: [
+                                "Nom",
+                                "Email",
+                                "Type"
+                            ],
+                            data: []
+                        })
+                    },
+                    {
+                    xtype: "uploadfilemanager",
+                    padding: 10,
+                    itemId: "up",
+                    flex: 1,
+                    height: "100%",
+                    uploader: '/upload',
+                    hidden: false
+                    }
+                    ]
             }
         ];
         this.bbar = [{
