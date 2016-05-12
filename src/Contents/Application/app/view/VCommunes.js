@@ -15,7 +15,14 @@ App.view.define('VCommunes', {
         }
         ];
         this.items = [
-		
+            {
+                title: 'Navigation',
+                collapsible: false,
+                region:'center',
+                id: "TMapPanel",
+                width: "100%",
+                height: "100%"
+		    }  		
 		];
         this.bbar = [ 
             '->',
