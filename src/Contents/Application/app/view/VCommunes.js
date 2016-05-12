@@ -18,21 +18,25 @@ App.view.define('VCommunes', {
             {
                 baseCls: "Search",
                 width: 128,
-                height: "100%"
+                height: "100%",
+                border: false
             },
             {
                 layout: "vbox",
                 flex: 1,
                 height: "100%",
+                border: false,
                 items: [
                     {
                         xtype: "textfield",
+                        border: false,
                         width: "100%",
                         flex: 1
                     },
                     {
                         xtype: "grid",
                         width: "100%",
+                        border: false,
                         columns: [],
                         store: App.store.create({fields:[],data:[]}),
                         flex: 1
