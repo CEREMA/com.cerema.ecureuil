@@ -29,8 +29,8 @@ App.view.define('VCommunes', {
                 xtype: "grid",
                 itemId: "search",
                 bbar: [
+                '->',
                 {
-                    '->',
                     text: "Ajouter",
                     itemId: "Add_commune"
                 }
