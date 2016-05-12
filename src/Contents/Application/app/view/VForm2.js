@@ -9,7 +9,7 @@ App.view.define('VForm2', {
         this.layout = "border";
         this.items = [
             {
-                region: "east",
+                region: "south",
                 width: 300,
                 layout: "fit",
                 border: false,
