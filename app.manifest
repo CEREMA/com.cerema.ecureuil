@@ -53,8 +53,7 @@
     "modules": [
         "Ext.ux.form.field.BoxSelect",
         "Ext.ux.upload",
-        "Ext.ux.form.SearchBox",
-        "Ext.grid.PagingScroller"
+        "Ext.ux.form.SearchBox"
     ],
     "plugins": [],
     "db": [
