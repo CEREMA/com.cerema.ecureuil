@@ -68,6 +68,7 @@ App.view.define('VForm2', {
                         hidden: false
                     }
                     ]
+                }]
             }
         ];
         this.bbar = [{
