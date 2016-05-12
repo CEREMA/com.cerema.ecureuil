@@ -59,8 +59,17 @@ App.view.define('VCommunes', {
 			title: 'Communes',
 			region:'east',
 			width: 200,
+            layout: "fit",
             items: [
-            
+            {
+                xtype: "grid",
+                itemId: "gridcom",
+                columns: [{
+                    header: "Commune",
+                    dataIndex: "commune"
+                }],
+                store: App.store.create({fields:['id','commune'],data:[]})
+            }
             ]
 		    } 		
 		];
