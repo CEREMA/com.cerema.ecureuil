@@ -9,7 +9,8 @@ App.view.define('VForm2', {
         this.layout = "border";
         this.items = [
             {
-                region: "east",
+                region: "west",
+                border: false,
                 width: 250,
                 layout: "vbox",
                 items: [
@@ -17,9 +18,9 @@ App.view.define('VForm2', {
                     xtype: "combo",
                     itemId: "cboDomaine",
                     margin: {
-                        //top: 10,
+                        right: 10,
+                        top: 10,
                         left: 10
-
                     },
                     fieldLabel: "Domaine",
                     allowBlank: false,
