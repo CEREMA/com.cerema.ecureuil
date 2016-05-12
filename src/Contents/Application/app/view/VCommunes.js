@@ -29,6 +29,10 @@ App.view.define('VCommunes', {
                 id: "TGridPanel",
                 xtype: "grid",
                 itemId: "search",
+                verticalScroller: {
+                    xtype: 'paginggridscroller',
+                    activePrefetch: false
+                },
                 columns: [{
                     header: "CPostal",
                     width: 80,
