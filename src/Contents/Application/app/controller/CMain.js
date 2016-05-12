@@ -1,8 +1,8 @@
 function GMap(l,m)
 {
 	var TMap={};
-	if (!l) l="46.333333";
-	if (!m) m="5.283333";
+	if (!l) l="5.283333";
+	if (!m) m="46.333333";
 	
 	TMap.map = new google.maps.Map(Ext.get('TMapPanel').dom,{
 		zoom: 18,
@@ -144,7 +144,9 @@ App.controller.define('CMain', {
             },
             "VCommunes grid#search": {
                 itemclick: function(me,store) {
-                    console.log(store);
+                    
+                    console.log(store.data.latitude);
+                    console.log(store.data.longitude);
                 }
             }
         });
