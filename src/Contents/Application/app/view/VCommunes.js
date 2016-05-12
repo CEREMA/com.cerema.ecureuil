@@ -9,40 +9,19 @@ App.view.define('VCommunes', {
 		this.layout="border";
         this.items = [
 		{
-			region: 'south',
+			region: 'north',
 			height: 150,
-			minSize: 150,
-			maxSize: 150,
             layout: "hbox",
             items: [
-            {
-                baseCls: "Search",
-                width: 128,
-                height: "100%",
-                border: false
-            },
-            {
-                layout: "vbox",
-                flex: 1,
-                height: "100%",
-                border: false,
-                items: [
-                    {
-                        xtype: "textfield",
-                        border: false,
-                        width: "100%",
-                        flex: 1
-                    },
-                    {
-                        xtype: "grid",
-                        width: "100%",
-                        border: false,
-                        columns: [],
-                        store: App.store.create({fields:[],data:[]}),
-                        flex: 1
-                    }                    
-                ]
-            }
+                {
+                    xtype: "grid",
+                    columns: [{
+                        header: "Commune",
+                        dataIndex: "nom_commune"
+                    }],
+                    
+                    store: App.store.create("gestionao2://communes{id,nom_commune+}",{buffered: true,autoLoad: true})
+                }
             ]
 		},
         {
