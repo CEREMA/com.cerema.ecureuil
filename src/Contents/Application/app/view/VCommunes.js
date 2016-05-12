@@ -22,7 +22,14 @@ App.view.define('VCommunes', {
                 id: "TMapPanel",
                 width: "100%",
                 height: "100%"
-		    }  		
+		    },
+            {
+			title: 'Communes',
+			region:'east',
+			width: 175,
+			minSize: 100,
+			maxSize: 250
+		} 		
 		];
         this.bbar = [ 
             '->',
