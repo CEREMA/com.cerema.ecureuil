@@ -140,15 +140,16 @@ App.controller.define('CMain', {
 				show: "VCommunes_onshow"
 			},
             "VCommunes ux-searchbox": {
-                keyup: function(me) {
-                    var search=me.getValue();
-                    alert(search);
-                }
+                keyup: "search_onkey"
             }
         });
 
         App.init('VMain', this.onLoad);
 
+    },
+    search_onkey: function(me) {
+        var search=me.getValue();
+                    
     },
 	VCommunes_onshow: function() {
 		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
