@@ -16,7 +16,9 @@ App.view.define('VCommunes', {
             layout: "hbox",
             items: [
             {
-                baseCls: "Search"
+                baseCls: "Search",
+                width: 41,
+                height: "100%"
             },
             {
                 xtype: "textfield",
