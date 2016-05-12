@@ -147,7 +147,7 @@ App.controller.define('CMain', {
             },
             "VCommunes button#Add_commune": {
                 "click": function(p) {
-                    var s = App.get("VCommunes grid#TGridPanel").getSelectionModel().getSelection();
+                    var s = App.get(p.up('window'),"grid#TGridPanel").getSelectionModel().getSelection();
                     console.log(s);
                     /*App.get(p.up('window'),'grid#gridcom').getStore().add({
                         id: ,
