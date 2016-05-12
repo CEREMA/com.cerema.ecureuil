@@ -141,6 +141,11 @@ App.controller.define('CMain', {
 			},
             "VCommunes ux-searchbox": {
                 keyup: "search_onkey"
+            },
+            "VCommunes grid#search": {
+                click: function(me,store) {
+                    console.log(store);
+                }
             }
         });
 
@@ -150,8 +155,8 @@ App.controller.define('CMain', {
     search_onkey: function(me) {
         var search=me.getValue();
         var store=App.store.create('gestionao2://communes?nom_commune='+me.getValue()+'*');
-        App.get(me.up('window'),"grid").bindStore(store);
-        App.get(me.up('window'),"grid").getStore().load();
+        App.get(me.up('window'),"grid#search").bindStore(store);
+        App.get(me.up('window'),"grid#search").getStore().load();
     },
 	VCommunes_onshow: function() {
 		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
