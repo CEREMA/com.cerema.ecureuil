@@ -20,6 +20,7 @@ App.view.define('VForm2', {
                     items: [
                     {
                         xtype: "grid",
+                        border: false,
                         itemId: "grid1",
                         flex: 1,
                         tbar: [{
@@ -60,7 +61,7 @@ App.view.define('VForm2', {
                     },
                     {
                         xtype: "uploadfilemanager",
-                        padding: 10,
+                        border: false,
                         itemId: "up",
                         flex: 1,
                         height: "100%",
