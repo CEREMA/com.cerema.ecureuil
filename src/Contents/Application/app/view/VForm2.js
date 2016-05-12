@@ -9,6 +9,62 @@ App.view.define('VForm2', {
         this.layout = "border";
         this.items = [
             {
+                region: "east",
+                width: 250,
+                layout: "vbox",
+                items: [
+                {
+                    xtype: "combo",
+                    itemId: "cboDomaine",
+                    margin: {
+                        //top: 10,
+                        left: 10
+
+                    },
+                    fieldLabel: "Domaine",
+                    allowBlank: false,
+                    editable: false,
+                    labelAlign: "top",
+                    labelWidth: 200,
+                    width: "100%",
+                    displayField: "nom_domaine",
+                    valueField: "id_domaine",
+                    store: App.store.create('App.AO.getDomaines', // Creation du store
+                        {
+                            autoLoad: true
+                        })
+
+                }                    
+                ]
+            },
+            {
+                region: "center",
+                layout: "vbox",
+                items: [
+                {
+                    xtype: "htmleditor",
+                    itemId: "objet",
+                    flex: 1,
+                    padding: 10,
+                    width: "95%",
+                    height: 50,
+                    labelAlign: "top",
+                    allowBlank: false,
+                    fieldLabel: "Objet"
+                },
+                {
+                    xtype: "textarea",
+                    itemId: "observations",
+                    flex: 1,
+                    padding: 10,
+                    width: "95%",
+                    height: 50,
+                    labelAlign: "top",
+                    fieldLabel: "Observations"
+                }                    
+                ]
+            },
+            {
                 region: "south",
                 width: 300,
                 layout: "fit",
