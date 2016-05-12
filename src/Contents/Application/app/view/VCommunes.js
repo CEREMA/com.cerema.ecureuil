@@ -10,9 +10,9 @@ App.view.define('VCommunes', {
         this.items = [
 		{
 			region: 'south',
-			height: 50,
-			minSize: 50,
-			maxSize: 50,
+			height: 150,
+			minSize: 150,
+			maxSize: 150,
             layout: "hbox",
             items: [
             {
@@ -21,18 +21,26 @@ App.view.define('VCommunes', {
                 height: "100%"
             },
             {
-                xtype: "textfield",
-                flex: 1
+                layout: "vbox",
+                flex: 1,
+                height: "100",
+                items: [
+                    {
+                        xtype: "textfield",
+                        width: "100%",
+                        flex: 1
+                    }
+                    {
+                        xtype: "grid",
+                        width: "100%",
+                        columns: [],
+                        store: App.store.create({fields:[],data:[]}),
+                        flex: 1
+                    }                    
+                ]
             }
             ]
 		},
-        {
-			title: 'Recherche',
-			region:'west',
-			width: 175,
-			minSize: 100,
-			maxSize: 250
-		},            
         {
 			title: 'Communes',
 			region:'east',
