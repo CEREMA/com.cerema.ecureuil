@@ -143,7 +143,7 @@ App.controller.define('CMain', {
                 keyup: "search_onkey"
             },
             "VCommunes grid#search": {
-                click: function(me,store) {
+                itemclick: function(me,store) {
                     console.log(store);
                 }
             }
