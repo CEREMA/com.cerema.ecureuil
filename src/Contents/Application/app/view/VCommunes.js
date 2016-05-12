@@ -13,11 +13,14 @@ App.view.define('VCommunes', {
 			height: 50,
 			minSize: 50,
 			maxSize: 50,
-            layout: "fit",
+            layout: "hbox",
             items: [
             {
+                baseCls: "Search"
+            },
+            {
                 xtype: "textfield",
-                
+                flex: 1
             }
             ]
 		},{
