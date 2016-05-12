@@ -154,7 +154,7 @@ App.controller.define('CMain', {
     },
     search_onkey: function(me) {
         var search=me.getValue();
-        var store=App.store.create('gestionao2://communes?nom_commune='+me.getValue()+'*');
+        var store=App.store.create('gestionao2://communes?nom_commune='+me.getValue()+'*',{buffered: true});
         App.get(me.up('window'),"grid#search").bindStore(store);
         App.get(me.up('window'),"grid#search").getStore().load();
     },
