@@ -17,7 +17,7 @@ App.view.define('VCommunes', {
             items: [
             {
                 baseCls: "Search",
-                width: 41,
+                width: 128,
                 height: "100%"
             },
             {
