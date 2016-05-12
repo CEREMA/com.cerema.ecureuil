@@ -11,6 +11,7 @@ App.view.define('VCommunes', {
         {
             xtype: "ux-searchbox",
             itemId: "searchCommunes",
+            enableKeyEvents: true,
             padding: 5,
             width: 200
         }
