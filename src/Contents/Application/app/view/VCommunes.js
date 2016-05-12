@@ -23,7 +23,7 @@ App.view.define('VCommunes', {
             {
                 layout: "vbox",
                 flex: 1,
-                height: "100",
+                height: "100%",
                 items: [
                     {
                         xtype: "textfield",
