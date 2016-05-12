@@ -12,24 +12,22 @@ App.view.define('VForm2', {
                 region: "west",
                 width: 300,
                 layout: "fit",
+                border: false,
                 items: [
                 {
                     xtype: "grid",
                     itemId: "grid1",
-                    padding: 10,
                     tbar: [{
                             xtype: "button",
                             text: "Ajouter groupe(s)",
                             itemId: "ajouter_groupe"
                         },
-
                         {
                             xtype: "button",
                             text: "Ajouter agent(s)",
                             itemId: "ajouter_agent"
                         },
                     ],
-
                     columns: [{
                             text: "Nom",
                             width: 140,
@@ -43,7 +41,6 @@ App.view.define('VForm2', {
                             dataIndex: "Type",
                             flex: 1
                         },
-
                     ],
                     flex: 1,
                     height: 160,
