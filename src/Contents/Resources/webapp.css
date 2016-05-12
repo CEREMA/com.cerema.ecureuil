@@ -102,3 +102,8 @@
 	font-weight: 500;
 	font-size: 1.0em;
 }
+
+.Search {
+    background-image: url(webapp/loupe.png);
+    background-size: contain;
+}
