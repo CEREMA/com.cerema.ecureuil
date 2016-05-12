@@ -28,6 +28,7 @@ App.view.define('VCommunes', {
                 region:'north',
                 id: "TGridPanel",
                 xtype: "grid",
+                itemId: "search",
                 columns: [{
                     header: "Commune",
                     dataIndex: "nom_commune"
