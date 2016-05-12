@@ -53,7 +53,7 @@
     "modules": [
         "Ext.ux.form.field.BoxSelect",
         "Ext.ux.upload",
-        "Ext.ux.form.Searchbox"
+        "Ext.ux.form.SearchBox"
     ],
     "plugins": [],
     "db": [
