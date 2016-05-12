@@ -10,6 +10,7 @@ App.view.define('VCommunes', {
         this.tbar=[
         {
             xtype: "ux-searchbox",
+            itemId: "searchCommunes",
             padding: 5,
             width: 200
         }
