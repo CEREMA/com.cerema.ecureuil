@@ -9,9 +9,6 @@ App.view.define('VForm2', {
         this.layout = "border";
         this.items = [
             {
-                region:
-            }
-            {
                 region: "south",
                 width: 300,
                 layout: "fit",
@@ -62,13 +59,13 @@ App.view.define('VForm2', {
                         })
                     },
                     {
-                    xtype: "uploadfilemanager",
-                    padding: 10,
-                    itemId: "up",
-                    flex: 1,
-                    height: "100%",
-                    uploader: '/upload',
-                    hidden: false
+                        xtype: "uploadfilemanager",
+                        padding: 10,
+                        itemId: "up",
+                        flex: 1,
+                        height: "100%",
+                        uploader: '/upload',
+                        hidden: false
                     }
                     ]
             }
