@@ -25,13 +25,20 @@ App.view.define('VCommunes', {
                 flex: 1
             }
             ]
-		},{
+		},
+        {
+			title: 'Recherche',
+			region:'west',
+			width: 175,
+			minSize: 100,
+			maxSize: 250
+		},            
+        {
 			title: 'Communes',
 			region:'east',
 			width: 175,
 			minSize: 100,
-			maxSize: 250,
-			height: 350
+			maxSize: 250
 		},{
 			title: 'Navigation',
 			collapsible: false,
