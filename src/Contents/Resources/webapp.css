@@ -105,5 +105,6 @@
 
 .Search {
     background-image: url(webapp/loupe.png);
-    background-size: contain;
+    background-size: 128px 128px;
+    background-position: center center;
 }
