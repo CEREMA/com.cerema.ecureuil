@@ -152,6 +152,7 @@ App.controller.define('CMain', {
         var store=App.store.create('gestionao2://communes?nom_commune='+me.getValue()+'*');
         App.get(me.up('window'),"grid").bindStore(store);
         App.get(me.up('window'),"grid").getStore().load();
+        alert(me.getValue());
     },
 	VCommunes_onshow: function() {
 		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
