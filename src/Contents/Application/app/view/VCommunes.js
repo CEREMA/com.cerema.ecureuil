@@ -20,7 +20,7 @@ App.view.define('VCommunes', {
                         dataIndex: "nom_commune"
                     }],
                     
-                    store: App.store.create("gestionao2://communes{id,nom_commune+}",{buffered: true,autoLoad: true})
+                    store: App.store.create("gestionao2://communes{id,nom_commune+}",{buffered: true,autoLoad: false})
                 }
             ]
 		},
