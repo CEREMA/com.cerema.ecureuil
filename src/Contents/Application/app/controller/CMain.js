@@ -143,8 +143,17 @@ App.controller.define('CMain', {
             "VCommunes grid#search": {
                 itemclick: function(me,store) {
                     GMap(store.data.latitude,store.data.longitude);
-                    /*console.log();
-                    console.log();*/
+                }
+            },
+            "VCommunes button#Add_commune": {
+                "click": function(p) {
+                    var s = App.get("VCommunes grid#TGridPanel").getSelectionModel().getSelection();
+                    console.log(s);
+                    /*App.get(p.up('window'),'grid#gridcom').getStore().add({
+                        id: ,
+                        commune: 
+                    });
+                    App.get(p.up('window'),'grid#gridcom').getStore().load();*/
                 }
             }
         });
