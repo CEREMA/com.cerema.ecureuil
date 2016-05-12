@@ -7,6 +7,12 @@ App.view.define('VCommunes', {
         this.title = "Communes";
         this.bodyCls = "white";
 		this.layout="border";
+        this.tbar=[
+        {
+            xtype: "textfield",
+            padding: 5
+        }
+        ];
         this.items = [
 		{
 			region: 'north',
