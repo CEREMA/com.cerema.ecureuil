@@ -25,7 +25,7 @@ App.view.define('VCommunes', {
             {
                 collapsible: false,
                 region:'north',
-                id: "TGridPanel",
+                itemId: "TGridPanel",
                 xtype: "grid",
                 itemId: "search",
                 bbar: [
