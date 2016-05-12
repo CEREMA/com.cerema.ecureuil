@@ -149,7 +149,7 @@ App.controller.define('CMain', {
                 "click": function(p) {
                     var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
                     if (s) s=s[0].data;
-                    
+                    console.log(s);
                     App.get(p.up('window'),'grid#gridcom').getStore().add({
                         id: s.id,
                         commune: s.nom_commune 
