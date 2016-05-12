@@ -31,6 +31,7 @@ App.view.define('VCommunes', {
                 itemId: "search",
                 columns: [{
                     header: "CPostal",
+                    width: 80,
                     dataIndex: "codes_postaux"
                 },{
                     header: "Commune",
