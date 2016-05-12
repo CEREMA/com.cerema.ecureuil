@@ -29,7 +29,7 @@ App.view.define('VCommunes', {
                         xtype: "textfield",
                         width: "100%",
                         flex: 1
-                    }
+                    },
                     {
                         xtype: "grid",
                         width: "100%",
