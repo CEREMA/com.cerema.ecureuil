@@ -13,7 +13,13 @@ App.view.define('VCommunes', {
 			height: 50,
 			minSize: 50,
 			maxSize: 50,
-			cmargins: '5 0 0 0'
+            layout: "fit",
+            items: [
+            {
+                xtype: "textfield",
+                
+            }
+            ]
 		},{
 			title: 'Communes',
 			region:'east',
