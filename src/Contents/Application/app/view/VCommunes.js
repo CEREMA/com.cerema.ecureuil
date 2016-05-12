@@ -30,8 +30,16 @@ App.view.define('VCommunes', {
                 xtype: "grid",
                 itemId: "search",
                 columns: [{
+                    header: "CPostal",
+                    dataIndex: "codes_postaux"
+                },{
                     header: "Commune",
+                    flex: 1,
                     dataIndex: "nom_commune"
+                },{
+                    header: "Région",
+                    width: 250,
+                    dataIndex: "nom_region"
                 }],
                 store: App.store.create({fields:[],data:[]}),
                 height: 200
