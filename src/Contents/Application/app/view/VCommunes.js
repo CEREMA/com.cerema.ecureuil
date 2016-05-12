@@ -55,7 +55,6 @@ App.view.define('VCommunes', {
                 height: 200
             },
             {
-			title: 'Communes',
 			region:'east',
 			width: 200,
             layout: "fit",
