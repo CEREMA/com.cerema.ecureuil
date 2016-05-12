@@ -58,10 +58,12 @@ App.view.define('VCommunes', {
 			region:'east',
 			width: 200,
             layout: "fit",
+            border: false,
             items: [
             {
                 xtype: "grid",
                 itemId: "gridcom",
+                border: false,
                 columns: [{
                     header: "Commune",
                     dataIndex: "commune",
