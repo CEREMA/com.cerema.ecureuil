@@ -1,13 +1,11 @@
 function GMap(l,m)
 {
 	var TMap={};
-	if (!l) l="5.283333";
-	if (!m) m="46.333333";
 	
 	TMap.map = new google.maps.Map(Ext.get('TMapPanel').dom,{
-		zoom: 18,
+		zoom: 12,
 		center: new google.maps.LatLng(l, m),
-		mapTypeId: google.maps.MapTypeId.SATELLITE	
+		mapTypeId: google.maps.MapTypeId.HYBRID	
 	});
 	TMap.marker= new google.maps.Marker({
 		position: new google.maps.LatLng(l,m)
