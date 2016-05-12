@@ -144,9 +144,9 @@ App.controller.define('CMain', {
             },
             "VCommunes grid#search": {
                 itemclick: function(me,store) {
-                    
-                    console.log(store.data.latitude);
-                    console.log(store.data.longitude);
+                    GMap(store.data.latitude,store.data.longitude);
+                    /*console.log();
+                    console.log();*/
                 }
             }
         });
