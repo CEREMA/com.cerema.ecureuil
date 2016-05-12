@@ -9,43 +9,19 @@ App.view.define('VCommunes', {
 		this.layout="border";
         this.tbar=[
         {
-            xtype: "textfield",
-            padding: 5
+            xtype: "ux-searchbox",
+            padding: 5,
+            width: 200
         }
         ];
         this.items = [
-		{
-			region: 'north',
-			height: 150,
-            layout: "hbox",
-            items: [
-                {
-                    xtype: "grid",
-                    columns: [{
-                        header: "Commune",
-                        dataIndex: "nom_commune"
-                    }],
-                    
-                    store: App.store.create("gestionao2://communes{id,nom_commune+}",{buffered: true,autoLoad: false})
-                }
-            ]
-		},
-        {
-			title: 'Communes',
-			region:'east',
-			width: 175,
-			minSize: 100,
-			maxSize: 250
-		},{
-			title: 'Navigation',
-			collapsible: false,
-			region:'center',
-			id: "TMapPanel",
-			width: "100%",
-			height: "100%"
-		}        
+		
 		];
         this.bbar = [ 
+            '->',
+            {
+                text: "OK"
+            }
         ];
         this.callParent(arguments);
     }
