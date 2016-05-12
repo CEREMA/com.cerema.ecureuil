@@ -148,12 +148,13 @@ App.controller.define('CMain', {
             "VCommunes button#Add_commune": {
                 "click": function(p) {
                     var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
-                    console.log(s);
-                    /*App.get(p.up('window'),'grid#gridcom').getStore().add({
-                        id: ,
-                        commune: 
+                    if (s) s=s[0].data;
+                    
+                    App.get(p.up('window'),'grid#gridcom').getStore().add({
+                        id: s.id,
+                        commune: s.nom_commune 
                     });
-                    App.get(p.up('window'),'grid#gridcom').getStore().load();*/
+                    App.get(p.up('window'),'grid#gridcom').getStore().load();
                 }
             }
         });
