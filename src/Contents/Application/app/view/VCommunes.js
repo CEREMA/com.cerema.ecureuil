@@ -65,7 +65,8 @@ App.view.define('VCommunes', {
                 itemId: "gridcom",
                 columns: [{
                     header: "Commune",
-                    dataIndex: "commune"
+                    dataIndex: "commune",
+                    flex: 1
                 }],
                 store: App.store.create({fields:['id','commune'],data:[]})
             }
