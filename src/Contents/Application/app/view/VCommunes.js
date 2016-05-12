@@ -18,7 +18,6 @@ App.view.define('VCommunes', {
         ];
         this.items = [
             {
-                title: 'Navigation',
                 collapsible: false,
                 region:'center',
                 id: "TMapPanel"
@@ -29,6 +28,13 @@ App.view.define('VCommunes', {
                 id: "TGridPanel",
                 xtype: "grid",
                 itemId: "search",
+                bbar: [
+                {
+                    '->',
+                    text: "Ajouter",
+                    itemId: "Add_commune"
+                }
+                ],
                 verticalScroller: {
                     xtype: 'paginggridscroller',
                     activePrefetch: false
@@ -52,10 +58,11 @@ App.view.define('VCommunes', {
             {
 			title: 'Communes',
 			region:'east',
-			width: 175,
-			minSize: 100,
-			maxSize: 250
-		} 		
+			width: 200,
+            items: [
+            
+            ]
+		    } 		
 		];
         this.bbar = [ 
             '->',
