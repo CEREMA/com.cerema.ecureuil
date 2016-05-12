@@ -21,10 +21,17 @@ App.view.define('VCommunes', {
                 title: 'Navigation',
                 collapsible: false,
                 region:'center',
-                id: "TMapPanel",
-                width: "100%",
-                height: "100%"
+                id: "TMapPanel"
 		    },
+            {
+                collapsible: false,
+                region:'north',
+                id: "TGridPanel",
+                xtype: "grid",
+                columns: [],
+                store: App.store.create({fields:[],data:[]})
+                height: 200
+            },
             {
 			title: 'Communes',
 			region:'east',
