@@ -32,6 +32,23 @@ App.view.define('VForm2', {
                     })
                 },
                 {
+                    xtype: "combo",
+                    padding: 10,
+                    itemId: "cboNom",
+                    fieldLabel: "Source",
+                    allowBlank: false,
+                    editable: false,
+                    labelAlign: "top",
+                    labelWidth: 200,
+                    width: "100%",
+                    displayField: "NomSource",
+                    valueField: "IdSource",
+                    store: App.store.create('App.AO.getAll2', // Creation du store
+                    {
+                        autoLoad: true
+                    })
+                },
+                {
                     xtype: "datefield",
                     padding: 10,
                     renderer: Ext.util.Format.dateRenderer('d/m/Y'),
@@ -51,23 +68,6 @@ App.view.define('VForm2', {
                     width: "100%",
                     fieldLabel: 'Date limite',
                     allowBlank: false
-                },
-                {
-                    xtype: "combo",
-                    padding: 10,
-                    itemId: "cboNom",
-                    fieldLabel: "Source",
-                    allowBlank: false,
-                    editable: false,
-                    labelAlign: "top",
-                    labelWidth: 200,
-                    width: "100%",
-                    displayField: "NomSource",
-                    valueField: "IdSource",
-                    store: App.store.create('App.AO.getAll2', // Creation du store
-                    {
-                        autoLoad: true
-                    })
                 }
                 ]
             },
