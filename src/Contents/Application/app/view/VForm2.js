@@ -139,22 +139,22 @@ App.view.define('VForm2', {
                         queryMode: 'local',
                         typeAhead: true,  
                         store: App.store.create('gestionao2://keywords',
-                            {
+                        {
                                 autoLoad: true
-                            })
+                        })
 
                     },
                     {
-                            xtype: "textfield",
-                            itemId: "ed_keyword",
-                            fieldLabel: "Mots clés",
-                            hidden: true,
-                            triggerAction:'all',
-                            padding: 10,
-                            flex: 1,
-                            labelAlign: "top",
-                            labelWidth: 200,
-                            enableKeyEvents:true						
+                        xtype: "textfield",
+                        itemId: "ed_keyword",
+                        fieldLabel: "Mots clés",
+                        hidden: true,
+                        triggerAction:'all',
+                        padding: 10,
+                        flex: 1,
+                        labelAlign: "top",
+                        labelWidth: 200,
+                        enableKeyEvents:true						
                     },
                     {
                         xtype: "button",
@@ -174,7 +174,51 @@ App.view.define('VForm2', {
                         }
                     }
 				 ]
-			     }                    
+			     },
+                 {
+                    layout: "hbox",
+                    border: false,
+                    width: "100%",
+                    items: [
+
+                        {
+                            xtype: "combo",
+                            itemId: "cboCode",
+                            margin: {
+                                top: 10,
+                                left: 10
+
+                            },
+                            fieldLabel: "Code de la prestation",
+                            allowBlank: false,
+                            editable: false,
+                            labelAlign: "top",
+                            labelWidth: 200,
+                            width: 200,
+                            displayField: "LibelleNaturePrestation",
+                            valueField: "IdNaturePrestation",
+
+                            store: App.store.create('App.AO.getAll5', // Creation du store
+                                {
+                                    autoLoad: true
+                                })
+
+                        }, {
+                            xtype: "textfield",
+                            itemId: "numero_semaine",
+                            margin: {
+                                top: 10,
+                                left: 30
+                            },
+                            width: 200,
+                            readOnly: true,
+                            labelAlign: "top",
+                            fieldLabel: "Numéro de semaine",
+                            allowBlank: false,
+                            labelWidth: 200,
+                        },
+                    ]
+                }                    
                 ]
             },
             {
