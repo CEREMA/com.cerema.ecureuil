@@ -4,22 +4,8 @@ App.view.define('VForm4',{
 	height: 410,
 	title: "Ajouter",
 	alias: "widget.TForm4",
+    layout: "fit",
 	items: [
-	{
-					layout: "hbox",
-					border: false,
-					width: "100%",
-					items: [
-					{
-						xtype: 'label',
-						itemId: 'myFieldNotification',
-						text: 'Notification',
-						margin: {
-								top: 10,
-								left:10
-								
-							}
-					},
 					
 					{
 					xtype: "grid",
@@ -41,17 +27,13 @@ App.view.define('VForm4',{
 						},
 						
 					],
-					width: 200,
-					height: 345,
 					store: App.store.create('App.AO.getUnites', // Creation du store
 												{
 													autoLoad: true
 												}) 
 					
 					
-				},
-							]		
-		},
+				}        
 	],
 	 bbar: [
 				{
