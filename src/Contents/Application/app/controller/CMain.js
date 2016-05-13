@@ -172,7 +172,7 @@ App.controller.define('CMain', {
                     var data=App.get(p.up('window'),'grid#gridcom').getStore().getRange();
                     console.log(s);
                     data.push(s);
-                    App.get(p.up('window'),'grid#gridcom').getStore().loadData(data);
+                    App.get(p.up('window'),'grid#gridcom').getStore().loadData(s);
                 }
             }
         });
