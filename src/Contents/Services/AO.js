@@ -29,7 +29,7 @@ AO = {
 		AO.using('db').model('bpclight','select * from unites left join melu on melu.Kuni= unites.Kuni where Archive=0',cb);
 	},
 	getAgents: function(o,cb) {
-		AO.using('db').model('bpclight','select * from agents left join mela on mela.Kage=agents.Kage where actif=1 and mela.libmela like "%cerema.fr"',cb);
+		AO.using('db').model('bpclight','select * from agents left join mela on mela.Kage=agents.Kage where actif=1 and mela.libmela like "%cerema.fr" order by nom',cb);
 	},
 	upload_blob: function(list,ndx,cb)
 	{
