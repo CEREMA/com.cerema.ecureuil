@@ -178,7 +178,6 @@ App.view.define('VForm2', {
                     editable: true,
                     labelAlign: "top",
                     labelWidth: 200,
-                    padding: 10,
                     flex: 1,
                     displayField: "keyword",
                     valueField: "id",
