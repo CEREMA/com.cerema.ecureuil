@@ -236,7 +236,7 @@ App.view.define('VForm2', {
                     },
                     {
                         border: false,
-                        height: 20
+                        height: 100
                     }
 				 ]
 			     }                    
