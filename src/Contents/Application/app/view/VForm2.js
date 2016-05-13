@@ -159,29 +159,6 @@ App.view.define('VForm2', {
                 {
                     xtype: "boxselect",
                     itemId: "cboDepartement",
-                    fieldLabel: "Département",
-                    padding: 10,
-                    allowBlank: false,
-                    editable: false,
-                    labelAlign: "top",
-                    labelWidth: 200,
-                    width: "100%",
-                    displayField: "departement",
-                    valueField: "IdDepartement",
-                    triggerAction:'all',
-                    enableKeyEvents:true,
-                    createNewOnEnter: false,
-                    forceSelection: false,
-                    queryMode: 'local',
-                    typeAhead: false,                     
-                    store: App.store.create('App.AO.getAll4',
-                    {
-                        autoLoad: true
-                    })
-                },
-                /*{
-                    xtype: "boxselect",
-                    itemId: "cboDepartement",
                     padding: 10,
                     fieldLabel: "Département",
                     allowBlank: false,
@@ -195,7 +172,7 @@ App.view.define('VForm2', {
                     {
                         autoLoad: true
                     })
-                },*/
+                },
                 {
                     layout: "hbox",
                     itemId: "regroupement_keywords",
