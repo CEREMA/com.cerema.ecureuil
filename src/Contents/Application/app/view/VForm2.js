@@ -234,7 +234,9 @@ App.view.define('VForm2', {
                     
                 ],
                 columns: [
-                    
+                    {
+                        header: "Communes"
+                    }
                 ],
                 store: App.store.create({fields:[],data:[]})
             }]
