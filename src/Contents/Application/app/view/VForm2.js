@@ -142,10 +142,9 @@ App.view.define('VForm2', {
             }, {
                 xtype: "textarea",
                 itemId: "observations",
-                flex: 1,
                 padding: 10,
                 width: "100%",
-                height: 10,
+                height: 20,
                 labelAlign: "top",
                 fieldLabel: "Observations"
             }, {
@@ -211,7 +210,7 @@ App.view.define('VForm2', {
                     text: "Ajouter",
                     height: 24,
                     margin: {
-                        top: 0,
+                        top: 10,
                         right: 10
                     },
                     width: 100,
