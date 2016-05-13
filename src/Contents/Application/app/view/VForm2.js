@@ -117,6 +117,9 @@ App.view.define('VForm2', {
                         })
                     },
                     {
+                        width: 2        
+                    },
+                    {
                         xtype: "uploadfilemanager",
                         border: false,
                         itemId: "up",
