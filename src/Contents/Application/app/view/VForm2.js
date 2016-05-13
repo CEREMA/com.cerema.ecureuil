@@ -124,7 +124,7 @@ App.view.define('VForm2', {
                     flex: 1,
                     border: false,
                     width: "100%",
-                    id: "TMapPanel2"
+                    id: "TCommunes"
 		        }
                 ]
             },
@@ -243,7 +243,8 @@ App.view.define('VForm2', {
                     },
                     {
                         border: false,
-                        height: 100
+                        itemId: "TMapPanel2",
+                        flex: 1
                     }
 				 ]
 			     }                    
