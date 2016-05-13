@@ -6,37 +6,28 @@ App.view.define('VForm3',{
 	alias: "widget.TForm3",
     layout: "fit",
 	items: [
-	{
-					layout: "hbox",
-					border: false,
-					width: "100%",
-					items: [
-					
-					{
-                        xtype: "grid",
-                        itemId: "grid2",
-                        border: false,
-                        columns: [
-                            {
-                                text: "Nom",
-                                width: 120,
-                                dataIndex: "Nom",
+        {
+            xtype: "grid",
+            itemId: "grid2",
+            border: false,
+            columns: [
+                {
+                    text: "Nom",
+                    width: 120,
+                    dataIndex: "Nom",
 
-                            },
-                            {
-                                text: "Prenom",
-                                dataIndex: "Prenom",
-                                flex:1
-                            },
-                        ],
-                        store: App.store.create('App.AO.getAgents',
-                         {
-                            autoLoad: true
-                        }) 										
-				    }
-							
-            ]		
-		},
+                },
+                {
+                    text: "Prenom",
+                    dataIndex: "Prenom",
+                    flex:1
+                },
+            ],
+            store: App.store.create('App.AO.getAgents',
+             {
+                autoLoad: true
+            }) 										
+        }        
 	],
 	 bbar: [
 				{
