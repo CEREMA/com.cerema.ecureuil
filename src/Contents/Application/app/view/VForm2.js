@@ -157,7 +157,7 @@ App.view.define('VForm2', {
                 editable: false,
                 labelAlign: "left",
                 labelWidth: 200,
-                height: 80,
+                height: 50,
                 width: "100%",
                 displayField: "departement",
                 valueField: "IdDepartement",
@@ -170,7 +170,7 @@ App.view.define('VForm2', {
                 itemId: "regroupement_keywords",
                 border: false,
                 width: "100%",
-                height: 90,
+                height: 60,
                 items: [{
                     xtype: "boxselect",
                     itemId: "Keywords",
@@ -189,7 +189,7 @@ App.view.define('VForm2', {
                     forceSelection: false,
                     queryMode: 'local',
                     typeAhead: true,
-                    height: 80,
+                    height: 50,
                     store: App.store.create('gestionao2://keywords', {
                         autoLoad: true
                     })
@@ -211,7 +211,7 @@ App.view.define('VForm2', {
                     text: "Ajouter",
                     height: 24,
                     margin: {
-                        top: 28,
+                        top: 0,
                         right: 10
                     },
                     width: 100,
