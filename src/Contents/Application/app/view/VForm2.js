@@ -35,6 +35,33 @@ App.view.define('VForm2', {
                             autoLoad: true
                         })
 
+                },
+                {
+                    xtype: "datefield",
+                    renderer: Ext.util.Format.dateRenderer('d/m/Y'),
+                    itemId: "date",
+                    labelAlign: "top",
+                    allowBlank: false,
+                    editable: false,
+                    margin: {
+                        top: 10,
+                        left: 10
+                    },
+                    width: 200,
+                    fieldLabel: 'Date de parution',
+                }, 
+                {
+                    xtype: "datefield",
+                    itemId: "date_limite",
+                    labelAlign: "top",
+                    editable: false,
+                    margin: {
+                        top: 10,
+                        left: 10
+                    },
+                    width: 200,
+                    fieldLabel: 'Date limite',
+                    allowBlank: false,
                 }                    
                 ]
             },
@@ -168,7 +195,6 @@ App.view.define('VForm2', {
                 margin: {
                     top: 10,
                     left: 10
-
                 }
             }
         ];
