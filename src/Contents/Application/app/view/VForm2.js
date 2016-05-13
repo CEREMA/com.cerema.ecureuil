@@ -119,7 +119,7 @@ App.view.define('VForm2', {
                     {
                         width: 5,
                         border: true,
-                        bodyStyle: "background-color:red"
+                        height: "100%"
                     },
                     {
                         xtype: "uploadfilemanager",
