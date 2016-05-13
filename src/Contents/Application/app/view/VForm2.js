@@ -87,7 +87,8 @@ App.view.define('VForm2', {
                             autoLoad: true
                         })
 
-                }, {
+                }, 
+                {
                     xtype: "textfield",
                     itemId: "numero_semaine",
                     padding: 10,
@@ -98,7 +99,25 @@ App.view.define('VForm2', {
                     allowBlank: false,
                     width: "100%",
                     labelWidth: 200,
-                }                    
+                },
+                {
+                    xtype: "combo",
+                    itemId: "cboType",
+                    padding: 10,
+                    fieldLabel: "Type de consultation",
+                    allowBlank: false,
+                    editable: false,
+                    labelAlign: "top",
+                    labelWidth: 200,
+                    width: "100%",
+                    displayField: "reponse",
+                    valueField: "IdConsultation",
+
+                    store: App.store.create('App.AO.getAll3', // Creation du store
+                        {
+                            autoLoad: true
+                        })
+                    }                    
                 ]
             },
             {
