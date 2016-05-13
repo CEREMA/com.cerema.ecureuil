@@ -70,48 +70,34 @@ App.view.define('VForm2', {
                     allowBlank: false
                 },
                 {
-                    layout: "hbox",
-                    border: false,
+                    xtype: "combo",
+                    itemId: "cboCode",
+                    padding: 10,
+                    fieldLabel: "Code de la prestation",
+                    allowBlank: false,
+                    editable: false,
+                    labelAlign: "top",
+                    labelWidth: 200,
                     width: "100%",
-                    items: [
+                    displayField: "LibelleNaturePrestation",
+                    valueField: "IdNaturePrestation",
 
+                    store: App.store.create('App.AO.getAll5', // Creation du store
                         {
-                            xtype: "combo",
-                            itemId: "cboCode",
-                            margin: {
-                                top: 10,
-                                left: 10
+                            autoLoad: true
+                        })
 
-                            },
-                            fieldLabel: "Code de la prestation",
-                            allowBlank: false,
-                            editable: false,
-                            labelAlign: "top",
-                            labelWidth: 200,
-                            width: 200,
-                            displayField: "LibelleNaturePrestation",
-                            valueField: "IdNaturePrestation",
-
-                            store: App.store.create('App.AO.getAll5', // Creation du store
-                                {
-                                    autoLoad: true
-                                })
-
-                        }, {
-                            xtype: "textfield",
-                            itemId: "numero_semaine",
-                            margin: {
-                                top: 10,
-                                left: 30
-                            },
-                            width: 200,
-                            readOnly: true,
-                            labelAlign: "top",
-                            fieldLabel: "Numéro de semaine",
-                            allowBlank: false,
-                            labelWidth: 200,
-                        },
-                      ]
+                }, {
+                    xtype: "textfield",
+                    itemId: "numero_semaine",
+                    padding: 10,
+                    width: 200,
+                    readOnly: true,
+                    labelAlign: "top",
+                    fieldLabel: "Numéro de semaine",
+                    allowBlank: false,
+                    width: "100%",
+                    labelWidth: 200,
                 }                    
                 ]
             },
