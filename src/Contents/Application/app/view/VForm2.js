@@ -148,12 +148,13 @@ App.view.define('VForm2', {
                 {
                     xtype: "boxselect",
                     itemId: "cboDepartement",
+                    padding: 10,
                     fieldLabel: "Département",
                     allowBlank: false,
                     editable: false,
                     labelAlign: "top",
                     labelWidth: 200,
-                    width: 310,
+                    width: "100%",
                     displayField: "departement",
                     valueField: "IdDepartement",
                     store: App.store.create('App.AO.getAll4', // Creation du store
