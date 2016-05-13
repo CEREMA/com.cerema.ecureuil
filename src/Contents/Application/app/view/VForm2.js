@@ -17,11 +17,7 @@ App.view.define('VForm2', {
                 {
                     xtype: "combo",
                     itemId: "cboDomaine",
-                    margin: {
-                        right: 10,
-                        top: 10,
-                        left: 10
-                    },
+                    padding: 10,
                     fieldLabel: "Domaine",
                     allowBlank: false,
                     editable: false,
@@ -37,11 +33,7 @@ App.view.define('VForm2', {
                 },
                 {
                     xtype: "datefield",
-                    margin: {
-                        right: 10,
-                        top: 10,
-                        left: 10
-                    },                    
+                    padding: 10,
                     renderer: Ext.util.Format.dateRenderer('d/m/Y'),
                     itemId: "date",
                     labelAlign: "top",
@@ -52,11 +44,7 @@ App.view.define('VForm2', {
                 }, 
                 {
                     xtype: "datefield",
-                    margin: {
-                        right: 10,
-                        top: 10,
-                        left: 10
-                    },                    
+                    padding: 10,
                     itemId: "date_limite",
                     labelAlign: "top",
                     editable: false,
@@ -66,7 +54,7 @@ App.view.define('VForm2', {
                     },
                     width: "100%",
                     fieldLabel: 'Date limite',
-                    allowBlank: false,
+                    allowBlank: false
                 }                    
                 ]
             },
