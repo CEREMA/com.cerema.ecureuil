@@ -160,7 +160,7 @@ App.view.define('VForm2', {
                     flex: 1,
                     padding: 10,
                     width: "100%",
-                    height: 50,
+                    height: 30,
                     labelAlign: "top",
                     fieldLabel: "Observations"
                 },
