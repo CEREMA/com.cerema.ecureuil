@@ -331,12 +331,12 @@ App.controller.define('CMain', {
 							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
 							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
 							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-							App.get('combo#cboThematique').setValue(record.data.IdThematique);
+							/*App.get('combo#cboThematique').setValue(record.data.IdThematique);*/
 							if (App.get('combo#cboDomaine').getValue() == 0) {
 								App.get('combo#cboDomaine').setValue('');
 							};
-							App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-							App.get('combo#cboThematique').getStore().load();
+							/*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+							App.get('combo#cboThematique').getStore().load();*/
 
 							AO_ID = record.data.IdAppelOffre;
 
@@ -356,7 +356,7 @@ App.controller.define('CMain', {
 							App.get('textarea#objet').setReadOnly(true);
 							App.get('textarea#observations').setReadOnly(true);
 							App.get('combo#cboDomaine').setReadOnly(true);
-							App.get('combo#cboThematique').setReadOnly(true);
+							//App.get('combo#cboThematique').setReadOnly(true);
 							App.get('combo#cboCode').setReadOnly(true);
 							App.get('TForm2 boxselect#Keywords').setReadOnly(true);
 							App.get('TForm2 button#add_keyword').hide();
@@ -388,12 +388,12 @@ App.controller.define('CMain', {
 							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
 							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
 							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-							App.get('combo#cboThematique').setValue(record.data.IdThematique);
+							//App.get('combo#cboThematique').setValue(record.data.IdThematique);
 							if (App.get('combo#cboDomaine').getValue() == 0) {
 								App.get('combo#cboDomaine').setValue('');
 							}
-							App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-							App.get('combo#cboThematique').getStore().load();
+							/*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+							App.get('combo#cboThematique').getStore().load();*/
 
 						}
 					});
@@ -598,12 +598,12 @@ App.controller.define('CMain', {
 							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
 							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
 							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-							App.get('combo#cboThematique').setValue(record.data.IdThematique);
+							//App.get('combo#cboThematique').setValue(record.data.IdThematique);
 							if (App.get('combo#cboDomaine').getValue() == 0) {
 								App.get('combo#cboDomaine').setValue('');
 							};
-							App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-							App.get('combo#cboThematique').getStore().load();
+							/*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+							App.get('combo#cboThematique').getStore().load();*/
 
 							AO_ID = record.data.IdAppelOffre;
 
@@ -621,7 +621,7 @@ App.controller.define('CMain', {
 							App.get('textarea#objet').setReadOnly(true);
 							App.get('textarea#observations').setReadOnly(true);
 							App.get('combo#cboDomaine').setReadOnly(true);
-							App.get('combo#cboThematique').setReadOnly(true);
+							//App.get('combo#cboThematique').setReadOnly(true);
 							App.get('combo#cboCode').setReadOnly(true);
 							App.get('VAppelOffreFavoris boxselect#Keywords').setReadOnly(true);
 							App.get('VAppelOffreFavoris button#add_keyword').hide();
@@ -653,12 +653,12 @@ App.controller.define('CMain', {
 							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
 							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
 							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-							App.get('combo#cboThematique').setValue(record.data.IdThematique);
+							//App.get('combo#cboThematique').setValue(record.data.IdThematique);
 							if (App.get('combo#cboDomaine').getValue() == 0) {
 								App.get('combo#cboDomaine').setValue('');
 							}
-							App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-							App.get('combo#cboThematique').getStore().load();
+							/*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+							App.get('combo#cboThematique').getStore().load();*/
 
 						}
 					});
@@ -795,7 +795,7 @@ App.controller.define('CMain', {
         App.get("grid#grid1").getStore().removeAll();
         App.get("grid#upload").getStore().removeAll();
         App.get('combo#cboDomaine').setValue('');
-        App.get('combo#cboThematique').setValue('');
+        //App.get('combo#cboThematique').setValue('');
         EMAIL = [];
         BLOB = [];
 
@@ -961,10 +961,10 @@ App.controller.define('CMain', {
             alert('Veuillez entrer un domaine');
             temoin = true;
         };
-        if (App.get('combo#cboThematique').getValue() == null) {
+        /*if (App.get('combo#cboThematique').getValue() == null) {
             alert('Veuillez entrer une thématique');
             temoin = true;
-        };
+        };*/
         if (App.get('combo#cboCode').getValue() == null) {
             alert('Veuillez entrer un code de la prestation');
             temoin = true;
@@ -988,7 +988,7 @@ App.controller.define('CMain', {
                 DateLimite: App.get('datefield#date_limite').getValue(),
                 Semaine: App.get('textfield#numero_semaine').getValue(),
                 IdDomaine: App.get('combo#cboDomaine').getValue(),
-                IdThematique: App.get('combo#cboThematique').getValue(),
+                //IdThematique: App.get('combo#cboThematique').getValue(),
                 IdNaturePrestation: App.get('combo#cboCode').getValue(),
                 _BLOB: App.get('uploadfilemanager#up').getFiles(),
                 Keywords: App.get('boxselect#Keywords').getValue()
@@ -1070,7 +1070,7 @@ App.controller.define('CMain', {
                 DateLimite: App.get('datefield#date_limite').getValue(),
                 Semaine: App.get('textfield#numero_semaine').getValue(),
                 IdDomaine: App.get('combo#cboDomaine').getValue(),
-                IdThematique: App.get('combo#cboThematique').getValue(),
+                //IdThematique: App.get('combo#cboThematique').getValue(),
                 IdNaturePrestation: App.get('combo#cboCode').getValue(),
                 Keywords: App.get('boxselect#Keywords').getValue()
             };
@@ -1144,9 +1144,9 @@ App.controller.define('CMain', {
     valider_thematiques: function(p, record) {
 
         var id_domaine = App.get('combo#cboDomaine').getValue();
-        App.get('combo#cboThematique').setValue('');
+        /*App.get('combo#cboThematique').setValue('');
         App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = id_domaine;
-        App.get('combo#cboThematique').getStore().load();
+        App.get('combo#cboThematique').getStore().load();*/
 
     },
 
@@ -1183,7 +1183,7 @@ App.controller.define('CMain', {
                 App.get('textarea#objet').setReadOnly(true);
                 App.get('textarea#observations').setReadOnly(true);
                 App.get('combo#cboDomaine').setReadOnly(true);
-                App.get('combo#cboThematique').setReadOnly(true);
+                //App.get('combo#cboThematique').setReadOnly(true);
                 App.get('combo#cboCode').setReadOnly(true);
 
 
@@ -1217,12 +1217,12 @@ App.controller.define('CMain', {
                 App.get('combo#cboCode').setValue(response.data[0].IdNaturePrestation);
                 App.get('textfield#numero_semaine').setValue(response.data[0].Semaine);
                 App.get('combo#cboDomaine').setValue(response.data[0].IdDomaine);
-                App.get('combo#cboThematique').setValue(response.data[0].IdThematique);
+                /*App.get('combo#cboThematique').setValue(response.data[0].IdThematique);
                 if (App.get('combo#cboDomaine').getValue() == 0) {
                     App.get('combo#cboDomaine').setValue('');
                 }
                 App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = response.data[0].Id_domaine;
-                App.get('combo#cboThematique').getStore().load();
+                App.get('combo#cboThematique').getStore().load();*/
             });
         } else {
             Auth.login(function(user) {
