@@ -145,7 +145,7 @@ App.view.define('VForm2', {
                 flex: 1,
                 padding: 10,
                 width: "100%",
-                height: 30,
+                height: 20,
                 labelAlign: "top",
                 fieldLabel: "Observations"
             }, {
@@ -157,7 +157,7 @@ App.view.define('VForm2', {
                 editable: false,
                 labelAlign: "left",
                 labelWidth: 200,
-                height: 50,
+                height: 80,
                 width: "100%",
                 displayField: "departement",
                 valueField: "IdDepartement",
@@ -189,7 +189,7 @@ App.view.define('VForm2', {
                     forceSelection: false,
                     queryMode: 'local',
                     typeAhead: true,
-                    height: 50,
+                    height: 80,
                     store: App.store.create('gestionao2://keywords', {
                         autoLoad: true
                     })
