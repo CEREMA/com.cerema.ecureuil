@@ -10,6 +10,7 @@ App.view.define('VForm4', {
         {
             xtype: "grid",
             itemId: "grid3",
+            border: false,
             columns: [{
                     text: "Nom groupe",
                     width: 120,
