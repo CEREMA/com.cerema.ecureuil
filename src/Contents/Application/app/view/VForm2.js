@@ -113,7 +113,68 @@ App.view.define('VForm2', {
                     {
                             autoLoad: true
                     })
-                }                    
+                },
+                {
+                    layout: "hbox",
+                    itemId: "regroupement_keywords",
+                    border: false,
+                    width: "100%",
+                    items: [
+                    {
+                        xtype: "boxselect",
+                        itemId: "Keywords",
+                        fieldLabel: "Mots clés",
+                        allowBlank: false,
+                        editable: true,
+                        labelAlign: "top",
+                        labelWidth: 200,
+                        padding: 10,
+                        flex: 1,
+                        displayField: "keyword",
+                        valueField: "id",
+                        triggerAction:'all',
+                        enableKeyEvents:true,
+                        createNewOnEnter: false,
+                        forceSelection: false,
+                        queryMode: 'local',
+                        typeAhead: true,  
+                        store: App.store.create('gestionao2://keywords',
+                            {
+                                autoLoad: true
+                            })
+
+                    },
+                    {
+                            xtype: "textfield",
+                            itemId: "ed_keyword",
+                            fieldLabel: "Mots clés",
+                            hidden: true,
+                            triggerAction:'all',
+                            padding: 10,
+                            flex: 1,
+                            labelAlign: "top",
+                            labelWidth: 200,
+                            enableKeyEvents:true						
+                    },
+                    {
+                        xtype: "button",
+                        itemId: "add_keyword",
+                        text: "Ajouter",
+                        height: 24,
+                        margin: {
+                            top: 28,
+                            right: 10
+                        },					
+                        width: 100,
+                        handler: function(p) {
+                            p.setDisabled(true);
+                            App.get('TForm2 textfield#ed_keyword').setValue('');
+                            App.get('TForm2 textfield#ed_keyword').show();                        
+                            App.get('TForm2 boxselect#Keywords').hide();
+                        }
+                    }
+				 ]
+			     }                    
                 ]
             },
             {
