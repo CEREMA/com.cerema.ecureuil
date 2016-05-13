@@ -120,12 +120,11 @@ App.view.define('VForm2', {
                     labelWidth: 200,
                 },
                 {
-                    collapsible: false,
-                    flex: 1,
                     border: false,
-                    width: "100%",
-                    id: "TCommunes"
-		        }
+                    itemId: "TMapPanel2",
+                    flex: 1,
+                    width: "100%"
+                 }                    
                 ]
             },
             {
@@ -245,11 +244,12 @@ App.view.define('VForm2', {
 				 ]
 			     },
                  {
-                    border: false,
-                    itemId: "TMapPanel2",
+                    collapsible: false,
                     flex: 1,
-                    width: "100%"
-                 }                    
+                    border: false,
+                    width: "100%",
+                    id: "TCommunes"
+		        }                                     
                 ]
             },
             {
