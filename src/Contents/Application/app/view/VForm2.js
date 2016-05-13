@@ -74,6 +74,7 @@ App.view.define('VForm2', {
             {
                 region: "center",
                 layout: "vbox",
+                border: false,
                 items: [
                 {
                     xtype: "htmleditor",
