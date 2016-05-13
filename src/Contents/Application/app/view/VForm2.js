@@ -89,18 +89,6 @@ App.view.define('VForm2', {
 
                 }, 
                 {
-                    xtype: "textfield",
-                    itemId: "numero_semaine",
-                    padding: 10,
-                    width: 200,
-                    readOnly: true,
-                    labelAlign: "top",
-                    fieldLabel: "Numéro de semaine",
-                    allowBlank: false,
-                    width: "100%",
-                    labelWidth: 200,
-                },
-                {
                     xtype: "combo",
                     itemId: "cboType",
                     padding: 10,
@@ -117,7 +105,19 @@ App.view.define('VForm2', {
                         {
                             autoLoad: true
                         })
-                    }                    
+                },
+                {
+                    xtype: "textfield",
+                    itemId: "numero_semaine",
+                    padding: 10,
+                    width: 200,
+                    readOnly: true,
+                    labelAlign: "top",
+                    fieldLabel: "Numéro de semaine",
+                    allowBlank: false,
+                    width: "100%",
+                    labelWidth: 200,
+                }                    
                 ]
             },
             {
@@ -136,7 +136,7 @@ App.view.define('VForm2', {
                         labelWidth: 200,
                 },                    
                 {
-                    xtype: "textarea",
+                    xtype: "htmleditor",
                     itemId: "objet",
                     flex: 1,
                     padding: 10,
