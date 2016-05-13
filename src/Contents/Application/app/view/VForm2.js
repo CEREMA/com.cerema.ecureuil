@@ -174,12 +174,12 @@ App.view.define('VForm2', {
                     forceSelection: false,
                     queryMode: 'local',
                     typeAhead: false,                     
-                    store: App.store.create('App.AO.getAll4', // Creation du store
+                    store: App.store.create('App.AO.getAll4',
                     {
                         autoLoad: true
                     })
                 },
-                {
+                /*{
                     xtype: "boxselect",
                     itemId: "cboDepartement",
                     padding: 10,
@@ -195,7 +195,7 @@ App.view.define('VForm2', {
                     {
                         autoLoad: true
                     })
-                },
+                },*/
                 {
                     layout: "hbox",
                     itemId: "regroupement_keywords",
