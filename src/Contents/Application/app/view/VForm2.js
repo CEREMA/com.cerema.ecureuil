@@ -246,6 +246,8 @@ App.view.define('VForm2', {
                  {
                     collapsible: false,
                     flex: 1,
+                     padding: 10,
+                     width: "100%",
                     border: false,
                     width: "100%",
                     id: "TCommunes"
