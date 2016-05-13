@@ -173,7 +173,7 @@ App.view.define('VForm2', {
                 items: [{
                     xtype: "boxselect",
                     itemId: "Keywords",
-                    fieldLabel: "Mots clés",
+                    //fieldLabel: "Mots clés",
                     allowBlank: false,
                     editable: true,
                     labelAlign: "top",
