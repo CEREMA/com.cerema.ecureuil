@@ -198,6 +198,7 @@ App.view.define('VForm2', {
                         forceSelection: false,
                         queryMode: 'local',
                         typeAhead: true,  
+                        height: 150,
                         store: App.store.create('gestionao2://keywords',
                         {
                                 autoLoad: true
