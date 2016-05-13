@@ -167,6 +167,7 @@ App.controller.define('CMain', {
                 "click": function(p) {
                     var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
                     if (s) s=s[0].data;
+                    App.DB.post('gestionao2://my_communes',s);
                     App.get(p.up('window'),'grid#gridcom').getStore().add();
                     var data=App.get(p.up('window'),'grid#gridcom').getStore().getRange();
                     data.push({
