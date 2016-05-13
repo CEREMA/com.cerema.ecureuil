@@ -186,6 +186,7 @@ App.view.define('VForm2', {
                     itemId: "regroupement_keywords",
                     border: false,
                     width: "100%",
+                    height: 60,
                     items: [
                     {
                         xtype: "boxselect",
