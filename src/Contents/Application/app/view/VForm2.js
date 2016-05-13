@@ -75,6 +75,7 @@ App.view.define('VForm2', {
                     flex: 1,
                     padding: 10,
                     height: 50,
+                    width: "100%",
                     labelAlign: "top",
                     allowBlank: false,
                     fieldLabel: "Objet"
@@ -84,6 +85,7 @@ App.view.define('VForm2', {
                     itemId: "observations",
                     flex: 1,
                     padding: 10,
+                    width: "100%",
                     height: 50,
                     labelAlign: "top",
                     fieldLabel: "Observations"
