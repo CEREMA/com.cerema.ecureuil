@@ -100,6 +100,7 @@ App.view.define('VForm2', {
                     xtype: "boxselect",
                     itemId: "cboDepartement",
                     fieldLabel: "Département",
+                    padding: 10,
                     allowBlank: false,
                     editable: false,
                     labelAlign: "top",
