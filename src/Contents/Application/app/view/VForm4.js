@@ -2,7 +2,7 @@ App.view.define('VForm4',{
 	extend: "Ext.window.Window",
 	width: 465,
 	height: 410,
-	title: "Ajouter",
+	title: "Notification Groupe",
 	alias: "widget.TForm4",
     layout: "fit",
 	items: [
