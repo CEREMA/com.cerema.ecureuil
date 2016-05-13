@@ -126,6 +126,16 @@ App.view.define('VForm2', {
                 border: false,
                 items: [
                 {
+                        xtype: "textfield",
+                        itemId: "client",
+                        padding: 10,
+                        width: "100%",
+                        labelAlign: "top",
+                        allowBlank: false,
+                        fieldLabel: "Client",
+                        labelWidth: 200,
+                },                    
+                {
                     xtype: "textarea",
                     itemId: "objet",
                     flex: 1,
