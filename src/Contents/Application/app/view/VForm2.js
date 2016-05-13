@@ -31,27 +31,32 @@ App.view.define('VForm2', {
                     displayField: "nom_domaine",
                     valueField: "id_domaine",
                     store: App.store.create('App.AO.getDomaines', // Creation du store
-                        {
-                            autoLoad: true
-                        })
-
+                    {
+                        autoLoad: true
+                    })
                 },
                 {
                     xtype: "datefield",
+                    margin: {
+                        right: 10,
+                        top: 10,
+                        left: 10
+                    },                    
                     renderer: Ext.util.Format.dateRenderer('d/m/Y'),
                     itemId: "date",
                     labelAlign: "top",
                     allowBlank: false,
-                    editable: false,
-                    margin: {
-                        top: 10,
-                        left: 10
-                    },
-                    width: 200,
+                    editable: false,                    
+                    width: "100%",
                     fieldLabel: 'Date de parution',
                 }, 
                 {
                     xtype: "datefield",
+                    margin: {
+                        right: 10,
+                        top: 10,
+                        left: 10
+                    },                    
                     itemId: "date_limite",
                     labelAlign: "top",
                     editable: false,
@@ -59,7 +64,7 @@ App.view.define('VForm2', {
                         top: 10,
                         left: 10
                     },
-                    width: 200,
+                    width: "100%",
                     fieldLabel: 'Date limite',
                     allowBlank: false,
                 }                    
