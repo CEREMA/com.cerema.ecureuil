@@ -168,6 +168,12 @@ App.view.define('VForm2', {
                     width: "100%",
                     displayField: "departement",
                     valueField: "IdDepartement",
+                    triggerAction:'all',
+                    enableKeyEvents:true,
+                    createNewOnEnter: false,
+                    forceSelection: false,
+                    queryMode: 'local',
+                    typeAhead: true,                     
                     store: App.store.create('App.AO.getAll4', // Creation du store
                     {
                         autoLoad: true
