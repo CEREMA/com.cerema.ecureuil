@@ -23,7 +23,7 @@ App.view.define('VForm3',{
                     flex:1
                 },
             ],
-            store: App.store.create('bpclight://agents{Nom+,Prenom}',
+            store: App.store.create('bpclight://agents{Kage,Nom+,Prenom,mela.LibMelA?actif=1}',
              {
                 autoLoad: true
             }) 										
