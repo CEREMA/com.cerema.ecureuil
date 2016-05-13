@@ -107,7 +107,7 @@ App.view.define('VForm2', {
                 border: false,
                 items: [
                 {
-                    xtype: "htmleditor",
+                    xtype: "textarea",
                     itemId: "objet",
                     flex: 1,
                     padding: 10,
