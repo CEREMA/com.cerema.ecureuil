@@ -4,33 +4,18 @@ App.view.define('VForm3',{
 	height: 640,
 	title: "Ajouter",
 	alias: "widget.TForm3",
+    layout: "fit",
 	items: [
 	{
 					layout: "hbox",
 					border: false,
 					width: "100%",
 					items: [
-					{
-						xtype: 'label',
-						itemId: 'myFieldNotification',
-						text: 'Notification',
-						margin: {
-								top: 10,
-								left:10
-								
-							}
-					},
 					
 					{
 					xtype: "grid",
 					itemId: "grid2",
-					margin: {
-								top: 10,
-								bottom: 0,
-								left:159,
-								right: 0
-							},
-					
+                    border: false,
 					columns: [
 						{
 							text: "Nom",
@@ -44,8 +29,6 @@ App.view.define('VForm3',{
 							flex:1
 						},
 					],
-					width: 300,
-					height: 575,
 					store: App.store.create('App.AO.getAgents',
 					 {
 						autoLoad: true
