@@ -131,6 +131,9 @@ App.controller.define('CMain', {
             "TForm2 grid#grid1": {
                 beforeitemcontextmenu: "grid1_oncontextmenu"
             },
+            "TForm2 button#add_commune": {
+                click: "add_commune"  
+            },
             "button#ajouter2": {
                 click: "validation_groupe"
             },
@@ -177,6 +180,9 @@ App.controller.define('CMain', {
 
         App.init('VMain', this.onLoad);
 
+    },
+    add_commune: function() {
+        App.view.create('VCommunes',{modal: true}).show();        
     },
     search_onkey: function(me) {
         var search=me.getValue();
