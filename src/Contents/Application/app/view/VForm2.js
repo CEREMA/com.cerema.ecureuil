@@ -173,7 +173,7 @@ App.view.define('VForm2', {
                     createNewOnEnter: false,
                     forceSelection: false,
                     queryMode: 'local',
-                    typeAhead: true,                     
+                    typeAhead: false,                     
                     store: App.store.create('App.AO.getAll4', // Creation du store
                     {
                         autoLoad: true
