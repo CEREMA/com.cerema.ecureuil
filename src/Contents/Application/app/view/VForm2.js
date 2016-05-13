@@ -117,7 +117,7 @@ App.view.define('VForm2', {
                         })
                     },
                     {
-                        width: 2        
+                        width: 5        
                     },
                     {
                         xtype: "uploadfilemanager",
