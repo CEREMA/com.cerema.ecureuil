@@ -945,7 +945,7 @@ App.controller.define('CMain', {
             alert('Veuillez entrer un client');
             temoin = true;
         };
-        if (App.get('textfield#objet').getValue() == "") {
+        if (App.get('htmleditor#objet').getValue() == "") {
             alert('Veuillez entrer un objet');
             temoin = true;
         };
@@ -981,7 +981,7 @@ App.controller.define('CMain', {
                 IdSource: App.get('combo#cboNom').getValue(),
                 DateParution: App.get('datefield#date').getValue(),
                 IdConsultation: App.get('combo#cboType').getValue(),
-                Objet: App.get('textfield#objet').getValue(),
+                Objet: App.get('htmleditor#objet').getValue(),
                 Client: App.get('textfield#client').getValue(),
                 Observation: App.get('textfield#observations').getValue(),
                 IdDepartement: App.get('combo#cboDepartement').getValue().join(','),
@@ -1029,7 +1029,7 @@ App.controller.define('CMain', {
 				});
                 App.get('TForm1 grid#AO').getStore().load();
                 if (EMAIL.length > 0) {
-					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('textfield#objet').getValue();
+					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
                     var o = {
                         to: EMAIL,
                         subject: subject.substr(0,255),
@@ -1063,7 +1063,7 @@ App.controller.define('CMain', {
                 IdSource: App.get('combo#cboNom').getValue(),
                 DateParution: App.get('datefield#date').getValue(),
                 IdConsultation: App.get('combo#cboType').getValue(),
-                Objet: App.get('textfield#objet').getValue(),
+                Objet: App.get('htmleditor#objet').getValue(),
                 Client: App.get('textfield#client').getValue(),
                 Observation: App.get('textfield#observations').getValue(),
                 IdDepartement: App.get('combo#cboDepartement').getValue().join(','),
@@ -1104,7 +1104,7 @@ App.controller.define('CMain', {
 					});
 				});
 				
-				var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('textfield#objet').getValue();
+				var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
                 var o = {
                     from: "stephane.zucatti@cerema.fr",
                     to: EMAIL,
@@ -1189,7 +1189,7 @@ App.controller.define('CMain', {
 
                 App.get('combo#cboNom').setValue(response.data[0].IdSource);
                 App.get('combo#cboType').setValue(response.data[0].IdConsultation);
-                App.get('textfield#objet').setValue(response.data[0].Objet);
+                App.get('htmleditor#objet').setValue(response.data[0].Objet);
                 App.get('textfield#client').setValue(response.data[0].Client);
                 App.get('textfield#observations').setValue(response.data[0].Observation);
 
