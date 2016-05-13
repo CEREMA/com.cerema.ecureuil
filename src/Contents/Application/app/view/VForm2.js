@@ -198,7 +198,7 @@ App.view.define('VForm2', {
                         forceSelection: false,
                         queryMode: 'local',
                         typeAhead: true,  
-                        height: 150,
+                        height: 50,
                         store: App.store.create('gestionao2://keywords',
                         {
                                 autoLoad: true
@@ -233,6 +233,10 @@ App.view.define('VForm2', {
                             App.get('TForm2 textfield#ed_keyword').show();                        
                             App.get('TForm2 boxselect#Keywords').hide();
                         }
+                    },
+                    {
+                        border: false,
+                        height: 20
                     }
 				 ]
 			     }                    
