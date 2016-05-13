@@ -2,7 +2,7 @@ App.view.define('VForm3',{
 	extend: "Ext.window.Window",
 	width: 610,
 	height: 640,
-	title: "Ajouter",
+	title: "Notification utilisateurs",
 	alias: "widget.TForm3",
     layout: "fit",
 	items: [
