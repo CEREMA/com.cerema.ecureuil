@@ -146,6 +146,22 @@ App.view.define('VForm2', {
                     })
                 },
                 {
+                    xtype: "boxselect",
+                    itemId: "cboDepartement",
+                    fieldLabel: "Département",
+                    allowBlank: false,
+                    editable: false,
+                    labelAlign: "top",
+                    labelWidth: 200,
+                    width: 310,
+                    displayField: "departement",
+                    valueField: "IdDepartement",
+                    store: App.store.create('App.AO.getAll4', // Creation du store
+                    {
+                        autoLoad: true
+                    })
+                },
+                {
                     layout: "hbox",
                     itemId: "regroupement_keywords",
                     border: false,
