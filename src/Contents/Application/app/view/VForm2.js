@@ -226,7 +226,7 @@ App.view.define('VForm2', {
                 flex: 1,
                 padding: 10,
                 width: "100%",
-                border: false,
+                border: true,
                 width: "100%",
                 id: "TCommunes",
                 xtype: "grid",
