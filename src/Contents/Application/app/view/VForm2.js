@@ -168,10 +168,9 @@ App.view.define('VForm2', {
                     width: "100%",
                     displayField: "departement",
                     valueField: "IdDepartement",
-
                     store: App.store.create('App.AO.getAll4', // Creation du store
                     {
-                            autoLoad: true
+                        autoLoad: true
                     })
                 },
                 {
