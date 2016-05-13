@@ -233,7 +233,8 @@ App.view.define('VForm2', {
                 tbar: [
                     '->',
                     {
-                        text: "Ajouter"
+                        text: "Ajouter",
+                        itemId: "add_commune"
                     }
                 ],
                 columns: [
