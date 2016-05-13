@@ -144,8 +144,8 @@ App.view.define('VForm2', {
                 itemId: "observations",
                 padding: 10,
                 width: "100%",
-                height: 20,
-                labelAlign: "top",
+                height: 50,
+                labelAlign: "left",
                 fieldLabel: "Observations"
             }, {
                 xtype: "boxselect",
