@@ -308,7 +308,7 @@ App.controller.define('CMain', {
 							});
 
 							App.get('combo#cboType').setValue(record.data.IdConsultation);
-							App.get('textfield#objet').setValue(record.data.Objet);
+							App.get('htmleditor#objet').setValue(record.data.Objet);
 							App.get('textfield#client').setValue(record.data.Client);
 							App.get('textfield#observations').setValue(record.data.Observation);
 							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
@@ -362,7 +362,7 @@ App.controller.define('CMain', {
 							App.get('TForm2 button#add_keyword').hide();
 							App.get('combo#cboNom').setValue(record.data.IdSource);
 							App.get('combo#cboType').setValue(record.data.IdConsultation);
-							App.get('textfield#objet').setValue(record.data.Objet);
+							App.get('htmleditor#objet').setValue(record.data.Objet);
 							App.get('textfield#client').setValue(record.data.Client);
 							App.get('textfield#observations').setValue(record.data.Observation);
 
@@ -575,7 +575,7 @@ App.controller.define('CMain', {
 							});
 
 							App.get('combo#cboType').setValue(record.data.IdConsultation);
-							App.get('textfield#objet').setValue(record.data.Objet);
+							App.get('htmleditor#objet').setValue(record.data.Objet);
 							App.get('textfield#client').setValue(record.data.Client);
 							App.get('textfield#observations').setValue(record.data.Observation);
 							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
@@ -627,7 +627,7 @@ App.controller.define('CMain', {
 							App.get('VAppelOffreFavoris button#add_keyword').hide();
 							App.get('combo#cboNom').setValue(record.data.IdSource);
 							App.get('combo#cboType').setValue(record.data.IdConsultation);
-							App.get('textfield#objet').setValue(record.data.Objet);
+							App.get('htmleditor#objet').setValue(record.data.Objet);
 							App.get('textfield#client').setValue(record.data.Client);
 							App.get('textfield#observations').setValue(record.data.Observation);
 
@@ -785,7 +785,7 @@ App.controller.define('CMain', {
         App.get('combo#cboNom').setValue('');
         App.get('datefield#date').setValue('');
         App.get('combo#cboType').setValue('');
-        App.get('textfield#objet').setValue('');
+        App.get('htmleditor#objet').setValue('');
         App.get('textfield#client').setValue('');
         App.get('textfield#observations').setValue('');
         App.get('combo#cboDepartement').setValue('');
