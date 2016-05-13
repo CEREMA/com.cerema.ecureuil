@@ -13,6 +13,7 @@ App.view.define('VForm2', {
                 border: false,
                 width: 250,
                 layout: "vbox",
+                bodyCls: "grey",
                 items: [
                 {
                     xtype: "combo",
