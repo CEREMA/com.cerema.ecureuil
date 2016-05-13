@@ -48,10 +48,6 @@ App.view.define('VForm2', {
                     itemId: "date_limite",
                     labelAlign: "top",
                     editable: false,
-                    margin: {
-                        top: 10,
-                        left: 10
-                    },
                     width: "100%",
                     fieldLabel: 'Date limite',
                     allowBlank: false
