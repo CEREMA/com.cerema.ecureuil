@@ -61,12 +61,12 @@ App.view.define('VForm2', {
                     editable: false,
                     labelAlign: "top",
                     labelWidth: 200,
-                    width: 200,
+                    width: "100%",
                     displayField: "NomSource",
                     valueField: "IdSource",
                     store: App.store.create('App.AO.getAll2', // Creation du store
                     {
-                            autoLoad: true
+                        autoLoad: true
                     })
                 }
                 ]
