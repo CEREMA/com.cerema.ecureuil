@@ -68,7 +68,51 @@ App.view.define('VForm2', {
                     width: "100%",
                     fieldLabel: 'Date limite',
                     allowBlank: false
-                }
+                },
+                {
+                    layout: "hbox",
+                    border: false,
+                    width: "100%",
+                    items: [
+
+                        {
+                            xtype: "combo",
+                            itemId: "cboCode",
+                            margin: {
+                                top: 10,
+                                left: 10
+
+                            },
+                            fieldLabel: "Code de la prestation",
+                            allowBlank: false,
+                            editable: false,
+                            labelAlign: "top",
+                            labelWidth: 200,
+                            width: 200,
+                            displayField: "LibelleNaturePrestation",
+                            valueField: "IdNaturePrestation",
+
+                            store: App.store.create('App.AO.getAll5', // Creation du store
+                                {
+                                    autoLoad: true
+                                })
+
+                        }, {
+                            xtype: "textfield",
+                            itemId: "numero_semaine",
+                            margin: {
+                                top: 10,
+                                left: 30
+                            },
+                            width: 200,
+                            readOnly: true,
+                            labelAlign: "top",
+                            fieldLabel: "Numéro de semaine",
+                            allowBlank: false,
+                            labelWidth: 200,
+                        },
+                      ]
+                }                    
                 ]
             },
             {
@@ -175,51 +219,7 @@ App.view.define('VForm2', {
                         }
                     }
 				 ]
-			     },
-                 {
-                    layout: "hbox",
-                    border: false,
-                    width: "100%",
-                    items: [
-
-                        {
-                            xtype: "combo",
-                            itemId: "cboCode",
-                            margin: {
-                                top: 10,
-                                left: 10
-
-                            },
-                            fieldLabel: "Code de la prestation",
-                            allowBlank: false,
-                            editable: false,
-                            labelAlign: "top",
-                            labelWidth: 200,
-                            width: 200,
-                            displayField: "LibelleNaturePrestation",
-                            valueField: "IdNaturePrestation",
-
-                            store: App.store.create('App.AO.getAll5', // Creation du store
-                                {
-                                    autoLoad: true
-                                })
-
-                        }, {
-                            xtype: "textfield",
-                            itemId: "numero_semaine",
-                            margin: {
-                                top: 10,
-                                left: 30
-                            },
-                            width: 200,
-                            readOnly: true,
-                            labelAlign: "top",
-                            fieldLabel: "Numéro de semaine",
-                            allowBlank: false,
-                            labelWidth: 200,
-                        },
-                    ]
-                }                    
+			     }                    
                 ]
             },
             {
