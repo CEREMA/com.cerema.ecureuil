@@ -231,6 +231,7 @@ App.view.define('VForm2', {
                 id: "TCommunes",
                 xtype: "grid",
                 tbar: [
+                    '->',
                     {
                         text: "Ajouter"
                     }
