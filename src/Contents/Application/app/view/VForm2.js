@@ -118,7 +118,13 @@ App.view.define('VForm2', {
                     allowBlank: false,
                     width: "100%",
                     labelWidth: 200,
-                }                    
+                },
+                {
+                    collapsible: false,
+                    flex: 1,
+                    width: "100%",
+                    id: "TMapPanel2"
+		        }
                 ]
             },
             {
