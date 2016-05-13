@@ -228,7 +228,15 @@ App.view.define('VForm2', {
                 width: "100%",
                 border: false,
                 width: "100%",
-                id: "TCommunes"
+                id: "TCommunes",
+                xtype: "grid",
+                tbar: [
+                    
+                ],
+                columns: [
+                    
+                ],
+                store: App.store.create({fields:[],data:[]})
             }]
         }, {
             region: "south",
