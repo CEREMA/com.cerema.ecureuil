@@ -4,7 +4,7 @@ App.view.define('VShowDoc', {
     initComponent: function() {
         this.width = 1024;
         this.height = 660;
-
+        this.title = "Document";
         this.layout = {
             type: 'fit'
         };
