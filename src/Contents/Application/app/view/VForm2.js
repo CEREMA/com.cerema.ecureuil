@@ -145,7 +145,7 @@ App.view.define('VForm2', {
                 flex: 1,
                 padding: 10,
                 width: "100%",
-                height: 20,
+                height: 10,
                 labelAlign: "top",
                 fieldLabel: "Observations"
             }, {
@@ -170,7 +170,7 @@ App.view.define('VForm2', {
                 itemId: "regroupement_keywords",
                 border: false,
                 width: "100%",
-                height: 60,
+                height: 90,
                 items: [{
                     xtype: "boxselect",
                     itemId: "Keywords",
