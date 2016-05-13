@@ -240,14 +240,15 @@ App.view.define('VForm2', {
                             App.get('TForm2 textfield#ed_keyword').show();                        
                             App.get('TForm2 boxselect#Keywords').hide();
                         }
-                    },
-                    {
-                        border: false,
-                        itemId: "TMapPanel2",
-                        flex: 1
                     }
 				 ]
-			     }                    
+			     },
+                 {
+                    border: false,
+                    itemId: "TMapPanel2",
+                    flex: 1,
+                    width: "100%"
+                 }                    
                 ]
             },
             {
