@@ -1,10 +1,7 @@
 App = {
 	init: function(app,server) {
 		app.use('/tmp',server.static(__dirname + require('path').sep+'tmp'));		
-		app.post('/upload',function(req,res) {
-			App.upload.up(req,res);
-		});
-		app.post('/',function(req,res) {
+		app.post('/',app.UPLOAD.any(),function(req,res,next) {
 			App.upload.up(req,res);
 		});
 		app.get('/docs/*',function(req,res) {
