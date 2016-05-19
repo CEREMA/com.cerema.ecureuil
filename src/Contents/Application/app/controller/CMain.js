@@ -186,7 +186,6 @@ App.controller.define('CMain', {
 
     },
     add_commune: function() {
-        alert('x');
         App.view.create('VCommunes',{modal: true}).show();        
     },
     search_onkey: function(me) {
