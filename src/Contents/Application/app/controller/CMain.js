@@ -170,10 +170,13 @@ App.controller.define('CMain', {
                     App.DB.post('gestionao2://my_communes',s);
                     App.get(p.up('window'),'grid#gridcom').getStore().add();
                     var data=App.get(p.up('window'),'grid#gridcom').getStore().getRange();
-                    console.log(data);
-                    console.log(s);
                     data.push(s);
+                    console.log(data);
                     App.get(p.up('window'),'grid#gridcom').getStore().loadData(data);
+                    App.get(p.up('window'),'grid#gridcom').getStore().on('load',function(){
+                        
+                        alert('b');
+                    })
                 }
             }
         });
