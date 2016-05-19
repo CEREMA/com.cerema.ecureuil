@@ -132,7 +132,7 @@ App.controller.define('CMain', {
                 beforeitemcontextmenu: "grid1_oncontextmenu"
             },
             "TForm2 button#add_commune": {
-                click: "a dd_commune"  
+                click: "add_commune"  
             },
             "button#ajouter2": {
                 click: "validation_groupe"
