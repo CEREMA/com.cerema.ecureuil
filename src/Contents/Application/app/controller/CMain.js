@@ -168,13 +168,9 @@ App.controller.define('CMain', {
                     var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
                     console.log(s);
                     if (s) s=s[0].data;
-                    console.log(s);
-                    App.DB.post('gestionao2://my_communes',s);
-                    var data=App.get(p.up('window'),'grid#gridcom').getStore().getRange();
-                    console.log(data);
-                    data.push(s);
-                    console.log(data);
-                    App.get(p.up('window'),'grid#gridcom').getStore().loadRawData(data);
+                    App.Communes.push(s);                    
+                    App.DB.post('gestionao2://my_communes',s);                    
+                    App.get(p.up('window'),'grid#gridcom').getStore().loadRawData(App.Communes);
                 }
             }
         });
@@ -192,6 +188,7 @@ App.controller.define('CMain', {
         App.get(me.up('window'),"grid#search").getStore().load();
     },
 	VCommunes_onshow: function() {
+        App.Communes=[];
 		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
 	},
     keyword_add: function(p,s) {
