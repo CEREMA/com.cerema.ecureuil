@@ -132,7 +132,7 @@ App.controller.define('CMain', {
                 beforeitemcontextmenu: "grid1_oncontextmenu"
             },
             "TForm2 button#add_commune": {
-                click: "add_commune"  
+                click: "a dd_commune"  
             },
             "button#ajouter2": {
                 click: "validation_groupe"
@@ -170,6 +170,7 @@ App.controller.define('CMain', {
                     App.DB.post('gestionao2://my_communes',s);
                     App.get(p.up('window'),'grid#gridcom').getStore().add();
                     var data=App.get(p.up('window'),'grid#gridcom').getStore().getRange();
+                    console.log(data);
                     data.push(s);
                     console.log(data);
                     App.get(p.up('window'),'grid#gridcom').getStore().loadData(data);
