@@ -166,11 +166,11 @@ App.controller.define('CMain', {
             "VCommunes button#Add_commune": {
                 "click": function(p) {
                     var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
-                    console.log(s);
-                    if (s) s=s[0].data;
-                    App.Communes.push(s);                    
-                    App.DB.post('gestionao2://my_communes',s);                    
-                    App.get(p.up('window'),'grid#gridcom').getStore().loadRawData(App.Communes);
+                    if (s) {
+                        App.Communes.push(s[0].data);                    
+                        App.DB.post('gestionao2://my_communes',s[0].data);                    
+                        App.get(p.up('window'),'grid#gridcom').getStore().loadRawData(App.Communes);
+                    }
                 }
             }
         });
