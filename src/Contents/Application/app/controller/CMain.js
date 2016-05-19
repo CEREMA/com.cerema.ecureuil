@@ -174,10 +174,10 @@ App.controller.define('CMain', {
                     data.push(s);
                     console.log(data);
                     App.get(p.up('window'),'grid#gridcom').getStore().loadData(data);
-                    App.get(p.up('window'),'grid#gridcom').getStore().on('load',function(){
+                    /*App.get(p.up('window'),'grid#gridcom').getStore().on('load',function(){
                         
                         alert('b');
-                    })
+                    })*/
                 }
             }
         });
