@@ -174,10 +174,10 @@ App.controller.define('CMain', {
                     data.push(s);
                     console.log(data);
                     App.get(p.up('window'),'grid#gridcom').getStore().loadData(data);
-                    /*App.get(p.up('window'),'grid#gridcom').getStore().on('load',function(){
+                    App.get(p.up('window'),'grid#gridcom').getStore().on('load',function(){
                         
                         alert('b');
-                    })*/
+                    })
                 }
             }
         });
@@ -198,6 +198,7 @@ App.controller.define('CMain', {
 		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
 	},
     keyword_add: function(p,s) {
+        console.log(s.button);
         if (s.button==12) {
             App.DB.get('gestionao2://keywords?keyword='+p.getValue(),function(o) {
                 if (o.data.length==0) {
