@@ -168,6 +168,7 @@ App.controller.define('CMain', {
                     var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
                     console.log(s);
                     if (s) s=s[0].data;
+                    console.log(s);
                     App.DB.post('gestionao2://my_communes',s);
                     var data=App.get(p.up('window'),'grid#gridcom').getStore().getRange();
                     console.log(data);
