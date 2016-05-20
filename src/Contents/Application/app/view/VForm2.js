@@ -120,6 +120,7 @@ App.view.define('VForm2', {
             region: "center",
             layout: "vbox",
             border: false,
+            itemId: "TCenter",
             items: [{
                 xtype: "textfield",
                 itemId: "client",
