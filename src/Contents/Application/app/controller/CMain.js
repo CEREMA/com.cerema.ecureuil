@@ -159,26 +159,27 @@ App.controller.define('CMain', {
                 keyup: "search_onkey"
             },
             "VCommunes grid#search": {
-                itemclick: function(me,store) {
-                    GMap(store.data.latitude,store.data.longitude);
-                }
+                itemclick: "Call_Map"
             },
             "VCommunes button#Add_commune": {
-                "click": function(p) {
-                    var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
-                    if (s) {
-                        App.Communes.push(s[0].data);                    
-                        App.DB.post('gestionao2://my_communes',s[0].data);                            
-                        App.get(p.up('window'),'grid#gridcom').getStore().loadRawData(App.Communes);
-                        console.log(App.get(p.up('window'),'grid#gridcom').getStore());
-                        console.log(App.Communes);
-                    }
-                }
+                "click": "add_commune"
             }
         });
 
         App.init('VMain', this.onLoad);
 
+    },
+    add_commune: function(p) {
+        var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
+        if (s) {
+            App.Communes.push(s[0].data);                    
+            App.DB.post('gestionao2://my_communes',s[0].data);                            
+            App.get(p.up('window'),'grid#gridcom').getStore().loadRawData(App.Communes);
+            App.get("TForm2 grid#TCommunes").getStore().loadRawData(App.Communes);
+        }
+    },
+    Call_Map: function(me,store) {
+        GMap(store.data.latitude,store.data.longitude);
     },
     add_commune: function() {
         App.view.create('VCommunes',{modal: true}).show();        
