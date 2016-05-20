@@ -158,7 +158,10 @@ App.controller.define('CMain', {
     },
     view_commune: function(p) {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
-        if (s) App.get("TForm2 grid#TCommunes").getStore().add(s[0].data);
+        if (s) {
+            App.get("TForm2 grid#TCommunes").getStore().add(s[0].data);
+            TMarker.marker(s[0].data.longitude,s[0].data.latitude);
+        }
     },
     add_commune: function() {
         App.view.create('VCommunes',{modal: true}).show();        
