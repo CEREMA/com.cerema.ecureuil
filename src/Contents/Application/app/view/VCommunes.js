@@ -2,11 +2,11 @@ App.view.define('VCommunes', {
     extend: "Ext.window.Window",
     alias: "widget.VCommunes",
     initComponent: function() {
-        this.width = 800;
+        this.width = 600;
         this.height = 650;
         this.title = "Communes";
         this.bodyCls = "white";
-		this.layout="hbox";
+		this.layout="vbox";
         this.closeAction="destroy";
         this.tbar=[
         {
@@ -49,26 +49,6 @@ App.view.define('VCommunes', {
                 width: "100%",
                 store: App.store.create({fields:[],data:[]}),
                 height: 200
-            },
-            {
-                width: 100,
-                padding: 10,
-                xtype: "button",
-                text:"Ajouter",
-                itemid: "xAdd_commune"
-            },
-            {
-                width: 200,
-                border: false,
-                xtype: "grid",
-                itemId: "gridcom",
-                border: false,
-                columns: [{
-                    header: "Commune",
-                    dataIndex: "nom_commune",
-                    flex: 1
-                }],
-                store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true})            
             }
         ];
         this.bbar = [ 
