@@ -1,23 +1,8 @@
-function GMap(l,m)
+function GMap(div,l,m)
 {
 	var TMap={};
 	
-	TMap.map = new google.maps.Map(Ext.get('TMapPanel').dom,{
-		zoom: 12,
-		center: new google.maps.LatLng(l, m),
-		mapTypeId: google.maps.MapTypeId.HYBRID	
-	});
-	TMap.marker= new google.maps.Marker({
-		position: new google.maps.LatLng(l,m)
-	});		
-	TMap.marker.setMap(TMap.map);
-	
-};
-function GMap2(l,m)
-{
-	var TMap={};
-	
-	TMap.map = new google.maps.Map(Ext.get('TMapPanel2').dom,{
+	TMap.map = new google.maps.Map(App.get(div).dom,{
 		zoom: 12,
 		center: new google.maps.LatLng(l, m),
 		mapTypeId: google.maps.MapTypeId.HYBRID	
