@@ -7,6 +7,7 @@ App.view.define('VCommunes', {
         this.title = "Communes";
         this.bodyCls = "white";
 		this.layout="border";
+        this.closeAction="destroy";
         this.tbar=[
         {
             xtype: "ux-searchbox",
