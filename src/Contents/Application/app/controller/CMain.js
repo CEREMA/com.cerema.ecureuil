@@ -156,11 +156,7 @@ App.controller.define('CMain', {
     },
     view_commune: function(p) {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
-        if (s) {
-            App.Communes.push(s[0].data);                    
-            App.DB.post('gestionao2://my_communes',s[0].data);                            
-            App.get("TForm2 grid#TCommunes").getStore().loadRawData(App.Communes);
-        }
+        if (s) App.get("TForm2 grid#TCommunes").getStore().add(s[0].data);
     },
     add_commune: function() {
         App.view.create('VCommunes',{modal: true}).show();        
@@ -172,7 +168,7 @@ App.controller.define('CMain', {
         App.get(me.up('window'),"grid#search").getStore().load();
     },
 	VCommunes_onshow: function() {
-        App.Communes=[];
+        //App.Communes=[];
 //		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
 	},
     keyword_add: function(p,s) {
