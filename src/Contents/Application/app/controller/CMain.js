@@ -168,8 +168,7 @@ App.controller.define('CMain', {
         App.get(me.up('window'),"grid#search").getStore().load();
     },
 	VCommunes_onshow: function() {
-        //App.Communes=[];
-//		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
+        
 	},
     keyword_add: function(p,s) {
         console.log(s.button);
@@ -406,7 +405,7 @@ App.controller.define('CMain', {
     TForm2_onshow: function(p) {
 		var d=new Date();
 		App.get('TForm2 textfield#numero_semaine').setValue(d.getWeekNumber());
-	
+        App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");	
         AO_ID = "";
         UPLOADZ = [];
         BLOB = [];
