@@ -168,8 +168,9 @@ App.controller.define('CMain', {
                     var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
                     if (s) {
                         App.Communes.push(s[0].data);                    
-                        App.DB.post('gestionao2://my_communes',s[0].data);                    
+                        App.DB.post('gestionao2://my_communes',s[0].data);                            
                         App.get(p.up('window'),'grid#gridcom').getStore().loadRawData(App.Communes);
+                        console.log(App.get(p.up('window'),'grid#gridcom').getStore());
                         console.log(App.Communes);
                     }
                 }
