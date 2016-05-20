@@ -165,7 +165,7 @@ App.controller.define('CMain', {
         }
     },
     Call_Map: function(me,store) {
-        GMap("VCommunes panel#TMapPanel",store.data.latitude,store.data.longitude);
+        GMap(store.data.latitude,store.data.longitude);
     },
     add_commune: function() {
         App.view.create('VCommunes',{modal: true}).show();        
@@ -178,6 +178,7 @@ App.controller.define('CMain', {
     },
 	VCommunes_onshow: function() {
         App.Communes=[];
+        alert(App.get("VCommunes panel#TMapPanel"));
 		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
 	},
     keyword_add: function(p,s) {
