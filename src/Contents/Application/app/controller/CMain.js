@@ -1,7 +1,9 @@
 var TMap={};
 function GMap(l,m)
 {
-        
+    App.get("TForm2 panel#TMapPanel").el.dom.on('click',function(){
+        alert('clic') ;
+    });
     TMap.map = new google.maps.Map(App.get("TForm2 panel#TMapPanel").el.dom,{
         zoom: 5,
         center: new google.maps.LatLng(48.864715, 2.666245),
@@ -977,6 +979,9 @@ App.controller.define('CMain', {
             temoin = true;
         };
         if (temoin) return;
+        
+        var Communes=App.getArray(App.get(p.up('window'),'grid#TCommunes').getStore().getRange(),"id");
+        console.log(Communes);
 
         if (OP == true) {
 
@@ -991,7 +996,7 @@ App.controller.define('CMain', {
                 DateLimite: App.get('datefield#date_limite').getValue(),
                 Semaine: App.get('textfield#numero_semaine').getValue(),
                 IdDomaine: App.get('combo#cboDomaine').getValue(),
-                //IdThematique: App.get('combo#cboThematique').getValue(),
+                Communes: JSON.stringify(Communes),
                 IdNaturePrestation: App.get('combo#cboCode').getValue(),
                 _BLOB: App.get('uploadfilemanager#up').getFiles(),
                 Keywords: App.get('boxselect#Keywords').getValue()
