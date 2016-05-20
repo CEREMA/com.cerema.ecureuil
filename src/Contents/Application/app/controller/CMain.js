@@ -162,9 +162,6 @@ App.controller.define('CMain', {
             App.get("TForm2 grid#TCommunes").getStore().loadRawData(App.Communes);
         }
     },
-    Call_Map: function(me,store) {
-        //GMap(store.data.latitude,store.data.longitude);
-    },
     add_commune: function() {
         App.view.create('VCommunes',{modal: true}).show();        
     },
