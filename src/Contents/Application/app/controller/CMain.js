@@ -2,7 +2,7 @@ function GMap(l,m)
 {
     if (!TMap) {
         var TMap={};
-        alert(App.get("VCommunes panel#TMapPanel"));
+        console.log(App.get("VCommunes panel#TMapPanel").dom);
         TMap.map = new google.maps.Map(App.get("VCommunes panel#TMapPanel").dom,{
             zoom: 12,
             center: new google.maps.LatLng(l, m),
