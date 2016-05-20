@@ -112,7 +112,7 @@ App.view.define('VForm2', {
                 labelWidth: 200,
             }, {
                 border: false,
-                itemId: "TMapPanel2",
+                itemId: "TMapPanel",
                 flex: 1,
                 width: "100%"
             }]
