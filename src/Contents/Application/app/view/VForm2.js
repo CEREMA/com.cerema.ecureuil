@@ -243,7 +243,7 @@ App.view.define('VForm2', {
                         flex: 1
                     }
                 ],
-                store: App.store.create({fields:["id","nom_commune"],data:[]},{autoLoad: true})
+                store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true})
             }]
         }, {
             region: "south",
