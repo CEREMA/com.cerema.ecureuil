@@ -160,7 +160,7 @@ App.controller.define('CMain', {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
             App.get("TForm2 grid#TCommunes").getStore().add(s[0].data);
-            TMap.marker(s[0].data.longitude,s[0].data.latitude);
+            TMap.marker(s[0].data.latitude,s[0].data.longitude);
         }
     },
     add_commune: function() {
