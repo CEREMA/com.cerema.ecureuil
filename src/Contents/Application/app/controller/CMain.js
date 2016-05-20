@@ -1,17 +1,18 @@
 function GMap(l,m)
 {
-	var TMap={};
-	
-	TMap.map = new google.maps.Map(App.get("VCommunes panel#TMapPanel").dom,{
-		zoom: 12,
-		center: new google.maps.LatLng(l, m),
-		mapTypeId: google.maps.MapTypeId.HYBRID	
-	});
-	TMap.marker= new google.maps.Marker({
-		position: new google.maps.LatLng(l,m)
-	});		
-	TMap.marker.setMap(TMap.map);
-	
+    if (!TMap) {
+        var TMap={};
+
+        TMap.map = new google.maps.Map(App.get("VCommunes panel#TMapPanel").dom,{
+            zoom: 12,
+            center: new google.maps.LatLng(l, m),
+            mapTypeId: google.maps.MapTypeId.HYBRID	
+        });
+        TMap.marker= new google.maps.Marker({
+            position: new google.maps.LatLng(l,m)
+        });		
+        TMap.marker.setMap(TMap.map);
+    }
 };
 
 App.controller.define('CMain', {
