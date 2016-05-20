@@ -164,7 +164,7 @@ App.controller.define('CMain', {
         }
     },
     Call_Map: function(me,store) {
-        GMap(store.data.latitude,store.data.longitude);
+        //GMap(store.data.latitude,store.data.longitude);
     },
     add_commune: function() {
         App.view.create('VCommunes',{modal: true}).show();        
