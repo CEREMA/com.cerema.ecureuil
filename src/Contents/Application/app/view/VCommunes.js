@@ -50,6 +50,25 @@ App.view.define('VCommunes', {
                 width: "100%",
                 store: App.store.create({fields:[],data:[]}),
                 height: 200
+            },
+            {
+                region:'east',
+                width: 200,
+                layout: "fit",
+                border: false,
+                items: [
+                {
+                    xtype: "grid",
+                    itemId: "gridcom",
+                    border: false,
+                    columns: [{
+                        header: "Commune",
+                        dataIndex: "nom_commune",
+                        flex: 1
+                    }],
+                    store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true})
+                }
+                ]
             }
         ];
         this.bbar = [ 
