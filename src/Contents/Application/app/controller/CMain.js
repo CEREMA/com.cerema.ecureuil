@@ -175,7 +175,7 @@ App.controller.define('CMain', {
             App.Communes.push(s[0].data);                    
             App.DB.post('gestionao2://my_communes',s[0].data);                            
             App.get(p.up('window'),'grid#gridcom').getStore().loadRawData(App.Communes);
-            App.get("TForm2 grid#TCommunes").getStore().loadRawData(App.Communes);
+            //App.get("TForm2 grid#TCommunes").getStore().loadRawData(App.Communes);
         }
     },
     Call_Map: function(me,store) {
