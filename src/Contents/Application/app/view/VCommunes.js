@@ -20,12 +20,7 @@ App.view.define('VCommunes', {
         this.items = [
             {
                 collapsible: false,
-                region:'center',
-                id: "TMapPanel"
-		    },
-            {
-                collapsible: false,
-                region:'north',
+                region:'west',
                 xtype: "grid",
                 itemId: "search",
                 bbar: [
