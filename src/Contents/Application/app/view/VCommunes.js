@@ -47,6 +47,7 @@ App.view.define('VCommunes', {
                     width: 250,
                     dataIndex: "nom_region"
                 }],
+                width: "100%",
                 store: App.store.create({fields:[],data:[]}),
                 height: 200
             }
