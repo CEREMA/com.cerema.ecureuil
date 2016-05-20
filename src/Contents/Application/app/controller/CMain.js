@@ -1,6 +1,7 @@
 var TMap={};
 function GMap(l,m)
 {
+    console.log(App.get("TForm2 panel#TMapPanel"));
     App.get("TForm2 panel#TMapPanel").dom.on('click',function(){
         alert('clic') ;
     });
