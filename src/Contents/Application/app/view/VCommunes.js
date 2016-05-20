@@ -69,7 +69,7 @@ App.view.define('VCommunes', {
                     dataIndex: "nom_commune",
                     flex: 1
                 }],
-                store: App.store.create("gestionao2://my_communes_fields")
+                store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true})
             }
             ]
 		    } 		
