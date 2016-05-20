@@ -982,6 +982,7 @@ App.controller.define('CMain', {
         if (temoin) return;
         
         var Communes=App.getArray(App.get(p.up('window'),'grid#TCommunes').getStore().getRange(),"communes_id");
+        console.log(Communes);
 
         if (OP == true) {
 
