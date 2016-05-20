@@ -3,14 +3,16 @@ function GMap(l,m)
     if (!TMap) {
         var TMap={};
         TMap.map = new google.maps.Map(App.get("TForm2 panel#TMapPanel").el.dom,{
-            zoom: 12,
+            zoom: 5,
             center: new google.maps.LatLng(l, m),
             mapTypeId: google.maps.MapTypeId.HYBRID	
         });
-        TMap.marker= new google.maps.Marker({
-            position: new google.maps.LatLng(l,m)
-        });		
-        TMap.marker.setMap(TMap.map);
+        TMap.marker= function(l,m){
+            var marker=new google.maps.Marker({
+                position: new google.maps.LatLng(l,m)
+            });
+            marker.setMap(TMap.map);
+        };        
     }
 };
 
