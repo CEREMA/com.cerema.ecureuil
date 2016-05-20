@@ -55,7 +55,7 @@ App.view.define('VCommunes', {
                 padding: 10,
                 xtype: "button",
                 text:"Ajouter",
-                itemid: "Add_commune"
+                itemid: "xAdd_commune"
             },
             {
                 width: 200,
