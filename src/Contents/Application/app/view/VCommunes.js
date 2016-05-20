@@ -51,7 +51,10 @@ App.view.define('VCommunes', {
                 height: 200
             }
         ];
-        this.bbar = [ 
+        this.bbar = [
+            {
+                html: ""  
+            },
             '->',
             {
                 text: "OK"
