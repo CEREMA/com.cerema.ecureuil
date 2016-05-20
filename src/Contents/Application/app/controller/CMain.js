@@ -3,7 +3,7 @@ function GMap(l,m)
 {
     console.log(App.get("TForm2 panel#TMapPanel"));
     App.get("TForm2 panel#TMapPanel").el.dom.onclick=function(){
-        alert('clic') ;
+        App.get("TForm2 ")
     };
     TMap.map = new google.maps.Map(App.get("TForm2 panel#TMapPanel").el.dom,{
         zoom: 5,
@@ -981,8 +981,7 @@ App.controller.define('CMain', {
         };
         if (temoin) return;
         
-        var Communes=App.getArray(App.get(p.up('window'),'grid#TCommunes').getStore().getRange(),"id");
-        console.log(Communes);
+        var Communes=App.getArray(App.get(p.up('window'),'grid#TCommunes').getStore().getRange(),"communes_id");
 
         if (OP == true) {
 
@@ -1079,7 +1078,7 @@ App.controller.define('CMain', {
                 DateLimite: App.get('datefield#date_limite').getValue(),
                 Semaine: App.get('textfield#numero_semaine').getValue(),
                 IdDomaine: App.get('combo#cboDomaine').getValue(),
-                //IdThematique: App.get('combo#cboThematique').getValue(),
+                Communes: JSON.stringify(Communes),
                 IdNaturePrestation: App.get('combo#cboCode').getValue(),
                 Keywords: App.get('boxselect#Keywords').getValue()
             };
