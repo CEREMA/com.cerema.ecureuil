@@ -3,7 +3,7 @@ function GMap(l,m)
 {
         
     TMap.map = new google.maps.Map(App.get("TForm2 panel#TMapPanel").el.dom,{
-        zoom: 5,
+        zoom: 3,
         center: new google.maps.LatLng(48.864715, 2.666245),
         mapTypeId: google.maps.MapTypeId.HYBRID	
     });
