@@ -2,8 +2,7 @@ function GMap(l,m)
 {
     if (!TMap) {
         var TMap={};
-        console.log(App.get("VCommunes panel#TMapPanel"));
-        TMap.map = new google.maps.Map(App.get("VCommunes panel#TMapPanel").dom,{
+        TMap.map = new google.maps.Map(App.get("VCommunes panel#TMapPanel").el.dom,{
             zoom: 12,
             center: new google.maps.LatLng(l, m),
             mapTypeId: google.maps.MapTypeId.HYBRID	
@@ -178,7 +177,6 @@ App.controller.define('CMain', {
     },
 	VCommunes_onshow: function() {
         App.Communes=[];
-        alert(App.get("VCommunes panel#TMapPanel"));
 		App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");
 	},
     keyword_add: function(p,s) {
