@@ -147,14 +147,14 @@ App.controller.define('CMain', {
                 itemclick: "Call_Map"
             },
             "VCommunes button#Add_commune": {
-                "click": "add_commune"
+                "click": "view_commune"
             }
         });
 
         App.init('VMain', this.onLoad);
 
     },
-    add_commune: function(p) {
+    view_commune: function(p) {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
             App.Communes.push(s[0].data);                    
