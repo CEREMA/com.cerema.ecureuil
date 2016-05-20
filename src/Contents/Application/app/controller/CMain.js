@@ -1,10 +1,10 @@
 var TMap={};
 function GMap(l,m)
 {
-    App.get("TForm2 panel#TMapPanel").el.dom.on('click',function(){
+    App.get("TForm2 panel#TMapPanel").dom.on('click',function(){
         alert('clic') ;
     });
-    TMap.map = new google.maps.Map(App.get("TForm2 panel#TMapPanel").el.dom,{
+    TMap.map = new google.maps.Map(App.get("TForm2 panel#TMapPanel").dom,{
         zoom: 5,
         center: new google.maps.LatLng(48.864715, 2.666245),
         mapTypeId: google.maps.MapTypeId.HYBRID	
