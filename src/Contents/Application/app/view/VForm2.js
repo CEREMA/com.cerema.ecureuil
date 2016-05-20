@@ -239,10 +239,11 @@ App.view.define('VForm2', {
                 ],
                 columns: [
                     {
-                        header: "Communes"
+                        header: "Communes",
+                        flex: 1
                     }
                 ],
-                store: App.store.create({fields:[],data:[]})
+                store: App.store.create({fields:["id","nom_commune"],data:[]},{autoLoad: true})
             }]
         }, {
             region: "south",
