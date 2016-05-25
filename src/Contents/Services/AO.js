@@ -42,6 +42,7 @@ AO = {
 			} else {
 				AO.using('db').query('gestionao2','insert into docs VALUES ("'+list[ndx].docId+'","-1","-1","-1","-1")',function() {
 					App.upload.toBase64(list[ndx].docId,function(_blob) {
+						console.log(_blob);
 						var up={
 							docId: list[ndx].docId,
 							_blob: _blob,
