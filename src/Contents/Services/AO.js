@@ -41,17 +41,19 @@ AO = {
 				AO.upload_blob(list,ndx+1,cb);
 			} else {
 				AO.using('db').query('gestionao2','insert into docs VALUES ("'+list[ndx].docId+'","-1","-1","-1","-1")',function() {
-					var up={
-						docId: list[ndx].docId,
-						_blob: App.upload.toBase64(list[ndx].docId),
-						filename: list[ndx].filename,
-						type: list[ndx].filetype,
-						size: list[ndx].filesize			
-					};
-					AO.using('db').post('gestionao2','docs',up,function(err,x) {
-						console.log(err);
-						console.log(x);
-						AO.upload_blob(list,ndx+1,cb);
+					App.upload.toBase64(list[ndx].docId,function(_blob) {
+						var up={
+							docId: list[ndx].docId,
+							_blob: _blob,
+							filename: list[ndx].filename,
+							type: list[ndx].filetype,
+							size: list[ndx].filesize			
+						};
+						AO.using('db').post('gestionao2','docs',up,function(err,x) {
+							console.log(err);
+							console.log(x);
+							AO.upload_blob(list,ndx+1,cb);
+						});
 					});
 				});			
 			}
