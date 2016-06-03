@@ -1,24 +1,3 @@
-var TMap={};
-function GMap(l,m)
-{
-    console.log(App.get("TForm2 panel#TMapPanel"));
-    App.get("TForm2 panel#TMapPanel").el.dom.onclick=function(){
-        App.get("TForm2 ")
-    };
-    TMap.map = new google.maps.Map(App.get("TForm2 panel#TMapPanel").el.dom,{
-        zoom: 5,
-        center: new google.maps.LatLng(48.864715, 2.666245),
-        mapTypeId: google.maps.MapTypeId.HYBRID	
-    });
-    TMap.marker= function(l,m){
-        var marker=new google.maps.Marker({
-            position: new google.maps.LatLng(l,m)
-        });
-        marker.setMap(TMap.map);
-    };        
-
-};
-
 App.controller.define('CMain', {
 
     views: [
@@ -153,17 +132,36 @@ App.controller.define('CMain', {
             },
             "VCommunes button#Add_commune": {
                 "click": "view_commune"
+            },
+            "VCommunes button#Del_commune": {
+                "click": "del_commune"
+            },
+            "VCommunes button#btn_ok": {
+                "click": "ok_commune"
             }
         });
 
         App.init('VMain', this.onLoad);
 
     },
+    ok_commune: function(me) {
+        me.up('window').close();
+    },
+    del_commune: function(p) {
+        var s = App.get(p.up('window'),"grid#search2").getSelectionModel().getSelection(); if (s) {
+            s=s[0];
+            var ndx=App.get(p.up('window'),"grid#search2").getStore().indexOf(s);
+            Lib.map.markers[ndx].setMap(null);
+            Lib.map.markers.splice(ndx,1);
+            App.get("TForm2 grid#TCommunes").getStore().removeAt(ndx);
+            App.get(p.up('window'),"grid#search2").getStore().removeAt(ndx);
+        }
+    },
     view_commune: function(p) {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
             App.get("TForm2 grid#TCommunes").getStore().add(s[0].data);
-            TMap.marker(s[0].data.latitude,s[0].data.longitude);
+            App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); Lib.map.marker(s[0].data.ville_latitude_deg,s[0].data.ville_longitude_deg);
         }
     },
     add_commune: function() {
@@ -171,12 +169,13 @@ App.controller.define('CMain', {
     },
     search_onkey: function(me) {
         var search=me.getValue();
-        var store=App.store.create('gestionao2://communes?nom_commune='+me.getValue()+'*');
+        var store=App.store.create('gestionao2://communes?ville_nom='+me.getValue()+'*');
         App.get(me.up('window'),"grid#search").bindStore(store);
         App.get(me.up('window'),"grid#search").getStore().load();
-    },
-	VCommunes_onshow: function() {
         
+    },
+	VCommunes_onshow: function(me) {
+        App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=Lib.map.init");	        
 	},
     keyword_add: function(p,s) {
         console.log(s.button);
@@ -413,7 +412,6 @@ App.controller.define('CMain', {
     TForm2_onshow: function(p) {
 		var d=new Date();
 		App.get('TForm2 textfield#numero_semaine').setValue(d.getWeekNumber());
-        App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=GMap");	
         AO_ID = "";
         UPLOADZ = [];
         BLOB = [];
@@ -980,8 +978,8 @@ App.controller.define('CMain', {
             temoin = true;
         };
         if (temoin) return;
-        
-        var Communes=App.getArray(App.get(p.up('window'),'grid#TCommunes').getStore().getRange(),"communes_id");
+        console.log(App.get(p.up('window'),'grid#TCommunes').getStore().getRange());
+        var Communes=App.getArray(App.get(p.up('window'),'grid#TCommunes').getStore().getRange(),"ville_id");
         console.log(Communes);
 
         if (OP == true) {
@@ -1004,6 +1002,7 @@ App.controller.define('CMain', {
             };
 
             App.AO.insert(o, function(err, rr) {
+                
                 if (!rr) {
                     App.notify("Un problème est survenu lors de l'enregistrement de la fiche");
 					p.setDisabled(false);
@@ -1167,7 +1166,7 @@ App.controller.define('CMain', {
 
     //Au chargement de l'application si le lien URL contient ?appelOffre= on recuperera les information de l'offre grace a son numero
     onLoad: function() {
-
+        
         var loc = document.location.href.split('?appelOffre=');
         lien = document.location.href.split('?')[0];
 		

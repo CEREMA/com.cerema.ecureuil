@@ -241,7 +241,7 @@ App.view.define('VForm2', {
                 columns: [
                     {
                         header: "Communes",
-                        dataIndex: "nom_commune",
+                        dataIndex: "ville_nom",
                         flex: 1
                     }
                 ],

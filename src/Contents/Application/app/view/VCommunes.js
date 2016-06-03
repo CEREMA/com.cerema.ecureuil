@@ -3,7 +3,7 @@ App.view.define('VCommunes', {
     alias: "widget.VCommunes",
     initComponent: function() {
         this.width = 600;
-        this.height = 650;
+        this.height = 800;
         this.title = "Communes";
         this.bodyCls = "white";
 		this.layout="vbox";
@@ -13,42 +13,96 @@ App.view.define('VCommunes', {
             xtype: "ux-searchbox",
             itemId: "searchCommunes",
             enableKeyEvents: true,
-            padding: 5,
-            width: 200
+            padding: 5
         }
         ];
         this.items = [
             {
-                xtype: "grid",
-                itemId: "search",
-                flex: 1,
-                bbar: [
-                '->',
+                layout: "hbox",
+                height: 250,
+                width: "100%", 
+                border: false,
+                items: [
                 {
-                    text: "Ajouter",
-                    itemId: "Add_commune"
-                }
-                ],
-                verticalScroller: {
-                    xtype: 'paginggridscroller',
-                    activePrefetch: false
-                },
-                columns: [{
-                    header: "CPostal",
-                    width: 80,
-                    dataIndex: "codes_postaux"
-                },{
-                    header: "Commune",
+                    xtype: "grid",
+                    itemId: "search",
                     flex: 1,
-                    dataIndex: "nom_commune"
-                },{
-                    header: "Région",
-                    width: 250,
-                    dataIndex: "nom_region"
-                }],
+                    verticalScroller: {
+                        xtype: 'paginggridscroller',
+                        activePrefetch: false
+                    },
+                    columns: [{
+                        header: "CPostal",
+                        width: 80,
+                        dataIndex: "ville_code_postal"
+                    },{
+                        header: "Commune",
+                        flex: 1,
+                        dataIndex: "ville_nom"
+                    }],
+                    store: App.store.create({fields:[],data:[]}),
+                    height: 250
+                },
+                {
+                    width: 70,
+                    layout: "vbox",
+                    height: "100%",
+                    border: false,
+                    margin: 5,
+                    items: [
+                    {
+                        flex: 1,
+                        border: false
+                    },
+                    {
+                        xtype: "button",
+                        text: "-->",
+                        width: 70,
+                        itemId: "Add_commune"
+                    },
+                    {
+                        height: 10,
+                        border: false
+                    },
+                    {
+                        xtype: "button",
+                        text: "<--",
+                        itemId: "Del_commune",
+                        width: 70
+                    },
+                    {
+                        flex: 1,
+                        border: false
+                    }
+                    ]                    
+                },
+                {
+                    xtype: "grid",
+                    itemId: "search2",
+                    flex: 1,
+                    verticalScroller: {
+                        xtype: 'paginggridscroller',
+                        activePrefetch: false
+                    },
+                    columns: [{
+                        header: "CPostal",
+                        width: 80,
+                        dataIndex: "ville_code_postal"
+                    },{
+                        header: "Commune",
+                        flex: 1,
+                        dataIndex: "ville_nom"
+                    }],
+                    store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true}),
+                    height: 250
+                }                
+                ]
+            },
+            {
+                xtype: "panel",
+                itemId: "PanelCommune",
                 width: "100%",
-                store: App.store.create({fields:[],data:[]}),
-                height: 200
+                flex: 1
             }
         ];
         this.bbar = [
@@ -57,7 +111,9 @@ App.view.define('VCommunes', {
             },
             '->',
             {
-                text: "OK"
+                text: "OK",
+                width: 80,
+                itemId: "btn_ok"
             }
         ];
         this.callParent(arguments);
