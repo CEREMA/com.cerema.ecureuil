@@ -981,12 +981,13 @@ App.controller.define('CMain', {
         if (temoin) return;
         var tab=App.get(p.up('window'),'grid#TCommunes').getStore().getRange();
         var Communes=[];
-        console.log(tab.length);
         for (var i=0;i<tab.length;i++) {
             Communes.push(tab[i].data.ville_id);
             console.log(tab[i].data.ville_id);
         };
-
+        
+        console.log(Communes);
+        
         if (OP == true) {
 
             var o = {
