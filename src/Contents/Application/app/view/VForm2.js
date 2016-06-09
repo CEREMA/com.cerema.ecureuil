@@ -323,22 +323,13 @@ App.view.define('VForm2', {
             }, {
                 xtype: "button",
                 itemId: "effacer_saisie",
-
-                text: "Effacer",
-                margin: {
-                    top: 10,
-                    bottom: 0,
-                    left: 10,
-                    right: 0
-                }
+                height: "100%",
+                text: "Effacer"
             }, {
                 xtype: "button",
                 itemId: "valider_saisie",
                 text: "Enregistrer",
-                margin: {
-                    top: 10,
-                    left: 10
-                }
+                height: "100%"
             }
         ];
         this.callParent(arguments);
