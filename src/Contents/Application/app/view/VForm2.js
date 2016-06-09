@@ -317,7 +317,7 @@ App.view.define('VForm2', {
                 xtype: "button",
                 itemId: "ajouter_favoris",
                 width: 300,
-                iconCls: "heart",
+                iconCls: "favori",
                 text: "Ajouter aux favoris",
                 hidden: true,
                 margin: {
