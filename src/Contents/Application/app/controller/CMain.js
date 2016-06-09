@@ -1198,7 +1198,7 @@ App.controller.define('CMain', {
                 App.get('textarea#observations').setReadOnly(true);
                 App.get('combo#cboDomaine').setReadOnly(true);
                 
-                App.get('gridTCommunes').loadData(JSON.parse(response.data[0].Communes));
+                App.get('grid#TCommunes').loadData(JSON.parse(response.data[0].Communes));
                 
                 //App.get('combo#cboThematique').setReadOnly(true);
                 App.get('combo#cboCode').setReadOnly(true);
