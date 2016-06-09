@@ -113,3 +113,7 @@
 .grey {
     background-color: "#EEEEEE"
 }
+
+.heart {
+    background-image:url(webapp/heart.png)
+}
