@@ -979,9 +979,11 @@ App.controller.define('CMain', {
             temoin = true;
         };
         if (temoin) return;
-        console.log(App.get(p.up('window'),'grid#TCommunes').getStore().getRange());
-        var Communes=App.getArray(App.get(p.up('window'),'grid#TCommunes').getStore().getRange(),"ville_id");
-        console.log(Communes);
+        var tab=App.get(p.up('window'),'grid#TCommunes').getStore().getRange();
+        var Communes=[];
+        for (var i=0;i<tab.length;i++) {
+            Communes.push(tab[i].data.ville_id);
+        };
 
         if (OP == true) {
 
