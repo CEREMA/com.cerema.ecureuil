@@ -310,6 +310,7 @@ App.view.define('VForm2', {
         this.bbar = [{
                 xtype: "button",
                 text: "Annuler",
+                height: "100%",
                 itemId: "CANCEL_lien"
             },
             '->', {
