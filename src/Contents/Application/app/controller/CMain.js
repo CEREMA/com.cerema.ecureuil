@@ -1145,7 +1145,7 @@ App.controller.define('CMain', {
 
 				};
 
-                App.get('TForm2').close();
+                //App.get('TForm2').close();
 
             });
         }
