@@ -310,26 +310,26 @@ App.view.define('VForm2', {
         this.bbar = [{
                 xtype: "button",
                 text: "Annuler",
-                height: "100%",
+                height: 24,
                 itemId: "CANCEL_lien"
             },
             '->', {
                 xtype: "button",
                 itemId: "ajouter_favoris",
-                height: "100%",
+                height: 24,
                 iconCls: "heart",
                 text: "Ajouter aux favoris",
                 hidden: true
             }, {
                 xtype: "button",
                 itemId: "effacer_saisie",
-                height: "100%",
+                height: 24,
                 text: "Effacer"
             }, {
                 xtype: "button",
                 itemId: "valider_saisie",
                 text: "Enregistrer",
-                height: "100%"
+                height: 24
             }
         ];
         this.callParent(arguments);
