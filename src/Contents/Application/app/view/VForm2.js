@@ -316,7 +316,7 @@ App.view.define('VForm2', {
             '->', {
                 xtype: "button",
                 itemId: "ajouter_favoris",
-                height: "100%",
+
                 iconCls: "heart",
                 text: "Ajouter aux favoris",
                 hidden: true,
@@ -327,7 +327,7 @@ App.view.define('VForm2', {
             }, {
                 xtype: "button",
                 itemId: "effacer_saisie",
-                height: "100%",
+
                 text: "Effacer",
                 margin: {
                     top: 10,
@@ -338,7 +338,6 @@ App.view.define('VForm2', {
             }, {
                 xtype: "button",
                 itemId: "valider_saisie",
-                height: "100%",
                 text: "Enregistrer",
                 margin: {
                     top: 10,
