@@ -3,7 +3,7 @@ App.view.define('VNotifGroupes', {
     width: 465,
     height: 410,
     title: "Notification Groupe",
-    alias: "widget.TForm4",
+    alias: "widget.TNotifGroupes",
     layout: "fit",
     items: [
 
