@@ -20,8 +20,13 @@ App.view.define('VNotifAgents',{
                 {
                     text: "Prenom",
                     dataIndex: "Prenom",
-                    flex:1
+                    width: 120
                 },
+                {
+                    text: "Mail",
+                    dataIndex: "LibMelA",
+                    flex:1
+                }                
             ],
             store: App.store.create('App.AO.getAgents',
              {
