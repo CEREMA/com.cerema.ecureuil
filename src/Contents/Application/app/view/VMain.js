@@ -23,31 +23,6 @@ App.view.define('VMain', {
 					itemId: "MobileADD"
 				}]
 			}
-				/*{
-					text: "Saisie modification",
-					menu: [
-						{
-							text: "Saisie d'un appel d'offre"
-						},
-						{
-							text: "Modification d'un appel d'offre"
-						},
-						{
-							text: "Saisie du suivi"
-						}
-					]
-				},
-				{
-					text: "Suivi de AO",
-					menu: [
-						{
-							text: "Suivi des appels d'offre"
-						},
-						{
-							text: "Recherche d'un AO en attente"
-						}
-					]
-				}*/
 			]		
 		},
 		{
