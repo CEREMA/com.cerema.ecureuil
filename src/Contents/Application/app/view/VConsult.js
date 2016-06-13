@@ -262,10 +262,12 @@ App.view.define('VConsult', {
                     flex: 1,
                     tbar: [{
                         xtype: "button",
+                        iconCls: "ico_user",
                         text: "Ajouter groupe(s)",
                         itemId: "ajouter_groupe"
                     }, {
                         xtype: "button",
+                        iconCls: "ico_group",
                         text: "Ajouter agent(s)",
                         itemId: "ajouter_agent"
                     }, ],
