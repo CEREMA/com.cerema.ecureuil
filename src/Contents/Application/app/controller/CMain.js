@@ -435,9 +435,16 @@ App.controller.define('CMain', {
             items: [{
                 text: 'Supprimer',
                 handler: function() {
-                    var ndx = App.get("grid#grid1").getSelectionModel().getSelection();
-                    console.log(ndx);
-                    App.get('grid#grid1').getStore().remove(ndx);
+                        App.AO.getProfil(user.mail, function(err, r) {
+                        
+                        
+						  if (r.result.length > 0) {
+                    
+                                var ndx = App.get("grid#grid1").getSelectionModel().getSelection();
+                                console.log(ndx);
+                                App.get('grid#grid1').getStore().remove(ndx);
+                          }
+                        });
                 }
 
             }]
