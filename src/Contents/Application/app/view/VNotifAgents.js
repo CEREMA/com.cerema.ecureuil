@@ -3,7 +3,7 @@ App.view.define('VNotifAgents',{
 	width: 610,
 	height: 640,
 	title: "Notification agents",
-	alias: "widget.TForm3",
+	alias: "widget.TNotifAgents",
     layout: "fit",
 	items: [
         {
