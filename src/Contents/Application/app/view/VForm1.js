@@ -1,6 +1,6 @@
-App.view.define('VForm1',{
+App.view.define('VPrincipal',{
 	extend: "Ext.Panel",
-	alias: "widget.TForm1",
+	alias: "widget.TPrincipal",
 	border: false,
 	items: [
 	{
