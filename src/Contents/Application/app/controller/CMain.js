@@ -431,26 +431,21 @@ App.controller.define('CMain', {
     grid1_oncontextmenu: function(view, record, item, index, e) {
         Remove_Id = record.data.Id;
         e.stopEvent();
-        var gridMenu = Ext.create('Ext.menu.Menu', {
-            items: [{
-                text: 'Supprimer',
-                handler: function() {
-                        App.AO.getProfil(user.mail, function(err, r) {
-                        
-                        
-						  if (r.result.length > 0) {
-                    
+        App.AO.getProfil(user.mail, function(err, r) {             
+            if (r.result.length > 0) {        
+                var gridMenu = Ext.create('Ext.menu.Menu', {
+                    items: [{
+                        text: 'Supprimer',
+                        handler: function() {
                                 var ndx = App.get("grid#grid1").getSelectionModel().getSelection();
                                 console.log(ndx);
                                 App.get('grid#grid1').getStore().remove(ndx);
-                          }
-                        });
-                }
-
-            }]
-        });
-        gridMenu.showAt(e.getXY());
-
+                        }
+                    }];
+                });
+                gridMenu.showAt(e.getXY());
+            }
+        });        
     },
     //Permet de supprimer une ligne avec le clic droit supprimer
     grid_upload_oncontextmenu: function(view, record, item, index, e) {
