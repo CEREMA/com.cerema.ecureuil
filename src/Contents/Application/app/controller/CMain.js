@@ -3,7 +3,7 @@ App.controller.define('CMain', {
     views: [
         "VMain",
         "VForm1",
-        "VForm2",
+        "VConsult",
         "VNotifAgents",
         "VNotifGroupes",
         "VShowDoc",
@@ -290,7 +290,7 @@ App.controller.define('CMain', {
 
         OP = false;
 
-        App.view.create('VForm2', {
+        App.view.create('VConsult', {
             modal: true,
 			listeners: {
 				show: function() {
@@ -805,7 +805,7 @@ App.controller.define('CMain', {
     },
     ajouter_modification: function(p, record) {
         OP = true;
-        App.view.create('VForm2', {
+        App.view.create('VConsult', {
             modal: true
         }).show().center();
 
@@ -1178,7 +1178,7 @@ App.controller.define('CMain', {
             profil = parseInt(document.location.href.split('?appelOffre=')[1].trim());
             App.AO.get(profil, function(response) {
                 App.get('TForm1').hide();
-                App.view.create('VForm2', {
+                App.view.create('VConsult', {
                     modal: true
                 }).show().center();
                 App.get('TForm2').setTitle('Appel d\'offre');
