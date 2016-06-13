@@ -1,4 +1,4 @@
-App.view.define('VForm3',{
+App.view.define('VNotifAgents',{
 	extend: "Ext.window.Window",
 	width: 610,
 	height: 640,
