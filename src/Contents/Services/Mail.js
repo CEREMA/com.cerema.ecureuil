@@ -10,8 +10,8 @@ Mail= {
 			debug: true
 		};
 		var transporter = nodemailer.createTransport(smtpTransport(options))
-		
-		transporter.sendMail({
+		console.log(o);
+		/*transporter.sendMail({
 					from: "robot-aix.sii.sg.dtermed@cete-mediterranee.i2",
 					to: o.to,
 					subject: o.subject, 
@@ -20,7 +20,7 @@ Mail= {
 			console.log(err);
 			console.log(result);
 			cb(err,result);
-		});
+		});*/
 		
 	}
 };
