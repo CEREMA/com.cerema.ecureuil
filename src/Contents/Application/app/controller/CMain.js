@@ -4,7 +4,7 @@ App.controller.define('CMain', {
         "VMain",
         "VForm1",
         "VForm2",
-        "VForm3",
+        "VNotifAgents",
         "VForm4",
         "VShowDoc",
         "VMobile",
@@ -820,7 +820,7 @@ App.controller.define('CMain', {
     //bouton ajouter agent de la grid principal
     ajouter_agent: function(p, record) {
 
-        App.view.create('VForm3', {
+        App.view.create('VNotifAgents', {
             modal: true
         }).show();
 
