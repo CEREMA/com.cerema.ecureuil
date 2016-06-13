@@ -354,7 +354,7 @@ App.controller.define('CMain', {
 							});
 							AO_ID = record.data.IdAppelOffre;
 							App.get('TConsult').setTitle('Appel d\'offre');
-							App.get('panel#regroupement_hboxGrid1').hide();
+							//App.get('panel#regroupement_hboxGrid1').hide();
 							App.get('uploadfilemanager#up').setReadOnly(true);
 							App.get('combo#cboNom').setReadOnly(true);
 							App.get('combo#cboType').setReadOnly(true);
