@@ -1,4 +1,4 @@
-App.view.define('VAO', {
+App.view.define('VConsult', {
     extend: "Ext.window.Window",
     alias: "widget.TForm2",
     initComponent: function() {
