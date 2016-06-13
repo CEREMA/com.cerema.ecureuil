@@ -23,7 +23,7 @@ App.view.define('VForm3',{
                     flex:1
                 },
             ],
-            store: App.store.create('App.AO.getAgents',
+            store: App.store.create('bpclight://agents',
              {
                 autoLoad: true
             }) 										
