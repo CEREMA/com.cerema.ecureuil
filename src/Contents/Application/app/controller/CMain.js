@@ -97,10 +97,10 @@ App.controller.define('CMain', {
             "grid#upload": {
                 itemclick: "upload_onclick"
             },
-            "TForm2 grid#grid1": {
+            "TConsult grid#grid1": {
                 beforeitemcontextmenu: "grid1_oncontextmenu"
             },
-            "TForm2 button#add_commune": {
+            "TConsult button#add_commune": {
                 click: "add_commune"  
             },
             "button#ajouter2": {
@@ -112,13 +112,13 @@ App.controller.define('CMain', {
             "button#valider_saisie": {
                 click: "valider_saisie"
             },
-            "TForm2": {
-                show: "TForm2_onshow"
+            "TConsult": {
+                show: "TConsult_onshow"
             },
             "combo#cboDomaine": {
                 select: "valider_thematiques"
             },
-            "TForm2 textfield#ed_keyword": {
+            "TConsult textfield#ed_keyword": {
                 keydown : "keyword_add"   
             },
 			"VCommunes": {
@@ -153,14 +153,14 @@ App.controller.define('CMain', {
             var ndx=App.get(p.up('window'),"grid#search2").getStore().indexOf(s);
             Lib.map.markers[ndx].setMap(null);
             Lib.map.markers.splice(ndx,1);
-            App.get("TForm2 grid#TCommunes").getStore().removeAt(ndx);
+            App.get("TConsult grid#TCommunes").getStore().removeAt(ndx);
             App.get(p.up('window'),"grid#search2").getStore().removeAt(ndx);
         }
     },
     view_commune: function(p) {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
-            App.get("TForm2 grid#TCommunes").getStore().add(s[0].data);
+            App.get("TConsult grid#TCommunes").getStore().add(s[0].data);
             App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); Lib.map.marker(s[0].data.ville_latitude_deg,s[0].data.ville_longitude_deg);
         }
     },
@@ -185,21 +185,21 @@ App.controller.define('CMain', {
                     App.DB.post('gestionao2://keywords',{
                         keyword: p.getValue()   
                     }, function(e,r) {
-                        App.get('TForm2 boxselect#Keywords').getStore().load();
-						App.get('TForm2 boxselect#Keywords').getStore().on('load',function() {
-							var values=App.get('TForm2 boxselect#Keywords').getValue();
+                        App.get('TConsult boxselect#Keywords').getStore().load();
+						App.get('TConsult boxselect#Keywords').getStore().on('load',function() {
+							var values=App.get('TConsult boxselect#Keywords').getValue();
 							values.push(e.insertId);
-							App.get('TForm2 boxselect#Keywords').setValue([]);
-							App.get('TForm2 boxselect#Keywords').setValue(values);
-                            App.get('TForm2 textfield#ed_keyword').hide();
+							App.get('TConsult boxselect#Keywords').setValue([]);
+							App.get('TConsult boxselect#Keywords').setValue(values);
+                            App.get('TConsult textfield#ed_keyword').hide();
                             App.get('boxselect#Keywords').show();      
-                            App.get('TForm2 button#add_keyword').setDisabled(false);
+                            App.get('TConsult button#add_keyword').setDisabled(false);
 						});                        
                     });
                 } else {
-                    App.get('TForm2 textfield#ed_keyword').hide();
+                    App.get('TConsult textfield#ed_keyword').hide();
                     App.get('boxselect#Keywords').show();                     
-                    App.get('TForm2 button#add_keyword').setDisabled(false);
+                    App.get('TConsult button#add_keyword').setDisabled(false);
                 }
             });
         }
@@ -301,7 +301,7 @@ App.controller.define('CMain', {
 
 						if (r.result.length > 0) {
 
-							App.get('TForm2').setTitle('Modifier un enregistrement');
+							App.get('TConsult').setTitle('Modifier un enregistrement');
 							App.get('combo#cboNom').setValue(record.data.IdSource);
 
 							App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
@@ -346,7 +346,7 @@ App.controller.define('CMain', {
 
 						} else {
 							AO_ID = record.data.IdAppelOffre;
-							App.get('TForm2').setTitle('Appel d\'offre');
+							App.get('TConsult').setTitle('Appel d\'offre');
 							App.get('panel#regroupement_hboxGrid1').hide();
 							App.get('uploadfilemanager#up').setReadOnly(true);
 							App.get('combo#cboNom').setReadOnly(true);
@@ -362,8 +362,8 @@ App.controller.define('CMain', {
 							App.get('combo#cboDomaine').setReadOnly(true);
 							//App.get('combo#cboThematique').setReadOnly(true);
 							App.get('combo#cboCode').setReadOnly(true);
-							App.get('TForm2 boxselect#Keywords').setReadOnly(true);
-							App.get('TForm2 button#add_keyword').hide();
+							App.get('TConsult boxselect#Keywords').setReadOnly(true);
+							App.get('TConsult button#add_keyword').hide();
 							App.get('combo#cboNom').setValue(record.data.IdSource);
 							App.get('combo#cboType').setValue(record.data.IdConsultation);
 							App.get('htmleditor#objet').setValue(record.data.Objet);
@@ -408,9 +408,9 @@ App.controller.define('CMain', {
         }).show().center();
     },
     //Si l'url contient ?appelOffre= cela modifie la fenêtre initial et affiche les données de l'appelOffre correspondante
-    TForm2_onshow: function(p) {
+    TConsult_onshow: function(p) {
 		var d=new Date();
-		App.get('TForm2 textfield#numero_semaine').setValue(d.getWeekNumber());
+		App.get('TConsult textfield#numero_semaine').setValue(d.getWeekNumber());
         AO_ID = "";
         UPLOADZ = [];
         BLOB = [];
@@ -836,7 +836,7 @@ App.controller.define('CMain', {
     },
 
     CANCEL_lien: function(p, record) {
-        App.get('TForm2').close();
+        App.get('TConsult').close();
     },
 
     grid1_onclick: function(p, record) {
@@ -1014,7 +1014,7 @@ App.controller.define('CMain', {
                 };
                 var id_appelOffre = rr.result.insertId;
 
-				var values=App.get('TForm2 boxselect#Keywords').getRawValue().split(', ');
+				var values=App.get('TConsult boxselect#Keywords').getRawValue().split(', ');
 				App.DB.get('gestionao2://keywords?keyword=["'+values.join('","')+'"]', function(e,r) {
 					var arr=[];
 					for (var i=0;i<r.result.data.length;i++) arr.push(r.result.data[i].keyword);
@@ -1025,11 +1025,11 @@ App.controller.define('CMain', {
 					});
 					App.DB.post('gestionao2://keywords',d,function(e2,r2) {
 						try {
-							App.get('TForm2 boxselect#Keywords').getStore().load();
-							App.get('TForm2 boxselect#Keywords').on('load',function() {
+							App.get('TConsult boxselect#Keywords').getStore().load();
+							App.get('TConsult boxselect#Keywords').on('load',function() {
 								App.DB.post('gestionao2://appelsoffres',{												  
 									IdAppelOffre: id_appelOffre,
-									keywords: JSON.stringify(App.get('TForm2 boxselect#Keywords').getValue())
+									keywords: JSON.stringify(App.get('TConsult boxselect#Keywords').getValue())
 								},function(e,r) {
 								
 								});
@@ -1065,7 +1065,7 @@ App.controller.define('CMain', {
 						p.setDisabled(false);
                     });
                 }
-                App.get('TForm2').close();
+                App.get('TConsult').close();
 
             });
         } else {
@@ -1094,7 +1094,7 @@ App.controller.define('CMain', {
                 UPLOADZ = [];
 				var id_appelOffre=AO_ID;
 
-				var values=App.get('TForm2 boxselect#Keywords').getRawValue().split(', ');
+				var values=App.get('TConsult boxselect#Keywords').getRawValue().split(', ');
 				App.DB.get('gestionao2://keywords?keyword=["'+values.join('","')+'"]', function(e,r) {
 					var arr=[];
 					for (var i=0;i<r.result.data.length;i++) arr.push(r.result.data[i].keyword);
@@ -1104,11 +1104,11 @@ App.controller.define('CMain', {
 						keyword: diff[i]
 					});
 					App.DB.post('gestionao2://keywords',d,function(e2,r2) {
-						App.get('TForm2 boxselect#Keywords').getStore().load();
-						App.get('TForm2 boxselect#Keywords').getStore().on('load',function() {
+						App.get('TConsult boxselect#Keywords').getStore().load();
+						App.get('TConsult boxselect#Keywords').getStore().on('load',function() {
 							App.DB.post('gestionao2://appelsoffres',{												  
 								IdAppelOffre: id_appelOffre,
-								keywords: JSON.stringify(App.get('TForm2 boxselect#Keywords').getValue())
+								keywords: JSON.stringify(App.get('TConsult boxselect#Keywords').getValue())
 							},function(e,r) {
 							
 							});
@@ -1143,7 +1143,7 @@ App.controller.define('CMain', {
 
 				};
 
-                //App.get('TForm2').close();
+                //App.get('TConsult').close();
 
             });
         }
@@ -1181,7 +1181,7 @@ App.controller.define('CMain', {
                 App.view.create('VConsult', {
                     modal: true
                 }).show().center();
-                App.get('TForm2').setTitle('Appel d\'offre');
+                App.get('TConsult').setTitle('Appel d\'offre');
                 //App.get('grid#docs').show();
                 App.get('panel#regroupement_hboxGrid1').hide();
                 App.get('combo#cboNom').setReadOnly(true);
