@@ -5,7 +5,7 @@ App.controller.define('CMain', {
         "VForm1",
         "VForm2",
         "VNotifAgents",
-        "VForm4",
+        "VNotifGroupes",
         "VShowDoc",
         "VMobile",
         "VFavoris",
@@ -813,7 +813,7 @@ App.controller.define('CMain', {
     //bouton ajouter groupe de la grid principal
     Ajouter_groupe: function(p, record) {
 
-        App.view.create('VForm4', {
+        App.view.create('VNotifGroupes', {
             modal: true
         }).show();
     },
