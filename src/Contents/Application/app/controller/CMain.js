@@ -175,7 +175,6 @@ App.controller.define('CMain', {
         
     },
 	VCommunes_onshow: function(me) {
-        alert(Lib.map.init)
         App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=Lib.map.init");	        
 	},
     keyword_add: function(p,s) {
@@ -218,7 +217,6 @@ App.controller.define('CMain', {
         e.stopEvent();
 		
 		var user=Auth.User;
-		alert(user.mail);
 		App.AO.getProfil(user.mail, function(err, r) {
 			console.log(r);
 			if (r.result.length<=0) return;
