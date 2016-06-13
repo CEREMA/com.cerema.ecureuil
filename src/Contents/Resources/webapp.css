@@ -120,10 +120,14 @@
 
 .ico_user
 {
-	background-image:url(webapp/user.png)
+	background-image:url(webapp/user.png);
+	width: 16px;
+	height: 16px;
 }
 
 .ico_group
 {
-	background-image:url(webapp/group.png)
+	background-image:url(webapp/group.png);
+	width: 16px;
+	height: 16px;
 }
