@@ -54,7 +54,7 @@ App.view.define('VMain', {
 			region: "center",
 			split:true,
 			layout: 'fit',			
-			xtype: "TForm1"
+			xtype: "TPrincipal"
 		},
 		{
 			region: "center",
