@@ -1,6 +1,6 @@
 App.view.define('VConsult', {
     extend: "Ext.window.Window",
-    alias: "widget.TForm2",
+    alias: "widget.TConsult",
     initComponent: function() {
         this.width = 1024;
         this.height = 860;
