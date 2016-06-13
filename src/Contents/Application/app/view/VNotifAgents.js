@@ -23,7 +23,7 @@ App.view.define('VNotifAgents',{
                     flex:1
                 },
             ],
-            store: App.store.create('bpclight://agents',
+            store: App.store.create('bpclight://agents{Kage,Nom,Prenom}',
              {
                 autoLoad: true
             }) 										
