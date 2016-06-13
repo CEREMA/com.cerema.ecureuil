@@ -414,7 +414,6 @@ App.controller.define('CMain', {
         AO_ID = "";
         UPLOADZ = [];
         BLOB = [];
-        EMAIL = [];
 
     },
 
@@ -799,7 +798,6 @@ App.controller.define('CMain', {
         App.get("grid#upload").getStore().removeAll();
         App.get('combo#cboDomaine').setValue('');
         //App.get('combo#cboThematique').setValue('');
-        EMAIL = [];
         BLOB = [];
 
     },
@@ -871,9 +869,7 @@ App.controller.define('CMain', {
                 Id: GRP_ID2
             }]);
 
-            EMAIL.push(GRP_EMAIL2);
-            EMAIL.join(',');
-            console.log(EMAIL);
+
         }
     },
 
@@ -899,9 +895,6 @@ App.controller.define('CMain', {
 
             }]);
 
-            EMAIL.push(GRP_EMAIL);
-            EMAIL.join(',');
-            console.log(EMAIL);
         }
     },
 
@@ -927,7 +920,12 @@ App.controller.define('CMain', {
     //Certain saisie sont obligatoire. Si on a fait un click sur le bouton ajouter_modification on fera 
     //de l'insertion et si on a fait un click sur grid_dblclick on fera une modification dans la base de donnée
     valider_saisie: function(p, record) {
-
+        
+        var EMAIL=[];
+        var cmp=App.get('TConsult grid#grid1').getStore().getRange();
+        console.log(cmp);
+        return;
+        
 		p.setDisabled(true);
         //for (var i=0;i<filez.length;i++) UPLOADZ.push(filez[i].tmpfilename+'|'+filez[i].filename+'|'+filez[i].filetype+'|'+filez[i].filesize);
 
@@ -1040,6 +1038,7 @@ App.controller.define('CMain', {
 					});
 				});
                 App.get('TPrincipal grid#AO').getStore().load();
+
                 if (EMAIL.length > 0) {
 					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
                     var o = {
