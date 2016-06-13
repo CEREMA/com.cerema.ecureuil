@@ -298,7 +298,8 @@ App.controller.define('CMain', {
 					var user=Auth.User;
 
 					App.AO.getProfil(user.mail, function(err, r) {
-
+                        
+                        
 						if (r.result.length > 0) {
 
 							App.get('TConsult').setTitle('Modifier un enregistrement');
@@ -345,6 +346,12 @@ App.controller.define('CMain', {
 							AO_ID = record.data.IdAppelOffre;
 
 						} else {
+							App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
+								try {
+									var t=JSON.parse(r.result.data[0].value);
+									App.get('grid#grid1').getStore().loadRawData(t);
+								}catch(e) {}
+							});
 							AO_ID = record.data.IdAppelOffre;
 							App.get('TConsult').setTitle('Appel d\'offre');
 							App.get('panel#regroupement_hboxGrid1').hide();
