@@ -117,3 +117,13 @@
 .heart {
     background-image:url(webapp/heart.png)
 }
+
+.ico_user
+{
+	background-image:url(webapp/user.png)
+}
+
+.ico_group
+{
+	background-image:url(webapp/group.png)
+}
