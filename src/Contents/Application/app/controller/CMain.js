@@ -2,7 +2,7 @@ App.controller.define('CMain', {
 
     views: [
         "VMain",
-        "VForm1",
+        "VPrincipal",
         "VConsult",
         "VNotifAgents",
         "VNotifGroupes",
@@ -29,7 +29,7 @@ App.controller.define('CMain', {
             "button#SynchroniserMobile": {
                 click: "SynchroniserMobile"
             },
-            "TForm1 grid#AO": {
+            "TPrincipal grid#AO": {
                 itemclick: "AO_onclick",
                 itemdblclick: "grid_dblclick",
                 beforeitemcontextmenu: "grid_oncontextmenu"
@@ -711,11 +711,11 @@ App.controller.define('CMain', {
     },
     ShowFavoris: function(){
         this.LoadFavoris();
-        App.get('TForm1').hide();
+        App.get('TPrincipal').hide();
         App.get('TFavoris').show();
     },
     ShowAccueil: function(){
-        App.get('TForm1').show();
+        App.get('TPrincipal').show();
         App.get('TFavoris').hide();
     },
     Menu_onClick: function(p) {
@@ -1039,7 +1039,7 @@ App.controller.define('CMain', {
 						}
 					});
 				});
-                App.get('TForm1 grid#AO').getStore().load();
+                App.get('TPrincipal grid#AO').getStore().load();
                 if (EMAIL.length > 0) {
 					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
                     var o = {
@@ -1090,7 +1090,7 @@ App.controller.define('CMain', {
             o._BLOB = App.get('uploadfilemanager#up').getFiles();
 
             App.AO.update(o, function(error, result) {
-                App.get('TForm1 grid#AO').getStore().load();
+                App.get('TPrincipal grid#AO').getStore().load();
                 UPLOADZ = [];
 				var id_appelOffre=AO_ID;
 
@@ -1177,7 +1177,7 @@ App.controller.define('CMain', {
         if (loc.length > 1) {
             profil = parseInt(document.location.href.split('?appelOffre=')[1].trim());
             App.AO.get(profil, function(response) {
-                App.get('TForm1').hide();
+                App.get('TPrincipal').hide();
                 App.view.create('VConsult', {
                     modal: true
                 }).show().center();
@@ -1233,7 +1233,7 @@ App.controller.define('CMain', {
         } else {
             Auth.login(function(user) {
                 App.AO.getProfil(user.mail, function(err, r) {
-                    App.get('TForm1 grid#AO').getStore().load();
+                    App.get('TPrincipal grid#AO').getStore().load();
                     if (r.result.length > 0) App.get('button#ajouter_modification').show();
                     else App.get('button#ajouter_modification').hide();
                 });
