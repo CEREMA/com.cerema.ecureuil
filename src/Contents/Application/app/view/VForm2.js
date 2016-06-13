@@ -1,4 +1,4 @@
-App.view.define('VForm2', {
+App.view.define('VAO', {
     extend: "Ext.window.Window",
     alias: "widget.TForm2",
     initComponent: function() {
