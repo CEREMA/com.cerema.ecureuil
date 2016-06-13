@@ -827,7 +827,7 @@ App.controller.define('CMain', {
     },
     //Bouton annuler de la grid agent
     annuler: function(p, record) {
-        App.get('TForm3').close();
+        App.get('TNotifAgents').close();
     },
 
     //Bouton annuler de la grid groupe
@@ -922,7 +922,7 @@ App.controller.define('CMain', {
 			Type: "Agent",
 			Id: GRP_ID2
 		}]); */
-        App.get('TForm3').close();
+        App.get('TNotifAgents').close();
     },
     //Certain saisie sont obligatoire. Si on a fait un click sur le bouton ajouter_modification on fera 
     //de l'insertion et si on a fait un click sur grid_dblclick on fera une modification dans la base de donnée
