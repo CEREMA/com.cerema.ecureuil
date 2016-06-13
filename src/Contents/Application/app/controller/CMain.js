@@ -923,8 +923,7 @@ App.controller.define('CMain', {
         
         var EMAIL=[];
         var cmp=App.get('TConsult grid#grid1').getStore().getRange();
-        console.log(cmp);
-        return;
+        for (var i=0;i<cmp.length;i++) EMAIL.push(cmp[i].data.Email);
         
 		p.setDisabled(true);
         //for (var i=0;i<filez.length;i++) UPLOADZ.push(filez[i].tmpfilename+'|'+filez[i].filename+'|'+filez[i].filetype+'|'+filez[i].filesize);
