@@ -390,21 +390,18 @@ App.controller.define('CMain', {
 								tabx.push(parseInt(tab[i]));
 							};
 							App.get('boxselect#cboDepartement').setValue(tabx);
-							App.get('boxselect#cboDepartement').getStore().on('load', function() {
 
-							});
 							App.get('datefield#date').setValue(record.data.DateParution);
 							App.get('datefield#date_limite').setValue(record.data.DateLimite);
 
 							App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
 							App.get('textfield#numero_semaine').setValue(record.data.Semaine);
 							App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-							//App.get('combo#cboThematique').setValue(record.data.IdThematique);
+
 							if (App.get('combo#cboDomaine').getValue() == 0) {
 								App.get('combo#cboDomaine').setValue('');
 							}
-							/*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-							App.get('combo#cboThematique').getStore().load();*/
+
 
 						}
 					});
