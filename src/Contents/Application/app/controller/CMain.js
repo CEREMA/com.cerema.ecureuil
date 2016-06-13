@@ -832,7 +832,7 @@ App.controller.define('CMain', {
 
     //Bouton annuler de la grid groupe
     annuler2: function(p, record) {
-        App.get('TForm4').close();
+        App.get('TNotifGroupes').close();
     },
 
     CANCEL_lien: function(p, record) {
@@ -912,7 +912,7 @@ App.controller.define('CMain', {
 			Email: GRP_EMAIL,
 			Type: "Groupe",
 		}]); */
-        App.get('TForm4').close();
+        App.get('TNotifGroupes').close();
     },
     //Bouton valider de la grid agent
     validation_agent: function(p, record) {
