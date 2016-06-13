@@ -1,4 +1,4 @@
-App.view.define('VForm4', {
+App.view.define('VNotifGroupes', {
     extend: "Ext.window.Window",
     width: 465,
     height: 410,
