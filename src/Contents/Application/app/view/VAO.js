@@ -1,4 +1,4 @@
-App.view.define('VForm5', 
+App.view.define('VAO', 
 {
     extend: 'Ext.window.Window',
 	alias : 'widget.form',
