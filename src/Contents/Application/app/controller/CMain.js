@@ -441,7 +441,7 @@ App.controller.define('CMain', {
                                 console.log(ndx);
                                 App.get('grid#grid1').getStore().remove(ndx);
                         }
-                    }];
+                    }]
                 });
                 gridMenu.showAt(e.getXY());
             }
