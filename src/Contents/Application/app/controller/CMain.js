@@ -377,6 +377,7 @@ App.controller.define('CMain', {
 							App.get('textfield#client').setValue(record.data.Client);
 							App.get('textfield#observations').setValue(record.data.Observation);
                             App.get('grid#grid1').getDockedItems('toolbar[dock=top]')[0].hide();
+                            App.get('grid#TCommunes').getDockedItems('toolbar[dock=top]')[0].hide();
 
 							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
 
