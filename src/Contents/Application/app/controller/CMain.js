@@ -364,7 +364,7 @@ App.controller.define('CMain', {
 							App.get('button#effacer_saisie').hide();
 							App.get('button#valider_saisie').hide();
 							App.get('textfield#client').setReadOnly(true);
-							App.get('htmlarea#objet').setReadOnly(true);
+							App.get('htmleditor#objet').setReadOnly(true);
 							App.get('textarea#observations').setReadOnly(true);
 							App.get('combo#cboDomaine').setReadOnly(true);
 							//App.get('combo#cboThematique').setReadOnly(true);
