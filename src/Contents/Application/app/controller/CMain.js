@@ -376,7 +376,7 @@ App.controller.define('CMain', {
 							App.get('htmleditor#objet').setValue(record.data.Objet);
 							App.get('textfield#client').setValue(record.data.Client);
 							App.get('textfield#observations').setValue(record.data.Observation);
-                            App.get('grid#grid1').getDockedComponent('top').hide();
+                            App.get('grid#grid1').getDockedItems('toolbar[dock=top]').hide();
 
 							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
 
