@@ -150,9 +150,25 @@ App.controller.define('CMain', {
         App.init('VMain', this.onLoad);
 
     },
-    export_excel: function() {
+    export_excel: function(me) {
+        me.disable(true);
         var ranges=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
-        console.log(ranges);
+        var data=[];
+        for (var i=0;i<ranges.length) data.push(ranges[i].data.IdAppelOffre);
+		Ext.Ajax.request({
+			url: '/export',
+			params: {
+				name: "AO",
+				kage: data.join(',')
+			},
+			success: function(response){
+                me.disable(false);
+				var url=response.responseText;
+				var iframe=document.createElement('iframe');
+				iframe.src=url;
+				document.getElementsByTagName('body')[0].appendChild(iframe);
+			}
+		});
     },
     ok_commune: function(me) {
         me.up('window').close();
