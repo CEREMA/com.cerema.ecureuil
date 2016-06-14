@@ -42,17 +42,17 @@ App = {
                         console.log(tabs.data)
 						for (var i=0;i<tabs.data.length;i++) {
 							var element=tabs.data[i];
-                            console.log(element);
 							var k=1;
 							var ii=i+2;
 							for (var el in element) {
-								if (k<1) {
+								if (k<2) {
 									sheet1.set(k, ii, element[el]);								
 								};
 								k++;
 							};
 						};			
 						workbook.save(function(ok){
+                            console.log(ok);
 							res.end('/tmp/'+uid+'.xlsx');
 						});					
 					});	
