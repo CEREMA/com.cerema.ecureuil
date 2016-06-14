@@ -240,7 +240,8 @@ App.controller.define('CMain', {
                                         ranges.push(store[i].data.ville_id);
                                     };
                                     console.log(ranges);
-                                    App.DB.post('gestionao2://')
+                                    alert(App.currentAO);
+                                    //App.DB.post('gestionao2://')
 								}
 						   },
 						   animateTarget: 'mb4',
