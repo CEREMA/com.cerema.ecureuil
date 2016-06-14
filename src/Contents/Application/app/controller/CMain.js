@@ -138,6 +138,9 @@ App.controller.define('CMain', {
             },
             "VCommunes button#btn_ok": {
                 "click": "ok_commune"
+            },
+            "TConsult grid#TCommunes": {
+                beforeitemcontextmenu: "gridCommunes_oncontextmenu"  
             }
         });
 
@@ -213,6 +216,40 @@ App.controller.define('CMain', {
 			modal: true,
 			pid: record.data.docId
 		}).show().center();
+    },
+    gridCommunes_oncontextmenu: function(view, record, item, index, e) {
+        e.stopEvent();
+		var user=Auth.User;
+		App.AO.getProfil(user.mail, function(err, r) {
+            if (r.result.length<=0) return;
+            var gridMenu = Ext.create('Ext.menu.Menu', {
+				items: [
+                    {
+					   text: 'Supprimer',
+					   handler: function() {
+						Ext.MessageBox.show({
+						   title:"Supprimer la commune",
+						   msg: "Vous êtes sur le point de supprimer cette commune. Voulez vous continuer ?",
+						   buttons: Ext.MessageBox.YESNOCANCEL,
+						   fn: function(btn) {
+								if (btn=="yes") {
+									var store=App.get('TConsult grid#TCommunes').getStore().getRange();
+                                    var ranges=[];
+                                    for (var i=0;i<store.length;i++) {
+                                        ranges.push(store[i].data.ville_id);
+                                    };
+                                    console.log(ranges);
+								}
+						   },
+						   animateTarget: 'mb4',
+						   icon: Ext.MessageBox.QUESTION
+						});                           
+                       }
+                    }
+                ]
+            });
+            gridMenu.showAt(e.getXY());
+        });
     },
 	grid_oncontextmenu: function(view, record, item, index, e) {
         e.stopEvent();
