@@ -20,6 +20,7 @@ App = {
 			var excelbuilder=App.using('msexcel-builder');
 			if (req.body.kage) {
 				var o=req.body.AO;
+                console.log(o);
 				if (req.body.name=="AO") {
 					App.AO.getXLS(o,function(e,tabs) {
                         console.log(e);
