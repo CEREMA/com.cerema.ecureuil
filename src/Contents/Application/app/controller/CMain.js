@@ -551,7 +551,7 @@ App.controller.define('CMain', {
 					var favoris = [];
 				}
 
-				App.AO.fetch(obj.idAppelOffre,function(e, record){
+				App.AO.get(obj.idAppelOffre,function(e, record){
 					if(e.success){
 						favoris.push(e.data[0]);
 						App.DB.post('gestionao2://favoris',{
