@@ -240,6 +240,7 @@ App.controller.define('CMain', {
                                         ranges.push(store[i].data.ville_id);
                                     };
                                     console.log(ranges);
+                                    App.DB.post('gestionao2://')
 								}
 						   },
 						   animateTarget: 'mb4',
@@ -343,7 +344,9 @@ App.controller.define('CMain', {
 
 							App.get('TConsult').setTitle('Modifier un enregistrement');
 							App.get('combo#cboNom').setValue(record.data.IdSource);
-
+                            
+                            App.CurrentAO=record.data.IdAppelOffre;
+                            
 							App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
 								try {
 									var t=JSON.parse(r.result.data[0].value);
@@ -712,8 +715,7 @@ App.controller.define('CMain', {
                             
 							if (App.get('combo#cboDomaine').getValue() == 0) App.get('combo#cboDomaine').setValue('');
 							
-							/*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-							App.get('combo#cboThematique').getStore().load();*/
+
 
 						}
 					});
@@ -1195,7 +1197,7 @@ App.controller.define('CMain', {
 
 				};
 
-                //App.get('TConsult').close();
+                App.get('TConsult').close();
 
             });
         }
