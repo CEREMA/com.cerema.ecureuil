@@ -31,8 +31,7 @@ App.view.define('VPrincipal',{
 				text: "Favoris",
 				scale: "large",
 				iconAlign: "top",
-				iconCls: "favori",
-                hidden: true
+				iconCls: "favori"
 			},
 			{
 				xtype:"button",
@@ -40,7 +39,8 @@ App.view.define('VPrincipal',{
 				text: "Exporter",
 				scale: "large",
 				iconAlign: "top",
-				iconCls: "xls"
+				iconCls: "xls",
+                hidden: true
 			}
 		],
 		features: [
