@@ -22,15 +22,14 @@ App = {
 				var o=req.body.AO;
 				if (req.body.name=="AO") {
 					App.AO.getXLS(o,function(e,tabs) {
-                        console.log(e);
-                        console.log(tabs);
+
 						var uid=Math.uuid();
 						var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
 						var sheet1 = workbook.createSheet('ECUREUIL', 1500, 1500);
 						var conf={};
 						conf.cols = [
 						{
-							caption: 'Nom',
+							caption: 'Id',
 							type:'string',
 							width: 50
 						}
@@ -39,15 +38,15 @@ App = {
 							sheet1.set(e+1,1,conf.cols[e].caption);
 							sheet1.width(e+1, conf.cols[e].width*1);
 						};
-                        console.log(tabs.data)
+                        console.log(tabs.data);
 						for (var i=0;i<tabs.data.length;i++) {
 							var element=tabs.data[i];
 							var k=1;
 							var ii=i+2;
 							for (var el in element) {
-								if (k<2) {
-									sheet1.set(k, ii, element[el]);								
-								};
+								//if (k<2) {
+									sheet1.set(1, ii, element[el]);								
+								//};
 								k++;
 							};
 						};			
