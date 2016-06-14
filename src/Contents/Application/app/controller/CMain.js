@@ -337,7 +337,7 @@ App.controller.define('CMain', {
 				show: function() {
 					
 					var user=Auth.User;
-
+                    App.CurrentAO=record.data.IdAppelOffre;
 					App.AO.getProfil(user.mail, function(err, r) {
                         
                         
@@ -346,7 +346,7 @@ App.controller.define('CMain', {
 							App.get('TConsult').setTitle('Modifier un enregistrement');
 							App.get('combo#cboNom').setValue(record.data.IdSource);
                             
-                            App.CurrentAO=record.data.IdAppelOffre;
+                            
                             
 							App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
 								try {
