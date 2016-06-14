@@ -330,6 +330,10 @@ App.controller.define('CMain', {
 								tabx.push(parseInt(tab[i]));
 							};
 
+                            var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
+                            App.get('grid#TCommunes').bindStore(store);
+                            App.get('grid#TCommunes').getStore().load();
+
 							App.get('boxselect#cboDepartement').setValue(tabx);
 							App.get('datefield#date').setValue(record.data.DateParution);
 							App.get('datefield#date_limite').setValue(record.data.DateLimite);
