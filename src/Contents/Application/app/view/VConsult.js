@@ -247,8 +247,7 @@ App.view.define('VConsult', {
                     {
                         header: "id",
                         dataIndex: "ville_id",
-                        hidden: true,
-                        flex: 1
+                        hidden: false
                     }                    
                 ],
                 store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true})
