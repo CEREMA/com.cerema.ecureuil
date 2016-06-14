@@ -35,7 +35,7 @@ App.controller.define('CMain', {
                 beforeitemcontextmenu: "grid_oncontextmenu"
             },
             "TFavoris grid#AO": {
-                itemdblclick: "ConsultationFavoris",
+                itemdblclick: "grid_dblclick",
                 beforeitemcontextmenu: "gridFavoris_oncontextmenu"
             },
             "button#b_appeloffre": {
