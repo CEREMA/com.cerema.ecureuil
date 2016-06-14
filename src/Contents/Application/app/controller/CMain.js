@@ -540,6 +540,7 @@ App.controller.define('CMain', {
 		var user=Auth.User;
 
 		App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
+            console.log(e);
 			if(e.success){
 
 				var favoris = null;
