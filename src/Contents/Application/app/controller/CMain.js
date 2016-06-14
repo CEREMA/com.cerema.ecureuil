@@ -656,6 +656,7 @@ App.controller.define('CMain', {
                             
                             var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
                             App.get('grid#TCommunes').bindStore(store);
+                            console.log(store.getRange());
                             App.get('grid#TCommunes').getStore().load();
                             
 							App.get('boxselect#cboDepartement').setValue(tabx);
