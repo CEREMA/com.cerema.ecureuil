@@ -331,7 +331,7 @@ App.controller.define('CMain', {
 								tabx.push(parseInt(tab[i]));
 							};
 
-                            var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
+                            var store=App.store.create('gestionao2://communes{ville_id,ville_nom}?ville_id='+record.data.Communes);
                             App.get('grid#TCommunes').bindStore(store);
                             App.get('grid#TCommunes').getStore().load();
 
