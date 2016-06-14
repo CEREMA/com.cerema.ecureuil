@@ -990,7 +990,7 @@ App.controller.define('CMain', {
         };
         if (temoin) return;
         var tab=App.get(p.up('window'),'grid#TCommunes').getStore().getRange();
-        console.log(tab);
+        
         var Communes=[];
         for (var i=0;i<tab.length;i++) {
             Communes.push(tab[i].data.ville_id);
