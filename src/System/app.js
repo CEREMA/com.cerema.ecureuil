@@ -52,7 +52,7 @@ App = {
 								k++;
 							};
 						};			
-                        console.log('done');
+                        console.log(workbook);
 						workbook.save(function(ok){
                             console.log(ok);
 							res.end('/tmp/'+uid+'.xlsx');
