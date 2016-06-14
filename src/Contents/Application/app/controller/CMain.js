@@ -546,12 +546,12 @@ App.controller.define('CMain', {
 				var favoris = null;
 
 				if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
-					favoris = JSON.parse(e.data[0].Favoris);
+					var favoris = JSON.parse(e.data[0].Favoris);
 				} else {
-					favoris = [];
+					var favoris = [];
 				}
 
-				App.AppelOffre.fetch(obj.idAppelOffre,function(e, record){
+				App.AO.fetch(obj.idAppelOffre,function(e, record){
 					if(e.success){
 						favoris.push(e.data[0]);
 						App.DB.post('gestionao2://favoris',{
