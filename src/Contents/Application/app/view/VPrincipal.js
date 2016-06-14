@@ -31,7 +31,8 @@ App.view.define('VPrincipal',{
 				text: "Favoris",
 				scale: "large",
 				iconAlign: "top",
-				iconCls: "favori"
+				iconCls: "favori",
+                hidden: true
 			},
 			{
 				xtype:"button",
