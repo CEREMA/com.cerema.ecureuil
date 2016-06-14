@@ -22,11 +22,13 @@ App = {
 				var o=req.body.AO;
 				if (req.body.name=="AO") {
 					App.AO.getXLS(o,function(e,tabs) {
-
+                        console.log(e);
+                        console.log(tabs);
 						var uid=Math.uuid();
 						var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
 						var sheet1 = workbook.createSheet('ECUREUIL', 1500, 1500);
 						var conf={};
+                        console.log('xxxxxxxxxxxxx')
 						conf.cols = [
 						{
 							caption: 'Nom',
@@ -34,7 +36,7 @@ App = {
 							width: 50
 						}
 						];	
-					
+					   console.log(conf.cols)
 						for (var e=0;e<conf.cols.length;e++) {
 							sheet1.set(e+1,1,conf.cols[e].caption);
 							sheet1.width(e+1, conf.cols[e].width*1);
