@@ -154,7 +154,7 @@ App.controller.define('CMain', {
         me.disable(true);
         var ranges=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
         var data=[];
-        for (var i=0;i<ranges.length) data.push(ranges[i].data.IdAppelOffre);
+        for (var i=0;i<ranges.length;i++) data.push(ranges[i].data.IdAppelOffre);
 		Ext.Ajax.request({
 			url: '/export',
 			params: {
