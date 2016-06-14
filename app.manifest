@@ -68,7 +68,7 @@
     "packages": [
         "nodemailer",
         "nodemailer-smtp-transport",
-        "xlsx"
+        "msexcel-builder"
     ],
     "icon": {
         "background": "#FFFFFF",
