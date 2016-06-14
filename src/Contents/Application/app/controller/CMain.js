@@ -338,6 +338,7 @@ App.controller.define('CMain', {
 					
 					var user=Auth.User;
                     App.CurrentAO=record.data.IdAppelOffre;
+                    alert(App.CurrentAO);
 					App.AO.getProfil(user.mail, function(err, r) {
                         
                         
