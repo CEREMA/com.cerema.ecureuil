@@ -38,7 +38,7 @@ App = {
 							sheet1.set(e+1,1,conf.cols[e].caption);
 							sheet1.width(e+1, conf.cols[e].width*1);
 						};
-                        console.log(tabs.data);
+                        /*console.log(tabs.data);
 						for (var i=0;i<tabs.data.length;i++) {
 							var element=tabs.data[i];
                             console.log(element);
@@ -51,7 +51,7 @@ App = {
 								//};
 								k++;
 							};
-						};			
+						};*/			
 						workbook.save(function(ok){
 							res.end('/tmp/'+uid+'.xlsx');
 						});					
