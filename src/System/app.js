@@ -19,10 +19,12 @@ App = {
 		app.post('/export',function(req,res) {
 			var excelbuilder=App.using('msexcel-builder');
 			if (req.body.kage) {
-				var o=req.body.kage.split(',');
-				if (req.body.name=="civility") {
-					App.Agents.exportCiv(o,function(e,tabs) {
+				var o=req.body.AO;
+				if (req.body.name=="AO") {
+					App.AO.getXLS(o,function(e,tabs) {
+                        console.log(e);
 						console.log(tabs);
+                        return;
 						var uid=Math.uuid();
 						var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
 						var sheet1 = workbook.createSheet('ECUREUIL', 1500, 1500);
