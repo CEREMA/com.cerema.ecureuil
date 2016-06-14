@@ -233,6 +233,7 @@ App.controller.define('CMain', {
 						   buttons: Ext.MessageBox.YESNOCANCEL,
 						   fn: function(btn) {
 								if (btn=="yes") {
+                                    App.get('TConsult grid#TCommunes').getStore().removeAt(index);
 									var store=App.get('TConsult grid#TCommunes').getStore().getRange();
                                     var ranges=[];
                                     for (var i=0;i<store.length;i++) {
