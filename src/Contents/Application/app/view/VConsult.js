@@ -217,9 +217,9 @@ App.view.define('VConsult', {
                     width: 100,
                     handler: function(p) {
                         p.setDisabled(true);
-                        App.get('TForm2 textfield#ed_keyword').setValue('');
-                        App.get('TForm2 textfield#ed_keyword').show();
-                        App.get('TForm2 boxselect#Keywords').hide();
+                        App.get(p.up('window'),'textfield#ed_keyword').setValue('');
+                        App.get(p.up('window'),'textfield#ed_keyword').show();
+                        App.get(p.up('window'),'boxselect#Keywords').hide();
                     }
                 }]
             }, {
