@@ -243,12 +243,7 @@ App.view.define('VConsult', {
                         header: "Communes",
                         dataIndex: "ville_nom",
                         flex: 1
-                    },
-                    {
-                        header: "id",
-                        dataIndex: "ville_id",
-                        hidden: false
-                    }                    
+                    }                
                 ],
                 store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true})
             }]
