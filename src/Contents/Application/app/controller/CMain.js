@@ -239,9 +239,11 @@ App.controller.define('CMain', {
                                     for (var i=0;i<store.length;i++) {
                                         ranges.push(store[i].data.ville_id);
                                     };
-                                    console.log(ranges);
-                                    alert(App.currentAO);
-                                    //App.DB.post('gestionao2://')
+                                    
+                                    App.DB.post('gestionao2://appelsoffres',{
+                                        Communes: JSON.stringify(ranges),
+                                        IdAppelOffre: App.CurrentAO
+                                    })
 								}
 						   },
 						   animateTarget: 'mb4',
@@ -338,7 +340,7 @@ App.controller.define('CMain', {
 					
 					var user=Auth.User;
                     App.CurrentAO=record.data.IdAppelOffre;
-                    alert(App.CurrentAO);
+                    
 					App.AO.getProfil(user.mail, function(err, r) {
                         
                         
