@@ -161,7 +161,8 @@ App.controller.define('CMain', {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
             App.get("TConsult grid#TCommunes").getStore().add(s[0].data);
-            App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); Lib.map.marker(s[0].data.ville_latitude_deg,s[0].data.ville_longitude_deg);
+            App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); 
+            Lib.map.marker(s[0].data.ville_latitude_deg,s[0].data.ville_longitude_deg);
         }
     },
     add_commune: function() {
@@ -989,6 +990,7 @@ App.controller.define('CMain', {
         };
         if (temoin) return;
         var tab=App.get(p.up('window'),'grid#TCommunes').getStore().getRange();
+        console.log(tab);
         var Communes=[];
         for (var i=0;i<tab.length;i++) {
             Communes.push(tab[i].data.ville_id);
