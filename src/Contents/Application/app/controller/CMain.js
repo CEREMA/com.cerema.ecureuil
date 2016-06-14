@@ -159,7 +159,7 @@ App.controller.define('CMain', {
 			url: '/export',
 			params: {
 				name: "AO",
-				kage: data.join(',')
+				AO: data.join(',')
 			},
 			success: function(response){
                 me.disable(false);
