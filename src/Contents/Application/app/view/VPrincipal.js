@@ -85,7 +85,7 @@ App.view.define('VPrincipal',{
 			}
 		],
 		store: App.store.create('App.AO.getAll',{
-			groupField: 'nom_thematique'
+			groupField: 'nom_domaine'
 		})
 	}	
 	]
