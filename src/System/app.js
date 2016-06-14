@@ -32,81 +32,6 @@ App = {
 							caption: 'Nom',
 							type:'string',
 							width: 50
-						},
-						{
-							caption: 'Prénom',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Catégorie FP',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Grades',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Date naissance',
-							type:'date',
-							width: 30
-						},
-						{
-							caption: 'Téléphone',
-							type:'string',
-							width: 30
-						},
-						{
-							caption: 'Portable',
-							type:'string',
-							width: 30
-						},
-						{
-							caption: 'Ville Naissance',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Département Naissance',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Pays naissance',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Adresse',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Code Postal',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Ville',
-							type:'string',
-							width: 50
-						},
-						{
-							caption: 'Etablissement',
-							type:'string',
-							width: 100
-						},
-						{
-							caption: 'Département',
-							type:'string',
-							width: 100
-						},
-						{
-							caption: 'Service',
-							type:'string',
-							width: 100
 						}
 						];	
 					
@@ -119,7 +44,7 @@ App = {
 							var k=1;
 							var ii=i+2;
 							for (var el in element) {
-								if (k<18) {
+								if (k<1) {
 									sheet1.set(k, ii, element[el]);								
 								};
 								k++;
