@@ -41,6 +41,7 @@ App = {
 						};
 						for (var i=0;i<tabs.length;i++) {
 							var element=tabs[i];
+                            console.log(element);
 							var k=1;
 							var ii=i+2;
 							for (var el in element) {
