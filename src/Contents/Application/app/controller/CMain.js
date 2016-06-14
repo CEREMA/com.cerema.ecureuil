@@ -381,6 +381,11 @@ App.controller.define('CMain', {
 
 							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
 
+                            var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
+                            App.get('grid#TCommunes').bindStore(store);
+                            console.log(store.getRange());
+                            App.get('grid#TCommunes').getStore().load();
+
 							try {
 								var tab = record.data.IdDepartement.split(',');
 							} catch (e) {
@@ -653,12 +658,7 @@ App.controller.define('CMain', {
 							for (var i = 0; i < tab.length; i++) {
 								tabx.push(parseInt(tab[i]));
 							};
-                            
-                            var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
-                            App.get('grid#TCommunes').bindStore(store);
-                            console.log(store.getRange());
-                            App.get('grid#TCommunes').getStore().load();
-                            
+                                                        
 							App.get('boxselect#cboDepartement').setValue(tabx);
 
 							App.get('datefield#date').setValue(record.data.DateParution);
