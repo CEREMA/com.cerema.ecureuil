@@ -34,6 +34,9 @@ App.controller.define('CMain', {
                 itemdblclick: "grid_dblclick",
                 beforeitemcontextmenu: "grid_oncontextmenu"
             },
+            "TPrincipal button#b_excel": {
+                click: "export_excel"  
+            },
             "TFavoris grid#AO": {
                 itemdblclick: "grid_dblclick",
                 beforeitemcontextmenu: "gridFavoris_oncontextmenu"
@@ -146,6 +149,10 @@ App.controller.define('CMain', {
 
         App.init('VMain', this.onLoad);
 
+    },
+    export_excel: function() {
+        var ranges=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
+        console.log(ranges);
     },
     ok_commune: function(me) {
         me.up('window').close();
