@@ -22,9 +22,7 @@ App = {
 				var o=req.body.AO;
 				if (req.body.name=="AO") {
 					App.AO.getXLS(o,function(e,tabs) {
-                        console.log(e);
-						console.log(tabs);
-                        return;
+
 						var uid=Math.uuid();
 						var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
 						var sheet1 = workbook.createSheet('ECUREUIL', 1500, 1500);
