@@ -152,8 +152,11 @@ App.controller.define('CMain', {
                         
                         
 						if (r.result.length > 0) {
-
-							App.get('TConsult').setTitle('Modifier un enregistrement');
+                            
+                            var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
+                            record=record[0];
+							
+                            App.get('TConsult').setTitle('Modifier un enregistrement');
 							App.get('combo#cboNom').setValue(record.data.IdSource);
                             
                             
