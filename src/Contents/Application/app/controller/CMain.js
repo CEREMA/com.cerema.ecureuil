@@ -273,7 +273,6 @@ App.controller.define('CMain', {
             "TConsult grid#TCommunes": {
                 beforeitemcontextmenu: "gridCommunes_oncontextmenu"
 			}
-            }
         });
 
         App.init('VMain', this.onLoad);
