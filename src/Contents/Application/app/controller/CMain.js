@@ -145,6 +145,7 @@ App.controller.define('CMain', {
             "TConsult": {
                 show: function() {
 					var user=Auth.User;
+                    if (AO) return;
                     var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
                     record=record[0];
                     App.CurrentAO=record.data.IdAppelOffre;
