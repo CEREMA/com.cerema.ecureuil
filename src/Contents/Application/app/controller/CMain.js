@@ -144,8 +144,9 @@ App.controller.define('CMain', {
             },
             "TConsult": {
                 show: function() {
-					alert('x');
 					var user=Auth.User;
+                    var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
+                    record=record[0];
                     App.CurrentAO=record.data.IdAppelOffre;
                     
 					App.AO.getProfil(user.mail, function(err, r) {
@@ -153,8 +154,6 @@ App.controller.define('CMain', {
                         
 						if (r.result.length > 0) {
                             
-                            var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
-                            record=record[0];
 							
                             App.get('TConsult').setTitle('Modifier un enregistrement');
 							App.get('combo#cboNom').setValue(record.data.IdSource);
