@@ -144,7 +144,7 @@ App.controller.define('CMain', {
             },
             "TConsult": {
                 show: function() {
-					
+					alert('x');
 					var user=Auth.User;
                     App.CurrentAO=record.data.IdAppelOffre;
                     
