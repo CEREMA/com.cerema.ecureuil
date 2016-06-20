@@ -154,6 +154,7 @@ App.controller.define('CMain', {
 
     },
     TConsult_onshow: function() {
+        alert('x');
         var user=Auth.User;
         if (OP) return;
         var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
