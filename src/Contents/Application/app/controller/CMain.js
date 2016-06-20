@@ -1106,9 +1106,9 @@ App.controller.define('CMain', {
 						keyword: diff[i]
 					});
 					App.DB.post('gestionao2://keywords',d,function(e2,r2) {
-						try {
-							App.get('TConsult boxselect#Keywords').getStore().load();
-							App.get('TConsult boxselect#Keywords').on('load',function() {
+						//try {
+							App.get('boxselect#Keywords').getStore().load();
+							App.get('boxselect#Keywords').on('load',function() {
 								App.DB.post('gestionao2://appelsoffres',{												  
 									IdAppelOffre: id_appelOffre,
 									keywords: JSON.stringify(App.get('TConsult boxselect#Keywords').getValue())
@@ -1116,9 +1116,9 @@ App.controller.define('CMain', {
 								
 								});
 							});
-						}catch(e) {
+						/*}catch(e) {
 						
-						}
+						}*/
 					});
 				});
                 App.get('TPrincipal grid#AO').getStore().load();
