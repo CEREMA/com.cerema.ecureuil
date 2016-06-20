@@ -756,7 +756,7 @@ App.controller.define('CMain', {
     },
     LoadFavoris: function(){
 
-        		var user=Auth.User;
+        var user=Auth.User;
 
 
         App.DB.get('gestionao2://favoris?UId=' + user.uid,function(e, r){
