@@ -1076,8 +1076,6 @@ App.controller.define('CMain', {
                 Keywords: App.get('boxselect#Keywords').getValue()
             };
             
-            console.log(o);
-
             App.AO.insert(o, function(err, rr) {
                 
                 if (!rr) {
@@ -1104,7 +1102,7 @@ App.controller.define('CMain', {
 									IdAppelOffre: id_appelOffre,
 									keywords: JSON.stringify(App.get('TConsult boxselect#Keywords').getValue())
 								},function(e,r) {
-								
+								    App.get('grid#AO').getStore().load();
 								});
 							});
 						/*}catch(e) {
