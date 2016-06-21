@@ -401,6 +401,7 @@ App.controller.define('CMain', {
                     App.get('textfield#client').setValue(record.data.Client);
                     App.get('textfield#observations').setValue(record.data.Observation);
                     App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+                    
                     if (record.data.Keywords) App.get('boxselect#Keywords').setValue(JSON.parse(record.data.Keywords));
 
                     try {
@@ -424,12 +425,11 @@ App.controller.define('CMain', {
                     App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
                     App.get('textfield#numero_semaine').setValue(record.data.Semaine);
                     App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-                    /*App.get('combo#cboThematique').setValue(record.data.IdThematique);*/
+
                     if (App.get('combo#cboDomaine').getValue() == 0) {
                         App.get('combo#cboDomaine').setValue('');
                     };
-                    /*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-                    App.get('combo#cboThematique').getStore().load();*/
+
 
                     AO_ID = record.data.IdAppelOffre;
 
@@ -1094,6 +1094,8 @@ App.controller.define('CMain', {
             if (id_appelOffre==0) id_appelOffre=App.CurrentAO; 
 
             var values=App.get('TConsult boxselect#Keywords').getRawValue().split(', ');
+            
+            alert('c');
             
             App.DB.get('gestionao2://keywords?keyword=["'+values.join('","')+'"]', function(e,r) {
                 var arr=[];
