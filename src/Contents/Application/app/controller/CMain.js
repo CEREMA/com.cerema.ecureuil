@@ -377,7 +377,7 @@ App.controller.define('CMain', {
             var record={
                 data: rx.data[0]
             };
-
+            alert(record.data.DateParution);
             App.AO.getProfil(user.mail, function(err, r) {
 
 
