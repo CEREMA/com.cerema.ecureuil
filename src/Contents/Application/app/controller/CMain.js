@@ -373,130 +373,132 @@ App.controller.define('CMain', {
         App.CurrentAO=record.data.IdAppelOffre;
         
         App.DB.get('gestionao2://appelsoffres?IdAppelOffre='+App.CurrentAO,function(record){
-            console.log(record);
-        });
-        return;
-        App.AO.getProfil(user.mail, function(err, r) {
+            record=record[0];
+
+            App.AO.getProfil(user.mail, function(err, r) {
 
 
-            if (r.result.length > 0) {
+                if (r.result.length > 0) {
 
 
-                App.get('TConsult').setTitle('Modifier un enregistrement');
-                App.get('combo#cboNom').setValue(record.data.IdSource);
+                    App.get('TConsult').setTitle('Modifier un enregistrement');
+                    App.get('combo#cboNom').setValue(record.data.IdSource);
 
 
 
-                App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
+                    App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
+                        try {
+                            var t=JSON.parse(r.result.data[0].value);
+                            App.get('grid#grid1').getStore().loadRawData(t);
+                        }catch(e) {}
+                    });
+
+                    App.get('combo#cboType').setValue(record.data.IdConsultation);
+                    App.get('htmleditor#objet').setValue(record.data.Objet);
+                    App.get('textfield#client').setValue(record.data.Client);
+                    App.get('textfield#observations').setValue(record.data.Observation);
+                    App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+                    if (record.data.Keywords) App.get('boxselect#Keywords').setValue(JSON.parse(record.data.Keywords));
+
                     try {
-                        var t=JSON.parse(r.result.data[0].value);
-                        App.get('grid#grid1').getStore().loadRawData(t);
-                    }catch(e) {}
-                });
+                        var tab = record.data.IdDepartement.split(',');
+                    } catch (e) {
+                        var tab = [];
+                        tab.push(record.data.IdDepartement);
+                    };
+                    var tabx = [];
+                    for (var i = 0; i < tab.length; i++) {
+                        tabx.push(parseInt(tab[i]));
+                    };
 
-                App.get('combo#cboType').setValue(record.data.IdConsultation);
-                App.get('htmleditor#objet').setValue(record.data.Objet);
-                App.get('textfield#client').setValue(record.data.Client);
-                App.get('textfield#observations').setValue(record.data.Observation);
-                App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
-                if (record.data.Keywords) App.get('boxselect#Keywords').setValue(JSON.parse(record.data.Keywords));
+                    var store=App.store.create('gestionao2://communes{ville_id,ville_nom}?ville_id='+record.data.Communes);
+                    App.get('grid#TCommunes').bindStore(store);
+                    App.get('grid#TCommunes').getStore().load();
 
-                try {
-                    var tab = record.data.IdDepartement.split(',');
-                } catch (e) {
-                    var tab = [];
-                    tab.push(record.data.IdDepartement);
-                };
-                var tabx = [];
-                for (var i = 0; i < tab.length; i++) {
-                    tabx.push(parseInt(tab[i]));
-                };
+                    App.get('boxselect#cboDepartement').setValue(tabx);
+                    App.get('datefield#date').setValue(record.data.DateParution);
+                    App.get('datefield#date_limite').setValue(record.data.DateLimite);
+                    App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
+                    App.get('textfield#numero_semaine').setValue(record.data.Semaine);
+                    App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
+                    /*App.get('combo#cboThematique').setValue(record.data.IdThematique);*/
+                    if (App.get('combo#cboDomaine').getValue() == 0) {
+                        App.get('combo#cboDomaine').setValue('');
+                    };
+                    /*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
+                    App.get('combo#cboThematique').getStore().load();*/
 
-                var store=App.store.create('gestionao2://communes{ville_id,ville_nom}?ville_id='+record.data.Communes);
-                App.get('grid#TCommunes').bindStore(store);
-                App.get('grid#TCommunes').getStore().load();
+                    AO_ID = record.data.IdAppelOffre;
 
-                App.get('boxselect#cboDepartement').setValue(tabx);
-                App.get('datefield#date').setValue(record.data.DateParution);
-                App.get('datefield#date_limite').setValue(record.data.DateLimite);
-                App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
-                App.get('textfield#numero_semaine').setValue(record.data.Semaine);
-                App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-                /*App.get('combo#cboThematique').setValue(record.data.IdThematique);*/
-                if (App.get('combo#cboDomaine').getValue() == 0) {
-                    App.get('combo#cboDomaine').setValue('');
-                };
-                /*App.get('combo#cboThematique').getStore().getProxy().extraParams.id_domaine = record.data.Id_domaine;
-                App.get('combo#cboThematique').getStore().load();*/
+                } else {
+                    App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
+                        try {
+                            var t=JSON.parse(r.result.data[0].value);
+                            App.get('grid#grid1').getStore().loadRawData(t);
+                        }catch(e) {}
+                    });
+                    AO_ID = record.data.IdAppelOffre;
+                    App.get('TConsult').setTitle('Appel d\'offre');
+                    //App.get('panel#regroupement_hboxGrid1').hide();
+                    App.get('uploadfilemanager#up').setReadOnly(true);
+                    App.get('combo#cboNom').setReadOnly(true);
+                    App.get('combo#cboType').setReadOnly(true);
+                    App.get('boxselect#cboDepartement').setReadOnly(true);
+                    App.get('datefield#date').setReadOnly(true);
+                    App.get('datefield#date_limite').setReadOnly(true);
+                    App.get('button#effacer_saisie').hide();
+                    App.get('button#valider_saisie').hide();
+                    App.get('textfield#client').setReadOnly(true);
+                    App.get('htmleditor#objet').setReadOnly(true);
+                    App.get('textarea#observations').setReadOnly(true);
+                    App.get('combo#cboDomaine').setReadOnly(true);
+                    //App.get('combo#cboThematique').setReadOnly(true);
+                    App.get('combo#cboCode').setReadOnly(true);
+                    App.get('TConsult boxselect#Keywords').setReadOnly(true);
+                    App.get('TConsult button#add_keyword').hide();
+                    App.get('combo#cboNom').setValue(record.data.IdSource);
+                    App.get('combo#cboType').setValue(record.data.IdConsultation);
+                    App.get('htmleditor#objet').setValue(record.data.Objet);
+                    App.get('textfield#client').setValue(record.data.Client);
+                    App.get('textfield#observations').setValue(record.data.Observation);
+                    App.get('grid#grid1').getDockedItems('toolbar[dock=top]')[0].hide();
+                    App.get('grid#TCommunes').getDockedItems('toolbar[dock=top]')[0].hide();
 
-                AO_ID = record.data.IdAppelOffre;
+                    App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
 
-            } else {
-                App.DB.get('gestionao2://mails?idao='+record.data.IdAppelOffre,function(e,r) {
+                    var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
+                    App.get('grid#TCommunes').bindStore(store);
+                    App.get('grid#TCommunes').getStore().load();
+
                     try {
-                        var t=JSON.parse(r.result.data[0].value);
-                        App.get('grid#grid1').getStore().loadRawData(t);
-                    }catch(e) {}
-                });
-                AO_ID = record.data.IdAppelOffre;
-                App.get('TConsult').setTitle('Appel d\'offre');
-                //App.get('panel#regroupement_hboxGrid1').hide();
-                App.get('uploadfilemanager#up').setReadOnly(true);
-                App.get('combo#cboNom').setReadOnly(true);
-                App.get('combo#cboType').setReadOnly(true);
-                App.get('boxselect#cboDepartement').setReadOnly(true);
-                App.get('datefield#date').setReadOnly(true);
-                App.get('datefield#date_limite').setReadOnly(true);
-                App.get('button#effacer_saisie').hide();
-                App.get('button#valider_saisie').hide();
-                App.get('textfield#client').setReadOnly(true);
-                App.get('htmleditor#objet').setReadOnly(true);
-                App.get('textarea#observations').setReadOnly(true);
-                App.get('combo#cboDomaine').setReadOnly(true);
-                //App.get('combo#cboThematique').setReadOnly(true);
-                App.get('combo#cboCode').setReadOnly(true);
-                App.get('TConsult boxselect#Keywords').setReadOnly(true);
-                App.get('TConsult button#add_keyword').hide();
-                App.get('combo#cboNom').setValue(record.data.IdSource);
-                App.get('combo#cboType').setValue(record.data.IdConsultation);
-                App.get('htmleditor#objet').setValue(record.data.Objet);
-                App.get('textfield#client').setValue(record.data.Client);
-                App.get('textfield#observations').setValue(record.data.Observation);
-                App.get('grid#grid1').getDockedItems('toolbar[dock=top]')[0].hide();
-                App.get('grid#TCommunes').getDockedItems('toolbar[dock=top]')[0].hide();
+                        var tab = record.data.IdDepartement.split(',');
+                    } catch (e) {
+                        var tab = [];
+                        tab.push(record.data.IdDepartement);
+                    };
+                    var tabx = [];
+                    for (var i = 0; i < tab.length; i++) {
+                        tabx.push(parseInt(tab[i]));
+                    };
+                    App.get('boxselect#cboDepartement').setValue(tabx);
 
-                App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
+                    App.get('datefield#date').setValue(record.data.DateParution);
+                    App.get('datefield#date_limite').setValue(record.data.DateLimite);
 
-                var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
-                App.get('grid#TCommunes').bindStore(store);
-                App.get('grid#TCommunes').getStore().load();
+                    App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
+                    App.get('textfield#numero_semaine').setValue(record.data.Semaine);
+                    App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
 
-                try {
-                    var tab = record.data.IdDepartement.split(',');
-                } catch (e) {
-                    var tab = [];
-                    tab.push(record.data.IdDepartement);
-                };
-                var tabx = [];
-                for (var i = 0; i < tab.length; i++) {
-                    tabx.push(parseInt(tab[i]));
-                };
-                App.get('boxselect#cboDepartement').setValue(tabx);
+                    if (App.get('combo#cboDomaine').getValue() == 0) {
+                        App.get('combo#cboDomaine').setValue('');
+                    }
 
-                App.get('datefield#date').setValue(record.data.DateParution);
-                App.get('datefield#date_limite').setValue(record.data.DateLimite);
 
-                App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
-                App.get('textfield#numero_semaine').setValue(record.data.Semaine);
-                App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
-
-                if (App.get('combo#cboDomaine').getValue() == 0) {
-                    App.get('combo#cboDomaine').setValue('');
                 }
-
-
-            }
+            });            
+            
         });
+
     },
 
     AO_onclick: function(p, record) {
