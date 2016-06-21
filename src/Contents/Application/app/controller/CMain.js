@@ -373,6 +373,7 @@ App.controller.define('CMain', {
         App.CurrentAO=record.data.IdAppelOffre;
         
         App.DB.get('gestionao2://appelsoffres?IdAppelOffre='+App.CurrentAO,function(record){
+            console.log(record);
             record=record[0];
 
             App.AO.getProfil(user.mail, function(err, r) {
