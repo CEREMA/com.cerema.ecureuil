@@ -118,7 +118,6 @@ App.controller.define('CMain', {
             "TConsult": {
                 show: "TConsult_onshow",
                 close: function() {
-                    alert('x');
                     delete App.CurrentAO;
                 }
             },
@@ -372,7 +371,11 @@ App.controller.define('CMain', {
         record=record[0];
 
         App.CurrentAO=record.data.IdAppelOffre;
-
+        
+        App.DB.get('gestionao2://appelsoffres?IdAppelOffre='+App.CurrentAO,function(record){
+            console.log(record);
+        });
+        return;
         App.AO.getProfil(user.mail, function(err, r) {
 
 
