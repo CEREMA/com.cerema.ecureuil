@@ -1067,6 +1067,7 @@ App.controller.define('CMain', {
         };
         
         console.log(Communes);
+        alert('x');
         
         if (OP == true) {
 
