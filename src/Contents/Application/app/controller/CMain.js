@@ -1103,7 +1103,7 @@ App.controller.define('CMain', {
 									IdAppelOffre: id_appelOffre,
 									keywords: JSON.stringify(App.get('TConsult boxselect#Keywords').getValue())
 								},function(e,r) {
-								    App.get(p.up('window'),'grid#AO').getStore().load();
+								    App.get('TPrincipal grid#AO').getStore().load();
 								});
 							});
 						/*}catch(e) {
