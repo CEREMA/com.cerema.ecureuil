@@ -366,6 +366,7 @@ App.controller.define('CMain', {
         if (OP) return;
         var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
         record=record[0];
+        console.log(record);
         App.CurrentAO=record.data.IdAppelOffre;
 
         App.AO.getProfil(user.mail, function(err, r) {
