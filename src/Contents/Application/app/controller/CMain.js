@@ -485,8 +485,9 @@ App.controller.define('CMain', {
                     };
                     App.get('boxselect#cboDepartement').setValue(tabx);
 
-                    App.get('datefield#date').setValue(record.data.DateParution);
-                    App.get('datefield#date_limite').setValue(record.data.DateLimite);
+                    App.get('datefield#date').setValue(new Date(record.data.DateParution));
+                    App.get('datefield#date_limite').setValue(new Date(record.data.DateLimite));
+
 
                     App.get('combo#cboCode').setValue(record.data.IdNaturePrestation);
                     App.get('textfield#numero_semaine').setValue(record.data.Semaine);
