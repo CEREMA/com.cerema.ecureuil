@@ -1107,7 +1107,7 @@ App.controller.define('CMain', {
                 });
                 App.DB.post('gestionao2://keywords',d,function(e2,r2) {
                     App.get('TPrincipal grid#AO').getStore().load();                                    
-                    alert('x');
+                    
                     // on notifie par mail
                     if (EMAIL.length > 0) {
                         var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
@@ -1133,7 +1133,7 @@ App.controller.define('CMain', {
                             else App.notify('Les agents ont été notifiés.');
                             p.setDisabled(false);
                         });*/
-                    }
+                    } else App.get('TConsult').close();
                 });
             });
         });
