@@ -378,6 +378,7 @@ App.controller.define('CMain', {
                 data: rx.data[0]
             };
             alert(record.data.DateParution);
+            return;
             App.AO.getProfil(user.mail, function(err, r) {
 
 
