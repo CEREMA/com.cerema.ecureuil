@@ -116,7 +116,11 @@ App.controller.define('CMain', {
                 click: "valider_saisie"
             },
             "TConsult": {
-                show: "TConsult_onshow"
+                show: "TConsult_onshow",
+                close: function() {
+                    alert('x');
+                    delete App.CurrentAO;
+                }
             },
             "combo#cboDomaine": {
                 select: "valider_thematiques"
@@ -1001,7 +1005,6 @@ App.controller.define('CMain', {
         for (var i=0;i<cmp.length;i++) EMAIL.push(cmp[i].data.Email);
         
 		p.setDisabled(true);
-        //for (var i=0;i<filez.length;i++) UPLOADZ.push(filez[i].tmpfilename+'|'+filez[i].filename+'|'+filez[i].filetype+'|'+filez[i].filesize);
 
         var temoin = false;
         if (App.get('combo#cboNom').getValue() == null) {
@@ -1036,10 +1039,6 @@ App.controller.define('CMain', {
             alert('Veuillez entrer un domaine');
             temoin = true;
         };
-        /*if (App.get('combo#cboThematique').getValue() == null) {
-            alert('Veuillez entrer une thématique');
-            temoin = true;
-        };*/
         if (App.get('combo#cboCode').getValue() == null) {
             alert('Veuillez entrer un code de la prestation');
             temoin = true;
@@ -1073,6 +1072,8 @@ App.controller.define('CMain', {
             _BLOB: App.get('uploadfilemanager#up').getFiles(),
             Keywords: App.get('boxselect#Keywords').getValue()
         };
+        
+        if (App.CurrentAO) o.IdAppelOffre=App.CurrentAO;
 
         App.DB.post('gestionao2://appelsoffres',o, function(err, rr) {
 
