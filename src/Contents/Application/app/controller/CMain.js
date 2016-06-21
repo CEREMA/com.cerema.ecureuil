@@ -1097,7 +1097,7 @@ App.controller.define('CMain', {
                 });
                 App.DB.post('gestionao2://keywords',d,function(e2,r2) {
                     App.get('TPrincipal grid#AO').getStore().load();                                    
-                    App.get('TConsult').close();
+                    
                     // on notifie par mail
                     if (EMAIL.length > 0) {
                         var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
@@ -1117,7 +1117,7 @@ App.controller.define('CMain', {
                         },function(e,r) {
 
                         });
-
+                        App.get('TConsult').close();
                         App.Mail.send(o, function(error, result) {
                             if (!error) App.notify('Impossible d\'envoyer le mail !');
                             else App.notify('Les agents ont été notifiés.');
