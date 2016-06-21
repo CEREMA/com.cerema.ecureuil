@@ -1057,7 +1057,7 @@ App.controller.define('CMain', {
             console.log(tab[i].data.ville_id);
         };
         
-        
+        console.log(OP);
         if (OP == true) {
 
             var o = {
