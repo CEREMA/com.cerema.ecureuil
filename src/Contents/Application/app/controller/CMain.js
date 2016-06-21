@@ -1177,8 +1177,8 @@ App.controller.define('CMain', {
 						keyword: diff[i]
 					});
 					App.DB.post('gestionao2://keywords',d,function(e2,r2) {
-						App.get('boxselect#Keywords').getStore().load();
-						App.get('boxselect#Keywords').getStore().on('load',function() {
+						App.get('TConsult boxselect#Keywords').getStore().load();
+						App.get('TConsult boxselect#Keywords').getStore().on('load',function() {
 							App.DB.post('gestionao2://appelsoffres',{												  
 								IdAppelOffre: id_appelOffre,
 								keywords: JSON.stringify(App.get('TConsult boxselect#Keywords').getValue())
