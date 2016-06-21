@@ -1076,7 +1076,7 @@ App.controller.define('CMain', {
         if (App.CurrentAO) o.IdAppelOffre=App.CurrentAO;
 
         App.DB.post('gestionao2://appelsoffres',o, function(rr) {
-
+            console.log(rr);
             if (!rr) {
                 App.notify("Un problème est survenu lors de l'enregistrement de la fiche");
                 p.setDisabled(false);
