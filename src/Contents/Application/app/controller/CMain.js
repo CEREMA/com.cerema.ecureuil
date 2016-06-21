@@ -1066,8 +1066,6 @@ App.controller.define('CMain', {
             console.log(tab[i].data.ville_id);
         };
         
-        console.log(Communes);
-        alert('x');
         
         if (OP == true) {
 
@@ -1087,6 +1085,8 @@ App.controller.define('CMain', {
                 _BLOB: App.get('uploadfilemanager#up').getFiles(),
                 Keywords: App.get('boxselect#Keywords').getValue()
             };
+            
+            console.log(o);
 
             App.AO.insert(o, function(err, rr) {
                 
