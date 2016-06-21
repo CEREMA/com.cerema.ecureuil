@@ -420,8 +420,8 @@ App.controller.define('CMain', {
 
                     App.get('boxselect#cboDepartement').setValue(tabx);
                     App.get('datefield#date').setValue(record.data.DateParution);
-                    App.get('datefield#date_limite').setValue(record.data.DateLimite.toDate());
-                    App.get('combo#cboCode').setValue(record.data.IdNaturePrestation.toDate());
+                    App.get('datefield#date_limite').setValue(new Date(record.data.DateLimite));
+                    App.get('combo#cboCode').setValue(new Date(record.data.IdNaturePrestation));
                     App.get('textfield#numero_semaine').setValue(record.data.Semaine);
                     App.get('combo#cboDomaine').setValue(record.data.IdDomaine);
                     /*App.get('combo#cboThematique').setValue(record.data.IdThematique);*/
