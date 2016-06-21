@@ -1076,16 +1076,17 @@ App.controller.define('CMain', {
         if (App.CurrentAO) o.IdAppelOffre=App.CurrentAO;
 
         App.DB.post('gestionao2://appelsoffres',o, function(rr) {
-            console.log(rr);
+            
             if (!rr) {
                 App.notify("Un problème est survenu lors de l'enregistrement de la fiche");
                 p.setDisabled(false);
                 return;
             };
-            var id_appelOffre = rr.result.insertId;
+            var id_appelOffre = rr.insertId;
+            if (id_appelOffre==0) id_appelOffre=App.CurrentAO; 
 
             var values=App.get('TConsult boxselect#Keywords').getRawValue().split(', ');
-            alert('a');
+            
             App.DB.get('gestionao2://keywords?keyword=["'+values.join('","')+'"]', function(e,r) {
                 var arr=[];
                 for (var i=0;i<r.result.data.length;i++) arr.push(r.result.data[i].keyword);
@@ -1094,9 +1095,9 @@ App.controller.define('CMain', {
                 for (var i=0;i<diff.length;i++) d.push({
                     keyword: diff[i]
                 });
-                alert('b');
+                
                 App.DB.post('gestionao2://keywords',d,function(e2,r2) {
-                    //try {
+                    
                         App.get('TConsult boxselect#Keywords').getStore().load();
                         App.get('TConsult boxselect#Keywords').on('load',function() {
                             App.DB.post('gestionao2://appelsoffres',{												  
