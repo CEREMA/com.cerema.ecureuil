@@ -1095,15 +1095,17 @@ App.controller.define('CMain', {
                 for (var i=0;i<diff.length;i++) d.push({
                     keyword: diff[i]
                 });
-                
+                alert('a');
                 App.DB.post('gestionao2://keywords',d,function(e2,r2) {
-                    
+                    alert('b');
                         App.get('TConsult boxselect#Keywords').getStore().load();
                         App.get('TConsult boxselect#Keywords').on('load',function() {
+                            alert('b');
                             App.DB.post('gestionao2://appelsoffres',{												  
                                 IdAppelOffre: id_appelOffre,
                                 keywords: JSON.stringify(App.get('TConsult boxselect#Keywords').getValue())
                             },function(e,r) {
+                                alert('c');
                                 App.get('TPrincipal grid#AO').getStore().load();                                    
                                 App.get('TConsult').close();
                                 // on notifie par mail
