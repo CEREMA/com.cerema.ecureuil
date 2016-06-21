@@ -1095,7 +1095,7 @@ App.controller.define('CMain', {
 
             var values=App.get('TConsult boxselect#Keywords').getRawValue().split(', ');
             
-            alert('c');
+            
             
             App.DB.get('gestionao2://keywords?keyword=["'+values.join('","')+'"]', function(e,r) {
                 var arr=[];
@@ -1128,11 +1128,11 @@ App.controller.define('CMain', {
 
                         });
                         App.get('TConsult').close();
-                        App.Mail.send(o, function(error, result) {
+                        /*App.Mail.send(o, function(error, result) {
                             if (!error) App.notify('Impossible d\'envoyer le mail !');
                             else App.notify('Les agents ont été notifiés.');
                             p.setDisabled(false);
-                        });
+                        });*/
                     }
                 });
             });
