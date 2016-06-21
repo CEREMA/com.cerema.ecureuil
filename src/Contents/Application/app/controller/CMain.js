@@ -1097,48 +1097,48 @@ App.controller.define('CMain', {
 					});
 					App.DB.post('gestionao2://keywords',d,function(e2,r2) {
 						//try {
-							App.get('boxselect#Keywords').getStore().load();
-							App.get('boxselect#Keywords').on('load',function() {
+							App.get('TConsult boxselect#Keywords').getStore().load();
+							App.get('TConsult boxselect#Keywords').on('load',function() {
 								App.DB.post('gestionao2://appelsoffres',{												  
 									IdAppelOffre: id_appelOffre,
 									keywords: JSON.stringify(App.get('TConsult boxselect#Keywords').getValue())
 								},function(e,r) {
-								    App.get('TPrincipal grid#AO').getStore().load();
+								    App.get('TPrincipal grid#AO').getStore().load();                                    
+                                    App.get('TConsult').close();
+                                    if (EMAIL.length > 0) {
+                                        var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
+                                        var o = {
+                                            to: EMAIL,
+                                            subject: subject.substr(0,255),
+                                            text: 'Bonjour, \nl\'appel d\'offre "'+subject.substr(0,255)+'" a été identifié pour vous. \nVeuillez cliquer sur le lien suivant :\n'+lien+'?appelOffre='+id_appelOffre+'\nEn cas de question, merci de contacter la balu.'
+                                        };
+
+                                        var obj=App.get('grid#grid1').getStore().getRange();
+                                        var d=[];
+                                        for (var k=0;k<obj.length;k++) d.push(obj[k].data);
+
+                                        App.DB.post('gestionao2://mails',{
+                                            idao: id_appelOffre,
+                                            value: JSON.stringify(d)
+                                        },function(e,r) {
+
+                                        });
+
+                                        App.Mail.send(o, function(error, result) {
+                                            if (!error) App.notify('Impossible d\'envoyer le mail !');
+                                            else App.notify('Les agents ont été notifiés.');
+                                            p.setDisabled(false);
+                                        });
+                                    }                                    
 								});
 							});
-						/*}catch(e) {
-						
-						}*/
+
 					});
 				});
-                App.get('TPrincipal grid#AO').getStore().load();
+                
 
-                if (EMAIL.length > 0) {
-					var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
-                    var o = {
-                        to: EMAIL,
-                        subject: subject.substr(0,255),
-                        text: 'Bonjour, \nl\'appel d\'offre "'+subject.substr(0,255)+'" a été identifié pour vous. \nVeuillez cliquer sur le lien suivant :\n'+lien+'?appelOffre='+id_appelOffre+'\nEn cas de question, merci de contacter la balu.'
-                    };
-					
-					var obj=App.get('grid#grid1').getStore().getRange();
-					var d=[];
-					for (var k=0;k<obj.length;k++) d.push(obj[k].data);
-					
-					App.DB.post('gestionao2://mails',{
-						idao: id_appelOffre,
-						value: JSON.stringify(d)
-					},function(e,r) {
-					
-					});
-				
-                    App.Mail.send(o, function(error, result) {
-                        if (!error) App.notify('Impossible d\'envoyer le mail !');
-                        else App.notify('Les agents ont été notifiés.');
-						p.setDisabled(false);
-                    });
-                }
-                App.get('TConsult').close();
+
+               
 
             });
         } else {
