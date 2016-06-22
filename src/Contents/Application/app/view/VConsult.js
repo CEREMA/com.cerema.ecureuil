@@ -3,7 +3,7 @@ App.view.define('VConsult', {
     alias: "widget.TConsult",
     initComponent: function() {
         this.width = 1024;
-        this.height = 860;
+        this.height = 700;
         this.title = "Consultation Appel d'offre";
         this.bodyCls = "white";
         this.layout = "border";
