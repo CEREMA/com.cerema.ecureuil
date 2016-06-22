@@ -1221,7 +1221,7 @@ App.controller.define('CMain', {
                 App.get('combo#cboCode').setValue(response.data[0].IdNaturePrestation);
                 App.get('textfield#numero_semaine').setValue(response.data[0].Semaine);
                 App.get('combo#cboDomaine').setValue(response.data[0].IdDomaine);*/
-            });
+            //});
         //} else {
             Auth.login(function(user) {
                 App.AO.getProfil(user.mail, function(err, r) {
