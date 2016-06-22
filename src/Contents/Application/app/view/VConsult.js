@@ -7,7 +7,15 @@ App.view.define('VConsult', {
         this.title = "Consultation Appel d'offre";
         this.bodyCls = "white";
         this.layout = "border";
-        this.items = [{
+        this.items = [
+		{
+			region: "east",
+			split:true,
+			layout: 'fit',			
+            width: 150,
+			html: "yes"
+		},            
+            {
             region: "west",
             border: false,
             width: 250,
