@@ -1166,8 +1166,8 @@ App.controller.define('CMain', {
         var loc = document.location.href.split('?appelOffre=');
         lien = document.location.href.split('?')[0];
 		
-        if (loc.length > 1) {
-            profil = parseInt(document.location.href.split('?appelOffre=')[1].trim());
+        //if (loc.length > 1) {
+            /*profil = parseInt(document.location.href.split('?appelOffre=')[1].trim());
             App.AO.get(profil, function(response) {
                 App.get('TPrincipal').hide();
                 App.view.create('VConsult', {
@@ -1220,9 +1220,9 @@ App.controller.define('CMain', {
 
                 App.get('combo#cboCode').setValue(response.data[0].IdNaturePrestation);
                 App.get('textfield#numero_semaine').setValue(response.data[0].Semaine);
-                App.get('combo#cboDomaine').setValue(response.data[0].IdDomaine);
+                App.get('combo#cboDomaine').setValue(response.data[0].IdDomaine);*/
             });
-        } else {
+        //} else {
             Auth.login(function(user) {
                 App.AO.getProfil(user.mail, function(err, r) {
                     App.get('TPrincipal grid#AO').getStore().load();
@@ -1230,7 +1230,7 @@ App.controller.define('CMain', {
                     else App.get('button#ajouter_modification').hide();
                 });
             });
-        };
+        //};
 
 
     }
