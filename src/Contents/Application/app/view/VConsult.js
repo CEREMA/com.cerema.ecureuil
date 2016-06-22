@@ -184,7 +184,6 @@ App.view.define('VConsult', {
             }, {
                 xtype: "htmleditor",
                 itemId: "objet",
-                flex: 1,
                 padding: 10,
                 height: 50,
                 width: "100%",
@@ -224,7 +223,6 @@ App.view.define('VConsult', {
                     forceSelection: false,
                     queryMode: 'local',
                     typeAhead: true,
-                    height: 80,
                     store: App.store.create('gestionao2://keywords', {
                         autoLoad: true
                     })
