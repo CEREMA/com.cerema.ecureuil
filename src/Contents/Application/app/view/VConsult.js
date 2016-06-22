@@ -186,7 +186,7 @@ App.view.define('VConsult', {
                 xtype: "htmleditor",
                 itemId: "objet",
                 padding: 10,
-                height: 50,
+                height: 100,
                 width: "100%",
                 labelAlign: "top",
                 allowBlank: false,
