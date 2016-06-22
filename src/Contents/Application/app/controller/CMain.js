@@ -367,8 +367,11 @@ App.controller.define('CMain', {
     //Si l'url contient ?appelOffre= cela modifie la fenêtre initial et affiche les données de l'appelOffre correspondante
     TConsult_onshow: function() {
         var user=Auth.User;
-        if (OP) return;
-        
+        try {
+            if (OP) return;
+        } catch(e) {
+            
+        };        
         if (!App.CurrentAO) {
             var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
             record=record[0];
