@@ -19,11 +19,11 @@ App.view.define('VConsult', {
                 xtype: "boxselect",
                 itemId: "cboDepartement",
                 padding: 10,
-                fieldLabel: "Département",
+                fieldLabel: "Départements",
                 allowBlank: false,
                 editable: false,
                 labelAlign: "top",
-                height: 100,
+                /*height: 100,*/
                 width: "100%",
                 displayField: "departement",
                 valueField: "IdDepartement",
