@@ -1228,7 +1228,8 @@ App.controller.define('CMain', {
                     App.get('TPrincipal grid#AO').getStore().load();
                     if (loc.length > 1) {
                         App.view.create('VConsult', {
-                            modal: true
+                            modal: true,
+                            AO: document.location.href.split('?appelOffre=')[1].trim()
                         }).show().center();
                     };
                     if (r.result.length > 0) 
