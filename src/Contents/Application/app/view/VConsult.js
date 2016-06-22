@@ -197,7 +197,7 @@ App.view.define('VConsult', {
                 padding: 10,
                 width: "100%",
                 height: 50,
-                labelAlign: "left",
+                labelAlign: "top",
                 fieldLabel: "Observations"
             },
             {
