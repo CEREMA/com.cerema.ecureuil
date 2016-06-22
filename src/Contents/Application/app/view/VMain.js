@@ -32,13 +32,6 @@ App.view.define('VMain', {
 			xtype: "TPrincipal"
 		},
 		{
-			region: "east",
-			split:true,
-			layout: 'fit',			
-            width: 150,
-			html: "yes"
-		},
-		{
 			region: "center",
 			split:true,
 			layout: 'fit',			
