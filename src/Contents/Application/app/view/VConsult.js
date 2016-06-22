@@ -172,6 +172,7 @@ App.view.define('VConsult', {
             layout: "vbox",
             border: false,
             itemId: "TCenter",
+            height: "100%",
             items: [{
                 xtype: "textfield",
                 itemId: "client",
@@ -204,7 +205,7 @@ App.view.define('VConsult', {
                 itemId: "regroupement_keywords",
                 border: false,
                 width: "100%",
-                height: 40,
+                flex: 1,
                 items: [{
                     xtype: "boxselect",
                     itemId: "Keywords",
@@ -214,6 +215,7 @@ App.view.define('VConsult', {
                     labelAlign: "top",
                     labelWidth: 200,
                     flex: 1,
+                    height: "100%",
                     padding: 10,
                     displayField: "keyword",
                     valueField: "id",
