@@ -157,7 +157,7 @@ App.view.define('VConsult', {
                 editable: false,
                 labelAlign: "left",
                 labelWidth: 200,
-                height: 80,
+                height: 40,
                 width: "100%",
                 displayField: "departement",
                 valueField: "IdDepartement",
@@ -170,7 +170,7 @@ App.view.define('VConsult', {
                 itemId: "regroupement_keywords",
                 border: false,
                 width: "100%",
-                height: 90,
+                height: 40,
                 items: [{
                     xtype: "boxselect",
                     itemId: "Keywords",
