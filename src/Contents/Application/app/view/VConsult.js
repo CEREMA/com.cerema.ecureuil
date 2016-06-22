@@ -212,7 +212,7 @@ App.view.define('VConsult', {
                     fieldLabel: "Mots clés",
                     allowBlank: false,
                     editable: true,
-                    labelAlign: "left",
+                    labelAlign: "top",
                     labelWidth: 200,
                     flex: 1,
                     padding: 10,
