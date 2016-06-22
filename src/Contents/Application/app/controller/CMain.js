@@ -335,18 +335,18 @@ App.controller.define('CMain', {
 				var favoris = null;
 				var check = true;
 				var idAppelOffre = record.data.IdAppelOffre;
+                if (e.data.length>0) {
+                    if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
 
-				if(e.data[0].Favoris != '' && e.data[0].Favoris != null){
+                        favoris = JSON.parse(e.data[0].Favoris);
 
-					favoris = JSON.parse(e.data[0].Favoris);
-
-					for(var i = 0 ; i < favoris.length && check ; i++){
-						if(favoris[i].IdAppelOffre == idAppelOffre){
-							check = false;
-						}
-					}
-				}
-
+                        for(var i = 0 ; i < favoris.length && check ; i++){
+                            if(favoris[i].IdAppelOffre == idAppelOffre){
+                                check = false;
+                            }
+                        }
+                    }
+                }
 				if(check){
 					App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
 					App.get('button#ajouter_favoris').show();
