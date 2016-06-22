@@ -199,7 +199,8 @@ App.view.define('VConsult', {
                 height: 50,
                 labelAlign: "left",
                 fieldLabel: "Observations"
-            }{
+            },
+            {
                 layout: "hbox",
                 itemId: "regroupement_keywords",
                 border: false,
