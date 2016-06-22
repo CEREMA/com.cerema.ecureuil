@@ -3,7 +3,7 @@ App.view.define('VCommunes', {
     alias: "widget.VCommunes",
     initComponent: function() {
         this.width = 600;
-        this.height = 800;
+        this.height = 700;
         this.title = "Communes";
         this.bodyCls = "white";
 		this.layout="vbox";
