@@ -1129,11 +1129,11 @@ App.controller.define('CMain', {
 
                         });
                         App.get('TConsult').close();
-                        /*App.Mail.send(o, function(error, result) {
+                        App.Mail.send(o, function(error, result) {
                             if (!error) App.notify('Impossible d\'envoyer le mail !');
                             else App.notify('Les agents ont été notifiés.');
                             p.setDisabled(false);
-                        });*/
+                        });
                     } else App.get('TConsult').close();
                 });
             });
