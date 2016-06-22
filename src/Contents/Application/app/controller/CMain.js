@@ -345,14 +345,15 @@ App.controller.define('CMain', {
                                 check = false;
                             }
                         }
+                    };
+                
+                    if(check){
+                        App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
+                        App.get('button#ajouter_favoris').show();
+                    } else {
+                        App.get('button#ajouter_favoris').hide();
                     }
-                }
-				if(check){
-					App.get('button#ajouter_favoris').idAppelOffre = record.data.IdAppelOffre;
-					App.get('button#ajouter_favoris').show();
-				} else {
-					App.get('button#ajouter_favoris').hide();
-				}
+                };
 			}
 		});
 
