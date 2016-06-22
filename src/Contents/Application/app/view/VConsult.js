@@ -13,7 +13,107 @@ App.view.define('VConsult', {
 			split:true,
 			layout: 'fit',			
             width: 250,
-			html: "yes"
+			items: [
+{
+                xtype: "boxselect",
+                itemId: "cboDepartement",
+                padding: 10,
+                fieldLabel: "Département",
+                allowBlank: false,
+                editable: false,
+                labelAlign: "left",
+                labelWidth: 200,
+                height: 40,
+                width: "100%",
+                displayField: "departement",
+                valueField: "IdDepartement",
+                store: App.store.create('App.AO.getAll4', // Creation du store
+                    {
+                        autoLoad: true
+                    })
+            }, {
+                layout: "hbox",
+                itemId: "regroupement_keywords",
+                border: false,
+                width: "100%",
+                height: 40,
+                items: [{
+                    xtype: "boxselect",
+                    itemId: "Keywords",
+                    fieldLabel: "Mots clés",
+                    allowBlank: false,
+                    editable: true,
+                    labelAlign: "left",
+                    labelWidth: 200,
+                    flex: 1,
+                    padding: 10,
+                    displayField: "keyword",
+                    valueField: "id",
+                    triggerAction: 'all',
+                    enableKeyEvents: true,
+                    createNewOnEnter: false,
+                    forceSelection: false,
+                    queryMode: 'local',
+                    typeAhead: true,
+                    height: 80,
+                    store: App.store.create('gestionao2://keywords', {
+                        autoLoad: true
+                    })
+
+                }, {
+                    xtype: "textfield",
+                    itemId: "ed_keyword",
+                    fieldLabel: "Mots clés",
+                    hidden: true,
+                    triggerAction: 'all',
+                    padding: 10,
+                    flex: 1,
+                    labelAlign: "top",
+                    labelWidth: 200,
+                    enableKeyEvents: true
+                }, {
+                    xtype: "button",
+                    itemId: "add_keyword",
+                    text: "Ajouter",
+                    height: 24,
+                    margin: {
+                        top: 10,
+                        right: 10
+                    },
+                    width: 100,
+                    handler: function(p) {
+                        p.setDisabled(true);
+                        App.get(p.up('window'),'textfield#ed_keyword').setValue('');
+                        App.get(p.up('window'),'textfield#ed_keyword').show();
+                        App.get(p.up('window'),'boxselect#Keywords').hide();
+                    }
+                }]
+            }, {
+                collapsible: false,
+                flex: 1,
+                padding: 10,
+                width: "100%",
+                border: true,
+                width: "100%",
+                id: "TCommunes",
+                xtype: "grid",
+                tbar: [
+                    '->',
+                    {
+                        text: "Ajouter",
+                        itemId: "add_commune"
+                    }
+                ],
+                columns: [
+                    {
+                        header: "Communes",
+                        dataIndex: "ville_nom",
+                        flex: 1
+                    }                
+                ],
+                store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true})
+            }                
+            ]
 		},            
             {
             region: "west",
@@ -156,104 +256,6 @@ App.view.define('VConsult', {
                 height: 50,
                 labelAlign: "left",
                 fieldLabel: "Observations"
-            }, {
-                xtype: "boxselect",
-                itemId: "cboDepartement",
-                padding: 10,
-                fieldLabel: "Département",
-                allowBlank: false,
-                editable: false,
-                labelAlign: "left",
-                labelWidth: 200,
-                height: 40,
-                width: "100%",
-                displayField: "departement",
-                valueField: "IdDepartement",
-                store: App.store.create('App.AO.getAll4', // Creation du store
-                    {
-                        autoLoad: true
-                    })
-            }, {
-                layout: "hbox",
-                itemId: "regroupement_keywords",
-                border: false,
-                width: "100%",
-                height: 40,
-                items: [{
-                    xtype: "boxselect",
-                    itemId: "Keywords",
-                    fieldLabel: "Mots clés",
-                    allowBlank: false,
-                    editable: true,
-                    labelAlign: "left",
-                    labelWidth: 200,
-                    flex: 1,
-                    padding: 10,
-                    displayField: "keyword",
-                    valueField: "id",
-                    triggerAction: 'all',
-                    enableKeyEvents: true,
-                    createNewOnEnter: false,
-                    forceSelection: false,
-                    queryMode: 'local',
-                    typeAhead: true,
-                    height: 80,
-                    store: App.store.create('gestionao2://keywords', {
-                        autoLoad: true
-                    })
-
-                }, {
-                    xtype: "textfield",
-                    itemId: "ed_keyword",
-                    fieldLabel: "Mots clés",
-                    hidden: true,
-                    triggerAction: 'all',
-                    padding: 10,
-                    flex: 1,
-                    labelAlign: "top",
-                    labelWidth: 200,
-                    enableKeyEvents: true
-                }, {
-                    xtype: "button",
-                    itemId: "add_keyword",
-                    text: "Ajouter",
-                    height: 24,
-                    margin: {
-                        top: 10,
-                        right: 10
-                    },
-                    width: 100,
-                    handler: function(p) {
-                        p.setDisabled(true);
-                        App.get(p.up('window'),'textfield#ed_keyword').setValue('');
-                        App.get(p.up('window'),'textfield#ed_keyword').show();
-                        App.get(p.up('window'),'boxselect#Keywords').hide();
-                    }
-                }]
-            }, {
-                collapsible: false,
-                flex: 1,
-                padding: 10,
-                width: "100%",
-                border: true,
-                width: "100%",
-                id: "TCommunes",
-                xtype: "grid",
-                tbar: [
-                    '->',
-                    {
-                        text: "Ajouter",
-                        itemId: "add_commune"
-                    }
-                ],
-                columns: [
-                    {
-                        header: "Communes",
-                        dataIndex: "ville_nom",
-                        flex: 1
-                    }                
-                ],
-                store: App.store.create("gestionao2://my_communes_fields",{autoLoad: true})
             }]
         }, {
             region: "south",
