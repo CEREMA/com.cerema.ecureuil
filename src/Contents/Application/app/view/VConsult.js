@@ -11,7 +11,8 @@ App.view.define('VConsult', {
 		{
 			region: "east",
 			split:true,
-			layout: 'fit',			
+			layout: 'vbox',			
+            border: false,
             width: 250,
 			items: [
 {
