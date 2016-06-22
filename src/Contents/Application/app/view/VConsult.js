@@ -12,7 +12,7 @@ App.view.define('VConsult', {
 			region: "east",
 			split:true,
 			layout: 'fit',			
-            width: 150,
+            width: 250,
 			html: "yes"
 		},            
             {
