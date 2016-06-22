@@ -215,7 +215,7 @@ App.view.define('VConsult', {
                     labelAlign: "top",
                     labelWidth: 200,
                     flex: 1,
-                    height: "100%",
+                    /*height: "100%",*/
                     padding: 10,
                     displayField: "keyword",
                     valueField: "id",
