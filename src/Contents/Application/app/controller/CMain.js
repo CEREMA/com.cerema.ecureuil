@@ -368,10 +368,13 @@ App.controller.define('CMain', {
     TConsult_onshow: function() {
         var user=Auth.User;
         if (OP) return;
-        var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
-        record=record[0];
+        
+        if (!App.CurrentAO) {
+            var record=App.get('TPrincipal grid#AO').getSelectionModel().getSelection();
+            record=record[0];
 
-        App.CurrentAO=record.data.IdAppelOffre;
+            App.CurrentAO=record.data.IdAppelOffre;
+        };
         
         App.DB.get('gestionao2://appelsoffres?IdAppelOffre='+App.CurrentAO,function(rx){
             
@@ -1227,9 +1230,9 @@ App.controller.define('CMain', {
                 App.AO.getProfil(user.mail, function(err, r) {
                     App.get('TPrincipal grid#AO').getStore().load();
                     if (loc.length > 1) {
+                        App.CurrentAO=document.location.href.split('?appelOffre=')[1].trim();
                         App.view.create('VConsult', {
-                            modal: true,
-                            AO: document.location.href.split('?appelOffre=')[1].trim()
+                            modal: true
                         }).show().center();
                     };
                     if (r.result.length > 0) 
