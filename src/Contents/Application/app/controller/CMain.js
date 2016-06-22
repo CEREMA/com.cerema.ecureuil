@@ -1226,8 +1226,15 @@ App.controller.define('CMain', {
             Auth.login(function(user) {
                 App.AO.getProfil(user.mail, function(err, r) {
                     App.get('TPrincipal grid#AO').getStore().load();
-                    if (r.result.length > 0) App.get('button#ajouter_modification').show();
-                    else App.get('button#ajouter_modification').hide();
+                    if (loc.length > 1) {
+                        App.view.create('VConsult', {
+                            modal: true
+                        }).show().center();
+                    };
+                    if (r.result.length > 0) 
+                        App.get('button#ajouter_modification').show();
+                    else 
+                        App.get('button#ajouter_modification').hide();
                 });
             });
         //};
