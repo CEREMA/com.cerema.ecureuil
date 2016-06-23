@@ -189,7 +189,6 @@ App.controller.define('CMain', {
     view_commune: function(p) {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
-            
             App.get("TConsult grid#TCommunes").getStore().add(s[0].data);
             console.log(s[0].data);
             App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); 
@@ -477,7 +476,7 @@ App.controller.define('CMain', {
 
                     App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
 
-                    var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
+                    var store=App.store.create('gestionao2://communes{ville_id,ville_nom}?ville_id='+record.data.Communes);
                     App.get('TConsult grid#TCommunes').bindStore(store);
                     App.get('TConsult grid#TCommunes').getStore().load();
 
