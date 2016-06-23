@@ -404,7 +404,7 @@ App.controller.define('CMain', {
                     });
 
                     App.get('combo#cboType').setValue(record.data.IdConsultation);
-                    App.get('htmleditor#objet').setValue(record.data.Objet);
+                    App.get('textarea#objet').setValue(record.data.Objet);
                     App.get('textfield#client').setValue(record.data.Client);
                     App.get('textfield#observations').setValue(record.data.Observation);
                     App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
@@ -459,7 +459,7 @@ App.controller.define('CMain', {
                     App.get('button#effacer_saisie').hide();
                     App.get('button#valider_saisie').hide();
                     App.get('textfield#client').setReadOnly(true);
-                    App.get('htmleditor#objet').setReadOnly(true);
+                    App.get('textarea#objet').setReadOnly(true);
                     App.get('textarea#observations').setReadOnly(true);
                     App.get('combo#cboDomaine').setReadOnly(true);
                     //App.get('combo#cboThematique').setReadOnly(true);
@@ -468,7 +468,7 @@ App.controller.define('CMain', {
                     App.get('TConsult button#add_keyword').hide();
                     App.get('combo#cboNom').setValue(record.data.IdSource);
                     App.get('combo#cboType').setValue(record.data.IdConsultation);
-                    App.get('htmleditor#objet').setValue(record.data.Objet);
+                    App.get('textarea#objet').setValue(record.data.Objet);
                     App.get('textfield#client').setValue(record.data.Client);
                     App.get('textfield#observations').setValue(record.data.Observation);
                     App.get('grid#grid1').getDockedItems('toolbar[dock=top]')[0].hide();
@@ -675,7 +675,7 @@ App.controller.define('CMain', {
 							});
 
 							App.get('combo#cboType').setValue(record.data.IdConsultation);
-							App.get('htmleditor#objet').setValue(record.data.Objet);
+							App.get('textarea#objet').setValue(record.data.Objet);
 							App.get('textfield#client').setValue(record.data.Client);
 							App.get('textfield#observations').setValue(record.data.Observation);
 							App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
@@ -727,7 +727,7 @@ App.controller.define('CMain', {
 							App.get('VAppelOffreFavoris button#add_keyword').hide();
 							App.get('combo#cboNom').setValue(record.data.IdSource);
 							App.get('combo#cboType').setValue(record.data.IdConsultation);
-							App.get('htmleditor#objet').setValue(record.data.Objet);
+							App.get('textarea#objet').setValue(record.data.Objet);
 							App.get('textfield#client').setValue(record.data.Client);
 							App.get('textfield#observations').setValue(record.data.Observation);
                             
@@ -882,7 +882,7 @@ App.controller.define('CMain', {
         App.get('combo#cboNom').setValue('');
         App.get('datefield#date').setValue('');
         App.get('combo#cboType').setValue('');
-        App.get('htmleditor#objet').setValue('');
+        App.get('textarea#objet').setValue('');
         App.get('textfield#client').setValue('');
         App.get('textfield#observations').setValue('');
         App.get('combo#cboDepartement').setValue('');
@@ -1039,7 +1039,7 @@ App.controller.define('CMain', {
             alert('Veuillez entrer un client');
             temoin = true;
         };
-        if (App.get('htmleditor#objet').getValue() == "") {
+        if (App.get('textarea#objet').getValue() == "") {
             alert('Veuillez entrer un objet');
             temoin = true;
         };
@@ -1076,7 +1076,7 @@ App.controller.define('CMain', {
             IdSource: App.get('combo#cboNom').getValue(),
             DateParution: App.get('datefield#date').getValue(),
             IdConsultation: App.get('combo#cboType').getValue(),
-            Objet: App.get('htmleditor#objet').getValue(),
+            Objet: App.get('textarea#objet').getValue(),
             Client: App.get('textfield#client').getValue(),
             Observation: App.get('textfield#observations').getValue(),
             IdDepartement: App.get('combo#cboDepartement').getValue().join(','),
@@ -1118,7 +1118,7 @@ App.controller.define('CMain', {
                     
                     // on notifie par mail
                     if (EMAIL.length > 0) {
-                        var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('htmleditor#objet').getValue();
+                        var subject="Appel d'offre #"+id_appelOffre+' :'+App.get('textarea#objet').getValue();
                         var o = {
                             to: EMAIL,
                             subject: subject.substr(0,255),
