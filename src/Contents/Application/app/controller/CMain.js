@@ -189,6 +189,7 @@ App.controller.define('CMain', {
     view_commune: function(p) {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
+            
             App.get("TConsult grid#TCommunes").getStore().add(s[0].data);
             console.log(s[0].data);
             App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); 
@@ -424,8 +425,8 @@ App.controller.define('CMain', {
                     };
 
                     var store=App.store.create('gestionao2://communes{ville_id,ville_nom}?ville_id='+record.data.Communes);
-                    App.get('grid#TCommunes').bindStore(store);
-                    App.get('grid#TCommunes').getStore().load();
+                    App.get('TConsult grid#TCommunes').bindStore(store);
+                    App.get('TConsult grid#TCommunes').getStore().load();
 
                     App.get('boxselect#cboDepartement').setValue(tabx);
                     App.get('datefield#date').setValue(new Date(record.data.DateParution));
@@ -473,13 +474,13 @@ App.controller.define('CMain', {
                     App.get('textfield#client').setValue(record.data.Client);
                     App.get('textfield#observations').setValue(record.data.Observation);
                     App.get('grid#grid1').getDockedItems('toolbar[dock=top]')[0].hide();
-                    App.get('grid#TCommunes').getDockedItems('toolbar[dock=top]')[0].hide();
+                    App.get('TConsult grid#TCommunes').getDockedItems('toolbar[dock=top]')[0].hide();
 
                     App.get('uploadfilemanager#up').setFiles(JSON.parse(record.data._BLOB));
 
                     var store=App.store.create('gestionao2://communes{ville_nom}?ville_id='+record.data.Communes);
-                    App.get('grid#TCommunes').bindStore(store);
-                    App.get('grid#TCommunes').getStore().load();
+                    App.get('TConsult grid#TCommunes').bindStore(store);
+                    App.get('TConsult grid#TCommunes').getStore().load();
 
                     try {
                         var tab = record.data.IdDepartement.split(',');
