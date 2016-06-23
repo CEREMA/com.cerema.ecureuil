@@ -464,7 +464,6 @@ App.controller.define('CMain', {
                     App.get('textarea#objet').setReadOnly(true);
                     App.get('textarea#observations').setReadOnly(true);
                     App.get('combo#cboDomaine').setReadOnly(true);
-                    //App.get('combo#cboThematique').setReadOnly(true);
                     App.get('combo#cboCode').setReadOnly(true);
                     App.get('TConsult boxselect#Keywords').setReadOnly(true);
                     App.get('TConsult button#add_keyword').hide();
