@@ -183,7 +183,7 @@ App.view.define('VConsult', {
                 fieldLabel: "Client",
                 labelWidth: 200,
             }, {
-                xtype: "htmleditor",
+                xtype: "textarea",
                 itemId: "objet",
                 padding: 10,
                 height: 100,
