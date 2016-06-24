@@ -34,6 +34,7 @@ App.view.define('VCommunes', {
                     columns: [{
                         header: "CPostal",
                         width: 80,
+                        hidden: true,
                         dataIndex: "ville_code_postal"
                     },{
                         header: "Commune",
