@@ -200,6 +200,7 @@ App.controller.define('CMain', {
     },
     search_onkey: function(me) {
         var search=me.getValue();
+        var search=me.getValue();
         var store=App.store.create('gestionao2://communes?ville_nom='+me.getValue()+'*');
         App.get(me.up('window'),"grid#search").bindStore(store);
         App.get(me.up('window'),"grid#search").getStore().load();
