@@ -189,9 +189,8 @@ App.controller.define('CMain', {
     view_commune: function(p) {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
-            App.get("TConsult grid#TCommunes").getStore().add(s[0].data);
-            App.get("TConsult grid#TCommunes").bindStore(App.get("TConsult grid#TCommunes").getStore());
-            //App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); 
+            App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); 
+            App.get("TConsult grid#TCommunes").getStore().add(s[0].data);            
             Lib.map.marker(s[0].data.ville_latitude_deg,s[0].data.ville_longitude_deg);
         }
     },
