@@ -190,8 +190,8 @@ App.controller.define('CMain', {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
             App.get("TConsult grid#TCommunes").getStore().add(s[0].data);
-            console.log(App.get("TConsult grid#TCommunes").getStore());
-            App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); 
+            App.get("TConsult grid#TCommunes").bindStore(App.get("TConsult grid#TCommunes").getStore());
+            //App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); 
             Lib.map.marker(s[0].data.ville_latitude_deg,s[0].data.ville_longitude_deg);
         }
     },
@@ -450,7 +450,7 @@ App.controller.define('CMain', {
                     });
                     AO_ID = record.data.IdAppelOffre;
                     App.get('TConsult').setTitle('Appel d\'offre');
-                    //App.get('panel#regroupement_hboxGrid1').hide();
+
                     App.get('uploadfilemanager#up').setReadOnly(true);
                     App.get('combo#cboNom').setReadOnly(true);
                     App.get('combo#cboType').setReadOnly(true);
