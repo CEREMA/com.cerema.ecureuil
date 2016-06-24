@@ -1069,7 +1069,7 @@ App.controller.define('CMain', {
         var Communes=[];
         for (var i=0;i<tab.length;i++) {
             Communes.push(tab[i].data.ville_id);
-            console.log(tab[i].data.ville_id);
+            alert(tab[i].data.ville_id);
         };
         
         var o = {
