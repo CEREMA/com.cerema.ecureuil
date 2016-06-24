@@ -190,6 +190,7 @@ App.controller.define('CMain', {
         var s = App.get(p.up('window'),"grid#search").getSelectionModel().getSelection();
         if (s) {
             App.get(p.up('window'),"grid#search2").getStore().add(s[0].data); 
+            App.get("TConsult grid#TCommunes").bindStore(App.get(p.up('window'),"grid#search2").getStore());
             App.get("TConsult grid#TCommunes").getStore().add(s[0].data);            
             Lib.map.marker(s[0].data.ville_latitude_deg,s[0].data.ville_longitude_deg);
         }
