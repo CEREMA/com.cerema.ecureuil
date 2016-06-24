@@ -49,11 +49,6 @@ App.view.define('VConsult', {
                 ],
                 columns: [
                     {
-                        header: "Id",
-                        dataIndex: "ville_id",
-                        flex: 1
-                    },
-                    {
                         header: "Communes",
                         dataIndex: "ville_nom",
                         flex: 1
