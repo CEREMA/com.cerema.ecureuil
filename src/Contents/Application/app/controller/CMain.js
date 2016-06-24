@@ -1067,10 +1067,7 @@ App.controller.define('CMain', {
         var tab=App.get(p.up('window'),'grid#TCommunes').getStore().getRange();
         
         var Communes=[];
-        for (var i=0;i<tab.length;i++) {
-            Communes.push(tab[i].data.ville_id);
-            alert(tab[i].data.ville_id);
-        };
+        for (var i=0;i<tab.length;i++) Communes.push(tab[i].data.ville_id);
         
         var o = {
             IdSource: App.get('combo#cboNom').getValue(),
