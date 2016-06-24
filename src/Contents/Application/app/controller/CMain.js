@@ -207,6 +207,7 @@ App.controller.define('CMain', {
     },
 	VCommunes_onshow: function(me) {
         App.loadAPI("https://maps.googleapis.com/maps/api/js?key=AIzaSyBjrQFrAt1CykERQC8uLfKP2TFF6fo6RR4&sensor=false&callback=Lib.map.init");	        
+        App.get(me,"grid#search2").bindStore(App.get("TConsult grid#TCommunes").getStore());
 	},
     keyword_add: function(p,s) {
         console.log(s.button);
