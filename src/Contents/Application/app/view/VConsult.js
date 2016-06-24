@@ -38,7 +38,7 @@ App.view.define('VConsult', {
                 width: "100%",
                 border: true,
                 width: "100%",
-                id: "TCommunes",
+                itemId: "TCommunes",
                 xtype: "grid",
                 tbar: [
                     '->',
