@@ -422,7 +422,8 @@ App.controller.define('CMain', {
                     for (var i = 0; i < tab.length; i++) {
                         tabx.push(parseInt(tab[i]));
                     };
-
+                    
+                    alert(record.data.Communes);
                     var store=App.store.create('gestionao2://communes{ville_id,ville_nom}?ville_id='+record.data.Communes);
                     App.get('TConsult grid#TCommunes').bindStore(store);
                     App.get('TConsult grid#TCommunes').getStore().load();
